@@ -192,6 +192,29 @@
             
 
 <div class="post-preview">
+    <a href="https://mrbelieve.tech/post/pwn%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+        <h2 class="post-title">
+            Pwn常用指令
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            ldd filename 读取libc ROPgadget --binary filename --only &quot;pop|ret&quot; __libc_start_main = u64(sh.recvuntil(&quot;\x7f&quot;)[-6:].ljust(8,'\x00')) __libc_start_main = u32(sh.recvuntil(&quot;\xf7&quot;)[-4:]) __libc_start_main = u32(sh.recv(4)) canary = u64(sh.recv(7).rjust(8,&quot;\x00&quot;)) log.success(&quot;canary------&gt;&quot; + hex(canary)) 接受成int型地址：str_addr = int(sh.recvuntil(&quot;\n&quot;,True),16) seccomp-tools dump ./filename 找不到flag：grep -rn flag * 32位 第
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Mr.Be1ieVe on Wednesday, February 5, 2020
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="https://mrbelieve.tech/post/leak_canary-others_babystack/">
         <h2 class="post-title">
             leak_canary-others_babystack
@@ -275,29 +298,6 @@
     <p class="post-meta">
     
         Posted by Mr.Be1ieVe on Monday, February 3, 2020
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://mrbelieve.tech/post/babyheap_0ctf_2017/">
-        <h2 class="post-title">
-            babyheap_0ctf_2017
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            参考wp:https://blog.csdn.net/weixin_42151611/article/details/98119213?fp
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Mr.Be1ieVe on Sunday, February 2, 2020
         
         
     
@@ -444,6 +444,8 @@
                
             
                
+            
+               
                     <a href="/tags/xray" title="xray">
                         xray
                     </a>
@@ -473,6 +475,8 @@
                     <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
                         学习笔记
                     </a>
+               
+            
                
             
                

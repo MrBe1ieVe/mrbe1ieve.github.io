@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="博客&amp;笔记思维方式V3.0" />
+    <meta property="og:title" content="博客&amp;笔记思维方式V3.0" />
+    <meta property="twitter:title" content="博客&amp;笔记思维方式V3.0" />
+    
+
+    
+    <meta name="description" content="本文简单说明了升级和迁移一些背景，介绍了从hexo迁移至hugo、配置CICD实现免本地构建、使用umami或者google analysis进行追踪分析等的相关配置。">
+    <meta property="og:description" content="本文简单说明了升级和迁移一些背景，介绍了从hexo迁移至hugo、配置CICD实现免本地构建、使用umami或者google analysis进行追踪分析等的相关配置。" />
+    <meta property="twitter:description" content="本文简单说明了升级和迁移一些背景，介绍了从hexo迁移至hugo、配置CICD实现免本地构建、使用umami或者google analysis进行追踪分析等的相关配置。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>博客&amp;笔记思维方式V3.0 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8Fv3.0/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+    <script async defer data-website-id="fe4ec796-b964-49b1-9b43-8816f82ced11" src="https://umami-production-fea1.up.railway.app/umami.js"></script>
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86" title="笔记管理">
+                            笔记管理
+                        </a>
+                        
+                        <a class="tag" href="/tags/para" title="PARA">
+                            PARA
+                        </a>
+                        
+                    </div>
+                    <h1>博客&amp;笔记思维方式V3.0</h1>
+                    <h2 class="subheading">博客和笔记方式再进化</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe
+                             
+                            on 
+                            Sunday, June 26, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="背景升级原因">背景&amp;升级原因</h2>
+<p>上一次笔记管理升级是在21年1月份了。 <a href="https://mrbelieve.tech/post/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86%E5%8D%87%E7%BA%A7/">笔记管理升级</a></p>
+<p>一年后的22年2月，和学长交流时新学习到了P.A.R.A 数字化信息的通用管理系统。可以借鉴这种方法来整理工作文档、工作邮箱和个人笔记。<a href="https://sspai.com/post/61459">P.A.R.A. 是什么及在 Notion 中的应用 - 少数派</a>但经过这样整理后，以前hexo相关的发布脚本就又得修改了。并且以前的发布有如下问题：</p>
+<ol>
+<li>发布困难、需要本地构建和推送</li>
+<li>笔记管理工具从typora切换至obsidian后，大量依赖脚本进行提取图片、复制至hexo图片路径下等操作。</li>
+<li>无法查看评论、文章点击情况等信息。卜算子的点击算法相当菜。</li>
+<li>发布脚本和笔记系统强耦合，笔记文件夹经过PARA方法改造后，整体目录结构大改，若再使用发布需要大改代码，不想动。。</li>
+</ol>
+<p>以及上班后领导教我的最重要的一点：要成体系的拿出来分享，而不是知识点的串联，要将笔记不断重构，形成体系、符合逻辑之后，拿出来分享。此处推荐一本书《<strong>金字塔原理</strong>》，从小知识点开始整理和笔记，再不断思考内在相关性，整理出更符合逻辑的大框架，这样可以更好的串联起来知识点。</p>
+<h2 id="rock--roll">Rock &amp; Roll</h2>
+<h3 id="网页生成服务">网页生成服务</h3>
+<p>hugo是和hexo一样的静态网页生成工具，将markdown转变成html。文章markdown文件和图片都可以很方便的进行迁移。
+<a href="https://gohugo.io/">The world’s fastest framework for building websites | Hugo</a></p>
+<h3 id="新建站点">新建站点</h3>
+<p>MAC可以按照如下操作，其余去看官网吧</p>
+<pre tabindex="0"><code>brew install hugo
+hugo version
+hugo new site New_Blog
+</code></pre><h3 id="选择主题">选择主题</h3>
+<p>我选择的是<a href="https://github.com/zhaohuabing/hugo-theme-cleanwhite">zhaohuabing/hugo-theme-cleanwhite: A clean, elegant blog theme for hugo</a>
+效果可以看<a href="https://themes.gohugo.io/themes/hugo-theme-cleanwhite/">Clean White | Hugo Themes</a>
+更多主题可以点击<a href="https://themes.gohugo.io/">Complete List | Hugo Themes</a>查看</p>
+<pre tabindex="0"><code># now at /New_Blog
+
+$ mkdir themes
+$ cd themes
+$ git clone https://github.com/zhaohuabing/hugo-theme-cleanwhite.git
+$ cp -r hugo-theme-cleanwhite/exampleSite/** ../ #使用案例配置
+$ cd ..
+$ hugo serve
+</code></pre><p>注意：这里最好不要使用 <code>submodule</code> 的方式导入。虽然submodule会实时更新，但如cleanwhite的主题里，扫码打赏等是跟随主题的，所以万一使用submodule，打赏码都是那位的大佬（误。</p>
+<p>配置参考 <code>config.toml</code> 模板改即可。</p>
+<h4 id="主题目录结构">主题目录结构</h4>
+<p>目录结构这里是和hexo差异较大的一个地方。</p>
+<p>当前目录结构结构</p>
+<pre tabindex="0"><code>content
+├── post
+│   ├── 2017-11-03-hello-world.md
+│   ├── 2017-11-04-istio-install_and_example.md
+│   └── readme.md
+├── search
+│   └── placeholder.md
+└── top
+    ├── about.md
+    ├── archive.md
+    └── books.md
+</code></pre><p><code>config.toml</code> 默认配置的</p>
+<pre tabindex="0"><code>  [[params.addtional_menus]]
+  title =  &#34;BOOKS&#34;
+  href =  &#34;/top/books/&#34;
+  [[params.addtional_menus]]
+  title =  &#34;ARCHIVE&#34;
+  href =  &#34;/top/archive/&#34;
+  [[params.addtional_menus]]
+  title =  &#34;ABOUT&#34;
+  href =  &#34;/top/about/&#34;
+</code></pre><p>此时 <code>/top/about/</code> 就是导航了 <code>content/top/about.md</code> 里，这里是一一对应的，即：写了addtional_menus的，会去top里查找对应的md文件。</p>
+<p>加到顶层导航的第二种方式是利用categories：用front matter里的 <code>categories:</code> 进行分类。</p>
+<p>如</p>
+<pre tabindex="0"><code>---
+
+title: WebGoat代码审计其1-登录注册
+date: 2021-05-25
+tags: 
+categories: [底层原理思考与分析]
+
+---
+</code></pre><p>这样就会在导航栏出现 <code>底层原理思考与分析</code> 的选项。建议仿照<a href="https://www.zhaohuabing.com/">Huabing Blog-赵化冰的博客 | Zhaohuabing Blog</a> 只保留四个categories，感觉刚刚好。</p>
+<h3 id="导入md文件">导入md文件</h3>
+<ol>
+<li>hexo的 <code>Blog/source/_posts</code> 下，md文件复制到 <code>New_Blog/content/post</code></li>
+</ol>
+<p>需要注意的是yaml tab要换成空格，可以用下面命令进行替换
+<code>sed -i &quot;s/\t/ /g&quot; *.md</code></p>
+<p>文件路径则可以用下面正则进行替换。
+<code>!\[(.*)\]\(</code>
+<code>!\[$1\]\(/img/</code>
+如：原来是 <code>![](APT学习/Snipaste_2021-05-05_19-28-55.png)</code>，需替换为 <code>![](/img/APT学习/Snipaste_2021-05-05_19-28-55.png)</code>.</p>
+<p>图片则复制粘贴到
+<code>New_Blog/static/img/</code> 下即可，按照文件夹整理也行，直接丢进去也行。</p>
+<h3 id="front-matter注意事项">front matter注意事项</h3>
+<p><a href="https://gohugo.io/content-management/front-matter/">Front Matter | Hugo</a>
+以前hexo是</p>
+<pre tabindex="0"><code>title: XXX准备
+date: 2020/01/13 22:47:54
+categories: 
+	- CTF
+	- AWD
+</code></pre><p>hugo则如下格式</p>
+<pre tabindex="0"><code>title: AWD准备
+date: 2020-01-13
+tags:
+  - CTF
+  - AWD
+</code></pre><p>替换思路：</p>
+<ol>
+<li>categories替换为tags</li>
+<li>替换date</li>
+</ol>
+<pre tabindex="0"><code># 删掉时间
+(date: \d+/\d+/\d+) \d+:\d+:\d+
+$1
+
+# 对上格式，不然会不显示时间、也不显示在Archive里
+date: (\d+)/(\d+)/(\d+)
+date: ($1)-($2)-($3)
+</code></pre><h3 id="cicd发布">CICD发布</h3>
+<p>这里我使用的是两个repo，一个私人repo放置笔记，叫 <code>xxx-Blog</code>，另一个按照github pages命名，叫 <code>mrbe1ieve.github.io</code>。</p>
+<p>发布流程则为：</p>
+<ol>
+<li>完成笔记编写，push到 <code>xxx-Blog</code> repo</li>
+<li>触发Action，执行构建。构建完后，将 <code>public</code> w文件夹下的内容，利用personal access token (PAT)，写入到 <code> mrbe1ieve.github.io</code> repo</li>
+<li><code> mrbe1ieve.github.io</code> repo触发官方Action，完成github pages的发布。</li>
+</ol>
+<h4 id="相关配置">相关配置</h4>
+<p>第一步中Action的触发，需要在 <code>xxx-Blog</code> Action中配置 <code>main.yml</code>，这里只需要修改 <code> EXTERNAL_REPOSITORY</code> 为自己的地址即可，内容如下：</p>
+<pre tabindex="0"><code>name: deploy
+
+on:
+    push:
+    workflow_dispatch:
+    schedule:
+        # Runs everyday at 8:00 AM
+        - cron: &#34;0 0 * * *&#34;
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                  submodules: true
+                  fetch-depth: 0
+
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@v2 #官方提供的
+              with:
+                  hugo-version: &#34;latest&#34;
+
+            - name: Build Web
+              run: hugo
+
+
+            - name: Deploy Web
+              uses: peaceiris/actions-gh-pages@v3 #官方提供的
+              with:
+                  PERSONAL_TOKEN: $ {{ secrets.PERSONAL_BLOG_TOKEN }} # TOKEN配置见下
+                  EXTERNAL_REPOSITORY: MrBe1ieVe/mrbe1ieve.github.io #注意替换成你的
+                  PUBLISH_BRANCH: master
+                  PUBLISH_DIR: ./public
+                  commit_message: ${{ github.event.head_commit.message }}
+</code></pre><p><strong>PAT：</strong>
+Github Settings - (左边最下方) Developer settings - personal access token，新建一个token，权限选择如下即可。
+
+  <img src="/img/%e5%8d%9a%e5%ae%a2&amp;%e7%ac%94%e8%ae%b0%e6%80%9d%e7%bb%b4%e6%96%b9%e5%bc%8fV3.0/Pasted%20image%2020220626181333.png" alt="">
+
+</p>
+<p>然后把这个值配置在 <code>xxx-Blog</code> 的Settings - Secrets - Actions中。命名为
+PERSONAL_BLOG_TOKEN，Value为刚刚的token值。</p>
+<p>这样在 <code>xxx-Blog</code> repo执行actions，才能读取到这个token，才可以把构建好的public文件夹更新到 <code>EXTERNAL_REPOSITORY</code> 中</p>
+<h4 id="配置custom-domain">配置custom domain</h4>
+<p>如果有自己域名的话，可以不使用官方的 <code>xxxx.github.io</code>。则需要先在域名解析服务那边加CNAME解析，然后
+Action的 <code>main.yml</code>， Build Web那里的run: hugo
+改为如下配置，将域名写入CNAME。不然的话每次发布后，Custom domain设置都会被覆盖。</p>
+<pre tabindex="0"><code>            - name: Build Web
+              run: hugo &amp;&amp; echo &#39;${IF_YOU_USE_CUSTOM_DOMAIN}&#39; &gt;&gt; ./public/CNAME
+</code></pre><h3 id="其余配置">其余配置</h3>
+<p>cusdis 评论系统放弃了，加载不出来-，- 感觉如果实在想沟通也会发邮件来了。</p>
+<p>数据分析的话，弄了railway+umami的配置方式，也配置了google analysis，还不知道具体效果会怎样。umami推荐看<a href="https://www.pseudoyu.com/zh/2022/05/21/free_blog_analysis_using_umami_vercel_and_heroku/">从零开始搭建一个免费的个人博客数据统计系统（umami + Vercel + Heroku） · Pseudoyu</a>配置。以前卜算子的算法就太差了，点击一下就算一个访问了。</p>
+<p>如果使用google analysis需要注意修改一个引入的html，详见<a href="https://gohugo.io/templates/internal/">Internal Templates | Hugo</a></p>
+<h2 id="博客与笔记关系的思考">博客与笔记关系的思考</h2>
+<p>笔记包含博客的文章，博客的文章只是知识输出里的一部分。以前是整理好一段笔记后就发送，是速览的用途。现在obsidian同步多端后，直接翻ob即可，不需要看博客了。博客因此就转换成了我自己的成体系思考的后的产物了，以分享为主。</p>
+<p>现在的思维转换流如下：
+闪念 -&gt; flomo，flomo整理后 -&gt; ob，ob再沉淀多次后形成Output，发布到博客中。</p>
+<h2 id="待解决的问题">待解决的问题</h2>
+<ol>
+<li>
+<p>文章从ob里复制到hugo <code>content/post</code>下时，图片的链接是不会一起更改的。所以还是需要脚本，完成内容的读写、图片链接替换和图片的复制。</p>
+</li>
+<li>
+<p>clean white用的搜索是另一个产品，怪麻烦的，先不弄了。。</p>
+</li>
+</ol>
+<p>以上。Have a good day.</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://sspai.com/post/59904">浅谈我为什么从 HEXO 迁移到 HUGO - 少数派</a></p>
+<p><a href="https://www.pseudoyu.com/zh/2022/06/12/why_i_still_write_blog_in_2022/">2022 年了，聊聊我为什么还在写博客 · Pseudoyu</a></p>
+<p><a href="https://www.pseudoyu.com/zh/2022/03/24/free_blog_deploy_using_hugo_and_cusdis/">免费的个人博客系统搭建及部署解决方案（Hugo + GitHub Pages + Cusdis） · Pseudoyu</a></p>
+<p><a href="https://www.pseudoyu.com/zh/2022/05/24/free_and_lightweight_blog_comment_system_using_cusdis_and_railway/">轻量级开源免费博客评论系统解决方案 （Cusdis + Railway） · Pseudoyu</a></p>
+<p><a href="https://www.pseudoyu.com/zh/2022/05/29/deploy_your_blog_using_hugo_and_github_action/">Hugo + GitHub Action，搭建你的博客自动发布系统 · Pseudoyu</a></p>
+<p><a href="https://www.pseudoyu.com/zh/2022/05/21/free_blog_analysis_using_umami_vercel_and_heroku/">从零开始搭建一个免费的个人博客数据统计系统（umami + Vercel + Heroku） · Pseudoyu</a></p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/%E4%B8%89%E4%B8%AA%E6%9C%88%E7%94%B2%E6%96%B9%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/" data-toggle="tooltip" data-placement="top" title="三个月甲方实习总结">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MN5DKEQD0E"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-MN5DKEQD0E', { 'anonymize_ip': false });
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>
