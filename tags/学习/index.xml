@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>学习 on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 学习 on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python中下划线的5种含义</title>
+      <link>https://mrbelieve.tech/post/python%E4%B8%AD%E4%B8%8B%E5%88%92%E7%BA%BF%E7%9A%845%E7%A7%8D%E5%90%AB%E4%B9%89/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/python%E4%B8%AD%E4%B8%8B%E5%88%92%E7%BA%BF%E7%9A%845%E7%A7%8D%E5%90%AB%E4%B9%89/</guid>
+      <description>在用python重写算法，学习学习算法时，一时好奇（打基础）来学习了python的下划线 单前导下划线：_var 小小警示，提示只在内部使用，非</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="HCNP-SEC-19.11.23" />
+    <meta property="og:title" content="HCNP-SEC-19.11.23" />
+    <meta property="twitter:title" content="HCNP-SEC-19.11.23" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>HCNP-SEC-19.11.23 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/hcnp-sec-19.11.23/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E7%BD%91%E7%BB%9C%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86" title="网络专业知识">
+                            网络专业知识
+                        </a>
+                        
+                    </div>
+                    <h1>HCNP-SEC-19.11.23</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Monday, January 13, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>
+  <img src="/img/HCNP-SEC-19.11.23/648EB2E3-ECFB-4610-AC4F-C41A40C726F0.png" alt="648EB2E3-ECFB-4610-AC4F-C41A40C726F0">
+
+</p>
+<blockquote>
+<p>eSight网管 可管其他厂商设备，几乎都可以</p>
+<p>CIS可用于抵御APT攻击。它从海量数据中提取关键信息，智能可视化，还原攻击链，防御攻击</p>
+<p>FireHunter还原流量，在虚拟环境对网络中传输的文件进行检测</p>
+<p>UMA 审计上网行为</p>
+<p>NGFW USG9000 网络运营商，广电（超大型网络）USG6000 中大型企业</p>
+<p>业务随行</p>
+<p>S12700 整个网络核心 S9k S7k</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/61051AC5-C8D2-47E8-9516-09E3979F7769.png" alt="61051AC5-C8D2-47E8-9516-09E3979F7769">
+
+</p>
+</blockquote>
+<h2 id="网络安全运维">网络安全运维</h2>
+<p>安全策略：简单，稳定，安全</p>
+<p>端口要加端口描述</p>
+<p>脚本配置</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/52CCD98F-87B0-4D17-9CD9-043B92E84B1E.png" alt="52CCD98F-87B0-4D17-9CD9-043B92E84B1E">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/6D82AE28-99ED-4EE5-8BAF-F34E0639D652.png" alt="6D82AE28-99ED-4EE5-8BAF-F34E0639D652">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/9C6D9139-095E-43E4-A914-232B379D1387.png" alt="9C6D9139-095E-43E4-A914-232B379D1387">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/0C995BDD-0A38-483B-B32B-727CA8AAF2C4.png" alt="0C995BDD-0A38-483B-B32B-727CA8AAF2C4">
+
+</p>
+<blockquote>
+<p>监控（类似只读）</p>
+</blockquote>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/4731E999-DBE2-4436-B428-3BC61E399D80.png" alt="4731E999-DBE2-4436-B428-3BC61E399D80">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/B33BEC42-D775-4EDF-98B9-08454E630607.png" alt="B33BEC42-D775-4EDF-98B9-08454E630607">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/3B696243-B418-4CCF-AE64-B94BC4556C4D.png" alt="3B696243-B418-4CCF-AE64-B94BC4556C4D">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/3CAA5AFE-7E9C-48D1-BC36-7D357E6FCEF3.png" alt="3CAA5AFE-7E9C-48D1-BC36-7D357E6FCEF3">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/7BC6559D-1E13-4026-AC0A-B341738B51A7.png" alt="7BC6559D-1E13-4026-AC0A-B341738B51A7">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/C7585DFE-372F-4841-B579-E5ABF8B743C4.png" alt="C7585DFE-372F-4841-B579-E5ABF8B743C4">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/A037C828-5CD5-4549-A6A4-E7E7CBE5A54C.png" alt="A037C828-5CD5-4549-A6A4-E7E7CBE5A54C">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/62BE7CDD-3135-430E-987F-6EACF0D80B0A.png" alt="62BE7CDD-3135-430E-987F-6EACF0D80B0A">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/FE1DD198-9061-4788-819D-4EB92584BB87.png" alt="FE1DD198-9061-4788-819D-4EB92584BB87">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/9DCB02F8-A1E8-49FB-B30B-8D1D93C28D5E.png" alt="9DCB02F8-A1E8-49FB-B30B-8D1D93C28D5E">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/C3771611-034E-4CE2-B951-D908189A4396.png" alt="C3771611-034E-4CE2-B951-D908189A4396">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/C8E502F2-BA95-4D88-980E-B339A71104CC.png" alt="C8E502F2-BA95-4D88-980E-B339A71104CC">
+
+</p>
+<p>QS 优先级？优先保证业务</p>
+<p>FW作为出口且有多条出口链路，两条链路一接，最起码也要做一个链路聚合（Eth-Trunck）</p>
+<p>在ensp中，fw连接router，在实际中不会占用GE0/0/0（这是个管理口）</p>
+<h2 id="智能选路应用场景">智能选路应用场景</h2>
+<p>网络差，如何优化：增加带宽，增加IP，调整点位</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130211703575.png" alt="image-20191130211703575">
+
+</p>
+<ul>
+<li>全局选路策略：动态选择出接口，充分利用资源</li>
+<li>策略路由：依据制定的策略进行数据转发</li>
+<li><strong>ISP路由</strong>：可以实现流量按照运营商转发，指定选路</li>
+<li>健康检查，感知服务器或链路状态变化，保证流量传输</li>
+</ul>
+<blockquote>
+<p>园区网的四大敏捷特性：有线无线深度融合，业务随行，安全协防，IPCA质量感知（极少）</p>
+</blockquote>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130213239431.png" alt="image-20191130213239431">
+
+</p>
+<blockquote>
+<p>路由策略和策略路由的区别？？</p>
+</blockquote>
+<h2 id="选路原理">选路原理</h2>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130213351116.png" alt="image-20191130213351116">
+
+</p>
+<h3 id="过载保护有预值">过载保护：有预值</h3>
+<ul>
+<li>根据带宽：默认的。<strong>原流量仍从该链路走，后续不再。并且全部过载，则继续根据比例分配流量</strong>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130220056847.png" alt="image-20191130220056847">
+
+</li>
+<li>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130220558188.png" alt="image-20191130220558188">
+
+</li>
+</ul>
+<blockquote>
+<p>入方向？出方向？</p>
+</blockquote>
+<ul>
+<li>根据链路质量：<strong>保证质量，保证体验</strong>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130221210672.png" alt="image-20191130221210672">
+
+</li>
+<li>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130221323811.png" alt="image-20191130221323811">
+
+</li>
+<li>根据链路权重：根据预设的权重</li>
+<li>根据链路优先级：默认优先级高的，超过过载阈值时启用优先级次高的链路。（少用，不可能闲置）</li>
+</ul>
+<h3 id="过载保护的问题">过载保护的问题</h3>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130221945199.png" alt="image-20191130221945199">
+
+</p>
+<p>会话保持：
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130222127477.png" alt="image-20191130222127477">
+
+</p>
+<p>查看会话保持表项（要有流量经过才能查看到</p>
+<pre tabindex="0"><code>display session persistence table
+</code></pre><h2 id="策略路由">策略路由</h2>
+<p>依据用户制定的策略进行转发</p>
+<p>bypass 直通模式，FW相当于透明</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130222809732.png" alt="image-20191130222809732">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130222832266.png" alt="image-20191130222832266">
+
+</p>
+<blockquote>
+<p>先看策略，无策略则按路由表转发</p>
+</blockquote>
+<h2 id="isp选路">ISP选路</h2>
+<p>在FW连接多个ISP网络时，通过ISP选路可以使访问特定ISP的流量通过相应出接口转发，保证最短路径。</p>
+<h3 id="原理">原理</h3>
+<p>写入CSV文件（该文件成为ISP地址文件），然后导入FW</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130223451969.png" alt="image-20191130223451969">
+
+</p>
+<blockquote>
+<p>导入ISP地址文件：Web界面操作 网络 &gt; 路由 &gt; 智能选路 &gt; 运营商地址库</p>
+<p>应用： 网络&gt; 接口 &gt; 编辑</p>
+</blockquote>
+<h3 id="可选健康检查">可选：健康检查</h3>
+<p>探测到无法访问，对应ISP路由会被删除</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130223853655.png" alt="image-20191130223853655">
+
+</p>
+<h2 id="策略路由应用">策略路由应用</h2>
+<p>修改名称，配置端口描述</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130224518587.png" alt="image-20191130224518587">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130224603119.png" alt="image-20191130224603119">
+
+</p>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130224624111.png" alt="image-20191130224624111">
+
+</p>
+<h3 id="命令行">命令行</h3>
+<p>配置安全区域</p>
+<pre tabindex="0"><code>interface GE1/0/2
+ip address 10.10.1.1 24
+quit 
+interface GE1/0/3
+ip address 10.1.1.1 24
+in GE1/0/4
+ip add 10.20.1.1 24
+firewall zone trust
+set priority 85
+add interface GE1/0/3
+quit
+firewall zone untrust
+set priority 5
+add interface GE1/0/2
+add interface GE1/0/4
+</code></pre><p>配置安全策略</p>
+<pre tabindex="0"><code>security-policy
+rule name policy_sec_sec_trust_untrust
+source-zone trust
+destination-zone untrust
+action permit
+source-address 10.1.1.0 24 
+</code></pre><p>一定要写action，不然默认不允许通过</p>
+<p>配置IP-Link</p>
+<p>目标ip 通过 xx 端口</p>
+<pre tabindex="0"><code>ip-link check enable
+ip-link name pbr_1
+destination 10.10.1.2 interface GE 1/0/2
+quit
+ip-link name pbr_2
+destination 10.20.1.2 interface GE 1/0/4
+</code></pre><p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130225841573.png" alt="image-20191130225841573">
+
+</p>
+<h2 id="故障排查">故障排查</h2>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130225907120.png" alt="image-20191130225907120">
+
+</p>
+<p>主要问题多为<strong>域间流量是否放行</strong></p>
+<h2 id="实验">实验</h2>
+<p>
+  <img src="/img/HCNP-SEC-19.11.23/image-20191130230708184.png" alt="image-20191130230708184">
+
+</p>
+<p>实验脚本</p>
+<pre tabindex="0"><code>R1:
+sys
+sysname r1
+int e0/0/0
+ip add 10.1.1.2 24
+des to-pc1-e0/0/1
+q
+int g0/0/0
+ip add 10.10.1.1 24
+des to-fw-g1/0/0
+q
+int e0/0/1
+des to-pc2-e0/0/1
+ip add 10.1.2.2 24
+</code></pre><blockquote>
+<p>Dis cu | in ip-link</p>
+</blockquote>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/ogeek2019-babyrop/" data-toggle="tooltip" data-placement="top" title="OGeek2019-babyrop">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/gxy_ctf_my_cannary-%E4%BB%8E%E9%9B%B6%E8%AE%B0%E5%BD%95%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E5%87%BA%E6%9D%A5/" data-toggle="tooltip" data-placement="top" title="GXY_CTF_my_cannary-从零记录如何调试出来">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

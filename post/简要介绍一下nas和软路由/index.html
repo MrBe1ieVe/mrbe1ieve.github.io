@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="简要介绍一下nas和软路由" />
+    <meta property="og:title" content="简要介绍一下nas和软路由" />
+    <meta property="twitter:title" content="简要介绍一下nas和软路由" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>简要介绍一下nas和软路由 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8Bnas%E5%92%8C%E8%BD%AF%E8%B7%AF%E7%94%B1/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>简要介绍一下nas和软路由</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Wednesday, August 26, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="nas和软路由作用">nas和软路由作用</h2>
+<p>对于普通人来说，nas的最大作用就是备份系统（全系统备份）以及作为外部存储空间来使用了，其次就是远程访问nas中的电影/剧，还有方便的共享文件和云协作、挂着下载bt/pt了。一般局域网访问有110M/s的速度，2.5G也有250M/s上下的速度，只要不是视频制作者和单反使用者，这应该很足够使用。</p>
+<p>nas如果有视频输出接口，或者家庭用的智能电视，也可以通过安装软件，自动扫描硬盘上的电影资源，自动获取展示海报等，作为家庭影音中心。</p>
+<p>而软路由，除了作为起飞地点之外，还可以流控，还可以玩高端路由器才玩得起的东西（因为我也没咋玩过hhh）。软路由可以在nas里起一个虚拟机/docker就能玩，这样更加方便了。</p>
+<h2 id="nas的几大系统和软硬结合厂商">nas的几大系统和软硬结合厂商</h2>
+<h3 id="群晖整机">群晖（整机）</h3>
+<p>最先要说的当然是群晖，贵，可能是我的缺点，易上手，这是真的好，ui还不错，个人感觉偏向ubuntu系统风格，配备的软件也很齐全，比如windwos/linux都可以通过自家的软件来实现定时备份。还有庞大的插件市场可以玩耍，但在手机上，app多，功能重叠也是一大问题。</p>
+<p>但是黑群晖就好玩了，近几年的x86都可以刷上黑群晖玩耍，除了硬件转码和他们自家的内网穿透需要白群晖认证（穿透不建议白嫖），大体功能是没有什么问题的。找好引导，刷在u盘上，往电脑一插然后刷入基础系统，就可以通过他们家的在线安装dsm系统了（不过还是建议选择网上给的dsm系统）</p>
+<p>至于阵列我就不多说了，群晖有个SHR阵列，这个比较建议多个盘相同容量。2T * 2的情况下会有2T专门用来冗余和数据保护，而2T * 3， *4甚至 *5的情况下，还是只用2T来用于数据保护，坏了一个盘数据也完全没有问题。</p>
+<h3 id="freenas系统">freenas（系统）</h3>
+<p>安装可能硬核一点，但支持广。freenas 自带的zfs系统挺有意思的，会在写入数据的时候放在一块新的空间里，写完之后才更新数据指向，这样自然而然可以拥有快照功能，还带有数据校验等功能。界面有web管理后台的感觉hhh，数据展示比较多比较炫酷，汉化有但还不是完全汉化。</p>
+<h3 id="威联通整机">威联通（整机）</h3>
+<p>系统ui比群晖还要高级好看一点，但是系统设置方面跟贴近于硬核玩家的使用习惯hhhh，比群晖便宜点但也便宜不到哪去（扶额）</p>
+<h3 id="unraid系统">unraid（系统）</h3>
+<p>了解不多。。。</p>
+<h3 id="openmediavautl系统">openmediavautl（系统）</h3>
+<p>了解不多。。。</p>
+<p>我研究的还是黑群晖比较多一点，毕竟比较方便，加上我看的教程视频，折腾的也是黑群晖，稍微了解了一点别的就拍板折腾黑群晖了。因为宿舍经常定时断电（半个月电费用完必断一次电才去充钱），为了保护宝贵的硬盘们还有我的电脑，又花了点点钱买了个ups玩玩（折腾永无止境hhh）</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/llvm-pass/" data-toggle="tooltip" data-placement="top" title="LLVM pass">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/c&#43;&#43;-static%E7%9A%84%E4%BD%9C%E7%94%A8/" data-toggle="tooltip" data-placement="top" title="c&#43;&#43; static的作用">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

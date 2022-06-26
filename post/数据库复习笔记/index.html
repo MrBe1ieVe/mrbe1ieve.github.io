@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="数据库复习笔记" />
+    <meta property="og:title" content="数据库复习笔记" />
+    <meta property="twitter:title" content="数据库复习笔记" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>数据库复习笔记 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                    </div>
+                    <h1>数据库复习笔记</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Monday, January 13, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p><strong>使用的是sql server，操作可能跟mysql有区别</strong></p>
+<h2 id="新建数据库">新建数据库</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">create database stuhyy
+on 
+(
+ name = stu, 
+ filename=&#39;C:\stu_data.mdf&#39;,
+ size = 3mb,
+ maxsize = 500mb,
+ filegrowth = 10%
+
+)
+log on
+(
+ name = stu_log,
+ filename = &#39;D:\stu_log.ldf&#39;,
+ size=3mb,
+ maxsize = unlimited,
+ filegrowth = 1mb
+)
+</code></pre><h2 id="修改数据库">修改数据库</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Alter database Stuhyy
+Modify file
+(
+    name = Stuhyy_log,
+    filename = &#39;H:\Stuhyy_log.ldf&#39;,
+    size = 10MB,
+    maxsize = 20MB,
+    fileGrowth = 5%
+)
+</code></pre><h2 id="添加数据库文件">添加数据库文件</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Alter database Stuhyy
+add file
+(
+    name = dataname,
+    filename = &#39;H:\dataname.ndf&#39;,
+    size = 20MB,
+    maxsize = 30MB,
+    filegrowth = 1MB
+)
+</code></pre><h2 id="新建修改数据表">新建&amp;修改数据表</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Create Table Student
+(
+    Num int primary key,
+    Nam char(6) not null,
+    Birthday datetime
+)
+Create Table ChoseClass
+(
+    Num int primary key,
+    CNum int not null,
+    Score int not null.
+    check (100&gt;= Score and Score &gt;= 0)
+)
+Alter Table Student
+add 学分 int
+ALTER TABLE table_name 
+DROP COLUMN column_name
+</code></pre><h3 id="添加外键约束">添加外键约束</h3>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Alter Table Student
+Add Constraint fk_stuNum
+Foreign key(Num) references ChoseClass(Num)
+</code></pre><h2 id="插入信息">插入信息</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Insert Into studinfo
+Values(&#39;hyy&#39;,&#39;11&#39;，&#39;广东&#39;)
+</code></pre><h2 id="删除信息">删除信息</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Delete From sc
+where xxx = xxx
+</code></pre><h2 id="备份数据库">备份数据库</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Backup database Stuhyy to disk = &#39;H:\StuhyyBackup.bak&#39;
+///Backup database Stuhyy to StuhyyBak
+Backup log Stuhyy_log to disk = &#39;H:\Stuhyy_logBackup.bak&#39;
+///Backup log Stuhyy_log to Stuhyy_log
+</code></pre><h2 id="恢复">恢复</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Restore Database Stuhyy from disk = &#39;H:\StuhyyBackup.bak&#39;
+</code></pre><p><code>Select Distinct 学号 from sc</code></p>
+<h2 id="对成绩进行降序相同则按学号升序排序">对成绩进行降序,相同则按学号升序排序</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Select 学号,成绩 From sc
+Where 课程号 = &#39;4&#39;
+Order by 成绩 desc,学号 asc
+</code></pre><h2 id="查询姓黄同学的信息">查询姓黄同学的信息</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Select 姓名, 系部名称 From Studinfo
+Where 姓名 like &#39;咩%&#39; and 系部名称 in (&#39;国传&#39;,&#39;媒体工程&#39;) 
+</code></pre><h2 id="查询选修人数超过10人的课程号">查询选修人数超过10人的课程号</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Select 课程号,Count(*) as 选课人数  From sc
+Group By 课程号
+Having Count (*) &gt; 10
+</code></pre><h2 id="查询每门课最高分最低分">==查询每门课最高分，最低分==</h2>
+<h2 id="查询选修了课程的学生姓名及选修课程的最高分">查询选修了课程的学生姓名及选修课程的最高分</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Select Studinfo.姓名,Max(sc.成绩) as 最高成绩 From sc
+Right Outer Join Studinfo on Studinfo.学号 = sc.学号
+Group by Studinfo.姓名
+</code></pre><h2 id="right-outer-join--left-inner-join">==right outer join  left inner join==</h2>
+<p>　　left join(左联接) 返回包括<strong>左表中的所有记录和右表中联结字段相等</strong>的记录  以左表为主
+　　right join(右联接) 返回包括<strong>右表中的所有记录和左表中联结字段相等</strong>的记录 以右表为主
+　　inner join(等值连接) 只返回两个表中联结字段相等的行</p>
+<blockquote>
+<p>outer join(外连接) 可分为左外连接left outer join和右外连接right outer join</p>
+<p>left join 是 left outer join 的简写，两者含义一样的。
+right join 是 right outer join 的简写，两者含义一样的</p>
+</blockquote>
+<h2 id="t-sql创建学生视图">T-sql创建学生视图</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Create View AS
+Select Studinfo.学号，Studinfo.系部名称,Course.课程名，Sc.成绩 From Studinfo,sc,Course
+Where Studinfo.学号 = sc.学号 And sc.课程号 = course.课程号 
+And Studinfo.系部名称 = &#39;媒体工程&#39;
+With Check Option
+</code></pre><blockquote>
+<p>对视图进行update或者insert操作时，保证更新或者插入的行满足图中定义的谓词条件 假如一张表里有个字段是专业的;你创建视图的时候 create view stu as select 学生 from table where 专业=&lsquo;计算机&rsquo; with check option 这样where后面就实现了对专业的限定 以后你如果对视图添加记录的时候专业如果不是计算机的话不让添加进去的
+————————————————
+版权声明：本文为CSDN博主「ClearLoveQ」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/ClearLoveQ/article/details/84285060</p>
+</blockquote>
+<h2 id="声明局部变量">声明局部变量</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Declare @max date , @min date
+set @max = (select Max(出生日期) from studinfo)
+set @min = (select Min(出生日期) from studinfo)
+select @max as 最大出生日期 , @min as 最小出生日期
+</code></pre><p>小知识</p>
+<blockquote>
+<p>①date类型可用于需要一个日期值而不需要时间部分时；</p>
+<p>②datetime类型:可用于需要同时包含日期和时间信息的值。</p>
+</blockquote>
+<h2 id="case的使用">Case的使用</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Select 姓名,课程名,成绩 =
+Case
+ when 成绩 &gt; 90 then &#39;A&#39;
+ when 成绩 &gt; 80 then &#39;B&#39;
+ when 成绩 &gt; 70 then &#39;C&#39;
+ when 成绩 &gt; 60 then &#39;D&#39;
+ else &#39;E&#39;
+End
+From sc
+inner join studinfo on sc.学号 = studinfo.学号
+inner join course on sc.课程号 = course.课程号
+
+///如果存在
+If Exists(select * from studinfo)
+ select * from studinfo
+</code></pre><h2 id="声明游标更新字段">声明游标，更新字段</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Declare curor_mark Cursor
+For select 成绩 from sc
+For Update of 成绩
+Go
+
+///删除游标
+Deallocate curor_mark
+</code></pre><h2 id="游标定位操作">游标定位操作</h2>
+<p>定义基于sc的游标，分别将第三条记录，从当前记录开始向前第二条记录和最后一条记录显示在屏幕上</p>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Declare cursor_mark Cursor Scroll
+For
+ Select * from sc
+ inner join studinfo on sc.学号 = Studinfo.学号
+ inner join course on course.课程号 = sc.课程号
+Open course_mark
+fetch absolute 3 from cursor_mark
+fetch relative -2 from cursor_mark
+fetch last from cursor_mark
+Close cursor_mark
+Deallocate cursor_mark
+</code></pre><h2 id="游标遍历sc表将学号为1001的学生的所有课程成绩加5分">游标遍历sc表，将学号为“1001”的学生的所有课程成绩加5分</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Declare @name char(20), @num int
+Declare cursor_mark Cursor Scroll
+For
+ Select 姓名,sc.学号 from sc
+ inner join studinfo on sc.学号 = studinfo.学号
+ inner join course on course.课程号 = sc.课程号
+For Update of 成绩
+Open cursor_mark
+Fetch Next from cursor_mark Into @name , @num
+while @@fetch_status = 0
+ Begin
+ if @name = &#39;女朋友&#39;
+  Update sc
+  set 成绩 = 成绩 + 5
+  where current of cursor_mark
+  Fetch Next from cursor_mark Into @name , @num
+ End
+Close cursor_mark
+Deallocate cursor_mark
+</code></pre><h2 id="给sc表增加一列字段等级char2利用游标操作机制给等级字段赋值如果score60则为p否则为f">给sc表增加一列字段：等级，char（2），利用游标操作机制给等级字段赋值，如果score&gt;60则为“P”，否则为“F”</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql"> Alter Table sc
+ Add 等级 char(2) null
+ Go
+ Begin
+  Update sc
+  set 等级 = 
+   Case
+     when 成绩 &gt;= 60 then &#39;P&#39;
+     when 成绩 &lt; 60 then &#39;F&#39;
+     End
+ End
+</code></pre><p>==dateadd(year,1,出生日期) 出生日期的year + 1==</p>
+<p>==month(出生日期) 取出生日期的month出来==</p>
+<h2 id="定义标量函数f_stud1统计某学院的学生人数">==定义标量函数f_stud1,统计某学院的学生人数==</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">If Exists(select * from sysobjects where name = &#39;f_stud1&#39;)
+ drop function f_stud1
+Go
+Create Function f_stud1(@nam char(10))
+return int
+AS
+ Begin
+  Declare @n int
+  set @n = (select count(*) from studinfo
+                 where 系部名称 = @nam)
+        return (@n)
+    End
+Go
+
+Select dbo.f_stud1(&#39;媒体工程&#39;) as 人数
+</code></pre><h2 id="定义一内嵌表值函数f_stud3返回某学生选修课情况包含姓名课程名分数等">定义一==内嵌表值函数==f_stud3，返回某学生选修课情况，包含姓名、课程名，分数等</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Create Function f_stud3(@name nchar(10))
+return Table
+As
+ return (select 姓名 ,课程名,成绩 from sc s
+           inner join studinfo on s.学号 = studinfo.学号
+           inner join course on s.学号 = course.学号
+           where 姓名 = @nam)
+Go
+
+selet * from dbo.f_stud3(&#39;Mie&#39;)
+</code></pre><h2 id="创建一个带输入的存储过程通过调用上例的f_stud3查询某学生的选修课程情况">创建一个==带输入的存储过程==，通过调用上例的f_stud3，查询某学生的选修课程情况</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Create Procedure use_f_stud3(@nam nchar(10))
+AS
+ select * from dbo.f_stud3(@nam)
+Go
+
+Exec use_f_stud3(&#39;Mie&#39;)
+</code></pre><p>==datediff(year,出生日期,getdate()) 获取年龄==</p>
+<h2 id="定义多语句表值函数根据输入的表名返回该表所包含的字段名称类型类型长度以及是否为空">==定义多语句表值函数，根据输入的表名，返回该表所包含的字段名称，类型，类型长度以及是否为空==</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">create function f_tableinfo
+(@tableName nvarchar(200))
+returns @result table (ColName nvarchar(200),ColType nvarchar(200),ColLength int,ColIsNull bit)
+as
+ begin
+  insert into @result(ColName,ColType,ColLength,ColIsNull)
+ select
+  c.[name] as ColumnName,
+  t.[name] as ColumnType,
+  c.max_length as MaxLength,
+  c.is_nullable as [IsNull]
+ from sys.columns c
+ inner join sys.types t on c.system_type_id=t.system_type_id
+ Where c.[object_id]=object_id(@tableName) and t.[name]&lt;&gt;&#39;sysname&#39;
+ Order by c.column_id
+ Return
+ End
+Go
+select * from f_tableinfo(&#39;Studinfo&#39;)
+</code></pre><h2 id="使用存储过程新建department系部人数总人数男生人数女生人数用sql语句从学生表中采集相应信息添加到系部表中">使用存储过程新建department(系部人数，总人数，男生人数，女生人数)，用SQL语句从学生表中采集相应信息添加到系部表中。</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Create Procedure p_stuXibu
+As
+ select 系部名称 as 系部名称,count(*) as 总人数,
+  sum(case 姓名 when &#39;女&#39; then 1 else 0 End) as 女生人数
+  sum(case 姓名 when &#39;男&#39; then 1 else 0 End) as 男生人数
+ into 系部表 From studinfo
+ Group by 系部名称
+Go
+p_stuXiBu
+</code></pre><h2 id="创建触发器tr_stud1当在课程表中新增一条记录时在屏幕上显示该新增记录信息同时激活该激活器验证该触发器的执行结果">创建触发器tr_stud1，当在课程表中新增一条记录时，在屏幕上显示该新增记录信息，同时激活该激活器，验证该触发器的执行结果</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Create trigger tr_stud1 on course
+For Insert
+As
+ select * from inserted
+</code></pre><h2 id="建立一个命名事务trans_credit当学号为sid的学生所选的课程课程编号为cid的总学分没有超过10时将学号和课程编号值sidcid添加到grade表中同时修改stu_credit表中的总学分使总学分为当前总学分所选课程的学分值cre否则取消该事务实现回滚">建立一个命名事务trans_credit，当学号为@sid的学生所选的课程（课程编号为@cid）的总学分没有超过10时，将学号和课程编号值（@sid,@cid）添加到grade表中，同时修改stu_credit表中的总学分，使总学分为当前总学分+所选课程的学分值（@cre），否则，取消该事务，实现回滚。</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">use Stuhyy
+go
+
+if exists(select * from sys.all_objects where name = &#39;trans_credit&#39;)
+ drop trigger trans_credit
+go
+
+create trigger trans_credit on stu_credit
+for insert
+as
+ BEGIN TRAN 选课
+  --save tran 选课
+  declare @sid char(10),@cid char(10),@mark int,@totalmark int
+  set @sid = (select 学号 from inserted)
+  set @cid = (select 课程号 from inserted)
+  set @mark = (select 学分 from inserted)
+  set @totalmark = (select 总学分 from stu_credit where 学号 = @sid) + @mark
+  if @totalmark &gt;10
+   BEGIN
+    print &#39;超出总学分!选课失败！&#39;
+    rollback tran 选课
+   END
+  else
+   BEGIN
+   update stu_credit set 总学分 = @totalmark where 学号 = @sid
+   if OBJECT_ID(N&#39;grade&#39;,N&#39;U&#39;) is not null
+    insert into grade 
+    Values(@sid,@cid)
+   else 
+    create table student  --创建表student
+    (学号 char(10) ,
+    课程号 char(10),
+    )
+    insert into grade 
+    Values(@sid,@cid) 
+   END
+ commit TRAN 选课
+ GO
+GO
+</code></pre><h2 id="用t-sql语句创建sql-server-登录1_test_w1登录密码为12345默认访问pubs">用T-Sql语句创建sql server 登录1_test_w1,登录密码为12345,默认访问pubs</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">sp_addlogin
+@loginame = &#39;Mie&#39;
+@passwd = &#39;12345&#39;
+@dfdb = &#39;pubs&#39;
+</code></pre><h2 id="授予windows用户连接到sql-server的权利">授予Windows用户连接到sql server的权利</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">EXEC sp_grantloging ‘CSUSQL\1_test_w2’
+Sp_addlogin
+@loginame = &#39;1_test_s2&#39;
+@defdb = &#39;Stuhyy&#39;
+</code></pre><h2 id="添加数据库用户">添加数据库用户</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">EXEC sp_grantdbaccess &#39;u_test_w1&#39;
+</code></pre><h2 id="禁止用户u_test_s1-对course表的插入和删除权限撤销对studinfo的更新权限">禁止用户u_test_s1 对course表的插入和删除权限，撤销对studinfo的更新权限</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">GRANT
+ DENY Insert,Delete On course
+ Revoke Update on Studinfo
+</code></pre><h2 id="对用户u_test_s1添加成员r_test_s1">对用户u_test_s1添加成员r_test_s1</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">EXEC Sp_addrolemember &#39;u_test_s1&#39; , &#39;r_test_s1&#39;
+</code></pre><h2 id="删除账户">删除账户</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Sp_revokelogin &#39;u_test_w1&#39;
+Sp_revokelogin &#39;u_test_s1&#39;
+</code></pre><h2 id="删除数据库中用户">删除数据库中用户</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">Sp_revokedbaccess &#39;r_test_s1&#39;
+</code></pre><h2 id="删除数据库角色r_test_s1">删除数据库角色r_test_s1</h2>
+<pre tabindex="0"><code class="language-mssql" data-lang="mssql">EXEC sp_droprolemember &#39;u_test_w1&#39;,&#39;r_test_s1&#39;
+</code></pre><h2 id="2019124上课笔记">2019/12/4上课笔记</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>use employee
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">Go</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> <span style="color:#ff79c6">exists</span>(<span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> sys.all_objects <span style="color:#ff79c6">where</span>
+</span></span><span style="display:flex;"><span>  name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;trigger_welcome&#39;</span> <span style="color:#ff79c6">and</span> <span style="color:#ff79c6">type</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;TR&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">Drop</span> <span style="color:#ff79c6">trigger</span> trigger_welcome
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">go</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">Create</span> <span style="color:#ff79c6">trigger</span> tr_employye <span style="color:#ff79c6">on</span> employee
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> <span style="color:#ff79c6">delete</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">as</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">declare</span> <span style="color:#ff79c6">@</span>msg <span style="color:#8be9fd;font-style:italic">varchar</span>(<span style="color:#bd93f9">50</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">select</span> <span style="color:#ff79c6">@</span>msg <span style="color:#ff79c6">=</span> str(<span style="color:#ff79c6">@@</span>rowcount)<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#34;个员工被删除&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">select</span> <span style="color:#ff79c6">@</span>msg
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">return</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">Create</span> <span style="color:#ff79c6">Trigger</span> test_tr
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">on</span> employee <span style="color:#ff79c6">from</span> <span style="color:#ff79c6">insert</span>,<span style="color:#ff79c6">update</span>,<span style="color:#ff79c6">delete</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">as</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> inserted
+</span></span><span style="display:flex;"><span> <span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> deleted
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">create</span> <span style="color:#ff79c6">trigger</span> tri_del_sales2
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">on</span> sotrebak
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> <span style="color:#ff79c6">delete</span> <span style="color:#ff79c6">as</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">delete</span> sales_bak <span style="color:#ff79c6">from</span> deleted
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">where</span> deleted.sotr_id <span style="color:#ff79c6">=</span> sales_bak.stor_id
+</span></span></code></pre></div><h2 id="20191211-上课笔记">2019/12/11 上课笔记</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">BEGIN</span> TRAN[SACTION]
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">COMMIT</span> TRAN[SACTION]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ROLLBACK</span> TRAN[SACTION]
+</span></span></code></pre></div><h2 id="20191225复习">2019/12/25复习</h2>
+<p>判断5分，单选20分，填空20分，简答题10分，综合设计45分</p>
+<p>E-R图什么标志表示实体，属性，关系？  P9</p>
+<p>数据库三级模式体系结构，有利于==数据独立性==</p>
+<blockquote>
+<p>三级模式结构又是什么，为什么可以有利   P6</p>
+<p>模式，内模式，外模式</p>
+<p>模式:对数据库全部数据的数据模式和特征的总体描述</p>
+<p>内模式：存储模式，数据库最低一级逻辑描述</p>
+<p>外模式:用户视图（来源一个或多个表组成的查询表</p>
+</blockquote>
+<p>数据库系统中，用户使用的数据视图用==外模式==描述，该模式是用户与数据库系统之间的接口</p>
+<p>一对一，一对多，多对多举例</p>
+<p>数据库特点：数据共享，数据完整性和数据独立性</p>
+<p>范式分解:减少冗余 范式P27</p>
+<blockquote>
+<p>是什么范式，判断不符合更高范式即可</p>
+<p>1NF：所有属性都不能分解为更基本的数据元素</p>
+<p>2NF：不存在部分函数依赖（某列也能函数决定另一列属性）</p>
+<p>3NF：非传递函数依赖</p>
+</blockquote>
+<p>数据模型三要素：数据结构（二维表），关系操作（选择投影链接），完整性约束</p>
+<p>DBMS、DB、DBS（system，包含人）、DBA</p>
+<table>
+<thead>
+<tr>
+<th>Create</th>
+<th>Insert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alter</td>
+<td>update</td>
+</tr>
+<tr>
+<td>Drop</td>
+<td>Delete</td>
+</tr>
+</tbody>
+</table>
+<p>自然连接：消除重复列</p>
+<p>sql server数据库文件后置：.mdf .ldf .ndf</p>
+<p>windows身份验证，混合身份验证</p>
+<p>存储过程：主动调用</p>
+<p>触发器：根据条件触发</p>
+<p>综合设计：E-R图转换，35分写代码（查询，存储过程，事务，每题6-8分）</p>
+<p>以633开头的7位电话怎么写</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/%E6%B1%87%E7%BC%96%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%9F%BA%E7%A1%80/" data-toggle="tooltip" data-placement="top" title="汇编、逆向工程基础">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0/" data-toggle="tooltip" data-placement="top" title="操作系统复习">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

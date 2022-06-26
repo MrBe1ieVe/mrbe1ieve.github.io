@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HackTheBox on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/hackthebox/</link>
+    <description>Recent content in HackTheBox on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HackTheBox Starting Point Shield .29</title>
+      <link>https://mrbelieve.tech/post/hackthebox-starting-point-shield-.29/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hackthebox-starting-point-shield-.29/</guid>
+      <description>扫描出来80 ISS和 3306 mysql bp发现路径下有wordpress 查看wordpress版本，网页搜索generator即可搜到generator wordpress</description>
+    </item>
+    
+    <item>
+      <title>HackTheBox Starting point Vaccine .46</title>
+      <link>https://mrbelieve.tech/post/hackthebox-starting-point-vaccine-.46/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hackthebox-starting-point-vaccine-.46/</guid>
+      <description>信息收集 扫描之后有ftp，ssh和web 联想到之前获得的ftp账户，输入进去登录后获得了backup.zip 使用Seclist的字典，通过爆</description>
+    </item>
+    
+    <item>
+      <title>HackTheBox Starting Point Oopsie .28</title>
+      <link>https://mrbelieve.tech/post/hackthebox-starting-point-oopsie-.28/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hackthebox-starting-point-oopsie-.28/</guid>
+      <description>扫描结果 Starting Nmap 7.80 ( https://nmap.org ) at 2020-12-03 06:15 EST Nmap scan report for 10.10.10.28 Host is up (0.49s latency). PORT STATE SERVICE VERSION 21/tcp closed ftp 23/tcp closed telnet 53/tcp closed domain 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) |_http-server-header: Apache/2.4.29 (Ubuntu) |_http-title: Welcome 110/tcp closed pop3 111/tcp closed rpcbind 113/tcp closed ident 135/tcp closed msrpc 139/tcp closed netbios-ssn 143/tcp closed imap 256/tcp closed fw1-secureremote</description>
+    </item>
+    
+    <item>
+      <title>HackTheBox Starting Point Archetype .27</title>
+      <link>https://mrbelieve.tech/post/hackthebox-starting-point-archetype-.27/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hackthebox-starting-point-archetype-.27/</guid>
+      <description>VPN 连接 sudo openvpn example.ovpn Foothold Sql server相关，这部分总提示我connection reset by peer 无法实验 链接到sql server impacket/examples/mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth SELECT IS_SRVROLEMEMBER(&#39;sysadmin&#39;) 判断自己有没有sysadmin（最</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="WebGoat代码审计其4-失效的身份认证" />
+    <meta property="og:title" content="WebGoat代码审计其4-失效的身份认证" />
+    <meta property="twitter:title" content="WebGoat代码审计其4-失效的身份认证" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>WebGoat代码审计其4-失效的身份认证 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B64-%E5%A4%B1%E6%95%88%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>WebGoat代码审计其4-失效的身份认证</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Saturday, July 3, 2021
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="认证绕过">认证绕过</h2>
+<p>POST <code>/WebGoat/auth-bypass/verify-account</code></p>
+<pre tabindex="0"><code>secQuestion0=test&amp;secQuestion1=test&amp;jsEnabled=1&amp;verifyMethod=SEC_QUESTIONS&amp;userId=12309746
+</code></pre><p>按照上面例子移除，没有成功，直接看代码了</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210703220939.png" alt="">
+
+</p>
+<p>这里会先调用下面的<code>parseSecQuestions()</code>处理，将名字包含<code>secQuestion</code>的参数转为HashMap类型。</p>
+<p>然后会进入<code>verificationHelper.didUserLikelylCheat()</code>中进行判断参数的<code>secQuestion0</code>和<code>secQuestion1</code>是否为数据库中的数据，是的话就返回True，判定作弊了</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210703225156.png" alt="">
+
+</p>
+<p>下面的<code>verificationHelper.verifyAccount()</code>才是重头戏</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210703225455.png" alt="">
+
+</p>
+<p>这里先判断submittedQuestions的参数数量，然后是重点
+<code>submittedQuestions.containsKey(&quot;secQuestion0&quot;) &amp;&amp; !submittedQuestions.get(&quot;secQuestion0&quot;).equals(secQuestionStore.get(verifyUserId).get(&quot;secQuestion0&quot;))</code></p>
+<p>翻译翻译</p>
+<p><code>存在参数secQuestion0 &amp;&amp; ！参数等于数据库中的参数</code>才返回认证失败</p>
+<p>还有点绕？再换种说法，<code>存在参数secQuestion0</code>并且<code>参数不等于数据库中的参数</code>才认证失败，其他情况默认认证成功</p>
+<p>我画了一个流程图（不大方便想出来就画出来），左边是正常的情况，右边是这里的写法。应该默认认证失败，只有包含<code>secQuestion0</code>和<code>secQuestion1</code>并比对成功才认证成功。</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210703231624.png" alt="">
+
+</p>
+<p>下面是我认为的一种写法</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210703232421.png" alt="">
+
+</p>
+<p>或者直接去掉containKey，只留下两个判断qeuals的。</p>
+<h2 id="jwt-tokens">JWT tokens</h2>
+<h3 id="什么是jwt-token">什么是JWT token</h3>
+<p>JSON Web Token(JWT)是一种开放标准(RFC 7519) ，它定义了一种紧凑和自包含的方式，用于作为 JSON 对象在各方之间安全地传输信息。可以验证和信任此信息，因为它是数字签名的。JWTs 可以使用 secret (使用 HMAC 算法)或使用 RSA 或 ECDSA 的公钥/私钥对进行签名。</p>
+<p>jsonweb令牌用于携带与客户机的身份和特征（声明）相关的信息。此“容器”由服务器签名，以避免客户端为了更改（例如）身份或任何特征（例如：将角色从简单用户更改为管理员或更改客户端登录名）而对其进行篡改。此令牌在身份验证期间创建（在身份验证成功的情况下提供），并在任何处理之前由服务器验证。应用程序使用它来允许客户端向服务器提供代表其“身份证”的令牌（包含有关其所有用户信息的容器），并允许服务器以安全的方式验证令牌的有效性和完整性，所有这些都采用无状态和可移植的方法（可移植的方式是客户端和服务器技术可以不同，包括传输通道，即使HTTP是最常用的）</p>
+<h3 id="jwt-token结构">JWT token结构</h3>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704013401.png" alt="">
+
+</p>
+<p>图片来自WebGoat，token经过base64编码，包含三部分：</p>
+<ul>
+<li>header</li>
+<li>claims / Payload</li>
+<li>signature</li>
+</ul>
+<h3 id="认证过程">认证过程</h3>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704014624.png" alt="">
+
+</p>
+<h3 id="jwt-签名安全性问题">JWT 签名安全性问题</h3>
+<p>在<a href="https://tools.ietf.org/html/rfc7519#section-6.1">RFC specification</a> 中定义了<code>alg: none</code>是一个合法的选项，可以使用不安全的JWT，这样生成的token，若后端按照headers中的算法来计算signature而不是按照自己设定的来计算，就会导致绕过校验这部分</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704154537.png" alt="">
+
+</p>
+<p>这里直接解析层JWT的格式，然后就直接获取声明/payload中的数据，判断是否为admin了，没有进行校验。</p>
+<p>跳转到<code>Jwt parse()</code>中，由于代码过长，只截取其中一段</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704155839.png" alt="">
+
+</p>
+<p>这一部分就是负责校验，但是由于我们设置为空，所以直接跳过了。并且，阅读后发现，就算header中<code>alg</code>设置为HS512，只要<code>base64UrlEncodedDigest</code>为null，就会跳过校验。</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704160637.png" alt="">
+
+</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704160748.png" alt="">
+
+</p>
+<h3 id="refreshing-a-token">Refreshing a token</h3>
+<p>通常有两种类型的令牌：访问令牌和刷新令牌。访问令牌用于对服务器进行API调用。访问令牌有一个有限的生命周期。一旦访问令牌不再有效，刷新令牌就可以向服务器发出请求，来获取新的访问令牌。刷新令牌可能会过期，但其过期更长。这解决了用户必须再次使用其凭据进行身份验证的问题。</p>
+<p>应该存储用户的ip或者地理位置来判断refresh token的使用情况</p>
+<h4 id="assignment">Assignment</h4>
+<p>这个其实比较绕，不看源码的话感觉是弄不出来的</p>
+<p>这里要先通过<code>/JWT/refresh/login</code>登录，获得我们的access_token和refresh_token。这里的user和password都是硬编码的。
+
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704203644.png" alt="">
+
+</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704203558.png" alt="">
+
+</p>
+<p>拿到refresh_token之后，因为我们目的是让Tom买单，所以访问<code>/JWT/refresh/newToken</code>，使用refresh_token，再附带上这<code>@RequestHeader(value = &quot;Authorization&quot;, required = false)</code>要求的，Header里的Authorization，内容自然是Tom的JWT token。</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704203152.png" alt="">
+
+</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704204230.png" alt="">
+
+</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704204335.png" alt="">
+
+</p>
+<p>这样拿到access_token之后，再去checkout
+
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704203142.png" alt="">
+
+</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704204437.png" alt="">
+
+</p>
+<p>并且，由于parse代码和上一个实验是一样的，所以这里<code>alg</code>是否为none都没有所谓。</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704204639.png" alt="">
+
+</p>
+<p>同上，这里没有先根据算法判断是否需要校验，而是没有校验的base64的话直接就不校验了。并且，refresh_token这里也没有判断绑定哪位用户，而是可以用来获取所有用户的access_token</p>
+<p>修复的话，不用parse，使用parseClaimsJws即可。</p>
+<h4 id="final">final</h4>
+<p><code>POST /WebGoat/JWT/final/delete</code>
+
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704205721.png" alt="">
+
+</p>
+<p><code>Jwt jwt = Jwts.parser().setSigningKeyResolver(new SigningKeyResolverAdapter() {</code>这一行开始，<code>setSigningKeyResolver</code>的作用是设置用来HMACSHA256算法中的密钥（<a href="https://jwt.io/">JSON Web Tokens - jwt.io</a>里的 your-256-bit-secret）</p>
+<p>那现在就清楚了，因为这里可以注入，所以我们可以控制这里的密钥，来让我们绕过校验。这里使用base64编码后的，是因为return 时候用了BASE64.decode.</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704225752.png" alt="">
+
+</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704214208.png" alt="">
+
+</p>
+<p>
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704214626.png" alt="">
+
+</p>
+<p>当然，这里的union，在mysql中的话不添加<code>from information_schema.tables</code>也可以返回数据，但是在这个题目中就会报错，具体原因，可能是webgoat用的HSQLDB，或者是java的问题（溜）。报错的话，两种都尝试一下就好了
+
+  <img src="/img/WebGoat%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1%e5%85%b64-%e5%a4%b1%e6%95%88%e7%9a%84%e8%ba%ab%e4%bb%bd%e8%ae%a4%e8%af%81/image-20210704223355.png" alt="">
+
+</p>
+<h3 id="建议用法">建议用法</h3>
+<ul>
+<li>固定算法，不要允许客户切换算法</li>
+<li>确定使用了合适的密钥长度</li>
+<li>确定token不包含个人信息，如果需要传递私密信息，再加密</li>
+<li>添加更多测试用例</li>
+<li>看看RFC中的使用方法<a href="https://tools.ietf.org/html/rfc8725#section-2">https://tools.ietf.org/html/rfc8725#section-2</a></li>
+</ul>
+<h2 id="密码重置">密码重置</h2>
+<p>功能点：输入邮箱部分，若输入不存在邮箱，也应该统一返回Email Sent，否则可以用来探测账户是否存在</p>
+<h3 id="安全问题">安全问题</h3>
+<p>密码重设链接应满足以下问题</p>
+<ul>
+<li>一个有随机token的独一无二链接</li>
+<li>只可以被用一次</li>
+<li>这个链接只是短时间内有效</li>
+</ul>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/from-zero-to-keep-learning/" data-toggle="tooltip" data-placement="top" title="From Zero To Keep Learning">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B65-xxe/" data-toggle="tooltip" data-placement="top" title="WebGoat代码审计其5-XXE">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

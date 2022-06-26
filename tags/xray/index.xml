@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xray on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/xray/</link>
+    <description>Recent content in xray on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Tue, 27 Apr 2021 01:15:25 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/xray/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xray_poc_编写学习</title>
+      <link>https://mrbelieve.tech/post/xray_poc_%E7%BC%96%E5%86%99%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 27 Apr 2021 01:15:25 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/xray_poc_%E7%BC%96%E5%86%99%E5%AD%A6%E4%B9%A0/</guid>
+      <description>环境设置 在线自动生成 直接访问 https://phith0n.github.io/xray-poc-generation/ 源仓库phith0n/xray-poc-generation: 🧬 辅助生成 XRay YAML POC 本地 我使用vscode多，所以选</description>
+    </item>
+    
+    <item>
+      <title>Xray 社区版 再学习记录</title>
+      <link>https://mrbelieve.tech/post/xray-%E7%A4%BE%E5%8C%BA%E7%89%88-%E5%86%8D%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/xray-%E7%A4%BE%E5%8C%BA%E7%89%88-%E5%86%8D%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>前言 以前也有用xray扫扫学校的漏洞，最近有在开发自己的扫描平台，估借此机会再学习。 官方文档 VulnType的复现在最后边。 三种基本模式 代理</description>
+    </item>
+    
+  </channel>
+</rss>

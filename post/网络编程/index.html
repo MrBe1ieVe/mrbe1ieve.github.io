@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="网络编程" />
+    <meta property="og:title" content="网络编程" />
+    <meta property="twitter:title" content="网络编程" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>网络编程 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                    </div>
+                    <h1>网络编程</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Monday, January 1, 0001
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="39">3/9</h2>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200309113441335.png" alt="image-20200309113441335">
+
+</p>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200309113925329.png" alt="image-20200309113925329">
+
+</p>
+<p>非阻塞模式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">// TcpServer.cpp : 定义控制台应用程序的入口点。
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">//
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&#34;stdafx.h&#34;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;WINSOCK2.H&gt;   </span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6"></span>  
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">#pragma comment(lib,&#34;WS2_32.lib&#34;)   
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#define BUF_SIZE    64      </span><span style="color:#6272a4">// 缓冲区大小
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">_tmain</span>(<span style="color:#8be9fd">int</span> argc, _TCHAR<span style="color:#ff79c6">*</span> argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span> WSADATA wsd;     <span style="color:#6272a4">// WSADATA变量，用于初始化Windows Socket   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    SOCKET  sServer;     <span style="color:#6272a4">// 服务器套接字，用于监听客户端请求
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    SOCKET  sClient;     <span style="color:#6272a4">// 客户端套接字，用于实现与客户端的通信   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span>     retVal;      <span style="color:#6272a4">// 调用各种Socket函数的返回值   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">char</span>    buf[BUF_SIZE];   <span style="color:#6272a4">// 用于接受客户端数据的缓冲区   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 初始化套接字动态库   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span>(WSAStartup(MAKEWORD(<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">2</span>),<span style="color:#ff79c6">&amp;</span>wsd) <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>)   
+</span></span><span style="display:flex;"><span>    {   
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#f1fa8c">&#34;WSAStartup failed !</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);   
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">1</span>;   
+</span></span><span style="display:flex;"><span>    }     
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 创建用于监听的套接字   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    sServer <span style="color:#ff79c6">=</span> socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);   
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">long</span> iMode <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>    retVal <span style="color:#ff79c6">=</span> ioctlsocket(sServer, FIONBIO, <span style="color:#ff79c6">&amp;</span>iMode);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span>(INVALID_SOCKET <span style="color:#ff79c6">==</span> sServer)   
+</span></span><span style="display:flex;"><span>    {   
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#f1fa8c">&#34;socket failed !</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);   
+</span></span><span style="display:flex;"><span>        WSACleanup();   
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;   
+</span></span><span style="display:flex;"><span>    }     
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 设置服务器套接字地址   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    SOCKADDR_IN addrServ;   
+</span></span><span style="display:flex;"><span>    addrServ.sin_family <span style="color:#ff79c6">=</span> AF_INET;   
+</span></span><span style="display:flex;"><span>    addrServ.sin_port <span style="color:#ff79c6">=</span> htons(<span style="color:#bd93f9">9990</span>);  <span style="color:#6272a4">// 监听端口为9990
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    addrServ.sin_addr.S_un.S_addr <span style="color:#ff79c6">=</span> htonl(INADDR_ANY);    
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 绑定套接字sServer到本地地址，端口9990  
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    retVal <span style="color:#ff79c6">=</span> bind(sServer,(<span style="color:#ff79c6">const</span> <span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">sockaddr</span><span style="color:#ff79c6">*</span>)<span style="color:#ff79c6">&amp;</span>addrServ,<span style="color:#ff79c6">sizeof</span>(SOCKADDR_IN));   
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span>(SOCKET_ERROR <span style="color:#ff79c6">==</span> retVal)   
+</span></span><span style="display:flex;"><span>    {   
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#f1fa8c">&#34;bind failed !</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);   
+</span></span><span style="display:flex;"><span>        closesocket(sServer);   
+</span></span><span style="display:flex;"><span>        WSACleanup();   
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;   
+</span></span><span style="display:flex;"><span>    }     
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 监听套接字   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    retVal <span style="color:#ff79c6">=</span> listen(sServer,<span style="color:#bd93f9">1</span>);   
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span>(SOCKET_ERROR <span style="color:#ff79c6">==</span> retVal)   
+</span></span><span style="display:flex;"><span>    {   
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#f1fa8c">&#34;listen failed !</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);   
+</span></span><span style="display:flex;"><span>        closesocket(sServer);   
+</span></span><span style="display:flex;"><span>        WSACleanup();   
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;   
+</span></span><span style="display:flex;"><span>    }     
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 接受客户请求   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    printf(<span style="color:#f1fa8c">&#34;TCP Server start...</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
+</span></span><span style="display:flex;"><span>    sockaddr_in addrClient;       <span style="color:#6272a4">// 客户端地址
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> addrClientlen <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(addrClient);   
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">while</span> (<span style="color:#8be9fd;font-style:italic">true</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        sClient <span style="color:#ff79c6">=</span> accept(sServer, (sockaddr FAR<span style="color:#ff79c6">*</span>) <span style="color:#ff79c6">&amp;</span> addrClient, <span style="color:#ff79c6">&amp;</span>addrClientlen);
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (INVALID_SOCKET <span style="color:#ff79c6">==</span> sClient)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> err <span style="color:#ff79c6">=</span> WSAGetLastError();
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (err <span style="color:#ff79c6">==</span> WSAEWOULDBLOCK)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                Sleep(<span style="color:#bd93f9">100</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">continue</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#f1fa8c">&#34;accept failed!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
+</span></span><span style="display:flex;"><span>                closesocket(sServer);
+</span></span><span style="display:flex;"><span>                WSACleanup();
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 循环接收客户端的数据，直接客户端发送quit命令后退出。  
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> <span style="color:#ff79c6">while</span>(<span style="color:#8be9fd;font-style:italic">true</span>)
+</span></span><span style="display:flex;"><span> {
+</span></span><span style="display:flex;"><span>  ZeroMemory(buf,BUF_SIZE);      <span style="color:#6272a4">// 清空接收数据的缓冲区
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  retVal <span style="color:#ff79c6">=</span> recv(sClient,buf,BUFSIZ,<span style="color:#bd93f9">0</span>);    <span style="color:#6272a4">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">if</span>(SOCKET_ERROR <span style="color:#ff79c6">==</span> retVal )   
+</span></span><span style="display:flex;"><span>  {   
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> err <span style="color:#ff79c6">=</span> WSAGetLastError();
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (err <span style="color:#ff79c6">==</span> WSAEWOULDBLOCK)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                Sleep(<span style="color:#bd93f9">100</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">continue</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (err <span style="color:#ff79c6">==</span> WSAETIMEDOUT <span style="color:#ff79c6">||</span> err <span style="color:#ff79c6">==</span> WSAENETDOWN)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#f1fa8c">&#34;recv failed!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
+</span></span><span style="display:flex;"><span>                closesocket(sServer);
+</span></span><span style="display:flex;"><span>                closesocket(sClient);
+</span></span><span style="display:flex;"><span>                WSACleanup();
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  } 
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (buf <span style="color:#ff79c6">==</span> <span style="color:#8be9fd;font-style:italic">NULL</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">continue</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// 获取当前系统时间
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  SYSTEMTIME st;
+</span></span><span style="display:flex;"><span>  GetLocalTime(<span style="color:#ff79c6">&amp;</span>st);
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd">char</span> sDateTime[<span style="color:#bd93f9">30</span>];
+</span></span><span style="display:flex;"><span>  sprintf(sDateTime, <span style="color:#f1fa8c">&#34;%4d-%2d-%2d %2d:%2d:%2d&#34;</span>,st.wYear,st.wMonth,st.wDay,st.wHour,st.wMinute,st.wSecond);
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// 打印输出的信息
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  printf(<span style="color:#f1fa8c">&#34;%s, Recv From Client [%s:%d] :%s</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, sDateTime, inet_ntoa(addrClient.sin_addr), addrClient.sin_port, buf);   
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// 如果客户端发送quit字符串，则服务器退出
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">if</span>(strcmp(buf, <span style="color:#f1fa8c">&#34;quit&#34;</span>) <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      retVal <span style="color:#ff79c6">=</span> send(sClient,<span style="color:#f1fa8c">&#34;quit&#34;</span>,strlen(<span style="color:#f1fa8c">&#34;quit&#34;</span>),<span style="color:#bd93f9">0</span>);   
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">else</span>  <span style="color:#6272a4">// 否则向客户端发送回显字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  {
+</span></span><span style="display:flex;"><span>      <span style="color:#8be9fd">char</span>    msg[BUF_SIZE];  
+</span></span><span style="display:flex;"><span>      sprintf(msg, <span style="color:#f1fa8c">&#34;Message received - %s&#34;</span>, buf); 
+</span></span><span style="display:flex;"><span>   retVal <span style="color:#ff79c6">=</span> send(sClient, msg, strlen(msg),<span style="color:#bd93f9">0</span>);   
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">if</span>(SOCKET_ERROR <span style="color:#ff79c6">==</span> retVal)   
+</span></span><span style="display:flex;"><span>   {   
+</span></span><span style="display:flex;"><span>       printf(<span style="color:#f1fa8c">&#34;send failed !</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);   
+</span></span><span style="display:flex;"><span>     closesocket(sServer);   
+</span></span><span style="display:flex;"><span>       closesocket(sClient);   
+</span></span><span style="display:flex;"><span>       WSACleanup();   
+</span></span><span style="display:flex;"><span>       <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;   
+</span></span><span style="display:flex;"><span>   }   
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 释放套接字   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    closesocket(sServer);   
+</span></span><span style="display:flex;"><span>    closesocket(sClient);   
+</span></span><span style="display:flex;"><span>    WSACleanup();   
+</span></span><span style="display:flex;"><span> <span style="color:#6272a4">// 暂停，按任意键退出
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> system(<span style="color:#f1fa8c">&#34;pause&#34;</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">// TcpClient.cpp : 定义控制台应用程序的入口点。
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">//
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&#34;stdafx.h&#34;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;Winsock2.H&gt;   </span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;string&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6"></span>  
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">#pragma comment(lib,&#34;WS2_32.lib&#34;)   
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#define BUF_SIZE    64          </span><span style="color:#6272a4">// 缓冲区大小  
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">_tmain</span>(<span style="color:#8be9fd">int</span> argc, _TCHAR<span style="color:#ff79c6">*</span> argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span> WSADATA     wsd;     <span style="color:#6272a4">// 用于初始化Windows Socket   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    SOCKET      sHost;     <span style="color:#6272a4">// 与服务器进行通信的套接字   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    SOCKADDR_IN servAddr;   <span style="color:#6272a4">// 服务器地址   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">char</span>        buf[BUF_SIZE];   <span style="color:#6272a4">// 用于接受数据缓冲区   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span>         retVal;       <span style="color:#6272a4">// 调用各种Socket函数的返回值   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> <span style="color:#6272a4">// 初始化Windows Socket
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span>(WSAStartup(MAKEWORD(<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">2</span>),<span style="color:#ff79c6">&amp;</span>wsd) <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>)   
+</span></span><span style="display:flex;"><span>    {   
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#f1fa8c">&#34;WSAStartup failed !</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);   
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">1</span>;   
+</span></span><span style="display:flex;"><span>    }     
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 创建套接字   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    sHost <span style="color:#ff79c6">=</span> socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);   
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span>(INVALID_SOCKET <span style="color:#ff79c6">==</span> sHost)   
+</span></span><span style="display:flex;"><span>    {   
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#f1fa8c">&#34;socket failed !</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);   
+</span></span><span style="display:flex;"><span>        WSACleanup();   
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;   
+</span></span><span style="display:flex;"><span>    }    
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 设置服务器地址   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    servAddr.sin_family <span style="color:#ff79c6">=</span> AF_INET;   
+</span></span><span style="display:flex;"><span>    servAddr.sin_addr.S_un.S_addr <span style="color:#ff79c6">=</span> inet_addr(<span style="color:#f1fa8c">&#34;127.0.0.1&#34;</span>);  <span style="color:#6272a4">// 用户需要根据实际情况修改
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    servAddr.sin_port <span style="color:#ff79c6">=</span> htons(<span style="color:#bd93f9">9990</span>);             <span style="color:#6272a4">// 在实际应用中，建议将服务器的IP地址和端口号保存在配置文件中
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> sServerAddlen <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(servAddr);            <span style="color:#6272a4">// 计算地址的长度       
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// 连接服务器   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> <span style="color:#ff79c6">while</span> (<span style="color:#8be9fd;font-style:italic">true</span>)
+</span></span><span style="display:flex;"><span> {
+</span></span><span style="display:flex;"><span>  retVal <span style="color:#ff79c6">=</span> connect(sHost, (LPSOCKADDR)<span style="color:#ff79c6">&amp;</span>servAddr, <span style="color:#ff79c6">sizeof</span>(servAddr));
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">if</span> (SOCKET_ERROR <span style="color:#ff79c6">==</span> retVal)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>   <span style="color:#8be9fd">int</span> err <span style="color:#ff79c6">=</span> WSAGetLastError();
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">if</span> (err <span style="color:#ff79c6">==</span> WSAEWOULDBLOCK <span style="color:#ff79c6">||</span> err <span style="color:#ff79c6">==</span> WSAEINVAL)
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>    Sleep(<span style="color:#bd93f9">500</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">continue</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (err <span style="color:#ff79c6">==</span> WSAEISCONN)
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#f1fa8c">&#34;connect failed !</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
+</span></span><span style="display:flex;"><span>    closesocket(sHost);
+</span></span><span style="display:flex;"><span>    WSACleanup();
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#6272a4">// 循环向服务器发送字符串，并显示反馈信息。
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> <span style="color:#6272a4">// 发送quit将使服务器程序退出，同时客户端程序自身也将退出
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> <span style="color:#ff79c6">while</span>(<span style="color:#8be9fd;font-style:italic">true</span>)
+</span></span><span style="display:flex;"><span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// 向服务器发送数据   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  printf(<span style="color:#f1fa8c">&#34;Please input a string to send: &#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// 接收输入的数据
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  std<span style="color:#ff79c6">::</span>string str;
+</span></span><span style="display:flex;"><span>  std<span style="color:#ff79c6">::</span>getline(std<span style="color:#ff79c6">::</span>cin, str);
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// 将用户输入的数据复制到buf中
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  ZeroMemory(buf,BUF_SIZE);   
+</span></span><span style="display:flex;"><span>  strcpy(buf,str.c_str());   
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span>(buf[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">==</span><span style="color:#f1fa8c">&#39;\0&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">continue</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// 向服务器发送数据
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">while</span> (<span style="color:#8be9fd;font-style:italic">true</span>)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>   retVal <span style="color:#ff79c6">=</span> send(sHost, buf, strlen(buf), <span style="color:#bd93f9">0</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#6272a4">//retVal = WSASend(sHost, buf, BUF_SIZE, strlen(buf),0,NULL,NULL);
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>   <span style="color:#ff79c6">if</span> (SOCKET_ERROR <span style="color:#ff79c6">==</span> retVal)
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> err <span style="color:#ff79c6">=</span> WSAGetLastError();
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (err <span style="color:#ff79c6">==</span> WSAEWOULDBLOCK)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>     Sleep(<span style="color:#bd93f9">500</span>);
+</span></span><span style="display:flex;"><span>     <span style="color:#ff79c6">continue</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>     printf(<span style="color:#f1fa8c">&#34;send failed!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
+</span></span><span style="display:flex;"><span>     closesocket(sHost);
+</span></span><span style="display:flex;"><span>     WSACleanup();
+</span></span><span style="display:flex;"><span>     <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// 接收服务器回传的数据  
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">while</span> (<span style="color:#8be9fd;font-style:italic">true</span>)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>   ZeroMemory(buf, BUF_SIZE);
+</span></span><span style="display:flex;"><span>   retVal <span style="color:#ff79c6">=</span> recv(sHost, buf, <span style="color:#ff79c6">sizeof</span>(buf) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">0</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">if</span> (SOCKET_ERROR <span style="color:#ff79c6">==</span> retVal)
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> err <span style="color:#ff79c6">=</span> WSAGetLastError();
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (err <span style="color:#ff79c6">==</span> WSAEWOULDBLOCK)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>     Sleep(<span style="color:#bd93f9">100</span>);
+</span></span><span style="display:flex;"><span>     printf(<span style="color:#f1fa8c">&#34;waiting back msg!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
+</span></span><span style="display:flex;"><span>     <span style="color:#ff79c6">continue</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (err <span style="color:#ff79c6">==</span> WSAETIMEDOUT <span style="color:#ff79c6">||</span> err <span style="color:#ff79c6">==</span> WSAENETDOWN)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>     printf(<span style="color:#f1fa8c">&#34;recv failed!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
+</span></span><span style="display:flex;"><span>     closesocket(sHost);
+</span></span><span style="display:flex;"><span>     WSACleanup();
+</span></span><span style="display:flex;"><span>     <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  printf(<span style="color:#f1fa8c">&#34;Recv From Server: %s</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,buf);   
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// 如果收到quit，则退出
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">if</span>(strcmp(buf, <span style="color:#f1fa8c">&#34;quit&#34;</span>) <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>   printf(<span style="color:#f1fa8c">&#34;quit!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">break</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 释放资源   
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    closesocket(sHost);   
+</span></span><span style="display:flex;"><span>    WSACleanup();   
+</span></span><span style="display:flex;"><span> <span style="color:#6272a4">// 暂停，按任意键继续
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> system(<span style="color:#f1fa8c">&#34;pause&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="323">3/23</h2>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200323111552979.png" alt="image-20200323111552979">
+
+</p>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200323113425859.png" alt="image-20200323113425859">
+
+</p>
+<h2 id="330">3/30</h2>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200330140139366.png" alt="image-20200330140139366">
+
+</p>
+<p>阻塞：适合通信量较少的简单应用，没有完成之前不会返回</p>
+<p>非阻塞:并发强</p>
+<h2 id="模型">模型</h2>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200330140556146.png" alt="image-20200330140556146">
+
+</p>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200330140713774.png" alt="image-20200330140713774">
+
+</p>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200330140911046.png" alt="image-20200330140911046">
+
+</p>
+<h2 id="413">4/13</h2>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200413135556939.png" alt="image-20200413135556939">
+
+</p>
+<h2 id="420">4/20</h2>
+<p>
+  <img src="/img/%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/image-20200420113827282.png" alt="image-20200420113827282">
+
+</p>
+<h2 id="511">5/11</h2>
+<p>用户类打交道最多的是View视图类，对界面各种操作响应</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/hackthebox-starting-point-archetype-.27/" data-toggle="tooltip" data-placement="top" title="HackTheBox Starting Point Archetype .27">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

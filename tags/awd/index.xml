@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWD on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/awd/</link>
+    <description>Recent content in AWD on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/awd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWD准备</title>
+      <link>https://mrbelieve.tech/post/awd%E5%87%86%E5%A4%87/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/awd%E5%87%86%E5%A4%87/</guid>
+      <description>探测主机 Nmap 或 HTTPScan Nmap 扫描端口 端口攻击 常见：22，2389，1443，3306 ==准备爆破脚本！！！== WEB 攻击 Web 方面的语言多为 PHP，小部分为 Java 和</description>
+    </item>
+    
+    <item>
+      <title>AWD常用指令</title>
+      <link>https://mrbelieve.tech/post/awd%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/awd%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</guid>
+      <description>备份web目录 tar -zcvf web.tar.gz /var/www/html/ 查看已建立网络连接和对应进程 netstat -antulp | grep EST 用户管理 w 查看当前用户 pkill -kill -t &amp;lt;Username&amp;gt; 查看指定端口被哪个进程占用 lsof -i:端口号 或者 netstat -tunlp|grep 端</description>
+    </item>
+    
+  </channel>
+</rss>

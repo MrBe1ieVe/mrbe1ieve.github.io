@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="Xray 社区版 再学习记录" />
+    <meta property="og:title" content="Xray 社区版 再学习记录" />
+    <meta property="twitter:title" content="Xray 社区版 再学习记录" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Xray 社区版 再学习记录 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/xray-%E7%A4%BE%E5%8C%BA%E7%89%88-%E5%86%8D%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                    </div>
+                    <h1>Xray 社区版 再学习记录</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Friday, March 12, 2021
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="前言">前言</h2>
+<p>以前也有用xray扫扫学校的漏洞，最近有在开发自己的扫描平台，估借此机会再学习。</p>
+<p><a href="https://docs.xray.cool/#/README">官方文档</a></p>
+<p>VulnType的复现在最后边。</p>
+<h2 id="三种基本模式">三种基本模式</h2>
+<h3 id="代理模式">代理模式</h3>
+<p>初始配置证书部分看官方文档吧Orz， <a href="https://docs.xray.cool/#/tutorial/webscan_proxy">代理模式进行扫描 - xray 安全评估工具文档</a></p>
+<p>建议配合 SwitchyOmega 这个插件使用，可以随意切换代理服务器及端口。</p>
+<p><code>config.yaml</code>配置好</p>
+<pre tabindex="0"><code>mitm:
+  restriction: # 代理能够访问的资源限制, 以下各项为空表示不限制
+    hostname_allowed: [&#39;*.web-security-academy.net&#39;,&#39;192.168.3.188&#39;] # 允许访问的 Hostname，支持格式如 t.com、*.t.com、1.1.1.1、1.1.1.1/24、1.1-4.1.1-8
+</code></pre><p>然后游览页面即可，若没有<code>config.yaml</code>则先运行一次xray</p>
+<h3 id="基础爬虫模式">基础爬虫模式</h3>
+<blockquote>
+<p>爬虫模式是模拟人工去点击网页的链接，然后去分析扫描，爬虫不需要人工的介入，访问速度要快很多，但是也有一些缺点</p>
+<ul>
+<li>xray 的基础爬虫不能处理 js 渲染的页面</li>
+</ul>
+</blockquote>
+<p><code>./xray webscan --basic-crawler http://testphp.vulnweb.com/ --html-output xray-crawler-testphp.html</code></p>
+<h4 id="配置cookie">配置Cookie</h4>
+<p>配置文件<code>config.yaml</code>里，<code>http</code> 配置部分的 <code>headers</code> 项:</p>
+<p>添加一条Cookie，如</p>
+<pre tabindex="0"><code>  headers:
+    Cookie: key=value
+</code></pre><p>例子</p>
+<pre tabindex="0"><code>http:
+  ...
+ 
+  headers:
+    Cookie: sysauth=xxxxx
+</code></pre><h3 id="服务扫描">服务扫描</h3>
+<blockquote>
+<p>目前主要是服务扫描相关的poc，目前只有一个 tomcat-cve-2020-1938 ajp 协议任意文件检测 poc。</p>
+</blockquote>
+<p>target参数支持ip:port方式，和 xxx.file方式</p>
+<pre tabindex="0"><code>./xray servicescan --target 127.0.0.1:8009
+./xray servicescan --target xxx.file
+</code></pre><p>xxx.file格式，一行一个ip:port目标，进行批量导入</p>
+<pre tabindex="0"><code>127.0.0.1:8009
+10.1.1.1:8099
+</code></pre><p>可以使用如下不同的导出方式</p>
+<pre tabindex="0"><code>NAME:
+    servicescan - Run a service scan task
+
+USAGE:
+    servicescan [command options] [arguments...]
+
+OPTIONS:
+   --target value          指定单一目标，例子: host:8009
+   --target-file value     从文件加载目标，一目标一行
+   --json-output FILE      使用json格式导出xray结果
+   --webhook-output value  用json格式post xray结果到某url
+   --html-output FILE      用html格式导出报告
+</code></pre><h2 id="配置文件">配置文件</h2>
+<h3 id="http-配置">HTTP 配置</h3>
+<pre tabindex="0"><code>http:
+  proxy: &#34;&#34;                             # 漏洞扫描时使用的代理，如: http://127.0.0.1:8080。 如需设置多个代理，请使用 proxy_rule 或自行创建上层代理
+  proxy_rule: []                        # 漏洞扫描使用多个代理的配置规则, 具体请参照文档
+</code></pre><h3 id="代理配置">代理配置</h3>
+<p>支持 <code>http</code>, <code>https</code> 和 <code>socks5</code> 三种格式，如:</p>
+<pre tabindex="0"><code>http://127.0.0.1:1111
+https://127.0.0.1:1111
+socks5://127.0.0.1:1080
+</code></pre><p>如果代理需要认证，可以使用下面的格式 <code>http://user:password@127.0.0.1:1111</code></p>
+<h3 id="多代理配置">多代理配置</h3>
+<p>不同的域名使用不同的代理，设置多个代理切换等，可以通过 <code>proxy_rule</code> 字段来配置。==Proxy 配置将优先于本配置。==</p>
+<pre tabindex="0"><code>proxy_rule:
+  - match: &#34;*host1&#34;
+    servers:
+      - addr: &#34;http://127.0.0.1:8001&#34;
+        weight: 1
+      - addr: &#34;http://127.0.0.1:8002&#34;
+        weight: 2
+  - match: &#34;*&#34;
+    servers:
+      - addr: &#34;http://127.0.0.1:8003&#34;
+        weight: 1
+      - addr: &#34;http://127.0.0.1:8004&#34;
+        weight: 5
+</code></pre><ul>
+<li>match: 请求的 url 的主机名如果匹配，就使用本条规则。
+<ul>
+<li>如果是 <code>*</code>，则代表可以匹配所有。所以一定要将 <code>*</code> 放在最后面，上面没有匹配到的域名都将使用这个配置。</li>
+<li>如果没有任何一条可以匹配，这个请求将不会使用代理。</li>
+</ul>
+</li>
+<li>addr: 代理服务器的地址，同 <code>proxy</code> 的配置。</li>
+<li>weight: 代理服务器的权重，如果 <code>servers</code> 中配置了多个代理服务器，设置权重可以均衡负载，比如权重是 <code>3:7</code>，则代表每 10 个请求，有 3 个选择 server1，有 7 个选择 server2。要注意的是，这里是 round bin 算法，前 3 个一定发往 server1，后面 7 个一定发往 server2，然后继续循环，不是每个请求都是基于权重随机的。</li>
+</ul>
+<h3 id="插件配置">插件配置</h3>
+<h4 id="dirscan">dirscan</h4>
+<ul>
+<li><code>depth</code> 深度限制</li>
+<li><code>dictionary</code> 配置目录字典, 需要是绝对路径, 配置后将与内置字典<strong>合并</strong></li>
+</ul>
+<p><code>depth</code> 是探测深度, 默认为 1, 即只在 URL 深度为 0, 和深度为 1 时运行该插件（前提是启用了该插件)</p>
+<p>定义 <code>http://example.com/</code>，深度为 0，定义 <code>http://example.com/a/</code>, 深度为 1。 在这种配置下，dirscan 将对</p>
+<p><code>http://example.com/</code> 和 <code>http://example.com/a/</code> 做两次扫描，如果存在 <code>http://example.com/a/example.zip</code> 那么就能将其扫描出来。</p>
+<h4 id="sqldet">sqldet</h4>
+<p>下面这个选项很<strong>危险</strong>，开启之后可以增加检测率，但是有破坏数据库数据的可能性，请务必了解工作原理之后再开启</p>
+<ul>
+<li><code>dangerously_use_comment_in_sql</code> 允许检查注入的时候使用注释</li>
+</ul>
+<h4 id="phantasm">phantasm</h4>
+<p>xray 的 poc 框架，在其下运行着许多 yaml 和 go 写的 poc，用户可以通过该模块编写自己的 poc 并让 xray 加载，具体见 自定义POC语法</p>
+<p>两个重点配置:</p>
+<pre tabindex="0"><code>depth: 1                            # 与 dirscan 一样，不再赘述
+exclude_poc: []                     # 排除哪些 poc, 支持 glob 语法, 如: /home/poc/*thinkphp* 或 poc-yaml-weblogic*
+local_poc: []                       # 加载本地的 poc, 支持 glob 语法, 如： /home/poc/*
+</code></pre><p><code>exclude_poc</code> 用于去除加载哪些 poc。</p>
+<pre tabindex="0"><code>plugins:
+  ...
+  phantasm:
+    enabled: true
+    exclude_poc:
+    - poc-yaml-bad-poc
+    - *bad-poc*
+</code></pre><p><code>local_poc</code> 是用于加载本地的 poc 的配置，最好指定绝对路径，且同样支持 glob 语法。</p>
+<p>一个稍微复杂的情况是将这两个搭配起来使用，比如:</p>
+<pre tabindex="0"><code>plugins:
+  ...
+  phantasm:
+    enabled: true
+    exclude_poc:
+    - /home/poc/poc-fake-good-poc
+    local_poc:
+    - /home/poc/*good-poc*
+</code></pre><p>上述配置的意思是加载 <code>/home/poc/</code> 目录下所有符合 <code>*good-poc*</code> 这个pattern 的poc，同时去掉同样目录下的 <code>poc-fake-good-poc</code></p>
+<h3 id="被动代理配置">被动代理配置</h3>
+<p>这部分是代理模式的配置</p>
+<h4 id="代理启用密码保护">代理启用密码保护</h4>
+<p>对应于 <code>auth</code> 中的配置。</p>
+<p>支持给代理配置基础认证的密码，当设置好 <code>auth</code> 中的 <code>username</code> 和 <code>password</code> 后，使用代理时浏览器会弹框要求输出用户名密码，输入成功后代理才可正常使用。</p>
+<h4 id="限制允许使用该代理的ip">限制允许使用该代理的ip</h4>
+<p><code>allow_ip_range</code> ，限制哪些ip可以使用该代理。支持单个 IP 和 CIDR 格式的地址，如：</p>
+<pre tabindex="0"><code>allow_ip_range: [&#34;127.0.0.1&#34;,&#34;192.168.1.1/24&#34;]
+</code></pre><p>留空则允许所有地址访问</p>
+<h4 id="限制扫描范围">限制扫描范围</h4>
+<p><code>restriction</code>中，allowed即为允许访问的，disallowed即为不允许的。如</p>
+<pre tabindex="0"><code>    hostname_allowed: []                # 允许访问的 Hostname，支持格式如 t.com、*.t.com、1.1.1.1、1.1.1.1/24、1.1-4.1.1-8
+    hostname_disallowed:                # 不允许访问的 Hostname，支持格式如 t.com、*.t.com、1.1.1.1、1.1.1.1/24、1.1-4.1.1-8
+    - &#39;*google*&#39;
+</code></pre><h4 id="代理请求头配置-proxy_header">代理请求头配置 <code>proxy_header</code></h4>
+<pre tabindex="0"><code>proxy_header:
+    via: &#34;&#34; # 如果不为空，proxy 将添加类似 Via: 1.1 $some-value-$random 的 http 头
+    x_forwarded: false # 是否添加 X-Forwarded-{For,Host,Proto,Url} 四个 http 头
+</code></pre><p>如果开启 proxy_header，代理会添加 <code>via</code> 头和 <code>X-Forwarded-*</code> 系列头。</p>
+<p>比如 <code>curl http://127.0.0.1:1234 -H &quot;Via: test&quot; -H &quot;X-Forwarded-For: 1.2.3.4&quot; -v</code>，后端实际收到的请求将会是</p>
+<pre tabindex="0"><code>GET / HTTP/1.1
+Host: 127.0.0.1:1234
+User-Agent: curl/7.54.0
+Accept: */*
+Via: test, 1.1 xray-1fe7f9e5241b2b150f32
+X-Forwarded-For: 1.2.3.4, 127.0.0.1
+X-Forwarded-Host: 127.0.0.1:1234
+X-Forwarded-Proto: http
+X-Forwarded-Url: http://127.0.0.1:1234/
+Accept-Encoding: gzip
+</code></pre><h4 id="http的代理-upstream_proxy">http的代理 <code>upstream_proxy</code></h4>
+<p>该项配置仅对 http 代理本身生效，不对漏洞扫描发出的请求生效。漏扫的代理配置HTTP部分</p>
+<h3 id="基础爬虫配置">基础爬虫配置</h3>
+<p>看配置就行</p>
+<pre tabindex="0"><code>basic-crawler:
+  max_depth: 0                          # 最大爬取深度， 0 为无限制
+  max_count_of_links: 0                 # 本次爬取收集的最大链接数, 0 为无限制
+  allow_visit_parent_path: false        # 是否允许爬取父目录, 如果扫描目标为 t.com/a/且该项为 false, 那么就不会爬取 t.com/ 这级的内容
+  restriction:                          # 爬虫的允许爬取的资源限制, 为空表示不限制。爬虫会自动添加扫描目标到 Hostname_allowed。
+    hostname_allowed: []                # 允许访问的 Hostname，支持格式如 t.com、*.t.com、1.1.1.1、1.1.1.1/24、1.1-4.1.1-8
+    hostname_disallowed:                # 不允许访问的 Hostname，支持格式如 t.com、*.t.com、1.1.1.1、1.1.1.1/24、1.1-4.1.1-8
+    - &#39;*google*&#39;
+    - &#39;*github*&#39;
+    - &#39;*.gov.cn&#39;
+    - &#39;*.edu.cn&#39;
+    - &#39;*chaitin*&#39;
+    - &#39;*.xray.cool&#39;
+    port_allowed: []                    # 允许访问的端口, 支持的格式如: 80、80-85
+    port_disallowed: []                 # 不允许访问的端口, 支持的格式如: 80、80-85
+    path_allowed: []                    # 允许访问的路径，支持的格式如: test、*test*
+    path_disallowed: []                 # 不允许访问的路径, 支持的格式如: test、*test*
+    query_key_allowed: []               # 允许访问的 Query Key，支持的格式如: test、*test*
+    query_key_disallowed: []            # 不允许访问的 Query Key, 支持的格式如: test、*test*
+    fragment_allowed: []                # 允许访问的 Fragment, 支持的格式如: test、*test*
+    fragment_disallowed: []             # 不允许访问的 Fragment, 支持的格式如: test、*test*
+    post_key_allowed: []                # 允许访问的 Post Body 中的参数, 支持的格式如: test、*test*
+    post_key_disallowed: []             # 不允许访问的 Post Body 中的参数, 支持的格式如: test、*test*
+  basic_auth:                           # 基础认证信息
+    username: &#34;&#34;
+    password: &#34;&#34;
+</code></pre><h3 id="反连平台">反连平台</h3>
+<p>反连平台默认不启用，因为这里面有些配置没有办法自动化，必须由人工配置完成才可使用。需要反连平台才可以检测出来的漏洞包括但不限于：</p>
+<ul>
+<li>ssrf</li>
+<li>fastjson</li>
+<li>s2-052</li>
+<li>xxe 盲打</li>
+<li>所有依赖反连平台的 poc</li>
+</ul>
+<pre tabindex="0"><code>reverse:
+  db_file_path: &#34;&#34;                      # 反连平台数据库文件位置, 这是一个 KV 数据库
+  token: &#34;&#34;                             # 反连平台认证的 Token, 独立部署时不能为空
+  http:
+    enabled: false
+    listen_ip: 0.0.0.0 
+    listen_port: &#34;&#34;
+    ip_header: &#34;&#34;                       # 在哪个 http header 中取 ip，为空代表从 REMOTE_ADDR 中取
+  dns:
+    enabled: false
+    listen_ip: 0.0.0.0 
+    domain: &#34;&#34;                          # DNS 域名配置
+    is_domain_name_server: false        # 是否修改了域名的 ns 为反连平台，如果是，那 nslookup 等就不需要指定 dns 了
+    resolve:                            # DNS 静态解析规则
+    - type: A                           # A, AAAA, TXT 三种
+      record: localhost
+      value: 127.0.0.1
+      ttl: 60
+  client:
+    remote_server: false                # 是否是独立的远程 server，如果是要在下面配置好远程的服务端地址
+    http_base_url: &#34;&#34;                   # 默认将根据 ListenIP 和 ListenPort 生成，该地址是存在漏洞的目标反连回来的地址, 当反连平台前面有反代、绑定域名、端口映射时需要自行配置
+    dns_server_ip: &#34;&#34;                   # 和 http_base_url 类似，实际用来访问 dns 服务器的地址
+</code></pre><h4 id="例子">例子</h4>
+<h5 id="xray和目标可以用ip双向互联">xray和目标可以用ip双向互联</h5>
+<p>假设 192.168.1.2 是 xray 所在机器的地址</p>
+<pre tabindex="0"><code>reverse:
+  http:
+    enabled: true
+    listen_ip: 192.168.1.2
+</code></pre><p>这里的 192.168.1.2 是 xray 所在的机器的地址, 也是扫描目标反连时所使用的地址。也就是，目标存在漏洞的时候，会访问 http://192.168.1.2/xxxx 携带漏洞结果和数据</p>
+<h5 id="xray-和目标可以使用-ip-双向互联但-listen-的地址和目标反连访问的地址不一样">xray 和目标可以使用 ip 双向互联，但 listen 的地址和目标反连访问的地址不一样</h5>
+<p>这种情况经常出现在云主机中，比如腾讯云的 linux 机器网卡地址时 10.xxx，但实际公网假设是 221.xxx</p>
+<pre tabindex="0"><code>reverse:
+  http:
+    enabled: true
+    listen_ip: 0.0.0.0
+  client:
+    http_base_url: &#34;http://221.xxx:${port}&#34; 
+</code></pre><p><code>${port}</code> 是一个预定义的宏，在运行时将被替换为实际监听的端口, 当然你也可以使用这种方式固定监听的端口：</p>
+<pre tabindex="0"><code>reverse:
+  http:
+    enabled: true
+    listen_ip: 0.0.0.0
+    listen_port: 8888
+  client:
+    http_base_url: &#34;http://221.xxx:8888&#34; 
+</code></pre><h5 id="单独布置反连平台">单独布置反连平台</h5>
+<p>xray 自带了一个 <code>reverse</code> 命令，可以启动反连平台作为一个远程服务运行，给多个客户端使用。</p>
+<p>在启动之前，需要配置好配置文件的 <code>db_file_path</code> 和 <code>token</code>，前者用于存储数据，后者用于服务端和客户端通信的秘钥。</p>
+<p>一个示例的服务端配置是：</p>
+<pre tabindex="0"><code>reverse:
+  db_file_path: &#34;reverse.db&#34;
+  token: &#34;please_change_me_to_a_new_token&#34;
+  http:
+    listen_ip: 0.0.0.0
+    listen_port: &#34;80&#34;
+</code></pre><p>与之对应的客户端配置是：</p>
+<pre tabindex="0"><code>reverse:
+  token: &#34;please_change_me_to_a_new_token&#34;
+  client:
+    remote_server: true
+    http_base_url: &#34;http://YOUR_REVERSE_SERVER_IP:80&#34;
+</code></pre><p><strong>需要客户端和服务端版本相同</strong></p>
+<h4 id="管理界面">管理界面</h4>
+<p>反连平台贴心的内置了一个管理界面，可以访问反连平台 http 地址，url 为 <code>/cland/</code>。</p>
+<p>功能包括</p>
+<ul>
+<li>生成自定义 url，并记录访问记录</li>
+<li>生成自定义域名，并记录解析记录</li>
+<li>使用平台预制 payload，记录抓取的数据</li>
+</ul>
+<blockquote>
+<p>mac 下的 docker 由于网络环境特殊，其实无法双向互联，建议使用远程部署的模式或使用 <code>host.docker.internal</code> 作为 http_base_url 的 host</p>
+</blockquote>
+<h3 id="子域名配置">子域名配置</h3>
+<pre tabindex="0"><code>subdomain:
+  max_parallel: 30                      # 子域名探测的并发度
+  allow_recursion: false                # 是否允许递归探测, 开启后，扫描完一级域名后，会自动将一级的每个域名作为新的目标
+  max_recursion_depth: 3                # 最大允许的递归深度, 3 表示 3 级子域名 仅当 allow_recursion 开启时才有意义
+  web_only: false                       # 结果中仅显示有 web 应用的, 没有 web 应用的将被丢弃
+  ip_only: false                        # 结果中仅展示解析出 IP 的，没有解析成功的将被丢弃
+  servers:                              # 子域名扫描过程中使用的 DNS Server
+  - 8.8.8.8
+  - 8.8.4.4
+  - 223.5.5.5
+  - 223.6.6.6
+  - 114.114.114.114
+  sources:
+    brute:
+      enabled: true
+      main_dict: &#34;&#34;                     # 一级大字典路径，为空将使用内置的 TOP 30000 字典
+      sub_dict: &#34;&#34;                      # 其他级小字典路径，为空将使用内置过的 TOP 100 字典
+    httpfinder:
+      enabled: true                     # 使用 http 的一些方式来抓取子域名，包括 js, 配置文件，http header 等等
+    dnsfinder:
+      enabled: true                     # 使用 dns 的一些错误配置来找寻子域名，如区域传送（zone transfer)
+    certspotter:                        # 下面的通过 api 获取的了
+      enabled: true
+    crt:
+      enabled: true
+    hackertarget:
+      enabled: true
+    qianxun:
+      enabled: true
+    rapiddns:
+      enabled: true
+    sublist3r:
+      enabled: true
+    threatminer:
+      enabled: true
+    virusTotal:
+      enabled: true
+</code></pre><h3 id="检查更新配置">检查更新配置</h3>
+<p>添加如下即可禁用更新检查</p>
+<pre tabindex="0"><code>update:
+  check: false
+</code></pre><h3 id="并发配置">并发配置</h3>
+<pre tabindex="0"><code>parallel: 30 # 漏洞探测的 worker 数量，可以简单理解为同时有 30 个 POC 在运行
+</code></pre><p>默认基本足够</p>
+<h2 id="高级用法">高级用法</h2>
+<h3 id="优化扫描速度">优化扫描速度</h3>
+<p>在 xray 的默认配置中，影响扫描速度的主要有两个参数</p>
+<ul>
+<li><code>max_qps</code> 每秒最大请求数，默认值为 500</li>
+<li><code>max_parallel</code> 插件调度并发数，默认值为 30</li>
+</ul>
+<blockquote>
+<p>即使到了 2000 qps，也还没有达到配置的检测最大并发，所以 <code>max_parallel</code> 一般情况下不需要修改。
+<code>max_qps</code> 在非测试场景下，也很难打满，一般情况下只会改低，防止影响业务，而不需要再调高。</p>
+</blockquote>
+<h3 id="总结">总结</h3>
+<p>限制 xray 扫描速度的主要原因为</p>
+<ul>
+<li>xray 与被扫描目标之间的网络情况</li>
+<li>被扫描目标的性能；否则网络再好，扫描速度也无法提升</li>
+</ul>
+<p>这两点可以从 <code>latency</code> 和  <code>failedRatio</code> 字段评估。<code>latency</code> 比较大，超过 100ms，说明网络比较慢，或者被扫描的目标响应比较慢。<code>failedRatio</code> 比较大，说明网络比较差，或者被扫描目标负载高而失去了响应等。</p>
+<p>在网络情况稳定的情况下，可以考虑</p>
+<ul>
+<li>降低 <code>max_qps</code>，防止业务方负载过高</li>
+<li>关闭特定模块和禁用部分 poc，减少请求量</li>
+<li>不要性能比较差的代理作为 xray 的扫描代理，比如 burp 的代理通过请求的速度基本只有几十 qps，这样整个扫描的瓶颈就在 burp 上了。</li>
+</ul>
+<h3 id="自定义poc语法和编写高质量poc">自定义POC语法和编写高质量POC</h3>
+<p><a href="https://docs.xray.cool/#/guide/poc">官方文档</a></p>
+<h2 id="webhook">webhook</h2>
+<p><code>--webhook-output</code></p>
+<p>统一的格式为:</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;xxx&#34;,
+    &#34;data&#34;: {}
+}
+</code></pre><p>type 的 enum 为 ：</p>
+<ul>
+<li>&ldquo;web_statistic&rdquo; web 扫描统计信息</li>
+<li>&ldquo;web_vuln&rdquo; web 漏洞</li>
+<li>&ldquo;host_vuln&rdquo; 服务漏洞</li>
+<li>&ldquo;subdomain&rdquo; 子域名</li>
+</ul>
+<h3 id="漏洞信息">漏洞信息</h3>
+<pre tabindex="0"><code>{
+  &#34;type&#34;: &#34;web_vuln&#34;,
+  &#34;data&#34;: {
+    &#34;create_time&#34;: 1604736253090,
+    &#34;detail&#34;: {
+      &#34;addr&#34;: &#34;http://127.0.0.1:9000/xss/example1.php?name=hacker&#34;,
+      &#34;extra&#34;: {
+        &#34;param&#34;: {
+          &#34;key&#34;: &#34;name&#34;,
+          &#34;position&#34;: &#34;query&#34;,
+          &#34;value&#34;: &#34;pkbnekwkjhwzabxnfjwh&#34;
+        }
+      },
+      &#34;payload&#34;: &#34;&lt;sCrIpT&gt;alert(1)&lt;/ScRiPt&gt;&#34;,
+      &#34;snapshot&#34;: [
+        [
+          &#34;GET /xxx&#34;,
+          &#34;HTTP/1.1 200 OK&#34;
+        ]
+      ]
+    },
+    &#34;plugin&#34;: &#34;xss/reflected/default&#34;,
+    &#34;target&#34;: {
+      &#34;params&#34;: [],
+      &#34;url&#34;: &#34;http://127.0.0.1:9000/xss/example1.php&#34;
+    }
+  }
+}
+</code></pre><ul>
+<li>type 是 <code>web_vuln</code> 或 <code>host_vuln</code></li>
+<li>snapshot 是漏洞探测的请求流，定义是 <code>[][2]string</code>, 即每一组有两部分，对应于请求和响应。对于 sql 注入这种就会有多组请求响应。</li>
+<li>target 实际意义不大, 主要是 detail 中的部分, detail 的定义为:</li>
+</ul>
+<pre tabindex="0"><code>type VulnDetail struct {
+    Addr     string                 `json:&#34;addr&#34; yaml:&#34;addr&#34;`
+    Payload  string                 `json:&#34;payload&#34; yaml:&#34;payload&#34;`
+    SnapShot []interface{}          `json:&#34;snapshot&#34; yaml:&#34;snapshot&#34;`
+    Extra    map[string]interface{} `json:&#34;extra&#34; yaml:&#34;extra&#34;`
+}
+</code></pre><h3 id="web统计信息">web统计信息</h3>
+<pre tabindex="0"><code>{
+  &#34;type&#34;: &#34;web_statistic&#34;,
+  &#34;data&#34;: {
+    &#34;num_found_urls&#34;: 1,
+    &#34;num_scanned_urls&#34;: 1,
+    &#34;num_sent_http_requests&#34;: 3,
+    &#34;average_response_time&#34;: 0,
+    &#34;ratio_failed_http_requests&#34;: 0,
+  }
+}
+</code></pre><ul>
+<li><code>num_found_urls</code> 发现的扫描目标数量</li>
+<li><code>num_scanned_urls</code> 已扫描完成的扫描目标数量</li>
+<li><code>num_sent_http_requests</code> 已经发出的漏洞探测请求数量</li>
+<li><code>average_response_time</code> 近 30s 请求平均响应时间</li>
+<li><code>ratio_failed_http_requests</code> 近 30s 请求失败率</li>
+</ul>
+<p>这些信息除了表面意思，还有其他隐藏含义：</p>
+<ul>
+<li>pending 的数量等于 <code>num_found_urls</code> - <code>num_scanned_urls</code>, 如果 pending = 0，那么就意味着扫描完成了</li>
+<li><code>average_response_time</code> 比较高 (&gt;200ms) 意味着网络延迟比较大</li>
+<li><code>ratio_failed_http_requests</code> 比较高(&gt;5%) 意味着可能有 waf, 反正就是很多请求失败了</li>
+</ul>
+<h3 id="子域名消息格式">子域名消息格式</h3>
+<pre tabindex="0"><code>{
+  &#34;type&#34;: &#34;subdomain&#34;,
+  &#34;data&#34;: {
+    &#34;cname&#34;: [],
+    &#34;domain&#34;: &#34;example.com&#34;,
+    &#34;extra&#34;: &#34;&#34;,
+    &#34;ip&#34;: [
+      {
+        &#34;asn&#34;: &#34;EDGECAST (ASN15133)&#34;,
+        &#34;country&#34;: &#34;北美洲 美国&#34;,
+        &#34;ip&#34;: &#34;93.184.216.34&#34;
+      },
+      {
+        &#34;asn&#34;: &#34;EDGECAST (ASN15133)&#34;,
+        &#34;country&#34;: &#34;北美洲 美国&#34;,
+        &#34;ip&#34;: &#34;2606:2800:220:1:248:1893:25c8:1946&#34;
+      }
+    ],
+    &#34;parent&#34;: &#34;example.com&#34;,
+    &#34;verbose_name&#34;: &#34;initial&#34;,
+    &#34;web&#34;: [
+      {
+        &#34;link&#34;: &#34;http://example.com/&#34;,
+        &#34;server&#34;: &#34;ECS (sjc/4FB8)&#34;,
+        &#34;status&#34;: 200,
+        &#34;title&#34;: &#34;Example Domain&#34;
+      },
+      {
+        &#34;link&#34;: &#34;https://example.com/&#34;,
+        &#34;server&#34;: &#34;ECS (sjc/4E8D)&#34;,
+        &#34;status&#34;: 200,
+        &#34;title&#34;: &#34;Example Domain&#34;
+      }
+    ]
+  }
+}
+</code></pre><h2 id="vulntype大类复现">VulnType大类复现</h2>
+<h3 id="server-error">Server-error</h3>
+<p>
+  <img src="/img/Snipaste_2021-03-09_21-01-20.png" alt="">
+
+</p>
+<p>使用bp的Repeater，设置目标复制Request即可。由于是概率引发error，多次刷新才行。
+
+  <img src="/img/Snipaste_2021-03-09_20-58-41.png" alt="">
+
+</p>
+<h3 id="crossdomain">crossdomain</h3>
+<p>
+  <img src="/img/Snipaste_2021-03-09_21-07-40.png" alt="">
+
+</p>
+<h3 id="configide">config/ide</h3>
+<p>
+  <img src="/img/Snipaste_2021-03-12_08-42-08.png" alt="">
+
+</p>
+<p>其中，FileEditorManager包含文件名及相对路径</p>
+<pre tabindex="0"><code>&lt;component name=&#34;FileEditorManager&#34;&gt;
+ ...
+ &lt;file leaf-file-name=&#34;cart.php&#34; pinned=&#34;false&#34; current=&#34;true&#34; current-in-tab=&#34;true&#34;&gt;
+  &lt;entry file=&#34;file://$PROJECT_DIR$/cart.php&#34;&gt;
+</code></pre><p>Git.Settings包含Git的一些设置</p>
+<pre tabindex="0"><code>&lt;component name=&#34;Git.Settings&#34;&gt;
+   &lt;option name=&#34;CHECKOUT_INCLUDE_TAGS&#34; value=&#34;false&#34;/&gt;
+   &lt;option name=&#34;UPDATE_CHANGES_POLICY&#34; value=&#34;STASH&#34;/&gt;
+   &lt;option name=&#34;LINE_SEPARATORS_CONVERSION&#34; value=&#34;ASK&#34;/&gt;
+&lt;/component&gt;
+</code></pre><p>ide文件历史记录</p>
+<pre tabindex="0"><code>&lt;component name=&#34;IdeDocumentHistory&#34;&gt;
+ &lt;option name=&#34;changedFiles&#34;&gt;
+  &lt;list&gt;
+   &lt;option value=&#34;$PROJECT_DIR$/.htaccess&#34;/&gt;
+   &lt;option value=&#34;$PROJECT_DIR$/cart.php&#34;/&gt;
+  &lt;/list&gt;
+ &lt;/option&gt;
+&lt;/component&gt;
+</code></pre><p>修改历史记录</p>
+<pre tabindex="0"><code>&lt;component name=&#34;ChangeListManager&#34;&gt;
+ &lt;list default=&#34;true&#34; id=&#34;190e5f86-a42c-4cc9-a03a-80ac0d47d6d2&#34; name=&#34;Default&#34; comment=&#34;&#34;/&gt;
+ &lt;ignored path=&#34;acuart.iws&#34;/&gt;
+ &lt;ignored path=&#34;.idea/workspace.xml&#34;/&gt;
+ &lt;option name=&#34;TRACKING_ENABLED&#34; value=&#34;true&#34;/&gt;
+ &lt;option name=&#34;SHOW_DIALOG&#34; value=&#34;false&#34;/&gt;
+ &lt;option name=&#34;HIGHLIGHT_CONFLICTS&#34; value=&#34;true&#34;/&gt;
+ &lt;option name=&#34;HIGHLIGHT_NON_ACTIVE_CHANGELIST&#34; value=&#34;false&#34;/&gt;
+ &lt;option name=&#34;LAST_RESOLUTION&#34; value=&#34;IGNORE&#34;/&gt;
+&lt;/component&gt;
+
+&lt;component name=&#34;editorHistoryManager&#34;&gt;
+ &lt;entry file=&#34;file://$PROJECT_DIR$/.htaccess&#34;&gt;
+  &lt;provider selected=&#34;true&#34; editor-type-id=&#34;text-editor&#34;&gt;
+   &lt;state line=&#34;6&#34; column=&#34;0&#34; selection-start=&#34;213&#34; selection-end=&#34;222&#34; vertical-scroll-proportion=&#34;0.124847&#34;&gt;
+ ...
+ &lt;entry file=&#34;file://$PROJECT_DIR$/cart.php&#34;&gt;
+  &lt;provider selected=&#34;true&#34; editor-type-id=&#34;text-editor&#34;&gt;
+   &lt;state line=&#34;60&#34; column=&#34;26&#34; selection-start=&#34;2336&#34; selection-end=&#34;2336&#34; vertical-scroll-proportion=&#34;-0.41645244&#34;&gt;
+
+ ...
+&lt;/component&gt;
+</code></pre><h3 id="poc-yaml-phpstudy-nginx-wrong-resolve">poc-yaml-phpstudy-nginx-wrong-resolve</h3>
+<p>请求了</p>
+<pre tabindex="0"><code>94561621.php
+index.php
+index.php/.php
+index.php/.xxx
+</code></pre><p>只有<code>index.php</code>和<code>index.php/.php</code>请求成功了，并且都返回的是index.php的页面。但由于网页使用相对路径加载图片，所以在<code>index.php/.php</code>时图片都无法正常加载。</p>
+<p>
+  <img src="/img/Snipaste_2021-03-12_09-12-46.png" alt="">
+
+</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/%E4%BD%A0%E8%AE%BF%E9%97%AE%E8%B0%B7%E6%AD%8C%E6%97%B6%E9%83%BD%E5%8F%91%E7%94%9F%E4%BA%86%E5%95%A5/" data-toggle="tooltip" data-placement="top" title="你访问谷歌时，都发生了啥">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/python%E7%BA%BF%E7%A8%8B%E6%B1%A0%E8%AF%BB%E5%86%99mysql/" data-toggle="tooltip" data-placement="top" title="Python线程池读写mysql">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

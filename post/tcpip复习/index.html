@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="TCPIP复习" />
+    <meta property="og:title" content="TCPIP复习" />
+    <meta property="twitter:title" content="TCPIP复习" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>TCPIP复习 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/tcpip%E5%A4%8D%E4%B9%A0/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                    </div>
+                    <h1>TCPIP复习</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Saturday, February 8, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="地址">地址</h2>
+<p>A类地址 公有1~126</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">地址类型</th>
+<th style="text-align:center">公有</th>
+<th style="text-align:center">私有</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A类</td>
+<td style="text-align:center">1 ~ 126</td>
+<td style="text-align:center">10.0.0.0 ~ 10.255.255.255</td>
+</tr>
+<tr>
+<td style="text-align:center">B类</td>
+<td style="text-align:center">128 ~ 191</td>
+<td style="text-align:center">172.16.0.0 ~ 172.31.255.255</td>
+</tr>
+<tr>
+<td style="text-align:center">C类</td>
+<td style="text-align:center">192.0.0.0 ~ 223.255.255.255</td>
+<td style="text-align:center">192.168.0.0 ~ 192.168.255.255</td>
+</tr>
+</tbody>
+</table>
+<h2 id="直接交付和间接交付">直接交付和间接交付</h2>
+<p>直接交付 -&gt; 交给同一个网络地址</p>
+<p>间接交付 -&gt; 经过一个直接交付，给路由器，再给路由器 直到到达同一个网络的路由再给主机</p>
+<h2 id="端到端和点到点">端到端和点到点</h2>
+<p>端到端 -&gt; 进程到进程</p>
+<p>点到点 -&gt; 设备到设备</p>
+<h2 id="三元组五元组">三元组五元组</h2>
+<p>三元组：协议，IP地址，端口</p>
+<p>五元组：三元 + 源IP，源端口</p>
+<h3 id="tcp-可靠性">TCP 可靠性</h3>
+<ul>
+<li>流量控制：滑动窗口 } 发送窗口</li>
+<li>拥塞控制： 拥塞窗口 重转定时器</li>
+<li>差错控制</li>
+</ul>
+<h3 id="套接字">套接字</h3>
+<ul>
+<li>流套接字：TCP 适合大量数据 单播</li>
+<li>数据报套接字： UDP</li>
+<li>原始套接字：编写自定底层协议</li>
+</ul>
+<h3 id="ip多播">IP多播</h3>
+<p>==五个前提？==</p>
+<p>多播地址 224.0.0.0 ~ 239.255.255.255</p>
+<p>IP地址的低23位替换mac地址低23位，第24位为0</p>
+<ul>
+<li>语义</li>
+<li>语法</li>
+<li>时序</li>
+</ul>
+<h2 id="ois七层模型">OIS七层模型</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">层次</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">应用层</td>
+<td style="text-align:center">报文/消息</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">表示层</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">定义数据格式和加密标准。将一种格式转换成另一种格式</td>
+</tr>
+<tr>
+<td style="text-align:center">会话层</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">验证会话双方，提供身份验证</td>
+</tr>
+<tr>
+<td style="text-align:center">传输层</td>
+<td style="text-align:center">段</td>
+<td style="text-align:center">网络节点之间的可靠数据传输</td>
+</tr>
+<tr>
+<td style="text-align:center">网络层</td>
+<td style="text-align:center">包</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">链路层</td>
+<td style="text-align:center">帧</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">物理层</td>
+<td style="text-align:center">流</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tcpip四层">TCP/IP四层</h2>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>提供端到端通信</td>
+<td></td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>IP数据包传输、路由选择、流量控制和拥塞控制</td>
+<td></td>
+</tr>
+<tr>
+<td>网络接口层</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>
+  <img src="/img/TCPIP%e5%a4%8d%e4%b9%a0/image-20200104164157071.png" alt="image-20200104164157071">
+
+</p>
+<p>
+  <img src="/img/TCPIP%e5%a4%8d%e4%b9%a0/image-20200104164216242.png" alt="image-20200104164216242">
+
+</p>
+<h2 id="记忆">记忆</h2>
+<p>以太网MTU最大传输单元，最大值1500字节</p>
+<p>基本概念：协议，封装，服务，接口</p>
+<p>IEEE802.3 CSMA/CD 总线媒体访问</p>
+<p>802.4 令牌总线</p>
+<p>802.5 令牌环</p>
+<h2 id="数据链路层">数据链路层</h2>
+<p>逻辑链路控制子层</p>
+<p>介质访问控制子层</p>
+<h2 id="mac寻址">MAC寻址</h2>
+<p>广播帧：目的MAC为广播地址（全1）</p>
+<h2 id="ethernet-ii帧格式">Ethernet II帧格式</h2>
+<h2 id="记忆-1">记忆</h2>
+<p>交换机工作在数据链路层</p>
+<p>冲突域：每个节点都能接收到所有被发送的帧</p>
+<p>广播域：能接收任一发出的广播</p>
+<p>路由器隔绝广播</p>
+<p>网桥：有两网卡，接两端线缆</p>
+<p>链路层协议：IEEE802.3 .4 .5 SLIP(串行线路Internet协议)，CSLIP()，PPP(点对点)</p>
+<p>SLIP：需要先知道ip，并且没有校验</p>
+<p>ARP和RARP</p>
+<p>静态映射：通过地址映射表与物理地址之间的映射</p>
+<p>动态映射：自动维护逻辑地址和物理地址</p>
+<h2 id="arp">ARP</h2>
+<p>广播请求，单播相应</p>
+<p>物理层广播，IP路由（网络层）不会转发</p>
+<h3 id="跨子网的地址解析">跨子网的地址解析</h3>
+<p>？？</p>
+<h2 id="记忆-2">记忆</h2>
+<p>若分配dhcp到的ip为169.254开头，说明dhcp服务有问题</p>
+<p>分片数据大小必须为8字节的整数倍，否则无法表述偏移量</p>
+<p>功能</p>
+<ul>
+<li>报告差错</li>
+<li>查询</li>
+</ul>
+<h2 id="差错报文">差错报文</h2>
+<p>差错报告报文：当路由器或目的主机处理IP数据报遇到问题时，查询报文以请求/应答形式成对出现</p>
+<p>差错报告报文：源抑制 源站抑制报告，降低源发包速度</p>
+<p>目的不可达：网络不可达，主机不可达，协议不可达和端口不可达</p>
+<p>网络不可达可能路由表或者目的地址有错。主机不可达可能信宿机不在运行中或不存在，并说明网络可达。</p>
+<h3 id="超时">超时</h3>
+<p>目的主机进行分片重组时会启动重组计时器，一旦超时就会丢弃正在重组的数据报，并产生ICMP数据报超时报告</p>
+<h3 id="重定向报文">重定向报文</h3>
+<p>路由收到报文后，判断是否最佳选择，不是就发送重定向报文，通知源主机修改路由表，最佳下一跳路由器的IP地址</p>
+<h3 id="计算应答时间">计算应答时间</h3>
+<p>
+  <img src="/img/TCPIP%e5%a4%8d%e4%b9%a0/image-20200104202342626.png" alt="image-20200104202342626">
+
+</p>
+<h2 id="应用">应用</h2>
+<p>ping和tracert</p>
+<p>##RIP 距离向量路由协议</p>
+<p>==通过度量值判断路径的好坏==</p>
+<p>包含：路径长度，跳数，可靠性，延迟，带宽，负载，通讯费用</p>
+<p>RIP V1 不支持VLSM V2 支持认证</p>
+<h2 id="ospf-链路状态路由协议">OSPF 链路状态路由协议</h2>
+<p>==通过管理距离判断路径好坏==</p>
+<p>每种路径由协议分配信任等级，根据算法的好坏</p>
+<h2 id="bgp协议">BGP协议</h2>
+<p>边界网关协议，用于自治系统之间</p>
+<p>小于1024端口做公用端口，全局方式进行分配</p>
+<p>1024～65535 临时端口</p>
+<h2 id="tcp">TCP</h2>
+<p>面向字节流。TCP使用缓冲区</p>
+<h3 id="三次握手">三次握手</h3>
+<p>SEQ 是随机数</p>
+<p>客户端</p>
+<p>第一次：SEQ = m , SYN = 1</p>
+<p>服务器</p>
+<p>第二次：SEQ = n，AN = m + 1，SYN=1，ACK=1</p>
+<p>客户端</p>
+<p>第三次：SEQ = m + 1 , AN = n +1 , ACK = 1</p>
+<h2 id="udp">UDP</h2>
+<p>面向报文 使用队列</p>
+<p>169.254 本地链路地址</p>
+<h2 id="dhcp报文格式">DHCP报文格式</h2>
+<p>网关IP地址 如果跨网段使用DHCP中继，此字段包含中继代理的ip地址</p>
+<p>windows域 WINS协议</p>
+<p>DNS递归解析，反向解析</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="个人原则宪法">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/ropgadget%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8-cmcc_simplerop/" data-toggle="tooltip" data-placement="top" title="ROPgadget&amp;系统调用-cmcc_simplerop">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

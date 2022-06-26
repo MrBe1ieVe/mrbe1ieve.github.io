@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="hexo升级跳坑" />
+    <meta property="og:title" content="hexo升级跳坑" />
+    <meta property="twitter:title" content="hexo升级跳坑" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>hexo升级跳坑 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/hexo%E5%8D%87%E7%BA%A7%E8%B7%B3%E5%9D%91/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>hexo升级跳坑</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Tuesday, April 7, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>应该是从4.0升级到4.2，_config.yml的更改就不说了，主要讲讲昨天晚上都干了啥（吐血捂肝</p>
+<p>4.2多了个友链（万恶起源）上来之后，最开始的变化就是，所有文章的日期都变成了<strong>创建时间</strong>，即便<strong>修改时间</strong>比创建时间还早0.0</p>
+<p>
+  <img src="/img/%e8%ae%b0%e5%bd%95%e4%b8%80%e4%b8%8bhexo%e5%8d%87%e7%ba%a7QAQ/image-20200407074702787.png" alt="image-20200407074702787">
+
+</p>
+<p>于是，写了脚本给每个文章加上date，确定最早的发布/创建时间，并且，没有这个<a href="https://hexo.io/zh-cn/docs/front-matter">Front-matter</a>是会报莫名其妙的YAMLException的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> datetime
+</span></span><span style="display:flex;"><span>fpath <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>getcwd()
+</span></span><span style="display:flex;"><span>path<span style="color:#ff79c6">=</span>os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>abspath(os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>dirname(__file__))
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#时间戳变成</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">shift_time</span>(filename):
+</span></span><span style="display:flex;"><span>    time_stamp_create <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>getctime(filename)
+</span></span><span style="display:flex;"><span>    time_stamp_modify <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>getmtime(filename)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> time_stamp_create <span style="color:#ff79c6">&gt;</span> time_stamp_modify:
+</span></span><span style="display:flex;"><span>        time_stamp <span style="color:#ff79c6">=</span> time_stamp_modify
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span> :
+</span></span><span style="display:flex;"><span>        time_stamp <span style="color:#ff79c6">=</span> time_stamp_create
+</span></span><span style="display:flex;"><span>    dateArray <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>datetime<span style="color:#ff79c6">.</span>fromtimestamp(time_stamp)  
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> dateArray<span style="color:#ff79c6">.</span>strftime(<span style="color:#f1fa8c">&#34;%Y/%m/</span><span style="color:#f1fa8c">%d</span><span style="color:#f1fa8c"> %H:%M:%S&#34;</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">writeback</span>(filename,text):
+</span></span><span style="display:flex;"><span>    s <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(text)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename , <span style="color:#f1fa8c">&#34;w&#34;</span> , encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>,) <span style="color:#ff79c6">as</span> f:
+</span></span><span style="display:flex;"><span>        f<span style="color:#ff79c6">.</span>write(s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#将文件创建时间或修改时间，最早的一个，写入date中，作为文章时间</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> parent, dirnames, filenames <span style="color:#ff79c6">in</span> os<span style="color:#ff79c6">.</span>walk(fpath):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> filename <span style="color:#ff79c6">in</span> filenames:         
+</span></span><span style="display:flex;"><span>        temp<span style="color:#ff79c6">=</span>os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>splitext(filename)
+</span></span><span style="display:flex;"><span>        file,<span style="color:#8be9fd;font-style:italic">type</span><span style="color:#ff79c6">=</span>temp
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">type</span> <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;.md&#34;</span>:
+</span></span><span style="display:flex;"><span>            headline <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>            head_exist <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>            date_exist <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>            line_num <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>            create_date <span style="color:#ff79c6">=</span> shift_time(filename) 
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> line <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename,encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>):
+</span></span><span style="display:flex;"><span>                line_num <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> line <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;---</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>:
+</span></span><span style="display:flex;"><span>                    headline <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#34;date:&#34;</span> <span style="color:#ff79c6">in</span> line:
+</span></span><span style="display:flex;"><span>                    date_exist <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">True</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> headline <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">2</span>:
+</span></span><span style="display:flex;"><span>                    head_exist <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">True</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> line_num <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">10</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> date_exist:
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">elif</span> head_exist:
+</span></span><span style="display:flex;"><span>                text <span style="color:#ff79c6">=</span> []
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">for</span> line <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename,encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>): 
+</span></span><span style="display:flex;"><span>                    text<span style="color:#ff79c6">.</span>append(line)
+</span></span><span style="display:flex;"><span>                text<span style="color:#ff79c6">.</span>insert(<span style="color:#bd93f9">1</span> , <span style="color:#f1fa8c">&#34;date: &#34;</span> <span style="color:#ff79c6">+</span> create_date <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
+</span></span><span style="display:flex;"><span>                writeback(filename,text)
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>                text <span style="color:#ff79c6">=</span> []
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">for</span> line <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename,encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>): 
+</span></span><span style="display:flex;"><span>                    text<span style="color:#ff79c6">.</span>append(line)
+</span></span><span style="display:flex;"><span>                text<span style="color:#ff79c6">.</span>insert(<span style="color:#bd93f9">0</span> , <span style="color:#f1fa8c">&#34;---</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">date: &#34;</span> <span style="color:#ff79c6">+</span> create_date <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">---</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
+</span></span><span style="display:flex;"><span>                writeback(filename,text)
+</span></span></code></pre></div><p>这部分修改好了之后呢，跑起来测试之后发现图片加载不了了，原来的hexo-assets-image的图片src地址有误，没法用了，换了<a href="https://github.com/cocowool/hexo-image-link">hexo-image-link</a>之后，可以是可以了，但是我原先的结构不能用了QAQ</p>
+<blockquote>
+<p>原先是图片都放在 markdown.assets/xxx.png 这样的，现在根据 官方和 image-link 的呢，只能改成  markdown/xxx.png 这样了 于是又写了这部分代码QAQ</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#先找到.assets文件夹，然后再去找md文件替换掉文件里的xxx.assets/image的.assets</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> folder <span style="color:#ff79c6">in</span> os<span style="color:#ff79c6">.</span>listdir():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> folder <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;.vscode&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>isdir(folder)<span style="color:#ff79c6">==</span><span style="color:#ff79c6">True</span>:
+</span></span><span style="display:flex;"><span>        temp<span style="color:#ff79c6">=</span>os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>splitext(folder)
+</span></span><span style="display:flex;"><span>        file,<span style="color:#8be9fd;font-style:italic">type</span><span style="color:#ff79c6">=</span>temp
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">type</span> <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;.assets&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> parent, dirnames, filenames <span style="color:#ff79c6">in</span> os<span style="color:#ff79c6">.</span>walk(fpath):
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">for</span> filename <span style="color:#ff79c6">in</span> filenames:  
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">if</span> filename <span style="color:#ff79c6">==</span> file <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;.md&#39;</span>:
+</span></span><span style="display:flex;"><span>                        text <span style="color:#ff79c6">=</span> []
+</span></span><span style="display:flex;"><span>                        <span style="color:#ff79c6">for</span> line <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename,encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>): 
+</span></span><span style="display:flex;"><span>                            text<span style="color:#ff79c6">.</span>append(line<span style="color:#ff79c6">.</span>replace(<span style="color:#f1fa8c">&#34;.assets&#34;</span>,<span style="color:#f1fa8c">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>                        writeback(file <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;.md&#39;</span>,text)
+</span></span><span style="display:flex;"><span>        new_name<span style="color:#ff79c6">=</span>folder<span style="color:#ff79c6">.</span>replace(<span style="color:#f1fa8c">&#39;.assets&#39;</span>,<span style="color:#f1fa8c">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>        os<span style="color:#ff79c6">.</span>rename(os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>join(path,folder),os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>join(path,new_name))
+</span></span></code></pre></div><p>再加上调下typora的<strong>插入图片时</strong>改为复制到指定路径即可。</p>
+<p>这样，我本地看也没有任何问题，发布出去也不会有问题，耶✌</p>
+<p>懒才是最强生产力（确信</p>
+<p>所以现在就是双击Winclick.bat 跑run.py。写完就丢嘿嘿</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4">#run.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> datetime
+</span></span><span style="display:flex;"><span>fpath <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>getcwd()
+</span></span><span style="display:flex;"><span>path<span style="color:#ff79c6">=</span>os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>abspath(os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>dirname(__file__))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">shift_time</span>(filename):
+</span></span><span style="display:flex;"><span>    time_stamp_create <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>getctime(filename)
+</span></span><span style="display:flex;"><span>    time_stamp_modify <span style="color:#ff79c6">=</span> os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>getmtime(filename)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> time_stamp_create <span style="color:#ff79c6">&gt;</span> time_stamp_modify:
+</span></span><span style="display:flex;"><span>        time_stamp <span style="color:#ff79c6">=</span> time_stamp_modify
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span> :
+</span></span><span style="display:flex;"><span>        time_stamp <span style="color:#ff79c6">=</span> time_stamp_create
+</span></span><span style="display:flex;"><span>    dateArray <span style="color:#ff79c6">=</span> datetime<span style="color:#ff79c6">.</span>datetime<span style="color:#ff79c6">.</span>fromtimestamp(time_stamp)  
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> dateArray<span style="color:#ff79c6">.</span>strftime(<span style="color:#f1fa8c">&#34;%Y/%m/</span><span style="color:#f1fa8c">%d</span><span style="color:#f1fa8c"> %H:%M:%S&#34;</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">writeback</span>(filename,text):
+</span></span><span style="display:flex;"><span>    s <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(text)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename , <span style="color:#f1fa8c">&#34;w&#34;</span> , encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>,) <span style="color:#ff79c6">as</span> f:
+</span></span><span style="display:flex;"><span>        f<span style="color:#ff79c6">.</span>write(s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#将文件创建时间或修改时间，最早的一个，写入date中，作为文章时间</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> parent, dirnames, filenames <span style="color:#ff79c6">in</span> os<span style="color:#ff79c6">.</span>walk(fpath):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> filename <span style="color:#ff79c6">in</span> filenames:         
+</span></span><span style="display:flex;"><span>        temp<span style="color:#ff79c6">=</span>os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>splitext(filename)
+</span></span><span style="display:flex;"><span>        file,<span style="color:#8be9fd;font-style:italic">type</span><span style="color:#ff79c6">=</span>temp
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">type</span> <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;.md&#34;</span>:
+</span></span><span style="display:flex;"><span>            headline <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>            head_exist <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>            date_exist <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>            line_num <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span>            create_date <span style="color:#ff79c6">=</span> shift_time(filename) 
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> line <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename,encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>):
+</span></span><span style="display:flex;"><span>                line_num <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> line <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;---</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>:
+</span></span><span style="display:flex;"><span>                    headline <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#34;date:&#34;</span> <span style="color:#ff79c6">in</span> line:
+</span></span><span style="display:flex;"><span>                    date_exist <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">True</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> headline <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">2</span>:
+</span></span><span style="display:flex;"><span>                    head_exist <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">True</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> line_num <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">10</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> date_exist:
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">elif</span> head_exist:
+</span></span><span style="display:flex;"><span>                text <span style="color:#ff79c6">=</span> []
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">for</span> line <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename,encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>): 
+</span></span><span style="display:flex;"><span>                    text<span style="color:#ff79c6">.</span>append(line)
+</span></span><span style="display:flex;"><span>                text<span style="color:#ff79c6">.</span>insert(<span style="color:#bd93f9">1</span> , <span style="color:#f1fa8c">&#34;date: &#34;</span> <span style="color:#ff79c6">+</span> create_date <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
+</span></span><span style="display:flex;"><span>                writeback(filename,text)
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>                text <span style="color:#ff79c6">=</span> []
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">for</span> line <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename,encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>): 
+</span></span><span style="display:flex;"><span>                    text<span style="color:#ff79c6">.</span>append(line)
+</span></span><span style="display:flex;"><span>                text<span style="color:#ff79c6">.</span>insert(<span style="color:#bd93f9">0</span> , <span style="color:#f1fa8c">&#34;---</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">date: &#34;</span> <span style="color:#ff79c6">+</span> create_date <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">---</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#39;</span>)
+</span></span><span style="display:flex;"><span>                writeback(filename,text)
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> folder <span style="color:#ff79c6">in</span> os<span style="color:#ff79c6">.</span>listdir():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> folder <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;.vscode&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>isdir(folder)<span style="color:#ff79c6">==</span><span style="color:#ff79c6">True</span>:
+</span></span><span style="display:flex;"><span>        temp<span style="color:#ff79c6">=</span>os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>splitext(folder)
+</span></span><span style="display:flex;"><span>        file,<span style="color:#8be9fd;font-style:italic">type</span><span style="color:#ff79c6">=</span>temp
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">type</span> <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;.assets&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> parent, dirnames, filenames <span style="color:#ff79c6">in</span> os<span style="color:#ff79c6">.</span>walk(fpath):
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">for</span> filename <span style="color:#ff79c6">in</span> filenames:  
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">if</span> filename <span style="color:#ff79c6">==</span> file <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;.md&#39;</span>:
+</span></span><span style="display:flex;"><span>                        text <span style="color:#ff79c6">=</span> []
+</span></span><span style="display:flex;"><span>                        <span style="color:#ff79c6">for</span> line <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">open</span>(filename,encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>): 
+</span></span><span style="display:flex;"><span>                            text<span style="color:#ff79c6">.</span>append(line<span style="color:#ff79c6">.</span>replace(<span style="color:#f1fa8c">&#34;.assets&#34;</span>,<span style="color:#f1fa8c">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>                        writeback(file <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;.md&#39;</span>,text)
+</span></span><span style="display:flex;"><span>        new_name<span style="color:#ff79c6">=</span>folder<span style="color:#ff79c6">.</span>replace(<span style="color:#f1fa8c">&#39;.assets&#39;</span>,<span style="color:#f1fa8c">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>        os<span style="color:#ff79c6">.</span>rename(os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>join(path,folder),os<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>join(path,new_name))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>os<span style="color:#ff79c6">.</span>system((<span style="color:#f1fa8c">&#39;cd </span><span style="color:#f1fa8c">{}</span><span style="color:#f1fa8c"> &amp;&amp; hexo clean &amp;&amp; hexo gen &amp;&amp; hexo deploy&#39;</span>)<span style="color:#ff79c6">.</span>format(path))
+</span></span></code></pre></div>
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%BD%AC%E7%A7%BB%E7%8E%AF%E5%A2%83%E4%B8%8A%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-toggle="tooltip" data-placement="top" title="记一次转移环境上服务器">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-toggle="tooltip" data-placement="top" title="数据库使用&amp;学习记录">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

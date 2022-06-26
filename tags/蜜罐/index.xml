@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>蜜罐 on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/%E8%9C%9C%E7%BD%90/</link>
+    <description>Recent content in 蜜罐 on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Mon, 10 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/%E8%9C%9C%E7%BD%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenCanary使用及理解</title>
+      <link>https://mrbelieve.tech/post/opencanary%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/opencanary%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%90%86%E8%A7%A3/</guid>
+      <description>协议支持列表 22 ssh : a Secure Shell server which alerts on login attempts 21 ftp - a File Transfer Protocol server which on login attempts git - a Git protocol which alerts on repo cloning 80 http - an HTTP web server that alerts on login attempts httpproxy - an HTTP web proxy that alerts when there is an attempt to proxy to another page</description>
+    </item>
+    
+  </channel>
+</rss>

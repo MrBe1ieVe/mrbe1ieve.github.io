@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>底层原理思考与分析 on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90/</link>
+    <description>Recent content in 底层原理思考与分析 on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Sun, 01 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebGoat代码审计其6-不安全的反序列化</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B66-%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B66-%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
+      <description>不安全的反序列化 POST /WebGoat/InsecureDeserialization/task 从结果出发 代码来自木爷 JAVA代码审计10:WEBGOAT Insecure Deserialization - 木头的小屋 Main.java package org.dummy.insecure.framework; import java.io.ByteArrayOutputStream; import java.io.IOException; import java.io.ObjectOutputStream; import java.util.Base64; public class Main { public static void main(String[] args) throws IOException {</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其5-XXE</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B65-xxe/</link>
+      <pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B65-xxe/</guid>
+      <description>Let’s try 这个按照第三页的，改一改 &amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE author [ &amp;lt;!ENTITY js SYSTEM &amp;#34;file:///&amp;#34;&amp;gt; ] &amp;gt;&amp;lt;comment&amp;gt; &amp;lt;text&amp;gt;&amp;amp;js;&amp;lt;/text&amp;gt;&amp;lt;/comment&amp;gt; 即可完成。看代码的话需要搜索xxe/simple 结果只要包含usr etc var 就判成功了</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其4-失效的身份认证</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B64-%E5%A4%B1%E6%95%88%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B64-%E5%A4%B1%E6%95%88%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</guid>
+      <description>认证绕过 POST /WebGoat/auth-bypass/verify-account secQuestion0=test&amp;amp;secQuestion1=test&amp;amp;jsEnabled=1&amp;amp;verifyMethod=SEC_QUESTIONS&amp;amp;userId=12309746 按照上面例子移除，没有成功，直接看代码了 这里会先调用下面的parseSecQuestions()处理，将名字包含secQues</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其3-路径穿越</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B63-%E8%B7%AF%E5%BE%84%E7%A9%BF%E8%B6%8A/</link>
+      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B63-%E8%B7%AF%E5%BE%84%E7%A9%BF%E8%B6%8A/</guid>
+      <description>Path traversal 2 请求 URL: http://localhost:8080/WebGoat/PathTraversal/profile-upload 请求方法: POST 全局搜索后找到 跳入 ProfileUploadBase类，看里面的execute函数 先检查file和fullName</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其2-sql注入</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B62-sql%E6%B3%A8%E5%85%A5/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B62-sql%E6%B3%A8%E5%85%A5/</guid>
+      <description>Intro 2 select 点击submit后, 查看数据包,发往/SqlInjection/attack2, 表单数据为query: select * from Employees where first_name=&#39;Bob&#39;; 别的查询都不会返回数</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其1-登录注册</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B61-%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B61-%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C/</guid>
+      <description>IDEA配置 下载idea之后, webgoat要求 * Java 15 * Maven &amp;gt; 3.2.1 * Your favorite IDE * Git, or Git support in your IDE 但是调试的话, 只安装java即可 安装好后先配置Proj</description>
+    </item>
+    
+    <item>
+      <title>OpenCanary使用及理解</title>
+      <link>https://mrbelieve.tech/post/opencanary%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/opencanary%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%90%86%E8%A7%A3/</guid>
+      <description>协议支持列表 22 ssh : a Secure Shell server which alerts on login attempts 21 ftp - a File Transfer Protocol server which on login attempts git - a Git protocol which alerts on repo cloning 80 http - an HTTP web server that alerts on login attempts httpproxy - an HTTP web proxy that alerts when there is an attempt to proxy to another page</description>
+    </item>
+    
+  </channel>
+</rss>

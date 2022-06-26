@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="安全产品学习" />
+    <meta property="og:title" content="安全产品学习" />
+    <meta property="twitter:title" content="安全产品学习" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>安全产品学习 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/%E5%AE%89%E5%85%A8%E4%BA%A7%E5%93%81%E5%AD%A6%E4%B9%A0/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>安全产品学习</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Tuesday, April 20, 2021
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="方向">方向</h2>
+<p>先明确方向<del>还是得看招的人的</del>，已知部分方向为：</p>
+<ul>
+<li>入侵检测（基于主机的HIDS和基于网络的NIDS）</li>
+<li>蜜罐</li>
+<li>waf</li>
+<li>防火墙</li>
+<li>日志与审计安全</li>
+<li>漏洞扫描系统（web、软件、iot等）</li>
+<li>端点检测和响应解决方案 （EDR）和端点保护平台（EPP）</li>
+</ul>
+<p>下面的可以看来了解一下</p>
+<h3 id="入侵检测基于主机的hids和基于网络的nids">入侵检测（基于主机的HIDS和基于网络的NIDS）</h3>
+<p>内容有所参考<a href="https://zhuanlan.zhihu.com/p/91096046">你需要得开源入侵检测系统都在这里</a></p>
+<ol>
+<li>NIPS <a href="https://github.com/snort3/snort3">snort3/snort3: Snort++</a></li>
+</ol>
+<ul>
+<li>C++ 94.9%</li>
+<li>免费付费区别是过滤规则，免费的规则来自于社区</li>
+</ul>
+<p>体系结构：
+
+  <img src="/img/http://drops.xmd5.com/full/996e5c4e7af5f24853cfd14d0deba9bc53129aa1.jpg" alt="Paste_Image.png">
+
+</p>
+<blockquote>
+<ul>
+<li>数据包嗅探模块，主要负责监听网络数据包，并根据TCP/IP协议解析数据包。</li>
+<li>预处理模块，1.包重组预处理器，它的作用是为了防止攻击信息被拆分到多个包中而 逃避了Snort的检测；2.协议编码预处理器，它的功能是把数据包协议解码成一个统一的格式，再传送给检测模块；3.协议异常检测预处器。</li>
+<li>检测引擎模块，当预处理器把数据包送过来后，检测引擎将这些数据包与三维链表形式的检测规则进行匹配，一旦发现数据包中的内容和某条规则相匹配，就通知报警模块。</li>
+<li>报警/日志模块，检测引擎将数据包传送给报警模块后，报警模块会根据规则定义（alert，log..）对其进行不同的处理（数据库，日志）。</li>
+</ul>
+<p>上图和介绍 来源<a href="http://drops.xmd5.com/static/drops/%E6%9D%A9%E6%84%AE%E6%B7%AE%E7%80%B9%E5%A4%8A%E5%8F%8F-9232.html">SNORT入侵检测系统 | WooYun知识库</a></p>
+</blockquote>
+<ol start="2">
+<li>NIDS和HIDS <a href="https://github.com/Security-Onion-Solutions/securityonion">Security-Onion-Solutions/securityonion: Security Onion 2 - Linux distro for threat hunting, enterprise security monitoring, and log management</a></li>
+</ol>
+<ul>
+<li>Shell 73.6%</li>
+<li>带有UI</li>
+</ul>
+<p>
+  <img src="/img/https://pic2.zhimg.com/80/v2-6479463e40f82cb47968ba4c078856b9_1440w.jpg" alt="">
+
+
+<del>包罗万象</del></p>
+<blockquote>
+<p>Security Onion里面的组件包括：snort（入侵检测引擎）、suricata（入侵检测引擎）、bro（入侵检测分析系统）、sguil（入侵检测分析系统）、squert（前端显示）、snorby（前端显示）、wireshark（抓包）、xplico（流量审计）。大致分类如下：</p>
+<ul>
+<li>完整数据包捕获；</li>
+<li>基于网络和主机的入侵检测系统（HIDS和NIDS）;</li>
+<li>强大的分析工具</li>
+</ul>
+<p>上图和介绍来源 <a href="https://zhuanlan.zhihu.com/p/34072611">Security Onion介绍 - 知乎</a></p>
+</blockquote>
+<ol start="3">
+<li>NIDS <a href="https://github.com/OISF/suricata">OISF/suricata: Suricata git repository maintained by the OISF</a></li>
+</ol>
+<ul>
+<li>C 88.1%</li>
+</ul>
+<blockquote>
+<p>Engine</p>
+<ul>
+<li>Network Intrusion Detection System (NIDS) engine</li>
+<li>Network Intrusion Prevention System (NIPS) engine</li>
+<li>Network Security Monitoring (NSM) engine
+等等</li>
+</ul>
+</blockquote>
+<ol start="4">
+<li><a href="https://github.com/zeek/zeek">zeek/zeek: Zeek is a powerful network analysis framework that is much different from the typical IDS you may know.</a></li>
+</ol>
+<p>network security monitor (NSM)</p>
+<ul>
+<li>C++ 51.4%   Zeek 44.6%</li>
+</ul>
+<ol start="5">
+<li><a href="https://github.com/ossec/ossec-hids">ossec/ossec-hids: OSSEC is an Open Source Host-based Intrusion Detection System that performs log analysis, file integrity checking, policy monitoring, rootkit detection, real-time alerting and active response.</a></li>
+</ol>
+<ul>
+<li>C 87.2%</li>
+<li>log analysis 日志分析</li>
+<li>file integrity checking   文件完整性检查</li>
+<li>policy monitoring 监控策略</li>
+<li>rootkit detection 加载到操作系统内核中的恶意软件 检测</li>
+<li>real-time alerting 实时提醒</li>
+<li>active response</li>
+</ul>
+<p>
+  <img src="/img/%e5%ae%89%e5%85%a8%e4%ba%a7%e5%93%81%e5%ad%a6%e4%b9%a0/Snipaste_2021-04-20_15-38-19.png" alt="">
+
+</p>
+<blockquote>
+<p>图片来源<a href="https://zhuanlan.zhihu.com/p/54993714">开源EDR(OSSEC)基础篇- 03 - 目录结构与实用工具 - 知乎</a></p>
+</blockquote>
+<ol start="6">
+<li><a href="https://github.com/Tripwire/tripwire-open-source">Tripwire/tripwire-open-source: Open Source Tripwire®</a></li>
+</ol>
+<ul>
+<li>C++ 81.1%</li>
+<li>security and data integrity tool for monitoring and alerting on file &amp; directory changes.</li>
+</ul>
+<ol start="7">
+<li><a href="https://github.com/aide/aide">aide/aide: aide source code</a></li>
+</ol>
+<ul>
+<li>C 84.7%</li>
+<li>被开发成Tripwire的一个替代品</li>
+</ul>
+<h3 id="蜜罐">蜜罐</h3>
+<p>初步了解可以看<a href="https://zhuanlan.zhihu.com/p/110886405">谈谈蜜罐（调研）与内网安全 - 知乎</a>了解部分开源蜜罐</p>
+<p>功能性可以参考
+<a href="https://chaitin-marketing.s3.cn-north-1.amazonaws.com.cn/Chaitin_D-Sensor_White_Paper.pdf">长亭谛听白皮书</a>
+<a href="https://www.moresec.cn/news/51">默安-从蜜罐发展看攻击欺骗应用趋势</a></p>
+<ol>
+<li>OpenCanary</li>
+</ol>
+<p>Python, 依赖于twisted的python库实现
+可以参考：</p>
+<ul>
+<li>web端 <a href="https://github.com/p1r06u3/opencanary_web">p1r06u3/opencanary_web: The web management platform of honeypot</a> 但是用的python2.7</li>
+<li><a href="http://pirogue.org/2019/01/15/opencanary_2/">opencanary二次开发(1)-日志格式 | pirogue</a></li>
+</ul>
+<ol start="2">
+<li>HFish</li>
+</ol>
+<p>Go编写
+参考：</p>
+<ul>
+<li>官方文档 <a href="https://hfish.io/docs/#/deploy/servies">蜜罐服务说明</a></li>
+<li>稍老<a href="https://blog.c1ker.top/2019/11/15/HFish-%E8%9C%9C%E7%BD%90%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/#%E6%94%BB%E5%87%BB%E5%AD%97%E5%85%B8%E7%BB%9F%E8%AE%A1">HFish 蜜罐使用心得 | ciker</a></li>
+<li>使用参考<a href="https://blog.csdn.net/weixin_39190897/article/details/109398179">渗透测试-Hfish蜜罐的搭建与使用</a></li>
+</ul>
+<h3 id="waf">WAF</h3>
+<p>可以直接看<a href="https://zhuanlan.zhihu.com/p/342756722">2021年十大开源waf - 知乎</a></p>
+<h3 id="防火墙">防火墙</h3>
+<p><a href="https://pfschina.org/wp/?p=4187">开源防火墙推荐 | 鐵血男兒的BLOG</a></p>
+<p>一般人好像都推荐用<a href="https://www.freebuf.com/sectool/214820.html">Pfsense：免费开源的应用层防火墙 - FreeBuf网络安全行业门户</a></p>
+<h3 id="日志审计">日志审计</h3>
+<p><a href="https://github.com/allinurl/goaccess">allinurl/goaccess: GoAccess is a real-time web log analyzer and interactive viewer that runs in a terminal in *nix systems or through your browser.</a></p>
+<ul>
+<li>star 13.1K C 86.2%</li>
+</ul>
+<p><a href="https://www.cnblogs.com/xiaozi/p/13198071.html">推荐 | 10个好用的Web日志安全分析工具 - Bypass - 博客园</a></p>
+<h3 id="漏洞扫描系统">漏洞扫描系统</h3>
+<p><a href="https://www.freebuf.com/articles/web/155209.html">最好用的开源Web漏扫工具梳理 - FreeBuf网络安全行业门户</a></p>
+<h3 id="edr">EDR</h3>
+<p><a href="https://github.com/ComodoSecurity/openedr">ComodoSecurity/openedr: Open EDR public repository</a></p>
+<p>有vm可以试用<a href="https://github.com/TheHive-Project/TheHive">TheHive-Project/TheHive: TheHive: a Scalable, Open Source and Free Security Incident Response Platform</a></p>
+<p>详见<a href="https://heimdalsecurity.com/blog/open-source-edr-tools/">Ten Open-Source EDR Tools to Enhance Your Cyber-Resilience Factor</a></p>
+<h2 id="蜜罐-1">蜜罐</h2>
+<h3 id="实现相关">实现相关</h3>
+<h4 id="功能相关">功能相关</h4>
+<h5 id="溯源">溯源</h5>
+<p>bypass图，来自群内
+
+  <img src="/img/%e5%ae%89%e5%85%a8%e4%ba%a7%e5%93%81%e5%ad%a6%e4%b9%a0/XTZAT_SUO4$J$F9%7d4FR_W%7d6.jpg" alt="">
+
+</p>
+<p>与群友交流后，学习到了
+溯源方法：</p>
+<ul>
+<li>游览器UA识别</li>
+<li>ip</li>
+<li>游览器端js执行</li>
+<li>webrtc</li>
+<li>jsonp 获取社交账户的信息 （如百度id）</li>
+<li>post message（类似jsonp）</li>
+<li>连接软件的（如mysql客户端）<a href="../PermanentBox/mysql%E8%9C%9C%E7%BD%90%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%20%E6%91%98%E5%BD%95.md">../PermanentBox/mysql蜜罐客户端任意文件读取 摘录</a></li>
+</ul>
+<p>游览器端js执行的一些骚操作：</p>
+<ul>
+<li>主机设置proxy_pass到某个网站，nginx配置某个路径的js为本机的溯源js，这样没有蜜罐特征</li>
+</ul>
+<h5 id="反蜜罐识别">反蜜罐识别</h5>
+<ul>
+<li>无痕游览器/防指纹游览器</li>
+<li>js识别</li>
+<li><a href="https://github.com/iiiusky/AntiHoneypot-Chrome-simple">iiiusky/AntiHoneypot-Chrome-simple: Chrome 蜜罐检测插件</a></li>
+</ul>
+<p>针对<a href="../RelatedBox/mysql%E8%9C%9C%E7%BD%90%E8%AF%86%E5%88%AB%20%E6%91%98%E5%BD%95.md">../RelatedBox/mysql蜜罐识别 摘录</a>进行反制</p>
+<h5 id="端口流量转发透传ip">端口流量转发（透传ip）</h5>
+<blockquote>
+<p>
+  <img src="/img/%e5%ae%89%e5%85%a8%e4%ba%a7%e5%93%81%e5%ad%a6%e4%b9%a0/Snipaste_2021-04-22_21-43-29.png" alt="">
+
+
+来源 <a href="https://mp.weixin.qq.com/s/hOy8wCXLpAavwtf6A46w4Q">蜜罐项目-端口流量转发（透传ip）方案调研</a></p>
+</blockquote>
+<p>感觉就是两机子建立gre隧道后，源机子设置DNAT（目标地址转换）将数据包转发到蜜罐中（或者蜜罐群的网关机子这种，使用点到多点GRE隧道），在docker中也可以实现透传ip的，接下来难点就是识别恶意流量了（倒）</p>
+<p>Gre隧道</p>
+<blockquote>
+<p>通用路由封装或 GRE 是一种协议，用于将使用一个<a href="https://www.cloudflare.com/zh-cn/learning/network-layer/what-is-routing">路由</a>协议的数据包封装在另一协议的数据包中。“封装”是指将一个数据包包装在另一个数据包中。GRE 是在网络上建立直接点对点连接的一种方法，目的是简化单独网络之间的连接。适用于各种网络层</p>
+<p>** 例如**，假设一家公司需要在位于两个不同办公室的局域网之间建立连接。两个 LAN 都使用最新版本的互联网协议IPv6。但是，为了从一个办公网络到达另一个办公网络，流量必须通过一个有些过时的网络，仅支持较旧的 IPv4 协议。
+借助 GRE，该公司可以将 IPv6 数据包封装在 IPv4 数据包中，然后便可通过此网络传输流量。回到那个类比，IPv6 数据包是汽车，IPv4 数据包是渡轮，而第三方网络则是水。</p>
+<p>来源 <a href="https://www.cloudflare.com/zh-cn/learning/network-layer/what-is-gre-tunneling/">什么是 GRE 隧道？| GRE 协议如何工作 | Cloudflare</a></p>
+</blockquote>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/hackthebox-starting-point-shield-.29/" data-toggle="tooltip" data-placement="top" title="HackTheBox Starting Point Shield .29">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/xray_poc_%E7%BC%96%E5%86%99%E5%AD%A6%E4%B9%A0/" data-toggle="tooltip" data-placement="top" title="Xray_poc_编写学习">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

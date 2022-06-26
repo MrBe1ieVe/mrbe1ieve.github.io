@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shellcode on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/shellcode/</link>
+    <description>Recent content in Shellcode on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Sat, 08 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/shellcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ORW-[极客大挑战2019]Not_Bad</title>
+      <link>https://mrbelieve.tech/post/orw-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019not_bad/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/orw-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019not_bad/</guid>
+      <description>RWX Linux的文件和目录的权限，有RWX三种。 r(Read，读取)：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目录的权限。 w(</description>
+    </item>
+    
+  </channel>
+</rss>

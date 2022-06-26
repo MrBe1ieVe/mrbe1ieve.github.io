@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="汇编、逆向工程基础" />
+    <meta property="og:title" content="汇编、逆向工程基础" />
+    <meta property="twitter:title" content="汇编、逆向工程基础" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>汇编、逆向工程基础 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/%E6%B1%87%E7%BC%96%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%9F%BA%E7%A1%80/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/ctf" title="CTF">
+                            CTF
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                    </div>
+                    <h1>汇编、逆向工程基础</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Monday, January 13, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>原文链接：https://blog.csdn.net/qq_21508727/article/details/80559270</p>
+<h2 id="单位">单位</h2>
+<blockquote>
+<ol>
+<li>·WORD（字） - 一个字由两个字节组成，共有16位。一个字的最大值是0FFFFh (或者是 65535d) (h代表16进制，d代表10进制)。</li>
+<li>·DOUBLE WORD（双字DWORD） - 一个双字包含两个字，共有32位。最大值为0FFFFFFFF (或者是 4294967295d)。</li>
+</ol>
+<blockquote>
+<p>一个16进制占4bit</p>
+</blockquote>
+</blockquote>
+<h2 id="寄存器">寄存器</h2>
+<p>Win+Intel CPU组成的计算机通常有9个32位寄存器 (w/o 标志寄存器)。它们是：</p>
+<blockquote>
+<ol>
+<li>EAX： 累加器</li>
+<li>EBX： 基址寄存器</li>
+<li>ECX： 计数器</li>
+<li>EDX： 数据寄存器</li>
+<li>ESI： 源变址寄存器</li>
+<li>EDI： 目的变址寄存器</li>
+<li>EBP： 扩展基址指针寄存器</li>
+<li>ESP： 栈指针寄存器</li>
+<li>EIP： 指令指针寄存器</li>
+</ol>
+<blockquote>
+<p>==大小都是4个字节==</p>
+<blockquote>
+<ol>
+<li>
+<p>EBP： EBP在栈中运用最广，刚开始没有什么需要特别注意的 ;)</p>
+</li>
+<li>
+<p>ESP： ESP指向栈区域的栈顶位置。栈是一个存放即将会被用到的数据的地方，你可以去搜索一下push/pop 指令了解更多栈知识。</p>
+</li>
+<li>
+<p>EIP： EIP指向下一个将会被执行的指令。</p>
+</li>
+</ol>
+<hr>
+<p><strong>栈（stack）：后进先出的数据结构</strong></p>
+<p><strong>堆（heap）：经过排列的树形数据结构，通常指二叉堆，存取是随意的</strong></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>有一些寄存器是16位甚至8位的，是不能直接寻址的。</p>
+<blockquote>
+<p>
+  <img src="/img/%e6%b1%87%e7%bc%96%e3%80%81%e9%80%86%e5%90%91%e5%b7%a5%e7%a8%8b%e5%9f%ba%e7%a1%80/1565342053303.png" alt="1565342053303">
+
+</p>
+</blockquote>
+<p>一个寄存器可以这样看：</p>
+<p>
+  <img src="/img/%e6%b1%87%e7%bc%96%e3%80%81%e9%80%86%e5%90%91%e5%b7%a5%e7%a8%8b%e5%9f%ba%e7%a1%80/1565342088084.png" alt="1565342088084">
+
+</p>
+<p>EAX是名字，AX是低16位部分，又分为低8位AL，高8位AH</p>
+<p><strong>了解：</strong></p>
+<p>i.单字节（8位）寄存器：</p>
+<blockquote>
+<ol>
+<li>AL and AH</li>
+<li>BL and BH</li>
+<li>CL and CH</li>
+<li>DL and DH</li>
+</ol>
+</blockquote>
+<p>ii.单字（16位）寄存器：这些寄存器大小为一个字（=2字节=16位）。一个单字寄存器包含两个单字节寄存器。通常根据功能区分</p>
+<p>1.通用寄存器:</p>
+<blockquote>
+<ol>
+<li>AX (单字=16位) = AH + AL -&gt; 其中‘+’号并不代表把它们代数相加。AH和AL寄存器是相互独立的，只不过都是AX寄存器的一部分，所以你改变AH或AL (或者都改变) ，AX寄存器也会被改变。</li>
+<li>-&gt; &lsquo;accumulator&rsquo;(累加器)：用于进行数学运算</li>
+<li>BX -&gt; &lsquo;base&rsquo;(基址寄存器)：用来连接栈(之后会说明)</li>
+<li>CX -&gt; &lsquo;counter&rsquo;(计数器)：</li>
+<li>DX -&gt; &lsquo;data&rsquo;(数据寄存器)：大多数情况下用来存放数据</li>
+<li>DI -&gt; &lsquo;destination index&rsquo;(目的变址寄存器): 例如将一个字符串拷贝到DI</li>
+<li>SI -&gt; &lsquo;source index&rsquo;(源变址寄存器): 例如将一个字符串从SI拷贝</li>
+</ol>
+</blockquote>
+<p>2.索引寄存器（指针寄存器）:</p>
+<blockquote>
+<ol>
+<li>BP -&gt; &lsquo;base pointer&rsquo;(基址指针寄存器)：表示栈区域的基地址</li>
+<li>SP -&gt; &lsquo;stack pointer&rsquo;(栈指针寄存器)：表示栈区域的栈顶地址</li>
+</ol>
+</blockquote>
+<p>3.段寄存器：</p>
+<blockquote>
+<ol>
+<li>CS -&gt; &lsquo;code segment&rsquo;(代码段寄存器)：用于存放应用程序代码所在段的段基址(之后会说明)</li>
+<li>DS -&gt; &lsquo;data segment&rsquo;(数据段寄存器)：用于存放数据段的段基址(以后会说明)</li>
+<li>ES -&gt; &rsquo;extra segment&rsquo;(附加段寄存器)：用于存放程序使用的附加数据段的基地址</li>
+<li>SS -&gt; &lsquo;stack segment&rsquo;(栈段寄存器)：用于存放栈段的段基址(以后会说明)</li>
+</ol>
+</blockquote>
+<p>4.指令指针寄存器：</p>
+<blockquote>
+<p>IP -&gt; &lsquo;instruction pointer&rsquo;(指令指针寄存器)：指向下一个指令 ;)</p>
+</blockquote>
+<p>iii. 双字(32位)寄存器：</p>
+<p>2 字= 4 字节= 32 位， EAX、EBX、ECX、EDX、EDI……</p>
+<p>如果16位寄存器前面加了‘E’，就代表它们是32位寄存器。例如，AX=16位，EAX=32位。</p>
+<h2 id="标志寄存器">标志寄存器</h2>
+<p>32位的CPU中有32个不同的标志寄存器，只关心期中三个：ZF、OF、CF。标志寄存器是一个标志，==只能是0或者1，决定了是否要执行某个指令==，可以知道程序在这一步是否会跳转。</p>
+<h3 id="z-flag零标志">Z-Flag（零标志）</h3>
+<p>ZF是破解中用的最多的寄存器（通常90%）。若上一个运算结果为0，则值为1，否则为0。</p>
+<h3 id="the-o-flag溢出标志">The O-Flag（溢出标志）</h3>
+<p>OF占约4%，若上一步改变了某寄存器的最高有效位，则会被设置为1。操作产生溢出时也会被设置为1。</p>
+<h3 id="the-c-flag进位标志">The C-Flag（进位标志）</h3>
+<p>CF占1%，产生溢出，就会被设置为1。</p>
+<h2 id="段偏移">段偏移</h2>
+<p>内存中的一个段储存了指令（CS）、数据（DS）、堆栈（SS）或者其他段（ES）。每一个段都有一个偏移量，在32位应用程序下，这些偏移量由00000000到FFFFFFFF。段和偏移量的标准形式如下：</p>
+<blockquote>
+<p>段：偏移量 = 把它们放在一起就是内存中一个具体的地址。</p>
+<p>比喻：一个段是一本书的某一页；偏移量是一页的某一行。</p>
+</blockquote>
+<h2 id="堆和栈">堆和栈</h2>
+<p><strong>内存中的栈区处于相对较高的地址以地址的增长方向为上的话，栈地址是向下增长的。</strong></p>
+<p>栈中分配局部变量空间，堆区是向上增长的用于分配程序员申请的内存空间。另外还有静态区是分配静态变量，全局变量空间的；只读区是分配常量和程序代码空间的；以及其他一些分区。</p>
+<blockquote>
+<p>PUSH 命令是向栈中压入数据，POP命令就是从栈中取出最后放入的数据并且把它存进具体的寄存器中。</p>
+</blockquote>
+<h3 id="1堆和栈申请和回收方式不同">1、堆和栈申请和回收方式不同</h3>
+<ul>
+<li>栈：由系统自动分配空间，自动回收</li>
+<li>堆：由程序员自己申请空间，不释放就可以一直访问</li>
+</ul>
+<h3 id="2申请后系统响应">2、申请后系统响应</h3>
+<ul>
+<li>栈：只要栈剩余空间,就自动分配空间，否则提示栈溢出</li>
+<li>堆：==操作系统有一个记录空闲内存地址的链表==，系统收到空间申请会遍历该链表，寻找第一个大于申请空间的结点。并将结点从空闲结点链表删除，将空间分配给程序。==在这块内存空间的首地址会记录分配空间的大小，所以delete才能正确释放空间。==多余空间会放回空闲链表。</li>
+</ul>
+<h3 id="3堆申请效率比栈低">3、堆申请效率比栈低</h3>
+<h3 id="4申请大小的限制">4、申请大小的限制</h3>
+<ul>
+<li>栈：Win下，栈是==连续的内存区域==，==向低地址扩展的数据结构。栈顶地址和栈的最大容量是系统预先规定好的。==Win下栈大小为1M，申请空间超出剩余会提示overflow。</li>
+<li>堆：向高地址拓展的数据结构，不连续的内存区域。（因为用链表储存）**链表遍历从低地址到高地址。**堆的大小受限于计算机系统中有效的虚拟内存。</li>
+</ul>
+<h3 id="5堆和栈中的存储内容">5、堆和栈中的存储内容</h3>
+<ul>
+<li>栈大小有限，用子函数有物理意义（？？？）</li>
+<li>栈：调用函数时，第一个进栈的是主函数中函数调用后的下一条指令（下一条可执行语句）==的地址==，然后是函数的各个参数，在大多数C编译器中，参数是由右往左入栈的，然后是函数中的局部变量。==静态变量不入栈。==</li>
+</ul>
+<p>==调用结束后，局部变量先出栈，然后是参数，最后栈顶指向最开始存的地址，也就是主函数中的下一条指令，程序由该点继续运行==</p>
+<ul>
+<li>堆:一般是在堆的头部用一个字节存放堆的大小。堆中具体内容由程序员安排。</li>
+</ul>
+<h3 id="6存取效率的比较">6、存取效率的比较</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8be9fd">char</span> s1[] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;aaaaaaaaaaaaaaa&#34;</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">char</span> <span style="color:#ff79c6">*</span>s2 <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;bbbbbbbbbbbbbbbbb&#34;</span>; 
+</span></span></code></pre></div><p>aaaaaaaaaaa是在运行时刻赋值的；（字符数组有连续空间存放值）放在栈中。
+而bbbbbbbbbbb是在编译时就确定的；（只有4字节的空间用于存放地址）放在堆中。
+==在以后的存取中，在栈上的数组比指针所指向的字符串(例如堆)快==</p>
+<h2 id="指令">指令</h2>
+<p>==所有值通常以16进制形式储存的。==</p>
+<p>大部分指令有两个操作符（例如add EAX,EBX）,有些是一个（例如not EAX），还有一些是三个操作符（例如IMUL EAX，EDX，64）。如果使用“DWORD PTR [XXX]”就表示使用了内存中偏移量为XXX的数据。<strong>Win+Intel的电脑大多采用“低尾端法”，所以字节在内存中储存方式是倒过来的。</strong></p>
+<blockquote>
+<p>大部分有两个操作符的指令都是以下这种格式（以add举例）</p>
+<pre tabindex="0"><code>add eax,ebx                           寄存器, 寄存器
+add eax,123                           寄存器, 数值
+add eax,dword ptr [404000]            寄存器, Dword  指针 [数值]
+add eax,dword ptr [eax]               寄存器, Dword  指针 [寄存器值]
+add eax,dword ptr [eax+00404000]      寄存器, Dword  指针 [寄存器值+数值]
+add dword ptr [404000],eax            Dword 指针[数值], 寄存器
+add dword ptr [404000],123            Dword 指针[数值], 数值
+add dword ptr [eax],eax               Dword 指针[寄存器值], 寄存器
+add dword ptr [eax],123               Dword 指针[寄存器值], 数值
+add dword ptr [eax+404000],eax        Dword 指针[寄存器值+数值], 寄存器add dword ptr [eax+404000],123        Dword 指针[寄存器值+数值], 数值
+</code></pre></blockquote>
+<h3 id="add">ADD</h3>
+<p>ADD 被加数，加数</p>
+<p>将一个数值加在一个寄存器上或者一个内存地址上。</p>
+<p>add eax,123 == eax = eax +123</p>
+<p>加法指令对ZF，OF，CF都有影响</p>
+<h3 id="and">AND</h3>
+<p>AND 目标数，原数</p>
+<p>AND运算对两个数进行逻辑与运算。</p>
+<p>会清空OF,CF标记，设置ZF标记。</p>
+<h3 id="call">CALL</h3>
+<blockquote>
+<p>CALL 404000                 最常见: CALL 地址
+CALL EAX                    CALL 寄存器 - 如果寄存器存的值为404000，那就等同于第一种情况
+CALL DWORD PTR [EAX]        CALL [EAX]偏移量所指向的地址
+CALL DWORD PTR [EAX+5]      CALL [EAX+5]偏移量所指向的地址</p>
+</blockquote>
+<h3 id="cdq">==CDQ==</h3>
+<p>通常出现在除法前面，将EDX的所有位变成EAX最高位的值</p>
+<p>比如当EAX&gt;=80000000h时，其二进制最高位为1，则EDX被32位全赋值为1，即FFFFFFFF</p>
+<p>若EAX&lt;80000000，则其二进制最高位为0，EDX为00000000。</p>
+<p>然后将EDX：EAX组成新数(64位)：FFFFFFFF 80000000</p>
+<h3 id="cmpcompare">CMP（compare）</h3>
+<p>CMP 目标数，原数</p>
+<p>比较两个值并且标记CF、OF、ZF:</p>
+<blockquote>
+<p>CMP     EAX, EBX               比较eax和ebx是否相等，如果相等就设置ZF为1
+CMP     EAX,[404000]           比较eax和偏移量为[404000]的值是否相等
+CMP     [404000],EAX           比较[404000]是否与eax相等</p>
+</blockquote>
+<h3 id="decdecrease">DEC(decrease)</h3>
+<p>DEC something</p>
+<p>自减</p>
+<blockquote>
+<p>dec eax                              eax自减1
+dec [eax]                            偏移量为eax的值自减1
+dec [401000]                         偏移量为401000的值自减1
+dec [eax+401000]                     偏移量为eax+401000的值自减1</p>
+</blockquote>
+<p>可以标记ZF、OF</p>
+<h3 id="divdivision除">DIV（division除）</h3>
+<p>DIV 除数</p>
+<p>无符号除法</p>
+<p>DIV指令用来将EAX除以除数（无符号除法），被除数通常是EAX，结果也储存在EAX中，而被除数对除数取的模存在除数中。</p>
+<blockquote>
+<p>mov eax,64                       EAX = 64h = 100
+mov ecx,9                        ECX = 9
+div ecx                          EAX除以ECX</p>
+</blockquote>
+<p>EAX = 100/9 = 0B(11)并且ECX = 100 MOD 9 = 1</p>
+<p>可以标记CF、OF、ZF</p>
+<h3 id="idiv整除">IDIV（整除）</h3>
+<p>IDIV 除数</p>
+<p>有符号除法</p>
+<p>执行方法同div一样</p>
+<h3 id="incincrease">INC（increase）</h3>
+<p>自加</p>
+<p>可以标记ZF、OF</p>
+<p><strong>INT</strong></p>
+<p>语法: int 目标数</p>
+<p>INT 的目标数必须是产生一个整数(例如：int 21h)，类似于call调用函数，INT指令是调用程序对硬件控制，不同的值对应着不同的功能。</p>
+<p>具体参照硬件说明书。</p>
+<p><strong>JUMPS</strong></p>
+<p>这些都是最重要的跳转指令和触发条件(重要用*标记，最重要用**标记)：</p>
+<pre tabindex="0"><code>指令                条件                    条件
+JA*          -    如果大于就跳转(无符号)      - CF=0 and ZF=0
+JAE          -    如果大于或等于就跳转(无符号)- CF=0
+JB*          -    如果小于就跳转(无符号)   - CF=1
+JBE          -    如果小于或等于就跳转(无符号)- CF=1 or ZF=1
+JC           -    如果CF被标记就了跳转       - CF=1
+JCXZ         -    如果CX等于0就跳转      - CX=0
+JE**         -    如果相等就跳转        - ZF=1
+JECXZ        -    如果ECX等于0就跳转       - ECX=0
+JG*          -    如果大于就跳转(有符号)   - ZF=0 and SF=OF (SF = Sign Flag)
+JGE*         -    如果大于或等于就跳转(有符号) - SF=OF
+JL*          -    如果小于就跳转(有符号)    - SF != OF (!= is not)
+JLE*         -    如果小于或等于就跳转(有符号 - ZF=1 and OF != OF
+JMP**        -    跳转             - 强制跳转
+JNA          -    如果不大于就跳转(无符号)   - CF=1 or ZF=1
+JNAE         -    如果不大于等于就跳转(无符号) - CF=1
+JNB          -    如果不小于就跳转(无符号)   - CF=0
+JNBE         -    如果不小于等于就跳转(无符号) - CF=0 and ZF=0
+JNC          -    如果CF未被标记就跳转     - CF=0
+JNE**        -    如果不等于就跳转       - ZF=0
+JNG          -    如果不大于就跳转(有符号)   - ZF=1 or SF!=OF
+JNGE         -    如果不大于等于就跳转(有符号) - SF!=OF
+JNL          -    如果不小于就跳转(有符号)   - SF=OF
+JNLE         -    如果不小于等于就跳转(有符号) - ZF=0 and SF=OF
+JNO          -    如果OF未被标记就跳转     - OF=0
+JNP          -    如果PF未被标记就跳转     - PF=0
+JNS          -    如果SF未被标记就跳转      - SF=0
+JNZ          -    如果不等于0就跳转      - ZF=0
+JO           -    如果OF被标记就跳转     - OF=1
+JP           -    如果PF被标记就跳转     - PF=1
+JPE          -    如果是偶数就跳转       - PF=1
+JPO          -    如果是奇数就跳转       - PF=0
+JS           -    如果SF被标记就跳转     - SF=1
+JZ           -    如果等于0就跳转      - ZF=1
+</code></pre><p><strong>LEA (有效地址传送)</strong></p>
+<p>语法：LEA 目的数、源数</p>
+<p>LEA可以看成和MOV差不多的指令LEA ，它本身的功能并没有被太广泛的使用，反而广泛运用在快速乘法中：</p>
+<p>lea eax，dword ptr [4*ecx+ebx]</p>
+<p>将eax赋值为 4*ecx+ebx</p>
+<p><strong>MOV (传送)</strong></p>
+<p>语法: MOV 目的数,源数</p>
+<p>这是一个很简单的指令，MOV指令将源数赋值给目的数，并且源数值保持不变</p>
+<p>这里有一些MOV的变形：</p>
+<p>MOVS/MOVSB/MOVSW/MOVSD EDI, ESI：这些变形能将ESI指向的内容传送到EDI指向的内容中去</p>
+<p>MOVSX：MOVSX指令将单字或者单字节扩展为双字或者双字节传送，原符号不变</p>
+<p>MOVZX：MOVZX扩展单字节或单字为双字节或双字并且用0填充剩余部分(通俗来说就是将源数取出置于目的数，其他位用0填充)</p>
+<p><strong>MUL (multiply乘法)</strong></p>
+<p>语法：MUL 数值</p>
+<p>这个指令同IMUL一样，不过MUL可以乘无符号数。</p>
+<p><strong>NOP (无操作)</strong></p>
+<p>语法：NOP</p>
+<p>这个指令说明不做任何事</p>
+<p>所以它在逆向中运用范围最广</p>
+<p><strong>OR (逻辑或)</strong></p>
+<p>语法：OR 目的数,源数</p>
+<p>OR指令对两个值进行逻辑或运算</p>
+<p>这个指令会清空OF、CF标记，设置ZF标记</p>
+<p>为了更好的理解OR，思考下面二进制串:</p>
+<pre tabindex="0"><code>10010101100101001101
+</code></pre><p>如果对它们进行逻辑与运算，结果将是1101011111。</p>
+<p>只有当两边同为0时其结果为0，否则就为1。你可以用计算器尝试计算。希望你能理解为什么，最好自己动手算一算</p>
+<p><strong>POP</strong></p>
+<p>语法：POP 目的地址</p>
+<p>POP指令将栈顶第一个字传送到目的地址。 每次POP后，ESP(栈指针寄存器)都会增加以指向新栈顶</p>
+<p><strong>PUSH</strong></p>
+<p>语法：PUSH 值</p>
+<p>PUSH是POP的相反操作，它将一个值压入栈并且减小栈顶指针值以指向新栈顶。</p>
+<p><strong>REP/REPE/REPZ/REPNE/REPNZ</strong></p>
+<p>语法: REP/REPE/REPZ/REPNE/REPNZ ins</p>
+<p>重复上面的指令：直到CX=0。ins必须是一个操作符，比如CMPS、INS、LODS、MOVS、OUTS、SCAS 或 STOS</p>
+<p><strong>RET (return返回)</strong></p>
+<p>语法：RET</p>
+<p>RET digit</p>
+<p>RET指令的功能是从一个代码区域中退出到调用CALL的指令处。</p>
+<p>RET digit在返回前会清理栈</p>
+<p><strong>SUB (减)</strong></p>
+<p>语法：SUB 目的数,源数</p>
+<p>SUB与ADD相反，它将源数减去目的数，并将结果储存在目的数中</p>
+<p>SUB可以标记ZF、OF、CF</p>
+<p><strong>TEST</strong></p>
+<p>语法：TEST 操作符、操作符</p>
+<p>这个指令99%都是用于”TEST EAX, EAX”，它执行与AND相同的功能，但是并不储存数据。如果EAX=0就会标记ZF，如果EAX不是0，就会清空ZF</p>
+<p><strong>XOR</strong></p>
+<p>语法：XOR 目的数,源数</p>
+<p>XOR指令对两个数进行异或操作</p>
+<p>这个指令清空OF、CF，但会标记ZF</p>
+<p>为了更好的理解，思考下面的二进制串：</p>
+<pre tabindex="0"><code>1001010110
+0101001101
+</code></pre><p>如果异或它们，结果将是1100011011</p>
+<p>如果两个值相等，则结果为0，否则为1。</p>
+<p>很多情况下我们会使用”XOR EAX, EAX”，这个操作是将EAX赋值为0，因为当一个值异或其自身，就过都是0。你最好自己动手尝试下，这样可以帮助你理解得更好</p>
+<h3 id="mov">MOV</h3>
+<p>MOV AX , 2000H 将AX传给2000H</p>
+<h3 id="逻辑操作符">逻辑操作符</h3>
+<p>
+  <img src="/img/%e6%b1%87%e7%bc%96%e3%80%81%e9%80%86%e5%90%91%e5%b7%a5%e7%a8%8b%e5%9f%ba%e7%a1%80/Snipaste_2019-08-12_22-36-43.jpg" alt="Snipaste_2019-08-12_22-36-43">
+
+</p>
+<h2 id="mips汇编">MIPS汇编</h2>
+<p><a href="https://www.cnblogs.com/thoupin/p/4018455.html">link</a></p>
+<p>xori 异或</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80/" data-toggle="tooltip" data-placement="top" title="汇编基础">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-toggle="tooltip" data-placement="top" title="数据库复习笔记">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

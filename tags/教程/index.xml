@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>教程 on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/%E6%95%99%E7%A8%8B/</link>
+    <description>Recent content in 教程 on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git同步到github和gitee</title>
+      <link>https://mrbelieve.tech/post/git%E5%90%8C%E6%AD%A5%E5%88%B0github%E5%92%8Cgitee/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/git%E5%90%8C%E6%AD%A5%E5%88%B0github%E5%92%8Cgitee/</guid>
+      <description>==按照此说明做下来保证可用，但我也还没完全研究透彻所以有诸多不足请多原谅== 一、准备工作 1、建立一个仓库 https://gitee.com/ 2、下载git https://git-scm.com/ 可以跟随这个 https://blog.csdn.net/sishen47k/article/details/80211002 安</description>
+    </item>
+    
+  </channel>
+</rss>

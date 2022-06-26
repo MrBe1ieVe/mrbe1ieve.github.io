@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="操作系统复习" />
+    <meta property="og:title" content="操作系统复习" />
+    <meta property="twitter:title" content="操作系统复习" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>操作系统复习 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                    </div>
+                    <h1>操作系统复习</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Monday, January 13, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="对不起我看吐了考炸了"><strong>对不起我看吐了，考炸了</strong></h2>
+<h2 id="操作系统的目标">操作系统的目标</h2>
+<p><strong>方便性，有效性，可扩充性和开放性</strong></p>
+<p>可扩充性：采用微内核结构 P30</p>
+<h3 id="发展主要动力">发展主要动力</h3>
+<ul>
+<li>不断提高计算机资源利用率</li>
+<li>方便用户</li>
+<li>器件的更新换代</li>
+<li>体系结构的发展</li>
+<li>新的应用需求</li>
+</ul>
+<h3 id="多道程序设计的基本概念">多道程序设计的基本概念</h3>
+<p>利用I/O操作的空闲时间，调度B程序运行，B空闲调度C等 P8</p>
+<h4 id="优缺点">优缺点</h4>
+<ul>
+<li>资源利用率高</li>
+<li>吞吐量大</li>
+<li>平均周转时间长</li>
+<li>没有交互能力</li>
+</ul>
+<p>==操作系统定义为:一组能有效组织和管理硬件和软件资源，合理进行调度，方便用户使用程序的集合==</p>
+<h3 id="分时系统the-sharing-system">分时系统（The Sharing System）</h3>
+<p>在一台主机上连接多个终端，允许多个用户同时通过终端以交互方式使用计算机，共享主机资源</p>
+<h4 id="特征">特征</h4>
+<ul>
+<li>多路性</li>
+<li>独立性</li>
+<li>及时性</li>
+<li>交互性</li>
+</ul>
+<h2 id="基本特性">基本特性</h2>
+<p><strong>有并发，共享，虚拟，异步四个基本特征</strong></p>
+<h3 id="并行与并发">并行与并发</h3>
+<p>并行：多个程序同时执行</p>
+<p>并发：分时交替执行（为主）</p>
+<h4 id="进程">进程</h4>
+<p>指在系统中可以独立运行并且是资源分配的基本单元</p>
+<h3 id="共享">共享</h3>
+<p>互斥共享方式和同时访问方式</p>
+<h3 id="虚拟">虚拟</h3>
+<p>（没有那么多但感觉有那么多）</p>
+<ul>
+<li>时分复用技术 （空闲时给其他用户服务</li>
+<li>空分复用技术    （储存器空闲时存储和运行程序</li>
+</ul>
+<h3 id="异步">异步</h3>
+<p>（同时开始，不同时结束）</p>
+<p>进程以不可预知的速度进行</p>
+<h2 id="存储器管理功能">存储器管理功能</h2>
+<ul>
+<li>内存分配</li>
+<li>内存保护</li>
+<li>地址映射</li>
+<li>内存扩充</li>
+</ul>
+<h2 id="os结构设计">OS结构设计</h2>
+<p>第一代无结构OS，第二代模块化OS，第三代分层式OS</p>
+<h2 id="进程-1">进程</h2>
+<p>PCB进程控制块（Process Control Block）</p>
+<p>定义：</p>
+<ul>
+<li>进程的程序的一次执行</li>
+<li>进程是一个程序及其数据 顺序执行的活动</li>
+<li>进程是系统进行资源分配的独立单元</li>
+</ul>
+<h3 id="特性">特性</h3>
+<ul>
+<li>动态性</li>
+<li>并发性</li>
+<li>独立性</li>
+<li>异步性</li>
+</ul>
+<h2 id="进程状态转换">进程状态转换</h2>
+<p>==P42-43==</p>
+<h2 id="操作系统内核">操作系统内核</h2>
+<p>处理机两种执行状态：系统态和用户态</p>
+<h2 id="进程同步">进程同步</h2>
+<h3 id="临界资源-生产者消费者问题">临界资源-生产者消费者问题</h3>
+<h3 id="设置临界区">设置临界区</h3>
+<ul>
+<li>进入区 判断资源是否被访问</li>
+<li>临界区</li>
+<li>退出区 将正被访问标志恢复为未被访问</li>
+<li>剩余区</li>
+</ul>
+<h3 id="同步规则">同步规则</h3>
+<ul>
+<li>空闲让进</li>
+<li>忙则等待</li>
+<li>有限等待 有限时间内能访问</li>
+<li>让权等待 不能进入则释放处理机</li>
+</ul>
+<h2 id="利用信号量实现进程互斥">利用信号量实现进程互斥</h2>
+<p>设mutex为互斥信号量，=1都未进入临界区，=0有一个进入运行，另一阻塞。= -1有一正在运行，另一等待。</p>
+<h2 id="线程">线程</h2>
+<p>调度和分派的基本单位，能独立运行的基本单位</p>
+<p>切换时仅保存和设置少量寄存器内容，切换代价远低于进程</p>
+<h2 id="处理机调度层次">处理机调度层次</h2>
+<h3 id="高级调度">高级调度</h3>
+<p>调度对象是作业，多用于多道批处理</p>
+<h3 id="低级调度">低级调度</h3>
+<p>决定就绪队列哪个进程获得处理机</p>
+<h3 id="中级调度">中级调度</h3>
+<p>提高内存利用率和系统吞吐量（把暂时不运行的进程调至外存，此时进程状态为就绪/挂起状态）</p>
+<h2 id="公式">公式</h2>
+<h3 id="cpu利用率">CPU利用率</h3>
+<p>CPU利用率 = CPU有效工作时间/(CPU有效工作时间 + CPU空闲等待时间)</p>
+<h3 id="平均周转时间">平均周转时间</h3>
+<p>T = 1/n(T1+T2 ······ +Tn)</p>
+<h3 id="平均带权周转时间">平均带权周转时间</h3>
+<p>W = 1/n(作业周转时间Ti/提供服务Ts + ······ ) i=1,2,3,4&hellip;..</p>
+<h3 id="系统吞吐量大">系统吞吐量大</h3>
+<p>与作业平均长度有关，单纯提高吞吐量可选择多的短作业运行</p>
+<h2 id="分时系统目标">分时系统目标</h2>
+<ul>
+<li>响应时间快</li>
+<li>均衡性（相应快慢和请求的复杂性相适应）</li>
+</ul>
+<h2 id="实时系统目标">实时系统目标</h2>
+<ul>
+<li>截止时间的保证</li>
+<li>可预测性</li>
+</ul>
+<h2 id="作业调度算法">作业调度算法</h2>
+<h3 id="fcfsfirst-come-first-server先来先服务">FCFS（First Come First Server）先来先服务</h3>
+<h3 id="sjf-short-job-first-短作业优先">SJF (Short Job First) 短作业优先</h3>
+<h3 id="psa-priority-scheduling-algorithm-优先级调度算法">PSA (Priority-Scheduling Algorithm) 优先级调度算法</h3>
+<p>基于作业紧迫程度</p>
+<h3 id="hrrn-highest-response-ratio-next-高响应比优先调度算法">HRRN (Highest Response Ratio Next) 高响应比优先调度算法</h3>
+<p>优先权 = (等待时间 + 要求服务时间) / 要求服务时间</p>
+<h3 id="rr--round-robin-基于时间片的轮转调度算法">RR ( Round Robin) 基于时间片的轮转调度算法</h3>
+<h3 id="edf-earliest-deadline-first-最早截止时间优先算法">EDF (Earliest Deadline First) 最早截止时间优先算法</h3>
+<h3 id="llf-least-laxity-first-最低松弛度算法">LLF (Least Laxity First) 最低松弛度算法</h3>
+<p>松弛度 = (必须完成时间 - 本身运行时间 - 当前时间)</p>
+<h2 id="死锁">死锁</h2>
+<h3 id="定义">定义</h3>
+<p>一组进程中每一个进程都在等待只有其他进程才能引发的时间</p>
+<h3 id="必要条件">必要条件</h3>
+<ul>
+<li>互斥条件</li>
+<li>请求和保持条件</li>
+<li>不可抢占条件</li>
+<li>循环等待条件</li>
+</ul>
+<h2 id="银行家算法-p121">银行家算法 P121</h2>
+<p>判断 需求是否小于等于需要的</p>
+<p>判断 需要是否小于等于可用的</p>
+<p>模拟分配并检测是否有安全序列</p>
+<h2 id="磁盘缓存">磁盘缓存</h2>
+<p>在内存中暂存磁盘中读出的数据</p>
+<h2 id="固定分区分配">固定分区分配</h2>
+<ul>
+<li>
+<p>相等</p>
+</li>
+<li>
+<p>不相等 建立表，记录分区信息</p>
+</li>
+</ul>
+<h2 id="动态分区分配">动态分区分配</h2>
+<p>常见数据结构:</p>
+<ul>
+<li>空闲分区链</li>
+<li>空闲分区表</li>
+</ul>
+<h2 id="空闲分区分配算法">空闲分区分配算法</h2>
+<h3 id="ff-first-fit-首次适应">FF (First Fit) 首次适应</h3>
+<p>从头找，找到空间再划分内存给作业</p>
+<h3 id="nf-next-fit-循环首次适应">NF (Next fit) 循环首次适应</h3>
+<p>从上一次查找到的空闲区的下一个开始查找</p>
+<h3 id="bf-best-fit-最佳适应算法">BF (Best Fit) 最佳适应算法</h3>
+<p>把能满足要求、最小的空闲区分配，但碎片很多</p>
+<h3 id="wf-worst-fit最坏适应算法">WF (Worst Fit)最坏适应算法</h3>
+<p>总挑选最大的空闲区进行分配</p>
+<p>优点 剩下的空闲区不至于太小 查找效率高</p>
+<h2 id="分页储存">分页储存</h2>
+<h3 id="分页储存-1">分页储存</h3>
+<h4 id="页面和物理块">页面和物理块</h4>
+<p>用户程序的地址空间分为若干区域，成为页。</p>
+<p>内存中同样划分，成为块</p>
+<p>地址结构：</p>
+<p>高20位 页号 低12位 位偏移量</p>
+<h4 id="页表">页表</h4>
+<p>记录页在内存中对应的物理块号</p>
+<h2 id="分段管理">分段管理</h2>
+<p>编程需要：</p>
+<ul>
+<li>信息共享</li>
+<li>信息保护</li>
+<li>动态增长</li>
+<li>动态链接</li>
+</ul>
+<p>作业地址被分为多个段，所以呈现出二维特性</p>
+<p>分段地址：</p>
+<p>高16位 段号 低16位 段内地址</p>
+<h3 id="段表">段表</h3>
+<p>各个段离散的放入内存不同分区中，需要为每个进程建立段映射表</p>
+<p>实现从逻辑段到物理内存区的映射</p>
+<h2 id="虚拟存储器定义">虚拟存储器定义</h2>
+<p>具有请求调入和置换功能，从逻辑上对内存扩充的存储器系统</p>
+<h2 id="特征-1">特征</h2>
+<ul>
+<li>多次性 分多次装入内存</li>
+<li>对换性</li>
+<li>虚拟性</li>
+</ul>
+<h2 id="页面置换算法">页面置换算法</h2>
+<h3 id="optimal-最佳置换算法">Optimal 最佳置换算法</h3>
+<p>预测最久不使用的页并进行替换。</p>
+<h3 id="fifo-先进先出页面置换算法">FIFO 先进先出页面置换算法</h3>
+<p>总淘汰最先进入的（驻留最久的）</p>
+<h3 id="lru-least-recent-used-最近最久未使用">LRU (Least Recent Used) 最近最久未使用</h3>
+<p>选择最近最久未使用的页面</p>
+<p>LRU和OPT，加物理块数不会增加缺页次数，FIFO不一定能减少缺页次数</p>
+<h2 id="抖动">抖动</h2>
+<h3 id="原因">原因</h3>
+<p>运行的进程太多，频繁出新缺页，进程大部分时间都用于页面的换进换出</p>
+<h3 id="预防">预防</h3>
+<ul>
+<li>局部置换策略 只在分配给自己的内存中置换</li>
+</ul>
+<h2 id="请求分段储存管理">请求分段储存管理</h2>
+<h3 id="共享段表">共享段表</h3>
+<h3 id="分段保护">分段保护</h3>
+<ul>
+<li>越界检查</li>
+<li>存取控制检查</li>
+<li>环保护机构 类似系统的内核等级</li>
+</ul>
+<h2 id="io基本功能">I/O基本功能</h2>
+<ul>
+<li>方便用户使用</li>
+<li>提高CPU和IO设备利用率</li>
+<li>共享设备时提供方便</li>
+</ul>
+<h2 id="中断处理程序">中断处理程序</h2>
+<ul>
+<li>测定是否有未响应的中断信号</li>
+<li>保护被中断进程的CPU环境</li>
+<li>转入相应的设备处理程序</li>
+<li>中断处理</li>
+<li>恢复CPU现场并退出中断</li>
+</ul>
+<p>图p206</p>
+<h2 id="dma控制器">DMA控制器</h2>
+<h3 id="主机-控制器接口">主机-控制器接口</h3>
+<ul>
+<li>DR 数据寄存器</li>
+<li>MAR 内存地址寄存器</li>
+<li>DC 数据计数器</li>
+<li>CR 命令/状态寄存器</li>
+</ul>
+<p>DC，MAR，CR获得从CPU传来的数据和命令，DR获取数据，并传入MAR</p>
+<p>设置MAR和DC初值 -&gt; 启动DMA -&gt; 使用存储器周期传送数据 -&gt; 存储器地址+1，DC-1 -&gt; 循环</p>
+<p>若DC = 0 请求中断</p>
+<h2 id="与设备无关io">与设备无关IO</h2>
+<ul>
+<li>以物理设备名使用设备  不灵活，利用率也不高</li>
+<li>逻辑设备名</li>
+</ul>
+<h3 id="设备控制表dct">设备控制表DCT</h3>
+<ul>
+<li>设备类型</li>
+<li>设备标志符</li>
+<li>设备状态</li>
+<li>指向控制器表的指针</li>
+<li>重复执行次数或时间</li>
+<li>设备队列的队首指针</li>
+</ul>
+<h3 id="控制器控制表coct">控制器控制表COCT</h3>
+<p>记录控制器情况</p>
+<h3 id="lut-logical-unit-table-逻辑设备表">LUT (Logical Unit Table) 逻辑设备表</h3>
+<p>逻辑设备名 | 物理设备名 | 驱动程序入口地址</p>
+<p>/dev/tty      |  3                |  1024</p>
+<p>逻辑设备表 | 系统设备表指针</p>
+<p>/dev/tty.     |    3</p>
+<h2 id="缓冲">缓冲</h2>
+<p>CPU和IO设备速度不匹配</p>
+<p>利用缓冲寄存器暂存数据</p>
+<h2 id="磁盘调度算法">磁盘调度算法</h2>
+<h3 id="fcfs">FCFS</h3>
+<h3 id="sstf-shortest-search-time-first-最短寻道时间优先">SSTF (Shortest Search Time First) 最短寻道时间优先</h3>
+<h2 id="基于扫描的磁盘调度">基于扫描的磁盘调度</h2>
+<h3 id="scan-扫描算法-又称电梯调度算法">SCAN 扫描算法 又称电梯调度算法</h3>
+<p>要访问的磁道与刺头当前距离较近</p>
+<h2 id="文件结构">文件结构</h2>
+<p>文件逻辑结构</p>
+<p>文件由一系列逻辑记录组成，是可以直接处理的数据及其结构，独立于文件的物理特性，又称文件组织</p>
+<p>物理结构</p>
+<p>对磁盘管理器的要求</p>
+<ul>
+<li>有效地利用存储空间</li>
+<li>提高磁盘IO速率</li>
+<li>提高磁盘系统可靠性</li>
+</ul>
+<p>外存组织方式</p>
+<ul>
+<li>连续</li>
+<li>链接</li>
+<li>索引</li>
+</ul>
+<h2 id="链接组织方式">链接组织方式</h2>
+<p>显式 表中放指针，链表、隐式 链表</p>
+<h2 id="fat">FAT</h2>
+<p>分成卷</p>
+<p>一个磁盘可多个卷，一个卷可由多个磁盘组成</p>
+<p>文件第一个盘号放在FCB中，FAT每个表项最后放下一个盘块号</p>
+<h3 id="簇">簇</h3>
+<p>是一组相邻的上去，作为虚拟扇区。盘块分配时以簇为基本单位</p>
+<p>好处：能适应磁盘容量不断增大的情况，还可减少FAT表中项数</p>
+<h2 id="文件储存空间管理">文件储存空间管理</h2>
+<h3 id="空闲表法">空闲表法</h3>
+<p>给每个文件分配连续存储空间。</p>
+<p>系统也会为外存空闲区建立空闲表</p>
+<h3 id="位视图法">位视图法</h3>
+<p>二位数组模样，m*n=磁盘总块数</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-toggle="tooltip" data-placement="top" title="数据库复习笔记">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/%E6%89%8B%E5%8A%A8%E8%84%B1%E5%A3%B3/" data-toggle="tooltip" data-placement="top" title="手动脱壳">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

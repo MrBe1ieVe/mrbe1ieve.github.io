@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/post/</link>
+    <description>Recent content in Posts on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Wed, 15 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>三个月甲方实习总结</title>
+      <link>https://mrbelieve.tech/post/%E4%B8%89%E4%B8%AA%E6%9C%88%E7%94%B2%E6%96%B9%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E4%B8%89%E4%B8%AA%E6%9C%88%E7%94%B2%E6%96%B9%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/</guid>
+      <description>前言 有段时间也没有写点东西发到博客上面去了，这次的内容会有点不一样，更像是朋友之间聊天，聊聊进展，聊聊感悟，聊聊前景。主要也是因为今天前辈发</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其6-不安全的反序列化</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B66-%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B66-%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
+      <description>不安全的反序列化 POST /WebGoat/InsecureDeserialization/task 从结果出发 代码来自木爷 JAVA代码审计10:WEBGOAT Insecure Deserialization - 木头的小屋 Main.java package org.dummy.insecure.framework; import java.io.ByteArrayOutputStream; import java.io.IOException; import java.io.ObjectOutputStream; import java.util.Base64; public class Main { public static void main(String[] args) throws IOException {</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其5-XXE</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B65-xxe/</link>
+      <pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B65-xxe/</guid>
+      <description>Let’s try 这个按照第三页的，改一改 &amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE author [ &amp;lt;!ENTITY js SYSTEM &amp;#34;file:///&amp;#34;&amp;gt; ] &amp;gt;&amp;lt;comment&amp;gt; &amp;lt;text&amp;gt;&amp;amp;js;&amp;lt;/text&amp;gt;&amp;lt;/comment&amp;gt; 即可完成。看代码的话需要搜索xxe/simple 结果只要包含usr etc var 就判成功了</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其4-失效的身份认证</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B64-%E5%A4%B1%E6%95%88%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B64-%E5%A4%B1%E6%95%88%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</guid>
+      <description>认证绕过 POST /WebGoat/auth-bypass/verify-account secQuestion0=test&amp;amp;secQuestion1=test&amp;amp;jsEnabled=1&amp;amp;verifyMethod=SEC_QUESTIONS&amp;amp;userId=12309746 按照上面例子移除，没有成功，直接看代码了 这里会先调用下面的parseSecQuestions()处理，将名字包含secQues</description>
+    </item>
+    
+    <item>
+      <title>From Zero To Keep Learning</title>
+      <link>https://mrbelieve.tech/post/from-zero-to-keep-learning/</link>
+      <pubDate>Tue, 29 Jun 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/from-zero-to-keep-learning/</guid>
+      <description>本文作为备份，给19，20的学弟学妹们学习。 多读书，多看推送，多学习 Week 1 原文-精简版 我的学习过程 graph TD; First[用Typora写md笔记];</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其3-路径穿越</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B63-%E8%B7%AF%E5%BE%84%E7%A9%BF%E8%B6%8A/</link>
+      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B63-%E8%B7%AF%E5%BE%84%E7%A9%BF%E8%B6%8A/</guid>
+      <description>Path traversal 2 请求 URL: http://localhost:8080/WebGoat/PathTraversal/profile-upload 请求方法: POST 全局搜索后找到 跳入 ProfileUploadBase类，看里面的execute函数 先检查file和fullName</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其2-sql注入</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B62-sql%E6%B3%A8%E5%85%A5/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B62-sql%E6%B3%A8%E5%85%A5/</guid>
+      <description>Intro 2 select 点击submit后, 查看数据包,发往/SqlInjection/attack2, 表单数据为query: select * from Employees where first_name=&#39;Bob&#39;; 别的查询都不会返回数</description>
+    </item>
+    
+    <item>
+      <title>WebGoat代码审计其1-登录注册</title>
+      <link>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B61-%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B61-%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C/</guid>
+      <description>IDEA配置 下载idea之后, webgoat要求 * Java 15 * Maven &amp;gt; 3.2.1 * Your favorite IDE * Git, or Git support in your IDE 但是调试的话, 只安装java即可 安装好后先配置Proj</description>
+    </item>
+    
+    <item>
+      <title>OpenCanary使用及理解</title>
+      <link>https://mrbelieve.tech/post/opencanary%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/opencanary%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%90%86%E8%A7%A3/</guid>
+      <description>协议支持列表 22 ssh : a Secure Shell server which alerts on login attempts 21 ftp - a File Transfer Protocol server which on login attempts git - a Git protocol which alerts on repo cloning 80 http - an HTTP web server that alerts on login attempts httpproxy - an HTTP web proxy that alerts when there is an attempt to proxy to another page</description>
+    </item>
+    
+    <item>
+      <title>APT学习</title>
+      <link>https://mrbelieve.tech/post/apt%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/apt%E5%AD%A6%E4%B9%A0/</guid>
+      <description>记录自己看过的一些APT报告，学习攻击思路 安全研究人员发布针对WeSteal的技术分析 混淆 The Trojan was specifically written for Python 3.9, as the PyInstaller package included python39.dll as the Python interpreter. The developer also used the open source</description>
+    </item>
+    
+    <item>
+      <title>Xray_poc_编写学习</title>
+      <link>https://mrbelieve.tech/post/xray_poc_%E7%BC%96%E5%86%99%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 27 Apr 2021 01:15:25 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/xray_poc_%E7%BC%96%E5%86%99%E5%AD%A6%E4%B9%A0/</guid>
+      <description>环境设置 在线自动生成 直接访问 https://phith0n.github.io/xray-poc-generation/ 源仓库phith0n/xray-poc-generation: 🧬 辅助生成 XRay YAML POC 本地 我使用vscode多，所以选</description>
+    </item>
+    
+    <item>
+      <title>安全产品学习</title>
+      <link>https://mrbelieve.tech/post/%E5%AE%89%E5%85%A8%E4%BA%A7%E5%93%81%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 20 Apr 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E5%AE%89%E5%85%A8%E4%BA%A7%E5%93%81%E5%AD%A6%E4%B9%A0/</guid>
+      <description>方向 先明确方向还是得看招的人的，已知部分方向为： 入侵检测（基于主机的HIDS和基于网络的NIDS） 蜜罐 waf 防火墙 日志与审计安全 漏洞扫描系统（w</description>
+    </item>
+    
+    <item>
+      <title>HackTheBox Starting Point Shield .29</title>
+      <link>https://mrbelieve.tech/post/hackthebox-starting-point-shield-.29/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hackthebox-starting-point-shield-.29/</guid>
+      <description>扫描出来80 ISS和 3306 mysql bp发现路径下有wordpress 查看wordpress版本，网页搜索generator即可搜到generator wordpress</description>
+    </item>
+    
+    <item>
+      <title>HackTheBox Starting point Vaccine .46</title>
+      <link>https://mrbelieve.tech/post/hackthebox-starting-point-vaccine-.46/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hackthebox-starting-point-vaccine-.46/</guid>
+      <description>信息收集 扫描之后有ftp，ssh和web 联想到之前获得的ftp账户，输入进去登录后获得了backup.zip 使用Seclist的字典，通过爆</description>
+    </item>
+    
+    <item>
+      <title>Hexo再升级</title>
+      <link>https://mrbelieve.tech/post/hexo%E5%86%8D%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hexo%E5%86%8D%E5%8D%87%E7%BA%A7/</guid>
+      <description>从4.2.1到5.4.0 Warning: 更新后front-matter十分严格，我又改了好久脚本。。。。嫌麻烦的请不要更新，又不是不能用.jpg hexo目</description>
+    </item>
+    
+    <item>
+      <title>Python线程池读写mysql</title>
+      <link>https://mrbelieve.tech/post/python%E7%BA%BF%E7%A8%8B%E6%B1%A0%E8%AF%BB%E5%86%99mysql/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/python%E7%BA%BF%E7%A8%8B%E6%B1%A0%E8%AF%BB%E5%86%99mysql/</guid>
+      <description>基于mysql-connector-python，主要是因为一次函数调用有七个select语句，而一共有3w8次7个select，原先要跑两</description>
+    </item>
+    
+    <item>
+      <title>Xray 社区版 再学习记录</title>
+      <link>https://mrbelieve.tech/post/xray-%E7%A4%BE%E5%8C%BA%E7%89%88-%E5%86%8D%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/xray-%E7%A4%BE%E5%8C%BA%E7%89%88-%E5%86%8D%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>前言 以前也有用xray扫扫学校的漏洞，最近有在开发自己的扫描平台，估借此机会再学习。 官方文档 VulnType的复现在最后边。 三种基本模式 代理</description>
+    </item>
+    
+    <item>
+      <title>你访问谷歌时，都发生了啥</title>
+      <link>https://mrbelieve.tech/post/%E4%BD%A0%E8%AE%BF%E9%97%AE%E8%B0%B7%E6%AD%8C%E6%97%B6%E9%83%BD%E5%8F%91%E7%94%9F%E4%BA%86%E5%95%A5/</link>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E4%BD%A0%E8%AE%BF%E9%97%AE%E8%B0%B7%E6%AD%8C%E6%97%B6%E9%83%BD%E5%8F%91%E7%94%9F%E4%BA%86%E5%95%A5/</guid>
+      <description>免责声明 此文章针对学校萌新，如有错误还请指教。仅出于教育科普意义，不是为了指引。遵守网络安全法，守法青年，从我做起。 当你访问谷歌的时候，你是</description>
+    </item>
+    
+    <item>
+      <title>笔记管理升级</title>
+      <link>https://mrbelieve.tech/post/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86%E5%8D%87%E7%BA%A7/</guid>
+      <description>前言 我当前的笔记环境，是直接在hexo的根目录下，_posts 和 _unposts 文件进行笔记的记录，图片保存在md文件名\下，结构简陋，也不方便找（在两个</description>
+    </item>
+    
+    <item>
+      <title>iot信息整理</title>
+      <link>https://mrbelieve.tech/post/iot%E4%BF%A1%E6%81%AF%E6%95%B4%E7%90%86/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/iot%E4%BF%A1%E6%81%AF%E6%95%B4%E7%90%86/</guid>
+      <description>前言 持续更新，欢迎贡献！目前私信QQ，麻烦了！ 总览 必看-IOT 安全实战资料收集整合 优先看-IOT 安全实战资料收集整合#总结性资料 IoT Pentesting 101 &amp;amp;&amp;amp; IoT Security</description>
+    </item>
+    
+    <item>
+      <title>HackTheBox Starting Point Oopsie .28</title>
+      <link>https://mrbelieve.tech/post/hackthebox-starting-point-oopsie-.28/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hackthebox-starting-point-oopsie-.28/</guid>
+      <description>扫描结果 Starting Nmap 7.80 ( https://nmap.org ) at 2020-12-03 06:15 EST Nmap scan report for 10.10.10.28 Host is up (0.49s latency). PORT STATE SERVICE VERSION 21/tcp closed ftp 23/tcp closed telnet 53/tcp closed domain 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) |_http-server-header: Apache/2.4.29 (Ubuntu) |_http-title: Welcome 110/tcp closed pop3 111/tcp closed rpcbind 113/tcp closed ident 135/tcp closed msrpc 139/tcp closed netbios-ssn 143/tcp closed imap 256/tcp closed fw1-secureremote</description>
+    </item>
+    
+    <item>
+      <title>IoTGoat</title>
+      <link>https://mrbelieve.tech/post/iotgoat/</link>
+      <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/iotgoat/</guid>
+      <description>No 1: Weak, Guessable, or Hardcoded Passwords: $ find . -name cgi-bin ./www/cgi-bin 查找，firmwalker It will search through the extracted or mounted firmware file system for things of interest such as: etc/shadow and etc/passwd list out the etc/ssl directory search for SSL related files such as .pem, .crt, etc. search for configuration files look for script files search</description>
+    </item>
+    
+    <item>
+      <title>Netgear Nighthawk R8300 upnpd PreAuth RCE 复现辅助</title>
+      <link>https://mrbelieve.tech/post/netgear-nighthawk-r8300-upnpd-preauth-rce-%E5%A4%8D%E7%8E%B0%E8%BE%85%E5%8A%A9/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/netgear-nighthawk-r8300-upnpd-preauth-rce-%E5%A4%8D%E7%8E%B0%E8%BE%85%E5%8A%A9/</guid>
+      <description>小声：因为nvram那里我实在搞不定了，如果有愿意帮忙的师傅欢迎联系！ 环境 固件下载地址 md5sum c3eb8f8c004d466796a05b4c60503162 R8300-V1.0.2.130_1.0.99.zip binwalk binwalk R8300-V1.0.2.130_1.0.99.chk DECIMAL HEXADECIMAL DESCRIPTION -------------------------------------------------------------------------------- 58 0x3A TRX firmware header, little endian, image size: 32653312 bytes, CRC32: 0x5CEAB739, flags: 0x0, version: 1,</description>
+    </item>
+    
+    <item>
+      <title>PCTF2016_Confused_ARM_调试记录</title>
+      <link>https://mrbelieve.tech/post/pctf2016_confused_arm_%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/pctf2016_confused_arm_%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/</guid>
+      <description>前言 结合书《CTF特训营》IoT篇看最佳 0x01 静态分析 指定处理器类型为ARM little-endian，不然 正常打开之后先看看DCD部分 DCD：</description>
+    </item>
+    
+    <item>
+      <title>c&#43;&#43; static的作用</title>
+      <link>https://mrbelieve.tech/post/c&#43;&#43;-static%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/c&#43;&#43;-static%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
+      <description>原文 static menmbers of a c++ class 当我们声明一个类成员为static的时候，这意味着无论有其他多少种类的对象被创建了，也仅有这一份静态成员的copy。 静态成员</description>
+    </item>
+    
+    <item>
+      <title>简要介绍一下nas和软路由</title>
+      <link>https://mrbelieve.tech/post/%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8Bnas%E5%92%8C%E8%BD%AF%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8Bnas%E5%92%8C%E8%BD%AF%E8%B7%AF%E7%94%B1/</guid>
+      <description>nas和软路由作用 对于普通人来说，nas的最大作用就是备份系统（全系统备份）以及作为外部存储空间来使用了，其次就是远程访问nas中的电影/剧</description>
+    </item>
+    
+    <item>
+      <title>LLVM pass</title>
+      <link>https://mrbelieve.tech/post/llvm-pass/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/llvm-pass/</guid>
+      <description>可以先看看 这里 LLVM的核心是一个库。从CSCD70的Assignment1来看，llvm pass可以调用库来输出源代码loop.c里有的函</description>
+    </item>
+    
+    <item>
+      <title>编译原理学习笔记</title>
+      <link>https://mrbelieve.tech/post/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>视频 编译器结构 词法分析 Lexical analysis or scanning 检测输入字符串中不属于我们语言的那部分符号 词法分析把程序字段变成关键字words or 词法单元tokens 如 if x ==</description>
+    </item>
+    
+    <item>
+      <title>Natas</title>
+      <link>https://mrbelieve.tech/post/natas/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/natas/</guid>
+      <description>natas0 natas1 禁用了右键，但还是可以F12或者 natas2 打开过files/pixel.png，但没想到这是目录权限问题。。。。顺便搜了一下爆破文件目录的工具，</description>
+    </item>
+    
+    <item>
+      <title>数据库使用&amp;学习记录</title>
+      <link>https://mrbelieve.tech/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>权限 GRANT CREATE TABLE TO { PUBLIC | GROUP group | username } GRANT ALTER TABLE Grant的用法 忘记密码 一个窗口 mysqld --shared-memory --skip-grant-tables 另一个窗口 mysql -u root -p //press enter FLUSH PRIVILEGES ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;你要设置的密码&amp;#39</description>
+    </item>
+    
+    <item>
+      <title>hexo升级跳坑</title>
+      <link>https://mrbelieve.tech/post/hexo%E5%8D%87%E7%BA%A7%E8%B7%B3%E5%9D%91/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hexo%E5%8D%87%E7%BA%A7%E8%B7%B3%E5%9D%91/</guid>
+      <description>应该是从4.0升级到4.2，_config.yml的更改就不说了，主要讲讲昨天晚上都干了啥（吐血捂肝 4.2多了个友链（万恶起源）上来之后，最</description>
+    </item>
+    
+    <item>
+      <title>记一次转移环境上服务器</title>
+      <link>https://mrbelieve.tech/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%BD%AC%E7%A7%BB%E7%8E%AF%E5%A2%83%E4%B8%8A%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%BD%AC%E7%A7%BB%E7%8E%AF%E5%A2%83%E4%B8%8A%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>本想着本地docker调好直接传上去的，然鹅一开vscode remote就崩 并且，vscode remote也仅指本地的docker里，不是云</description>
+    </item>
+    
+    <item>
+      <title>cisco课程代码记录</title>
+      <link>https://mrbelieve.tech/post/cisco%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/cisco%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/</guid>
+      <description>不记肯定会忘记QAQ,只敲简写然后敲tab也是可以的 enable configure terminal hostname R1 加密 enable password xxx # 设置用户执行密码 enable secret class # 设置特权执行密码 line console 0 #线路密码 (config-line)password cisco (config-line)login (config-line)exit line</description>
+    </item>
+    
+    <item>
+      <title>常用好用的快捷键（Win）</title>
+      <link>https://mrbelieve.tech/post/%E5%B8%B8%E7%94%A8%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AEwin/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E5%B8%B8%E7%94%A8%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AEwin/</guid>
+      <description>写下来新发现的/有需求之后找到的快捷键，希望对各位有帮助 全局（存疑） 软件窗口切换 自由控制方向alt + 方向 依次切换alt + tab 选择已输入的 shift + ←</description>
+    </item>
+    
+    <item>
+      <title>docker隔离开发环境和宿主</title>
+      <link>https://mrbelieve.tech/post/docker%E9%9A%94%E7%A6%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%92%8C%E5%AE%BF%E4%B8%BB/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/docker%E9%9A%94%E7%A6%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%92%8C%E5%AE%BF%E4%B8%BB/</guid>
+      <description>如何把开发环境移到docker里？ 目前设想了有：通过scp传数据，来让宿主机知道docker里安装了啥包。然后对应自动生成dockerfil</description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://mrbelieve.tech/post/docker/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/docker/</guid>
+      <description>群里介绍截图 2375:默认端口 不过root权限免密登录的是容器 使用 进入docker exec -it ID /bin/bash 查看一下本地的镜像，运行docker images docker</description>
+    </item>
+    
+    <item>
+      <title>商业计划书撰写及案例分析</title>
+      <link>https://mrbelieve.tech/post/%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6%E6%92%B0%E5%86%99%E5%8F%8A%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6%E6%92%B0%E5%86%99%E5%8F%8A%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/</guid>
+      <description>1，2页，最多3 分析竞争对手 深入详细 长远目标，现行战略，产品趋势 分析优劣，内外部威胁，外部机会与内部因素相匹配 评审要点 痛点-&amp;gt;解决方案</description>
+    </item>
+    
+    <item>
+      <title>ORW-[极客大挑战2019]Not_Bad</title>
+      <link>https://mrbelieve.tech/post/orw-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019not_bad/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/orw-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019not_bad/</guid>
+      <description>RWX Linux的文件和目录的权限，有RWX三种。 r(Read，读取)：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目录的权限。 w(</description>
+    </item>
+    
+    <item>
+      <title>ROPgadget&amp;系统调用-cmcc_simplerop</title>
+      <link>https://mrbelieve.tech/post/ropgadget%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8-cmcc_simplerop/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ropgadget%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8-cmcc_simplerop/</guid>
+      <description>第一反应就是用ROPgadget自动生成ropchains 但在这里不行，算出来的偏移是0x20，那么只有68字节给ropchains了 而自动</description>
+    </item>
+    
+    <item>
+      <title>TCPIP复习</title>
+      <link>https://mrbelieve.tech/post/tcpip%E5%A4%8D%E4%B9%A0/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/tcpip%E5%A4%8D%E4%B9%A0/</guid>
+      <description>地址 A类地址 公有1~126 地址类型 公有 私有 A类 1 ~ 126 10.0.0.0 ~ 10.255.255.255 B类 128 ~ 191 172.16.0.0 ~ 172.31.255.255 C类 192.0.0.0 ~ 223.255.255.255 192.168.0.0 ~ 192.168.255.255 直接交付和间接交付 直接交付 -&amp;gt; 交给同一个网络地址 间接</description>
+    </item>
+    
+    <item>
+      <title>个人原则宪法</title>
+      <link>https://mrbelieve.tech/post/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95/</guid>
+      <description>史蒂芬.柯维提出，以原则为导向是以终为始最有效的方法。 李源在解读查理.芒格时说，芒格的思维方式解决了他一直以来困惑的“愚人船”命题——一群人</description>
+    </item>
+    
+    <item>
+      <title>强网杯2019_拟态-STKOF</title>
+      <link>https://mrbelieve.tech/post/%E5%BC%BA%E7%BD%91%E6%9D%AF2019_%E6%8B%9F%E6%80%81-stkof/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E5%BC%BA%E7%BD%91%E6%9D%AF2019_%E6%8B%9F%E6%80%81-stkof/</guid>
+      <description>这题给了两文件，分别是32和64位的，32位的由于是静态链接，直接自动生成就能打通。 打到buu服务器上时，exp是随机打到两个程序中的一个的</description>
+    </item>
+    
+    <item>
+      <title>解密系列笔记</title>
+      <link>https://mrbelieve.tech/post/%E8%A7%A3%E5%AF%86%E7%B3%BB%E5%88%97/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E8%A7%A3%E5%AF%86%E7%B3%BB%E5%88%97/</guid>
+      <description>解密系列 ASCII编码是Unicode字符编码的一部分 系统dll属于level3，内核运行在level0. 虚拟内存 在保护模式下： 应用程序是不</description>
+    </item>
+    
+    <item>
+      <title>oneshot_tjctf_2016</title>
+      <link>https://mrbelieve.tech/post/oneshot_tjctf_2016/</link>
+      <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/oneshot_tjctf_2016/</guid>
+      <description>*v4，要用str(elf.got[&#39;__libc_start_main&#39;]) 接受要用int(sh.recvuntil(&amp;quot;\n&amp;q</description>
+    </item>
+    
+    <item>
+      <title>Pwn常用指令</title>
+      <link>https://mrbelieve.tech/post/pwn%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/pwn%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</guid>
+      <description>ldd filename 读取libc ROPgadget --binary filename --only &amp;quot;pop|ret&amp;quot; __libc_start_main = u64(sh.recvuntil(&amp;quot;\x7f&amp;quot;)[-6:].ljust(8,&#39;\x00&#39;)) __libc_start_main = u32(sh.recvuntil(&amp;quot;\xf7&amp;quot;)[-4:]) __libc_start_main = u32(sh.recv(4)) canary = u64(sh.recv(7).rjust(8,&amp;quot;\x00&amp;quot;)) log.success(&amp;quot;canary------&amp;gt;&amp;quot; + hex(canary)) 接受成int型地址：str_addr = int(sh.recvuntil(&amp;quot;\n&amp;quot;,True),16) seccomp-tools dump ./filename 找不到flag：grep -rn flag * 32位 第</description>
+    </item>
+    
+    <item>
+      <title>leak_canary-others_babystack</title>
+      <link>https://mrbelieve.tech/post/leak_canary-others_babystack/</link>
+      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/leak_canary-others_babystack/</guid>
+      <description>Full RELRO GOT表只读 s申请的是0x80，但读入0x100。并且canary在stack -0x8的地方 先泄露canary，puts函数在输出时，只</description>
+    </item>
+    
+    <item>
+      <title>Linux常见问题解决方法</title>
+      <link>https://mrbelieve.tech/post/linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description>E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarily unavailable) E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it? ps -A | grep apt sudo kill -9 processnumber sudo rm /var/lib/dpkg/lock sudo rm /var/lib/dpkg/lock-frontend E: Could not get lock /var/cache/apt/archives/lock - open (11: Resource temporarily unavailable) E: Unable to lock directory /var/cache/apt/archives/ sudo killall apt-get sudo rm /var/lib/apt/lists/lock sudo rm /var/cache/apt/archives/lock sudo rm</description>
+    </item>
+    
+    <item>
+      <title>PWN 环境搭建清单</title>
+      <link>https://mrbelieve.tech/post/pwn-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%B8%85%E5%8D%95/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/pwn-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%B8%85%E5%8D%95/</guid>
+      <description>LINUX ubuntu18、16 pwntools edb 调试栈好 vim libcsearcher pwndbg 调试堆好 seccomp-tools 查看seccomp proxychains4 apt get的快 WIN/MAC IDA 反汇编 die 查看32/64 和壳等 一些常用指令 [可供参考e</description>
+    </item>
+    
+    <item>
+      <title>堆的基础知识</title>
+      <link>https://mrbelieve.tech/post/%E5%A0%86%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E5%A0%86%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>get_shell 修改某个函数的got表 为 system 的地址,然后参数准备为binsh 就可以 修改free函数为puts函数,然后某个堆里参数准备为某个函数的got表地</description>
+    </item>
+    
+    <item>
+      <title>babyheap_0ctf_2017</title>
+      <link>https://mrbelieve.tech/post/babyheap_0ctf_2017/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/babyheap_0ctf_2017/</guid>
+      <description>参考wp:https://blog.csdn.net/weixin_42151611/article/details/98119213?fp</description>
+    </item>
+    
+    <item>
+      <title>堆之UAF(Use_after_free)及调试-hitcontraining_uaf</title>
+      <link>https://mrbelieve.tech/post/%E5%A0%86%E4%B9%8Buafuse_after_free%E5%8F%8A%E8%B0%83%E8%AF%95-hitcontraining_uaf/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E5%A0%86%E4%B9%8Buafuse_after_free%E5%8F%8A%E8%B0%83%E8%AF%95-hitcontraining_uaf/</guid>
+      <description>https://wiki.x10sec.org/pwn/heap/use_after_free/ 一个很直接的想法是修改note的put字段为magic函数的地址，从而实现在执行print note 的时候执行magic函数。 那么该怎么执行呢？ 我</description>
+    </item>
+    
+    <item>
+      <title>BrainOverFlow_Vol.1_BUU特供</title>
+      <link>https://mrbelieve.tech/post/brainoverflow_vol.1_buu%E7%89%B9%E4%BE%9B/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/brainoverflow_vol.1_buu%E7%89%B9%E4%BE%9B/</guid>
+      <description>很有意思（好玩）的游戏，感谢札哥的题 btw，我也没想到我会是第六个解出来的hhhhh，我可以吹一个月（笑 剧情我就不说了，反正很有意思的 具体东</description>
+    </item>
+    
+    <item>
+      <title>Hgame</title>
+      <link>https://mrbelieve.tech/post/hgame/</link>
+      <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hgame/</guid>
+      <description>Hard_AAAAA V5在-0x31，s在-0xAC sh.recvuntil(&amp;#34;Let&amp;#39;s 0O0o\\0O0!&amp;#34;) payload=&amp;#34;a&amp;#34;*(0xAC - 0x31) payload += &amp;#39;0O0o\x00O0&amp;#39; sh.send(payload) sh.interactive() One_Shot 0xE0 - 0xC0之后刚好是32位，这样第 payload = cyclic(0xE0 - 0xC0) sh.send(payload) sh.recvuntil(&amp;#34;shot!\n&amp;#34;) payload = str(6295776) sh.send(payload) ROP_LEVEL0 open_read_puts from pwn import * context.log_level = &amp;#39;debug&amp;#39; context.arch = &amp;#39;amd64&amp;#39; elf</description>
+    </item>
+    
+    <item>
+      <title>pwn_by_examples</title>
+      <link>https://mrbelieve.tech/post/pwn_by_examples/</link>
+      <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/pwn_by_examples/</guid>
+      <description>x64参数按在rdi,rsi,rdx,rcs,r8,r9依次储存 IDA部分 shift f12 字符串 n 重命名 x 查看引用 bash部分 cyclic 200 #生成循环 200个 cyclic -l</description>
+    </item>
+    
+    <item>
+      <title>ciscn_2019_s_9</title>
+      <link>https://mrbelieve.tech/post/ciscn_2019_s_9/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ciscn_2019_s_9/</guid>
+      <description>啥保护没开，第一时间考虑shellcode 另外leak只有50，leak多才考虑直接走rop 尝试过ret2libc,但是怎么都调不出来= = shellcode</description>
+    </item>
+    
+    <item>
+      <title>SROP-ciscn_2019_s_3</title>
+      <link>https://mrbelieve.tech/post/srop-ciscn_2019_s_3/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/srop-ciscn_2019_s_3/</guid>
+      <description>Sigreturn Oriented Programming (SROP) Attack攻击原理 比较详细的WP https://www.jianshu.com/p/ca4a5dacd1a2 两个系统调用，一个是sys_read，一个是sys_write，往栈上写数据（0x400），从栈</description>
+    </item>
+    
+    <item>
+      <title>ciscn_2019_ne_5-骚骚的小东西</title>
+      <link>https://mrbelieve.tech/post/ciscn_2019_ne_5-%E9%AA%9A%E9%AA%9A%E7%9A%84%E5%B0%8F%E4%B8%9C%E8%A5%BF/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ciscn_2019_ne_5-%E9%AA%9A%E9%AA%9A%E7%9A%84%E5%B0%8F%E4%B8%9C%E8%A5%BF/</guid>
+      <description>输入之后，在调用getflag这里会造成溢出 函数里调用有system，但没有/bin/sh 骚东西： 0x80482E6 + 0x4就是 sh 我们可以system(&amp;l</description>
+    </item>
+    
+    <item>
+      <title>ez_pz_hackover_2016-继续深入学习edb</title>
+      <link>https://mrbelieve.tech/post/ez_pz_hackover_2016-%E7%BB%A7%E7%BB%AD%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0edb/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ez_pz_hackover_2016-%E7%BB%A7%E7%BB%AD%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0edb/</guid>
+      <description>得先绕过result的strcmp sh.recvuntil(&amp;#34;&amp;gt;&amp;#34;) payload = &amp;#34;crashme&amp;#34; payload = payload.ljust(10,&amp;#34;\x00&amp;#34;) payload += cyclic(200) pause() sh.sendline(payload) pause时，打开edb并attach ez_pz_hackover_2016 我常用：f8单步运行，ctrl+f9直接跳</description>
+    </item>
+    
+    <item>
+      <title>栈迁移</title>
+      <link>https://mrbelieve.tech/post/%E6%A0%88%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%A0%88%E8%BF%81%E7%A7%BB/</guid>
+      <description>劫持一次流程，覆盖一次ebp 栈迁移后跳到read 正常Rop到libc，再rop，再到libc rop到libc，由于跳到read上，后面可以继</description>
+    </item>
+    
+    <item>
+      <title>ROPgadget-not_the_same_3dsctf_2016</title>
+      <link>https://mrbelieve.tech/post/ropgadget-not_the_same_3dsctf_2016/</link>
+      <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ropgadget-not_the_same_3dsctf_2016/</guid>
+      <description>ROPgadget --binary not_the_same_3dsctf_2016 --ropchain 自动生成 from struct import pack p = &amp;#39;&amp;#39; p += pack(&amp;#39;&amp;lt;I&amp;#39;, 0x0806fcca) # pop edx ; ret p += pack(&amp;#39;&amp;lt;I&amp;#39;, 0x080eb060) # @ .data p += pack(&amp;#39;&amp;lt;I&amp;#39;, 0x08048b0b) # pop eax ; ret p += &amp;#39;/bin&amp;#39; p += pack(&amp;#39;&amp;lt;I&amp;#39;, 0x0805586b) # mov dword ptr [edx], eax ; ret p += pack(&amp;#39;&amp;lt;I&amp;#39;, 0x0806fcca) # pop edx ; ret p += pack(&amp;#39;&amp;lt;I&amp;#39;, 0x080eb064) # @</description>
+    </item>
+    
+    <item>
+      <title>AWD准备</title>
+      <link>https://mrbelieve.tech/post/awd%E5%87%86%E5%A4%87/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/awd%E5%87%86%E5%A4%87/</guid>
+      <description>探测主机 Nmap 或 HTTPScan Nmap 扫描端口 端口攻击 常见：22，2389，1443，3306 ==准备爆破脚本！！！== WEB 攻击 Web 方面的语言多为 PHP，小部分为 Java 和</description>
+    </item>
+    
+    <item>
+      <title>AWD常用指令</title>
+      <link>https://mrbelieve.tech/post/awd%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/awd%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</guid>
+      <description>备份web目录 tar -zcvf web.tar.gz /var/www/html/ 查看已建立网络连接和对应进程 netstat -antulp | grep EST 用户管理 w 查看当前用户 pkill -kill -t &amp;lt;Username&amp;gt; 查看指定端口被哪个进程占用 lsof -i:端口号 或者 netstat -tunlp|grep 端</description>
+    </item>
+    
+    <item>
+      <title>buu-ciscn_2019-c_1 WP</title>
+      <link>https://mrbelieve.tech/post/buu-ciscn_2019-c_1-wp/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/buu-ciscn_2019-c_1-wp/</guid>
+      <description>// local variable allocation has failed, the output may be wrong! int __cdecl main(int argc, const char **argv, const char **envp) { int v4; // [rsp+Ch] [rbp-4h] init(*(_QWORD *)&amp;amp;argc, argv, envp); puts(&amp;#34;EEEEEEE hh iii &amp;#34;); puts(&amp;#34;EE mm mm mmmm aa aa cccc hh nn nnn eee &amp;#34;); puts(&amp;#34;EEEEE mmm mm mm aa aaa cc hhhhhh iii nnn nn ee e &amp;#34;); puts(&amp;#34;EE mmm mm mm aa aaa cc hh hh</description>
+    </item>
+    
+    <item>
+      <title>ciscn_2019_n_1 WP</title>
+      <link>https://mrbelieve.tech/post/ciscn_2019_n_1-wp/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ciscn_2019_n_1-wp/</guid>
+      <description>int func() { int result; // eax char v1; // [rsp+0h] [rbp-30h] float v2; // [rsp+2Ch] [rbp-4h] v2 = 0.0; puts(&amp;#34;Let&amp;#39;s guess the number.&amp;#34;); gets(&amp;amp;v1); if ( v2 == 11.28125 ) result = system(&amp;#34;cat /flag&amp;#34;); else result = puts(&amp;#34;Its value should be 11.28125&amp;#34;); return result; } 看见==我还尝试了一下&amp;rsquo;a&amp;rsqu</description>
+    </item>
+    
+    <item>
+      <title>get_started_3dsctf_2016</title>
+      <link>https://mrbelieve.tech/post/get_started_3dsctf_2016/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/get_started_3dsctf_2016/</guid>
+      <description>mprotect函数原型： int mprotect(void *addr, size_t len, int prot); addr 内存启始地址 len 修改内存的长度 prot 内存的权限 [ 所以得到exp: from pwn import * elf = ELF(&amp;#39;./get_started_3dsctf_2016&amp;#39;) sh = elf.process() #sh = remote(&amp;#39;node3.buuoj.cn&amp;#39;,27037) pop3_ret = 0x804951D #为了后</description>
+    </item>
+    
+    <item>
+      <title>git同步到github和gitee</title>
+      <link>https://mrbelieve.tech/post/git%E5%90%8C%E6%AD%A5%E5%88%B0github%E5%92%8Cgitee/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/git%E5%90%8C%E6%AD%A5%E5%88%B0github%E5%92%8Cgitee/</guid>
+      <description>==按照此说明做下来保证可用，但我也还没完全研究透彻所以有诸多不足请多原谅== 一、准备工作 1、建立一个仓库 https://gitee.com/ 2、下载git https://git-scm.com/ 可以跟随这个 https://blog.csdn.net/sishen47k/article/details/80211002 安</description>
+    </item>
+    
+    <item>
+      <title>GXY_CTF_my_cannary-从零记录如何调试出来</title>
+      <link>https://mrbelieve.tech/post/gxy_ctf_my_cannary-%E4%BB%8E%E9%9B%B6%E8%AE%B0%E5%BD%95%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E5%87%BA%E6%9D%A5/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/gxy_ctf_my_cannary-%E4%BB%8E%E9%9B%B6%E8%AE%B0%E5%BD%95%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E5%87%BA%E6%9D%A5/</guid>
+      <description>查看main 进入test() 看见了read，等等先 judge无法反编译，查看汇编 看见了xor rdx,[rbp-8]，以及上图的mov rdx, [rdx] 也就</description>
+    </item>
+    
+    <item>
+      <title>HCNP-SEC-19.11.23</title>
+      <link>https://mrbelieve.tech/post/hcnp-sec-19.11.23/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hcnp-sec-19.11.23/</guid>
+      <description>eSight网管 可管其他厂商设备，几乎都可以 CIS可用于抵御APT攻击。它从海量数据中提取关键信息，智能可视化，还原攻击链，防御攻击 Fire</description>
+    </item>
+    
+    <item>
+      <title>OGeek2019-babyrop</title>
+      <link>https://mrbelieve.tech/post/ogeek2019-babyrop/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ogeek2019-babyrop/</guid>
+      <description>程序 为了绕过strncmp，我们在v6这里可以放一个\x00 因为strlen会在识别到\x00之后停止，这样strncmp就会默认返回0 这里</description>
+    </item>
+    
+    <item>
+      <title>Proxychains</title>
+      <link>https://mrbelieve.tech/post/proxychains/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/proxychains/</guid>
+      <description>折腾两小时，不如问一下人= = Proxychains 先安装 然后sudo vi /etc/proxychains.conf socks5 win_ip 1080 win_ip为你的windows主机ip，可在cmd ifconfig查看 飞机要打开</description>
+    </item>
+    
+    <item>
+      <title>Python中下划线的5种含义</title>
+      <link>https://mrbelieve.tech/post/python%E4%B8%AD%E4%B8%8B%E5%88%92%E7%BA%BF%E7%9A%845%E7%A7%8D%E5%90%AB%E4%B9%89/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/python%E4%B8%AD%E4%B8%8B%E5%88%92%E7%BA%BF%E7%9A%845%E7%A7%8D%E5%90%AB%E4%B9%89/</guid>
+      <description>在用python重写算法，学习学习算法时，一时好奇（打基础）来学习了python的下划线 单前导下划线：_var 小小警示，提示只在内部使用，非</description>
+    </item>
+    
+    <item>
+      <title>使用docker为pwn题目搭配环境</title>
+      <link>https://mrbelieve.tech/post/%E4%BD%BF%E7%94%A8docker%E4%B8%BApwn%E9%A2%98%E7%9B%AE%E6%90%AD%E9%85%8D%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E4%BD%BF%E7%94%A8docker%E4%B8%BApwn%E9%A2%98%E7%9B%AE%E6%90%AD%E9%85%8D%E7%8E%AF%E5%A2%83/</guid>
+      <description>将多个题目搭建一个docker里 ubuntu *1 docker 安装 docker-compose 官方文档 giantbranch/pwn_deploy_chroot 解决 ERROR: Couldn&amp;rsquo;t connect to Docker daemon at http+docker://localunixsocket - is it running? docker-compose up解决错误ERROR: Couldn&amp;rsquo;t connect to Docker daemon at http+docker://localunixsocket - is it running? 将题目放到</description>
+    </item>
+    
+    <item>
+      <title>博弈论</title>
+      <link>https://mrbelieve.tech/post/%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E5%8D%9A%E5%BC%88%E8%AE%BA/</guid>
+      <description>LINK 《博弈圣经》博弈论的定义：我们把动物利用大自然移动的瘾魂，在决策人期待的空间里，形成三维均衡的学术理论，称为博弈论。 基本概念中包括局中人、</description>
+    </item>
+    
+    <item>
+      <title>安洵杯线下AWD总结</title>
+      <link>https://mrbelieve.tech/post/%E5%AE%89%E6%B4%B5%E6%9D%AF%E7%BA%BF%E4%B8%8Bawd%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E5%AE%89%E6%B4%B5%E6%9D%AF%E7%BA%BF%E4%B8%8Bawd%E6%80%BB%E7%BB%93/</guid>
+      <description>事后BB ==赛前自动提交flag脚本没有，自动化打全场脚本没有，哎。== 线下还是很友好的，可以连接外网，伙食也很不错，但是！ 只有先黑盒测试过</description>
+    </item>
+    
+    <item>
+      <title>手动脱壳</title>
+      <link>https://mrbelieve.tech/post/%E6%89%8B%E5%8A%A8%E8%84%B1%E5%A3%B3/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%89%8B%E5%8A%A8%E8%84%B1%E5%A3%B3/</guid>
+      <description>手动脱壳 可分为压缩壳（常见的有UPX、北斗、ASDPack、Npack、PECompact等）和保护壳（如强壳Safengine、VMpro</description>
+    </item>
+    
+    <item>
+      <title>操作系统复习</title>
+      <link>https://mrbelieve.tech/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0/</guid>
+      <description>对不起我看吐了，考炸了 操作系统的目标 方便性，有效性，可扩充性和开放性 可扩充性：采用微内核结构 P30 发展主要动力 不断提高计算机资源利用率 方便用户 器</description>
+    </item>
+    
+    <item>
+      <title>数据库复习笔记</title>
+      <link>https://mrbelieve.tech/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>使用的是sql server，操作可能跟mysql有区别 新建数据库 create database stuhyy on ( name = stu, filename=&amp;#39;C:\stu_data.mdf&amp;#39;, size = 3mb, maxsize = 500mb, filegrowth = 10% ) log on ( name = stu_log, filename = &amp;#39;D:\stu_log.ldf&amp;#39;, size=3mb, maxsize = unlimited, filegrowth = 1mb ) 修改</description>
+    </item>
+    
+    <item>
+      <title>汇编、逆向工程基础</title>
+      <link>https://mrbelieve.tech/post/%E6%B1%87%E7%BC%96%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%B1%87%E7%BC%96%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%9F%BA%E7%A1%80/</guid>
+      <description>原文链接：https://blog.csdn.net/qq_21508727/article/details/80559270 单位 ·WORD</description>
+    </item>
+    
+    <item>
+      <title>汇编基础</title>
+      <link>https://mrbelieve.tech/post/%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80/</guid>
+      <description>X86汇编基础 ==Intel和AT&amp;amp;T语法区别：== Intel操作数在前面，AT&amp;amp;T的在后面 在Intel语法中： 在AT&amp;am</description>
+    </item>
+    
+    <item>
+      <title>19/9/20笔记</title>
+      <link>https://mrbelieve.tech/post/19920%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/19920%E7%AC%94%E8%AE%B0/</guid>
+      <description>逆向笔记 PE是windows下的文件，ELF是linux/unix下的文件 packer壳 28537194573619560LL LL-&amp;gt;长长整型 可在汇编语言中寻找到mov rax</description>
+    </item>
+    
+    <item>
+      <title>Hello World!</title>
+      <link>https://mrbelieve.tech/post/hello-world/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hello-world/</guid>
+      <description>2019/8/3日 15：22，我的网站算是正式开通了。这里可能是我展现最真实的我的地方，也用来记录我的学习过程和学习资料。在此先感谢一下毛同</description>
+    </item>
+    
+    <item>
+      <title>What a day</title>
+      <link>https://mrbelieve.tech/post/what-a-day/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/what-a-day/</guid>
+      <description>明明说要调整作息的，结果头疼晚上睡了会，现在一点都不困了。。。。 想学逆向 发现了mac上的一些软件之类的，link 入门link pwn学习流程 –</description>
+    </item>
+    
+    <item>
+      <title>转载-编写shellcode测试工具</title>
+      <link>https://mrbelieve.tech/post/%E7%BC%96%E5%86%99shellcode%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E7%BC%96%E5%86%99shellcode%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+      <description>不知不觉，shellcode已成功攻击过程中必不可少的步骤，后面的文章会继续介绍如何编写其它类型的shellcode。直到目前为止，每次完s</description>
+    </item>
+    
+    <item>
+      <title>Clean White Theme for Hugo</title>
+      <link>https://mrbelieve.tech/post/readme/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/readme/</guid>
+      <description>Clean White Theme for Hugo CleanWhite is a clean, elegant, but fully functional blog theme for Hugo. Here is a live demo site using this theme. It is based on huxblog Jekyll Theme and Clean Blog Jekyll Theme. These two upstream projects have done awesome jobs to create a blog theme, what I&amp;rsquo;m doing here is porting it to Hugo, of which I like the simplicity and the much faster</description>
+    </item>
+    
+    <item>
+      <title>CSAPP_lab</title>
+      <link>https://mrbelieve.tech/post/csapp_lab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/csapp_lab/</guid>
+      <description>datalab 正数用原码表示的，负数用补码表示 补码：正数的补码就是其原码；负数的反码+1就是补码 如单字节5，在计算机中就表示为：0000 0101。负数用</description>
+    </item>
+    
+    <item>
+      <title>django学习记录</title>
+      <link>https://mrbelieve.tech/post/django%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/django%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>调试 python manage.py runserver 127.0.0.1:28000 将现有数据库导入到models.py中 python manage.py inspectdb &amp;gt; app/models.py js实现定时刷新页面 Ajax轮询,Ajax长轮询和websocket(详细使用)</description>
+    </item>
+    
+    <item>
+      <title>HackTheBox Starting Point Archetype .27</title>
+      <link>https://mrbelieve.tech/post/hackthebox-starting-point-archetype-.27/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/hackthebox-starting-point-archetype-.27/</guid>
+      <description>VPN 连接 sudo openvpn example.ovpn Foothold Sql server相关，这部分总提示我connection reset by peer 无法实验 链接到sql server impacket/examples/mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth SELECT IS_SRVROLEMEMBER(&#39;sysadmin&#39;) 判断自己有没有sysadmin（最</description>
+    </item>
+    
+    <item>
+      <title>网络编程</title>
+      <link>https://mrbelieve.tech/post/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
+      <description>3/9 非阻塞模式 // TcpServer.cpp : 定义控制台应用程序的入口点。 // #include &amp;#34;stdafx.h&amp;#34; #include &amp;lt;WINSOCK2.H&amp;gt; #include &amp;lt;iostream&amp;gt; #pragma comment(lib,&amp;#34;WS2_32.lib&amp;#34;) #define BUF_SIZE 64 // 缓冲区大小 int _tmain(int argc, _TCHAR* argv[]) { WSADATA wsd; // WSADATA变量，用于初始化Windo</description>
+    </item>
+    
+  </channel>
+</rss>

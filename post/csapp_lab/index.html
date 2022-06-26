@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="CSAPP_lab" />
+    <meta property="og:title" content="CSAPP_lab" />
+    <meta property="twitter:title" content="CSAPP_lab" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>CSAPP_lab | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/csapp_lab/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                    </div>
+                    <h1>CSAPP_lab</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Monday, January 1, 0001
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="datalab">datalab</h2>
+<p>正数用<strong>原码</strong>表示的，负数用<strong>补码</strong>表示</p>
+<blockquote>
+<p>补码：正数的补码就是其原码；<strong>负数的反码+1</strong>就是补码</p>
+<p>如单字节5，在计算机中就表示为：0000 0101。负数用补码表示，如单字节-5，在计算机中表示为1111 1011。</p>
+</blockquote>
+<h3 id="alloddbits">allOddBits</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">/* 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * allOddBits - return 1 if all odd-numbered bits in word set to 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   where bits are numbered from 0 (least significant) to 31 (most significant)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Examples allOddBits(0xFFFFFFFD) = 0, allOddBits(0xAAAAAAAA) = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Max ops: 12
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Rating: 2
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">allOddBits</span>(<span style="color:#8be9fd">int</span> x) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd">int</span> ALL_A <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0xAAAAAAAA</span>;<span style="color:#6272a4">//10101010101010101010101010101010
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">!</span>((x <span style="color:#ff79c6">&amp;</span> ALL_A) <span style="color:#ff79c6">^</span> ALL_A);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="isasciidigit">isAsciiDigit</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">/* 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * isAsciiDigit - return 1 if 0x30 &lt;= x &lt;= 0x39 (ASCII codes for characters &#39;0&#39; to &#39;9&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Example: isAsciiDigit(0x35) = 1.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *            isAsciiDigit(0x3a) = 0.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *            isAsciiDigit(0x05) = 0.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Max ops: 15
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Rating: 3
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">isAsciiDigit</span>(<span style="color:#8be9fd">int</span> x) {
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">// x &gt; 0x30 &amp;&amp; x &lt; 0x39
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#8be9fd">int</span> TMIN <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x80000000</span>; <span style="color:#6272a4">// 10000000000000000000000000000000
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#8be9fd">int</span> minus0x30 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">~</span><span style="color:#bd93f9">0x30</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">!</span>((x <span style="color:#ff79c6">+</span> minus0x30) <span style="color:#ff79c6">&amp;</span> TMIN) <span style="color:#6272a4">// x - 0x30 &gt; 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>       <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#ff79c6">!</span>((<span style="color:#bd93f9">0x39</span> <span style="color:#ff79c6">-</span> x) <span style="color:#ff79c6">&amp;</span> TMIN); <span style="color:#6272a4">// 0x39 - x &gt; 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>}
+</span></span></code></pre></div><h3 id="conditional-x--y--z">conditional x ? y : z</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">/* 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * conditional - same as x ? y : z 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Example: conditional(3,4,5) = 4
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Max ops: 16
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Rating: 3
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">conditional</span>(<span style="color:#8be9fd">int</span> x, <span style="color:#8be9fd">int</span> y, <span style="color:#8be9fd">int</span> z) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd">int</span> x1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">!!</span>x;<span style="color:#6272a4">//if x==0, x1 = 1 else x1 = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  x <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">~</span>x1<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;<span style="color:#6272a4">//if x1 == 1, x = 111111111...11 else x =0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">return</span> (x<span style="color:#ff79c6">&amp;</span>y)<span style="color:#ff79c6">|</span>(<span style="color:#ff79c6">~</span>x<span style="color:#ff79c6">&amp;</span>z);
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">//if x =11111... 1111 ,(x &amp; y) = y,( ~x &amp; z) = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span> <span style="color:#6272a4">//if x = 0 , (x &amp; γ〕 = 0, (~x &amp; z) = z
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>}
+</span></span></code></pre></div><h3 id="islessorequal">isLessOrEqual</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">/* 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * isLessOrEqual - if x &lt;= y  then return 1, else return 0 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Example: isLessOrEqual(4,5) = 1.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Max ops: 24
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Rating: 3
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">isLessOrEqual</span>(<span style="color:#8be9fd">int</span> x, <span style="color:#8be9fd">int</span> y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd">int</span> isLessOrEqual(<span style="color:#8be9fd">int</span> x, <span style="color:#8be9fd">int</span> y) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd">int</span> diff_sign <span style="color:#ff79c6">=</span> ((x <span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#bd93f9">31</span>) <span style="color:#ff79c6">&amp;</span> <span style="color:#bd93f9">1</span>)         <span style="color:#6272a4">// x &lt; 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>                  <span style="color:#ff79c6">&amp;</span> (((y <span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#bd93f9">31</span>) <span style="color:#ff79c6">&amp;</span> <span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">^</span> <span style="color:#bd93f9">1</span>);<span style="color:#6272a4">// y &gt; 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#8be9fd">int</span> same_sign <span style="color:#ff79c6">=</span> (((x <span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#bd93f9">31</span>) <span style="color:#ff79c6">&amp;</span> <span style="color:#bd93f9">1</span>)        <span style="color:#6272a4">// same equals 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>                  <span style="color:#ff79c6">^</span> ((y <span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#bd93f9">31</span>) <span style="color:#ff79c6">&amp;</span> <span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">^</span> <span style="color:#bd93f9">1</span>); <span style="color:#6272a4">// not the same euqals 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#8be9fd">int</span> x_minus_y <span style="color:#ff79c6">=</span> (((x <span style="color:#ff79c6">+</span> (<span style="color:#ff79c6">~</span>y)) <span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#bd93f9">31</span>) <span style="color:#ff79c6">&amp;</span> <span style="color:#bd93f9">1</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> diff_sign <span style="color:#ff79c6">||</span> ( same_sign <span style="color:#ff79c6">&amp;&amp;</span> x_minus_y);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="wp">WP</h4>
+<p>x &lt;= y 的条件等价于</p>
+<ul>
+<li>
+<p>x，y异号。<code>sign(x) == 1 &amp;&amp; sing(y) == 0</code>，即<code>sign(x) &amp; (sign(y) ^ 1)</code></p>
+<blockquote>
+<p>Sign(x) {</p>
+<p>​ return ((x &raquo; 31) &amp; 1); // 逻辑位移，详见下</p>
+<p>}</p>
+<p>如果为负数，返回1</p>
+<p>正数，返回0</p>
+</blockquote>
+</li>
+<li>
+<p>x，y同号。</p>
+</li>
+</ul>
+<pre tabindex="0"><code>1.sign(x) == sign(y) =&gt; (sign(x) ^ sign(y) ^ 1)
+2.x - y &lt;= 0
+=&gt; x - y &lt; 1
+=&gt; x + (~y+1) &lt; 1
+=&gt; x + (~y) &lt; 1
+=&gt; sign(x + (~y))
+</code></pre><blockquote>
+<p><a href="https://www.cnblogs.com/sinkinben/p/12323784.html">来源&amp;参考-最大数值</a></p>
+</blockquote>
+<h4 id="逻辑位移算数位移">逻辑位移算数位移</h4>
+<p>逻辑右移只将二进制数整体右移，<strong>左边补0</strong>，屏蔽了右移带出来的符号位</p>
+<p>算术位移，左边补上符号位。</p>
+<h3 id="logicalneg">logicalNeg</h3>
+<blockquote>
+<p>当 x≠0x≠0 时，x|(−x)x|(−x) 的符号位必然为 1</p>
+<p><a href="https://mcginn7.github.io/2020/02/14/CSAPP-datalab/#isLessOrEqual-x-y">来源</a></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">/* 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * logicalNeg - implement the ! operator, using all of 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *              the legal operators except !
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Examples: logicalNeg(3) = 0, logicalNeg(0) = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Legal ops: ~ &amp; ^ | + &lt;&lt; &gt;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Max ops: 12
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Rating: 4 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">logicalNeg</span>(<span style="color:#8be9fd">int</span> x) {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> ((x <span style="color:#ff79c6">|</span> (<span style="color:#ff79c6">~</span>x <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>))<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">31</span>)<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="howmanybits">howManyBits</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6272a4">/* howManyBits - return the minimum number of bits required to represent x in
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *             two&#39;s complement
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *  Examples: howManyBits(12) = 5
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *            howManyBits(298) = 10
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *            howManyBits(-5) = 4
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *            howManyBits(0)  = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *            howManyBits(-1) = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *            howManyBits(0x80000000) = 32
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *  Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *  Max ops: 90
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *  Rating: 4
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">howManyBits</span>(<span style="color:#8be9fd">int</span> x) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd">int</span> b16,b8,b4,b2,b1,b0;
+</span></span><span style="display:flex;"><span>  <span style="color:#8be9fd">int</span> sign<span style="color:#ff79c6">=</span>x<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">31</span>;
+</span></span><span style="display:flex;"><span>  x <span style="color:#ff79c6">=</span> (sign<span style="color:#ff79c6">&amp;~</span>x)<span style="color:#ff79c6">|</span>(<span style="color:#ff79c6">~</span>sign<span style="color:#ff79c6">&amp;</span>x);<span style="color:#6272a4">//如果x&gt;0, 则x = x, 否则x = ~x
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  
+</span></span><span style="display:flex;"><span>  b16 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">!!</span>(x<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">16</span>)<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#bd93f9">4</span>;<span style="color:#6272a4">//高十六位有1，则b16 = 2^4 = 16, 否则b16 = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">&gt;&gt;</span>b16;
+</span></span><span style="display:flex;"><span>  b8 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">!!</span>(x<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">8</span>)<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#bd93f9">3</span>;
+</span></span><span style="display:flex;"><span>  x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">&gt;&gt;</span>b8;
+</span></span><span style="display:flex;"><span>  b4 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">!!</span>(x<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">4</span>)<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#bd93f9">2</span>;
+</span></span><span style="display:flex;"><span>  x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">&gt;&gt;</span>b4;
+</span></span><span style="display:flex;"><span>  b2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">!!</span>(x<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">2</span>)<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>  x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">&gt;&gt;</span>b2;
+</span></span><span style="display:flex;"><span>  b1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">!!</span>(x<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">1</span>);
+</span></span><span style="display:flex;"><span>  x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">&gt;&gt;</span>b1;
+</span></span><span style="display:flex;"><span>  b0 <span style="color:#ff79c6">=</span> x;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> b16<span style="color:#ff79c6">+</span>b8<span style="color:#ff79c6">+</span>b4<span style="color:#ff79c6">+</span>b2<span style="color:#ff79c6">+</span>b1<span style="color:#ff79c6">+</span>b0<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;<span style="color:#6272a4">//+1表示加上符号位
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>}
+</span></span></code></pre></div><h3 id="floatscale2">floatScale2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">/* 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">* floatScale2 - Return bit-level equivalent of expression 2*f for
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">*   floating point argument f.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">*   Both the argument and result are passed as unsigned int&#39;s, but
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">*   they are to be interpreted as the bit-level representation of
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">*   single-precision floating point values.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">*   When argument is NaN, return argument
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">*   Legal ops: Any integer/unsigned operations incl. ||, &amp;&amp;. also if, while
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">*   Max ops: 30
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">*   Rating: 4
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">unsigned</span> <span style="color:#50fa7b">floatScale2</span>(<span style="color:#8be9fd">unsigned</span> uf) {
+</span></span><span style="display:flex;"><span>   <span style="color:#8be9fd">int</span> exp_const <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x7f800000</span>; <span style="color:#6272a4">// 01111111100000000000000000000000
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>   <span style="color:#8be9fd">int</span> frac_const <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x7fffff</span>;  <span style="color:#6272a4">// 00000000011111111111111111111111
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>   <span style="color:#8be9fd">int</span> exp <span style="color:#ff79c6">=</span> (uf <span style="color:#ff79c6">&amp;</span> exp_const)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">23</span>; <span style="color:#6272a4">// get exp part
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>   <span style="color:#8be9fd">int</span> frac <span style="color:#ff79c6">=</span> uf <span style="color:#ff79c6">&amp;</span> frac_const;     <span style="color:#6272a4">// get frac part
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>   <span style="color:#8be9fd">int</span> sign <span style="color:#ff79c6">=</span> uf <span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#bd93f9">31</span>;            <span style="color:#6272a4">// get sign
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>   <span style="color:#8be9fd">int</span> sign_bit <span style="color:#ff79c6">=</span> sign <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">31</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">if</span> (exp <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">return</span> uf <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">|</span> sign_bit; <span style="color:#6272a4">// exp = 0, not a correct format
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>   <span style="color:#ff79c6">if</span> (exp <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">255</span>) <span style="color:#ff79c6">return</span> uf; <span style="color:#6272a4">// When argument is NaN, return argument
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>   <span style="color:#ff79c6">return</span> ((exp <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">23</span>) <span style="color:#ff79c6">|</span> frac <span style="color:#ff79c6">|</span> sign_bit;<span style="color:#6272a4">// 组合在一起
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>1位符号位，8位exp，23位frac</p>
+<p>如125.125（10进制）</p>
+<p>转换成二进制<code>1111101.001</code>(二进制)，再转换成浮点数标准格式</p>
+<p><code>1.111101001 * 2^6</code></p>
+<p>6代表点向左移动了几位，加上偏移量<code>127(32位)或者1023(64位)</code>，32位下，exp = (6+127)的二进制表示<code>10000101</code></p>
+<p>Frac = 小数点后的数，如<code>111101001</code></p>
+</blockquote>
+<h3 id="floatfloat2int">floatFloat2Int</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">/* 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * floatFloat2Int - Return bit-level equivalent of expression (int) f
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   for floating point argument f.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Argument is passed as unsigned int, but
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   it is to be interpreted as the bit-level representation of a
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   single-precision floating point value.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Anything out of range (including NaN and infinity) should return
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   0x80000000u.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Legal ops: Any integer/unsigned operations incl. ||, &amp;&amp;. also if, while
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Max ops: 30
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Rating: 4
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">floatFloat2Int</span>(<span style="color:#8be9fd">unsigned</span> uf) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> exp_const <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x7f800000</span>; <span style="color:#6272a4">// 01111111100000000000000000000000
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> frac_const <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x7fffff</span>;  <span style="color:#6272a4">// 00000000011111111111111111111111
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> exp <span style="color:#ff79c6">=</span> (uf <span style="color:#ff79c6">&amp;</span> exp_const)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">23</span>; <span style="color:#6272a4">// get exp part
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> frac <span style="color:#ff79c6">=</span> uf <span style="color:#ff79c6">&amp;</span> frac_const;     <span style="color:#6272a4">// get frac part
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    frac <span style="color:#ff79c6">=</span> frac <span style="color:#ff79c6">|</span> <span style="color:#bd93f9">0x800000</span>;         <span style="color:#6272a4">// 浮点数省略了第一个1，一般到位移的时候，1.frac，小数点前的1被省略了，所以得补上
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> sign <span style="color:#ff79c6">=</span> uf <span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#bd93f9">31</span>;            <span style="color:#6272a4">// get sign
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> sign_bit <span style="color:#ff79c6">=</span> sign <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">31</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> shift_num <span style="color:#ff79c6">=</span> exp <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">127</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (shift_num <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (shift_num <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">31</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0x80000000u</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (shift_num <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">23</span>)       <span style="color:#6272a4">// 如果位移在23以上，说明frac部分全都是小数点前的，需要左移
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        frac <span style="color:#ff79c6">=</span> frac <span style="color:#ff79c6">&lt;&lt;</span> (shift_num <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">23</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>              <span style="color:#6272a4">// 右移并将小数点后的省略掉
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        frac <span style="color:#ff79c6">=</span> (frac <span style="color:#ff79c6">&gt;&gt;</span> (<span style="color:#bd93f9">23</span> <span style="color:#ff79c6">-</span> shift_num));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (sign)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">~</span>frac<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> frac;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="floatpower2">floatPower2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6272a4">/* 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * floatPower2 - Return bit-level equivalent of the expression 2.0^x
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   (2.0 raised to the power x) for any 32-bit integer x.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   The unsigned value that is returned should have the identical bit
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   representation as the single-precision floating-point number 2.0^x.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   If the result is too small to be represented as a denorm, return
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   0. If too large, return +INF.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Legal ops: Any integer/unsigned operations incl. ||, &amp;&amp;. Also if, while 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Max ops: 30 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> *   Rating: 4
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">unsigned</span> <span style="color:#50fa7b">floatPower2</span>(<span style="color:#8be9fd">int</span> x) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> INF <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x7f800000</span>; <span style="color:#6272a4">// 01111111100000000000000000000000
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> exp <span style="color:#ff79c6">=</span> x <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">127</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (exp <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">255</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> INF;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (exp <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> exp <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">23</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>2.0的位级表示（ 1.0 * 2^1 ）：符号位：0，指数：1+127=128，frac=1.0-1=0。</p>
+<p>首先得到偏移之后的指数值e，如果e小于等于0（为0时，结果为0，因为2.0的浮点表示frac部分为0），对应的如果e大于等于255则为无穷大或越界了。否则返回正常浮点值，frac为0，直接对应指数即可</p>
+<p>来源https://zhuanlan.zhihu.com/p/59534845</p>
+</blockquote>
+<h2 id="bomblab">bomblab</h2>
+<h3 id="phase_1">Phase_1</h3>
+<p><code>Border relations with Canada have never been better.</code></p>
+<h3 id="phase_2">Phase_2</h3>
+<p>看phase_2函数里</p>
+<p>
+  <img src="/img/CSAPP_lab/image-20200905200221312.png" alt="image-20200905200221312">
+
+</p>
+<p>
+  <img src="/img/CSAPP_lab/image-20200905201155428.png" alt="image-20200905201155428">
+
+</p>
+<p>读取了六个数字，结合f5生成的伪代码，可以看到讲读取的数据存入到栈种。调用结束后会将[rsp]与1进行比较，所以第一个数必须是1。</p>
+<p>
+  <img src="/img/CSAPP_lab/image-20200905202536189.png" alt="image-20200905202536189">
+
+</p>
+<p>标黄的地方，将[rsp+4]放到rbx中，然后在0x400F17这里，可以看到将[rbx-4]，也就是[rsp]放入eax中，再eax自加，随后将exa和[rbx]相比较，所以也就是读取的数字中，第二个数字是第一个数字*2，以此类推，一直到rbx = rbp 也就是直到rsp + 18h，也就是比对完这读取的六个数字，然后再结束循环解除炸弹。</p>
+<h3 id="phase_3">Phase_3</h3>
+<p>根据输入的v8，比对result是否和v9一样</p>
+<h3 id="phase_4">Phase_4</h3>
+<p>可以用python写一下func4的代码，或者直接让v8=7让返回结果是0就行</p>
+<h3 id="phase_5">Phase_5</h3>
+<p>
+  <img src="/img/CSAPP_lab/image-20200906215307237.png" alt="image-20200906215307237">
+
+</p>
+<p>
+  <img src="/img/CSAPP_lab/image-20200906215354052.png" alt="image-20200906215354052">
+
+</p>
+<p>赋值这里，由于会和 0xF与一下，所以为了使结果是flyers，输入<code>9on567</code>即可在这个数组中取得对应的字幕</p>
+<pre tabindex="0"><code>o = 0110 1111 
+o &amp; 0xf = 0000 1111 = 16 = 0xf
+n = 0110 1110
+n &amp; 0xf = 0000 1110 = 15 = 0xe
+</code></pre><h3 id="phase_6">Phase_6</h3>
+<p>4 3 2 1 6 5</p>
+<p>挖坑，咕咕咕</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/django%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-toggle="tooltip" data-placement="top" title="django学习记录">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/readme/" data-toggle="tooltip" data-placement="top" title="Clean White Theme for Hugo">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

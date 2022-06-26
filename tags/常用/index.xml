@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>常用 on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/%E5%B8%B8%E7%94%A8/</link>
+    <description>Recent content in 常用 on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/%E5%B8%B8%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>栈迁移</title>
+      <link>https://mrbelieve.tech/post/%E6%A0%88%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%A0%88%E8%BF%81%E7%A7%BB/</guid>
+      <description>劫持一次流程，覆盖一次ebp 栈迁移后跳到read 正常Rop到libc，再rop，再到libc rop到libc，由于跳到read上，后面可以继</description>
+    </item>
+    
+  </channel>
+</rss>

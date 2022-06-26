@@ -1,0 +1,2377 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="编译原理学习笔记" />
+    <meta property="og:title" content="编译原理学习笔记" />
+    <meta property="twitter:title" content="编译原理学习笔记" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>编译原理学习笔记 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>编译原理学习笔记</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Saturday, June 27, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p><a href="https://www.bilibili.com/video/BV1cE411f78c?p=1">视频</a></p>
+<h2 id="编译器结构">编译器结构</h2>
+<h3 id="词法分析-lexical-analysis-or-scanning">词法分析 Lexical analysis or scanning</h3>
+<p><strong>检测输入字符串中不属于我们语言的那部分符号</strong></p>
+<p>词法分析把程序字段变成关键字words or 词法单元tokens</p>
+<p>如</p>
+<pre tabindex="0"><code>if x == y then z = 1; else z = 2;
+</code></pre><p>分号，标点，分隔符都是词法单元</p>
+<h3 id="语法分析syntax-analysis-parsing">语法分析syntax analysis parsing</h3>
+<p>试着去判断是否格式正确或者是否是有效程序（语句中是否存在格式错误或没用解析树）</p>
+<p>if then else包含三部分</p>
+<p>predicate条件判断，then语句和else语句</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200626235143347.png" alt="image-20200626235143347">
+
+</p>
+<h3 id="语义分析-semantic-analysis">语义分析 semantic analysis</h3>
+<p>尝试去找出矛盾的地方</p>
+<h3 id="优化-optimization">优化 optimization</h3>
+<p>修改代码使之使用更少的资源</p>
+<h3 id="代码生成">代码生成</h3>
+<p>高级语言转变成汇编</p>
+<h2 id="cool语言">Cool语言</h2>
+<pre tabindex="0"><code class="language-cool" data-lang="cool">class Main {
+ i : IO &lt;- new IO;
+ main() : Int { { i.out_string(&#34;Hello wordld!\n&#34;); 1;} };
+};
+</code></pre><p>Int 是return type。</p>
+<pre tabindex="0"><code>class Main {
+ i : IO &lt;- new IO;
+ main() : IO { { i.out_string(&#34;Hello wordld!\n&#34;); } };
+};//一旦打印完string就退出
+</code></pre><pre tabindex="0"><code>class Main {
+ i : IO &lt;- new IO;
+ main() : Object { { i.out_string(&#34;Hello wordld!\n&#34;); } };
+};//Object 返回类型
+
+class Main {
+ main() : Object { { (new IO).out_string(&#34;Hello wordld!\n&#34;); } };
+};
+</code></pre><p>下面是继承的写法</p>
+<pre tabindex="0"><code>class Main inherits IO{
+ main() : Object { { self.out_string(&#34;Hello wordld!\n&#34;); } };
+};
+
+class Main inherits IO{
+ main() : Object { { out_string(&#34;Hello wordld!\n&#34;); } };
+};
+</code></pre><h2 id="词法分析">词法分析</h2>
+<p>目标是将输入流划分为词素。</p>
+<p>从左到右的扫描字符串，有时必须对输入字符串向前看，才能弄清楚当前字符串和子字符串在语言中的角色</p>
+<p>变量名称：字母开头</p>
+<p>字符串-&gt; 语法分析器 -&gt;<code>变成token&lt;class, string&gt;</code> parser解析器</p>
+<p>foo = 42 -&gt;                  &lt;Id, &ldquo;foo&rdquo;&gt; &lt;operator, &ldquo;=&quot;&gt; &lt;Int, &ldquo;42&rdquo;&gt;</p>
+<p>有以下几类：</p>
+<ul>
+<li>空格whitespace</li>
+<li>keyword</li>
+<li>identifiers</li>
+<li>numbers</li>
+</ul>
+<p>这些子字符串称为词素（构成词的要素），&lt;token class， lexemes词素&gt;，这就是一个token</p>
+<h3 id="正则表达式">正则表达式</h3>
+<h4 id="基础表达式">基础表达式</h4>
+<h5 id="单字符">单字符</h5>
+<p>&lsquo;c&rsquo; = {&lsquo;c&rsquo;}</p>
+<h5 id="epsilon">Epsilon</h5>
+<p>Epsilon = {&rdquo;&quot;} = 单个字符的空字符串 != 空字符串</p>
+<h4 id="复合表达式">复合表达式</h4>
+<h5 id="union">Union</h5>
+<p>A + B = {a|a属于A} U {b|b属于B}</p>
+<p>A并B</p>
+<h5 id="concatencation-级联">Concatencation 级联</h5>
+<p>如[a,b]与[c,d]级联得到[ac,ad,bc,bd]</p>
+<p>AB = {ab | a属于A ^ b 属于B }</p>
+<h5 id="iterator-串联">Iterator 串联</h5>
+<p>A* = 0到无穷个A串联</p>
+<h3 id="匹配变量名">匹配变量名</h3>
+<p>A+ = AA* = 至少一个A</p>
+<p>digit = &lsquo;0&rsquo; + &lsquo;1&rsquo; + &lsquo;2&rsquo; + &lsquo;3&rsquo; + &lsquo;4&rsquo; + &lsquo;5&rsquo; + &lsquo;6&rsquo; + &lsquo;7&rsquo; + &lsquo;8&rsquo; + &lsquo;9&rsquo;</p>
+<p>letter = [a-zA-Z] 匹配所有字母</p>
+<p>letter(letter+digit)* 字母+0或多个字母和数字的组合</p>
+<p>空格 &rsquo; &rsquo; + &lsquo;\n&rsquo; + &lsquo;\t&rsquo;</p>
+<p>opt_function = (&rsquo;.&lsquo;digits)?</p>
+<p>Opt_exponent = (&lsquo;E&rsquo;(&rsquo;+&rsquo; + &lsquo;-&rsquo;)?digits)?</p>
+<p>###词法规范</p>
+<p>当输入值有两种不同的前缀，且这两种都是有效的词法单元时，就应该选择最长的那个，最长匹配原则Maximal Munch</p>
+<p>当匹配到两个规则的时候，如keiword，identifiers，会优先匹配第一个choose the one listed first。</p>
+<p>捕获有可能错误字符串的正则表达式并赋予其最低优先级</p>
+<h3 id="有限自动机finite-automata">有限自动机Finite Automata</h3>
+<h4 id="定义">定义</h4>
+<ul>
+<li>一组能读取的输入字符串</li>
+<li>一个有限状态的集合</li>
+<li>一个特殊的集合被设定为开始状态</li>
+<li>一组用于接受状态的集合（读取完可接受状态输入后自动结束，否则拒绝输入</li>
+<li>有一些用于状态转换的集合</li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628214134850.png" alt="image-20200628214134850">
+
+</p>
+<h4 id="exampls">Exampls</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628160825195.png" alt="image-20200628160825195">
+
+</p>
+<h4 id="确定性自动机和非确定性自动机的区别">确定性自动机和非确定性自动机的区别</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628161433100.png" alt="image-20200628161433100">
+
+</p>
+<p>DFA只有一条道可以通过</p>
+<p>NFA基于输入执行，可能处于许多不同的状态，只要有任何一条路径可以接受，就会处于接受状态 ，这个字符串就属于这个NFA可以接受的语言</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628161945645.png" alt="image-20200628161945645">
+
+</p>
+<p>NFA要远比DFA来的小，可以成倍缩小，DFA执行速度更快</p>
+<h3 id="将正则表达式转换为nfa-非确定性有限自动机">将正则表达式转换为NFA 非确定性有限自动机</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628213856496.png" alt="image-20200628213856496">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628213913515.png" alt="image-20200628213913515">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628213950201.png" alt="image-20200628213950201">
+
+</p>
+<h3 id="nfa-to-dfa">NFA to DFA</h3>
+<p>Epsilon-closure：是状态选择，可以是一组状态，但只针对单个状态进行处理，只关注那些仅通过空跳就可以到达的状态。</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628215245905.png" alt="image-20200628215245905">
+
+</p>
+<p>N种状态，可用状态数量子集|S| &lt;= N，公用2^N -1种非空子集</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628220546136.png" alt="image-20200628220546136">
+
+</p>
+<p>所维护的每一个属性都指代一条计算执行路径，DFA的状态记录了NFA基于相同输入可能进入的可能状态集</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628221202160.png" alt="image-20200628221202160">
+
+</p>
+<p>原视频讲解链接：<a href="https://www.bilibili.com/video/BV1cE411f78c?p=16">link</a> 11:15秒</p>
+<h3 id="实现有限自动机">实现有限自动机</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628221706335.png" alt="image-20200628221706335">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200628222154758.png" alt="image-20200628222154758">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200629082652419.png" alt="image-20200629082652419">
+
+</p>
+<h4 id="实现nfa">实现NFA</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200629083217424.png" alt="image-20200629083217424">
+
+</p>
+<p>节省了大量表空间，但是</p>
+<p>执行速度比确定性自动机慢很多</p>
+<h4 id="总结">总结</h4>
+<p>DFA执行速度更快，结构上较为松散</p>
+<p>NFA速度较慢，结构紧凑</p>
+<h3 id="pa2">PA2</h3>
+<p><a href="https://github.com/mrbelieve128/Stanford-Compilers-PA/tree/master/PA2">https://github.com/mrbelieve128/Stanford-Compilers-PA/tree/master/PA2</a></p>
+<h2 id="解析器-parsing">解析器 Parsing</h2>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200707171225807.png" alt="image-20200707171225807">
+
+</p>
+<h3 id="上下文无关文法-context-free-grammar">上下文无关文法 context-free grammar</h3>
+<ul>
+<li>不是所有token都是程序</li>
+<li>解析器parse需要分辨有效和无效的字符串</li>
+</ul>
+<p>所以需要</p>
+<ul>
+<li>需要中算法来分辨有效token</li>
+<li>算法来分辨有效token和无效token</li>
+</ul>
+<p>上下文无关的文法自然而然地用于描述这种递归结构</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708102409480.png" alt="image-20200708102409480">
+
+</p>
+<p>上下文无关的文法包含</p>
+<ul>
+<li>A set of terminals <strong>T</strong></li>
+<li>A set of non-terminal <strong>N</strong></li>
+<li>A start symbol <strong>S</strong> <strong>(S 是 N之一)</strong></li>
+<li>A set of productions (是指一个符号跟着一个箭头，紧接着一串符号)</li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708103010382.png" alt="image-20200708103010382">
+
+</p>
+<p><a href="https://www.bilibili.com/video/BV1cE411f78c?p=19">定义7:43左右</a></p>
+<h3 id="推导">推导</h3>
+<h4 id="example">Example</h4>
+<p>Grammer</p>
+<p>E -&gt; E+E | E*E | (E) | id</p>
+<p>String</p>
+<p>id * id + id</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708111200187.png" alt="image-20200708111200187">
+
+</p>
+<p>A parse tree has</p>
+<ul>
+<li>Terminals at the leaves</li>
+<li>Non-terminals at the interior nodes (内部节点)</li>
+</ul>
+<p>叶子结点的中序遍历结果是原始输入</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708111904374.png" alt="image-20200708111904374">
+
+</p>
+<p>解析树也展示了操作间的关联性，但输入字符串并没有展示</p>
+<p>如上图，**&quot;<em>&quot;<strong>要比</strong>&quot;+&quot;**号更优先，因为</em>号是+号的子树</p>
+<p>上图这个例子是最左推导(在每个步骤先替换最左边的非终结字符）也有个等价概念最右推导</p>
+<p>最左和最右推导生成的解析树都是一样的</p>
+<h4 id="总结-1">总结</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708113045442.png" alt="image-20200708113045442">
+
+</p>
+<h3 id="ambiguity-歧义性">Ambiguity 歧义性</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708144341299.png" alt="">
+
+</p>
+<ul>
+<li>如果对于某个字符串有多个解析树，那么这个语法就是模棱两可的。或者说，对于某个字符串有多个最右推导或者最左推导，那么这个字符串就会有两个截然不同的解析树，语法也会变得有歧义</li>
+<li>Ambiguity is <strong>BAD</strong></li>
+</ul>
+<p>消除歧义性得最直接办法是重写语法，生成相同语法但生成单一解析树</p>
+<p>E -&gt; E&rsquo; + E | E&rsquo;</p>
+<p>E&rsquo; -&gt; id * E&rsquo; | id | (E) * E&rsquo; | (E)</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708151619295.png" alt="image-20200708151619295">
+
+</p>
+<h4 id="if-then-else结构">if-then-else结构</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708152324929.png" alt="image-20200708152324929">
+
+</p>
+<h4 id="总结-2">总结</h4>
+<ul>
+<li>
+<p>Impossible to convert automatically an ambiguous grammar to an unambiguous one</p>
+</li>
+<li>
+<p>User with care, ambiguity can simplify the grammar</p>
+<blockquote>
+<p>sometimes allows more natural definitions</p>
+<p>We need disambiguation mechanisms</p>
+</blockquote>
+</li>
+<li>
+<p>Instead of rewriting the grammar</p>
+<blockquote>
+<p>Use the more natural (ambiguous) grammar</p>
+<p>Along with disambiguating declarations</p>
+</blockquote>
+</li>
+<li>
+<p>Most tools allow precedence and associativity declarations(优先性和关联性声明) to disambiguate grammars</p>
+</li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708153308814.png" alt="image-20200708153308814">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708153242579.png" alt="image-20200708153242579">
+
+</p>
+<h3 id="错误处理">错误处理</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708211223360.png" alt="image-20200708211223360">
+
+</p>
+<h4 id="紧急模式">紧急模式</h4>
+<p>最简单，最广泛使用的</p>
+<p>检测到错误，解析器会开始抛弃 token直到找到作用明确的token</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708211933630.png" alt="image-20200708211933630">
+
+</p>
+<h4 id="heading"></h4>
+<h4 id="错误产生式">错误产生式</h4>
+<p>将常犯的已知错误指定为语法中的替代产生式</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708214135600.png" alt="image-20200708214135600">
+
+</p>
+<h4 id="自动局部或全局校正">自动局部或全局校正</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708214329681.png" alt="image-20200708214329681">
+
+</p>
+<h3 id="抽象语法树-abstract-syntax-trees">抽象语法树 Abstract Syntax Trees</h3>
+<ul>
+<li>Like parse trees but ignore some details</li>
+<li>Abbreviated as AST （简称AST）</li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708215810670.png" alt="image-20200708215810670">
+
+</p>
+<p>下图表示了上图相同的内容</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200708215745811.png" alt="image-20200708215745811">
+
+</p>
+<h3 id="递归下降解析">递归下降解析</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709092646974.png" alt="image-20200709092646974">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709093014117.png" alt="image-20200709093014117">
+
+</p>
+<p>将E变成与(int)相同的格式使之可以匹配，则算解析成功，所以E-&gt;T-&gt;(E)-&gt;(int)</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709093210746.png" alt="image-20200709093210746">
+
+</p>
+<h3 id="递归下降算法">递归下降算法</h3>
+<ul>
+<li>Let TOKEN be the type of tokens
+<ul>
+<li>Special tokens INT, OPEN, CLOSE, PLUS, TIMES</li>
+</ul>
+</li>
+<li>Let the global <strong>next</strong> point to the next input token</li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709093644246.png" alt="image-20200709093644246">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709100234043.png" alt="image-20200709100234043">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709100315068.png" alt="image-20200709100315068">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709100353599.png" alt="image-20200709100353599">
+
+</p>
+<h3 id="递归下降的局限性">递归下降的局限性</h3>
+<p><a href="https://www.bilibili.com/video/BV1cE411f78c?p=26">link</a></p>
+<ul>
+<li>if a production for non-terminal X suceeds
+<ul>
+<li>canno backtrack to try a different production for X later</li>
+</ul>
+</li>
+<li>General recurisive-descent algorithms support such &ldquo;full&rdquo; backtracking
+<ul>
+<li>Can implement any grammar</li>
+</ul>
+</li>
+</ul>
+<h3 id="递归下降解析的主要难点-左递归-left-recursion">递归下降解析的主要难点-左递归 left recursion</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709223432931.png" alt="image-20200709223432931">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709223907932.png" alt="image-20200709223907932">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200709224244931.png" alt="image-20200709224244931">
+
+</p>
+<h3 id="pa3">PA3</h3>
+<p><a href="https://github.com/mrbelieve128/Stanford-Compilers-PA/tree/master/PA3">https://github.com/mrbelieve128/Stanford-Compilers-PA/tree/master/PA3</a></p>
+<h3 id="预测解析-predictive-parsers">预测解析 Predictive Parsers</h3>
+<p>预测解析和递归下降很像，依然是自上而下，但能从不出错的预测该使用哪一个产生式，并得出正确的解析。</p>
+<blockquote>
+<ul>
+<li>根据输入字符串中出现的内容，来尝试得出该使用哪个产生式。只适合语法形式很固定的情况</li>
+<li>不需要回滚操作。解析器可以完全肯定要使用的产生式</li>
+</ul>
+<p>接受 LL(K) 语法 (left-to-right 从左到右 left-most derivate 始终基于解析树上最左非终结符 k tokens lookahead)</p>
+</blockquote>
+<p>如</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200721124025300.png" alt="image-20200721124025300">
+
+</p>
+<p>实际上是使用表格记录数据</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200721124104017.png" alt="image-20200721124104017">
+
+</p>
+<p>使用栈记录边界</p>
+<ul>
+<li>把最左终结符或非终结符始终放在栈顶</li>
+</ul>
+<h4 id="算法">算法</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200721201621877.png" alt="image-20200721201621877">
+
+</p>
+<ul>
+<li>使用S和$初始化栈。</li>
+<li>$标记栈底，可以看作输入结束的标记。</li>
+<li>如果栈顶是最左非终结符，根据解析表来查找非终结符为X和下一个输入字符所对应的产生式右手边内容，然后弹出栈顶的X。如果不符合就会报错，因为没有回滚操作，没有办法解析字符串。</li>
+<li>如果栈顶是终结符的话，试着匹配输入，匹配成功就移动到下一个输入元素，然后弹出栈顶元素。如果不符合就会报错，因为没有回滚操作，没有办法解析字符串。</li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200721201531558.png" alt="image-20200721201531558">
+
+</p>
+<h3 id="first集-first-sets">First集 First Sets</h3>
+<h4 id="构建ll1-解析表">构建LL(1) 解析表</h4>
+<p>non-terminal <strong>A</strong>, input singal t</p>
+<p>什么时候T[A,t] = α（意思是解析表上[A, T]这一单元格里的内容是α</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722154608118.png" alt="image-20200722154608118">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722160201765.png" alt="image-20200722160201765">
+
+</p>
+<h4 id="例子">例子</h4>
+<p>左边是terminal的first集，只包含自身，右边是non-terminal的</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722160742081.png" alt="image-20200722160742081">
+
+</p>
+<h3 id="follow集-follow-sets">Follow集 Follow Sets</h3>
+<p>Follow集中的元素是那些被用到的元素而不是生成的符号。ε不会加进Follow集中</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722162012683.png" alt="image-20200722162012683">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722162135668.png" alt="image-20200722162135668">
+
+</p>
+<h4 id="一些规则">一些规则</h4>
+<p>出现在产生式右侧末尾的，如E -&gt; TX Follow(E) 是Follow(X)的子集</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722164420950.png" alt="image-20200722164420950">
+
+</p>
+<p>而在E -&gt; TX 中，X可以消除，所以Follow(E) 同样是Follow(T)中的元素</p>
+<p>&rsquo; ( &lsquo;的Follow集就是First(E)中所有元素，而First(E) = First(T)</p>
+<p>Follow(&rsquo;+&rsquo;) = First(E)</p>
+<p>Follow(int)因为可以Y可以变成ε，所以Follow(T)中的元素也会是Follow(int)中的元素</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722165632093.png" alt="image-20200722165632093">
+
+</p>
+<h3 id="ll1解析表">LL(1)解析表</h3>
+<p>目标是为上下文无关语法G构建出一个解析表T</p>
+<h4 id="语法规则">语法/规则</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722223652295.png" alt="image-20200722223652295">
+
+</p>
+<h4 id="例子-1">例子</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722224646095.png" alt="image-20200722224646095">
+
+</p>
+<p>根据字母（非终结符）和符号（终结符）来预测和匹配完整的对应关系</p>
+<p>构建完解析表的时候，如果表格内的某些单元格中有多种操作的话，每种情况下的操作就不是唯一的，这就不是LL(1)语法。</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200722225221200.png" alt="image-20200722225221200">
+
+</p>
+<h3 id="自下而上的解析-bottom-up-parsing">自下而上的解析 Bottom-Up Parsing</h3>
+<p>Bottom-Up 解析比top-down 递归下降解析 更通用，且同样高效</p>
+<p>Bottom-Up是大部分解析生成工具所使用的一种首选方法</p>
+<ul>
+<li>不需要提取左因子语法</li>
+<li>回归到“正常”语法，但仍然需要对**+号<strong>和</strong><em>号</em>*的优先权进行编码</li>
+<li>不会处理语义混淆的语法</li>
+</ul>
+<p>Bottom-Up解析 会进行归约，既通过反转产生式，逆向替换，将字符串规约为起始符号</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723094219185.png" alt="image-20200723094219185">
+
+</p>
+<p>从下往上看，是最右推导</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723094508872.png" alt="image-20200723094508872">
+
+</p>
+<p>解析树，也是从下往上生成的</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723094848086.png" alt="image-20200723094848086">
+
+</p>
+<h3 id="移位规约解析-shift-reduce-parsing">移位规约解析 Shift Reduce Parsing</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723095155240.png" alt="image-20200723095155240">
+
+</p>
+<p>在执行规约操作前，始终得需要得到足够多的输入（移位足够多次）</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723095718573.png" alt="image-20200723095718573">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723095745689.png" alt="image-20200723095745689">
+
+</p>
+<ul>
+<li>竖线左边的字符串能够由一个栈实现，栈顶就是那个竖线的位置</li>
+<li>Shift移位操作会push一个terminal进入栈</li>
+<li>规约操作，将一些符号弹出栈，这些是产生式右手边的内容。接着会把一个非终结符压入栈中，这歌非终结符是产生式左手边的内容</li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723100832481.png" alt="image-20200723100832481">
+
+</p>
+<h3 id="句柄-handles">句柄 Handles</h3>
+<p>句柄就是一个规约点，可以允许解析器通过进一步的规约操作回到开始符号位置。（句柄就是包含了一个可规约的操作路径）</p>
+<p>在shift-reduce解析中，句柄只会出现在栈顶</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723102541174.png" alt="image-20200723102541174">
+
+</p>
+<h3 id="句柄识别">句柄识别</h3>
+<p>L代表从左到右扫描，R代表最右推导，K代表了需要向前看k个数量的token</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723103946950.png" alt="image-20200723103946950">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723104156569.png" alt="image-20200723104156569">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723104447205.png" alt="image-20200723104447205">
+
+</p>
+<p>对于任何语法来说，可行前缀集就是一个正则语言</p>
+<p>item是指一个产生式右手边某处存在的一个&rsquo; . &lsquo;，如 T -&gt; (E) 的item包含 T -&gt; .(E)  T -&gt; (.E) T -&gt; (E.) T -&gt; (E).</p>
+<p>而 X -&gt; ε 的item是 X -&gt; .</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723105616024.png" alt="image-20200723105616024">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723105856274.png" alt="image-20200723105856274">
+
+</p>
+<p>&rsquo; . &lsquo;左侧的内容是见过的，即栈内元素。右侧元素则是在进行规约操作前想要读取的内容。</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723111109950.png" alt="image-20200723111109950">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723112430462.png" alt="image-20200723112430462">
+
+</p>
+<p>从底向上开始处理</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723112639904.png" alt="image-20200723112639904">
+
+</p>
+<h3 id="识别可行前缀-recognizing-viable-prefixes">识别可行前缀 Recognizing Viable Prefixes</h3>
+<p>目标是去写一个非确定性有限自动机来识别解析器中有效的栈</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723152951096.png" alt="image-20200723152951096">
+
+</p>
+<p>感觉是推算所有的可能性</p>
+<h3 id="有效item-valid-items">有效item Valid items</h3>
+<p>The states of the DFA are &ldquo;canonical collections of items&rdquo; or &ldquo;canonical collections of LR(0) items&rdquo;</p>
+<h4 id="定义-1">定义</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723155218728.png" alt="image-20200723155218728">
+
+</p>
+<h4 id="简化地说">简化地说</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723155456565.png" alt="image-20200723155456565">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723155514814.png" alt="image-20200723155514814">
+
+</p>
+<h2 id="语义分析-semantic-analysis-1">语义分析 Semantic Analysis</h2>
+<h3 id="语义分析简介">语义分析简介</h3>
+<h4 id="为什么需要单独一个语义分析阶段">为什么需要单独一个语义分析阶段？</h4>
+<ul>
+<li>编程语言会有一些特征，人可能会犯一些解析无法捕获的错误</li>
+<li>一些语言结构并非上下文无关</li>
+</ul>
+<h4 id="语义分析实际上做什么">语义分析实际上做什么</h4>
+<p>如coolc的检查列表</p>
+<ol>
+<li>所有标识符被声明，作用域是否规范</li>
+<li>类型检查（主要功能）</li>
+<li>继承关系是否有意义</li>
+<li>类仅定义一次</li>
+<li>类中方法也只被定义一次</li>
+<li>不滥用保留的关键字标识符</li>
+<li>&hellip;&hellip;</li>
+</ol>
+<h3 id="scope">Scope</h3>
+<p>目标: 将用法和声明相匹配</p>
+<p>静态分析在大多数语言中都相当重要</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723162419518.png" alt="image-20200723162419518">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723165607420.png" alt="image-20200723165607420">
+
+</p>
+<p>在下面例子中，对于X可能会有歧义，则使用最近嵌套规则 most closely nested rule</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723170146809.png" alt="image-20200723170146809">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723170623797.png" alt="image-20200723170623797">
+
+</p>
+<h3 id="symbol-tables">Symbol Tables</h3>
+<p>在许多编译器中的一种重要的数据结构</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200723171535802.png" alt="image-20200723171535802">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724094925936.png" alt="image-20200724094925936">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724095151576.png" alt="image-20200724095151576">
+
+</p>
+<p>会先找最近的Y（也就是最新定义的）</p>
+<p>而在下述错误示范中，为了解决这个问题</p>
+<pre tabindex="0"><code>f(x:INT, x:INT)
+{}
+</code></pre><p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724095821453.png" alt="image-20200724095821453">
+
+</p>
+<p>check_scope直到x处在栈顶才返回true</p>
+<p>因为cool中可以，class名先用再定义，所以不可能通过symbol table或在一次检查中检查完class名</p>
+<p>解决办法</p>
+<ul>
+<li>第一次检查：记录所有的class名</li>
+<li>第二次检查：检测</li>
+</ul>
+<p>语义分析通常要求多次检查，而且经常大于两次检查。</p>
+<h3 id="types">Types</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724102140619.png" alt="image-20200724102140619">
+
+</p>
+<p>一种语言的type system定义了哪些类型能使用哪些操作符，目标是操作符只被正确的类型使用</p>
+<p>目前，有三种类型语言：</p>
+<ul>
+<li>静态类型：编译的时候就检测类型</li>
+<li>动态类型：直到执行代码才检测类型</li>
+<li>untyped：没有类型检测（机器代码 ）</li>
+</ul>
+<h4 id="静态类型喝动态类型的看法">静态类型喝动态类型的看法</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724103636901.png" alt="image-20200724103636901">
+
+</p>
+<h3 id="type-checkingimage-20200724105958685img编译原理学习笔记image-20200724105958685png">Type Checking
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724105958685.png" alt="image-20200724105958685">
+
+</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724110021635.png" alt="image-20200724110021635">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724110937602.png" alt="image-20200724110937602">
+
+</p>
+<h3 id="type-environments">Type Environments</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724111334320.png" alt="image-20200724111334320">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724111354123.png" alt="image-20200724111354123">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724111528046.png" alt="image-20200724111528046">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724111731184.png" alt="image-20200724111731184">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724112015350.png" alt="image-20200724112015350">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724112448369.png" alt="image-20200724112448369">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724112420945.png" alt="image-20200724112420945">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724112952700.png" alt="image-20200724112952700">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724113344525.png" alt="image-20200724113344525">
+
+</p>
+<h3 id="subtyping">Subtyping</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724141347149.png" alt="image-20200724141347149">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724141650601.png" alt="image-20200724141650601">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724142110637.png" alt="image-20200724142110637">
+
+</p>
+<h4 id="lub-or-least-upper-bound">LUB or least upper bound</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724142626399.png" alt="image-20200724142626399">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724143528841.png" alt="image-20200724143528841">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724143822176.png" alt="image-20200724143822176">
+
+</p>
+<p>因为不知道会匹配上哪个类型，所以要lub(T1,&hellip;..Tn)</p>
+<h3 id="typing-methods">Typing Methods</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724144324764.png" alt="image-20200724144324764">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724144914464.png" alt="image-20200724144914464">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724145112483.png" alt="image-20200724145112483">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724145555997.png" alt="image-20200724145555997">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724145757350.png" alt="image-20200724145757350">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724150056109.png" alt="image-20200724150056109">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724150109672.png" alt="image-20200724150109672">
+
+</p>
+<h3 id="implementing-type-checking">Implementing Type Checking</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724151522565.png" alt="image-20200724151522565">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724151938870.png" alt="image-20200724151938870">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724152341217.png" alt="image-20200724152341217">
+
+</p>
+<h3 id="pa4">PA4</h3>
+<h2 id="cool-type-checking--runtime-organization">Cool Type Checking &amp; Runtime Organization</h2>
+<h3 id="static-vs-dynamic-typing">Static vs. Dynamic Typing</h3>
+<p>Static type systems detect common errors( at compile time)</p>
+<p><strong>But some correct programs are disallowed</strong></p>
+<ul>
+<li>Some argue for dynamic type checking instead</li>
+<li>Others want more expressive static type checking</li>
+</ul>
+<p>Soundness theorem: for all expressions <strong>E</strong></p>
+<p><strong>dynamic_type(E)=static_type(E)</strong></p>
+<p><em>In all executions,E evaluates to values of the type inferred by the compiler.</em></p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200803110654648.png" alt="image-20200803110654648">
+
+</p>
+<h3 id="self-type">Self Type</h3>
+<pre tabindex="0"><code>class Count{
+ i:int-0; 
+ inc():Count{//返回Count的class类型
+  {
+   i&lt;-i+1; 
+   self;
+  }
+ };
+};
+
+class Stock inherits Count{
+ name: String;--name of item
+}
+class Main{
+ Stocka-(new Stock).inc();//类型错误，Count不是Stock的子集
+ ...a.name ...
+}
+</code></pre><p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200803112048486.png" alt="image-20200803112048486">
+
+</p>
+<h3 id="self-type-operations">Self Type Operations</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200803112942180.png" alt="image-20200803112942180">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200803113101122.png" alt="image-20200803113101122">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200803113408665.png" alt="image-20200803113408665">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200803114939592.png" alt="image-20200803114939592">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200803115337069.png" alt="image-20200803115337069">
+
+</p>
+<h3 id="self-type-usage">Self Type Usage</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804090907495.png" alt="image-20200804090907495">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804090921258.png" alt="image-20200804090921258">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804091404056.png" alt="image-20200804091404056">
+
+</p>
+<h3 id="self-type-checking">Self Type Checking</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804094143731.png" alt="image-20200804094143731">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804094222838.png" alt="image-20200804094222838">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804094434305.png" alt="image-20200804094434305">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804094508391.png" alt="image-20200804094508391">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804094930978.png" alt="image-20200804094930978">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804094952794.png" alt="image-20200804094952794">
+
+</p>
+<h3 id="error-recovery">Error Recovery</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804100054994.png" alt="image-20200804100054994">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804095353003.png" alt="image-20200804095353003">
+
+</p>
+<blockquote>
+<p>a workable solution but with cascading errors</p>
+</blockquote>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804100442013.png" alt="image-20200804100442013">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804100525228.png" alt="image-20200804100525228">
+
+</p>
+<h3 id="runtime-organization">Runtime Organization</h3>
+<p>Enforcing the language definition is just one purpose of the front-end. The front-end also builds the data structures that are needed to do co-generation as we seen but there is a real. Once we get through the front-end we no longer looking for errors in the program. We&rsquo;re no longer trying to figure out whether it&rsquo;s a valid program. Now we&rsquo;re really down to the point where we&rsquo;re going to generate code And that is a job at the back end.</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804100935737.png" alt="image-20200804100935737">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804101607087.png" alt="image-20200804101607087">
+
+</p>
+<h3 id="activations">Activations</h3>
+<p>Two goals:</p>
+<ul>
+<li>Correctness</li>
+<li>Speed</li>
+</ul>
+<p>Complications in code generation come from trying to be fast as well as correct</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804102036374.png" alt="image-20200804102036374">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804103800174.png" alt="image-20200804103800174">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804103904151.png" alt="image-20200804103904151">
+
+</p>
+<h4 id="activation-tree">activation tree</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804104501937.png" alt="image-20200804104501937">
+
+</p>
+<blockquote>
+<p>子树在同一行内代表调用后，需要依次调用的函数</p>
+<pre tabindex="0"><code>isEven(x:Int) : Bool {x % 2 == 0};
+isOne(x:Int) : Bool {x == 1};
+powerOfTwo(x:Int) : Bool {
+if isEven(x) then powerOfTwo(x / 2)
+else isOne(x)
+};
+</code></pre><p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804105015043.png" alt="image-20200804105015043">
+
+</p>
+</blockquote>
+<h3 id="activation-records">Activation Records</h3>
+<p>The information needed to manage one procedure activation is called an activation record (AR) or frame</p>
+<p>If procedure <strong>F</strong> calls <strong>G</strong>, then <strong>G</strong>&rsquo;s activation record contains a mix of info about <strong>F</strong> and <strong>G</strong>.</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804105747132.png" alt="image-20200804105747132">
+
+</p>
+<p>The compiler must determine,at compile-time,the layout of activation records and generate code that correctly accesses locations in the activation record</p>
+<p>Thus,the AR layout and the code generator must be designed together!</p>
+<h3 id="globals-and-heap">Globals and Heap</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804111927233.png" alt="image-20200804111927233">
+
+</p>
+<p>Both the heap and the stack grow</p>
+<p>Must take care that they don&rsquo;t grow into each other</p>
+<p>Solution:start heap and stack at opposite ends of memory and let them grow towards each other</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804112106101.png" alt="image-20200804112106101">
+
+</p>
+<h3 id="alignment">Alignment</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804112719766.png" alt="image-20200804112719766">
+
+</p>
+<h3 id="stack-machines">Stack Machines</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804112851657.png" alt="image-20200804112851657">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804113208145.png" alt="image-20200804113208145">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804113359758.png" alt="image-20200804113359758">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804114035608.png" alt="image-20200804114035608">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804114216478.png" alt="image-20200804114216478">
+
+</p>
+<p>After evaluating an expression e, the accumulator holds the value of e and the stack is unchanged.</p>
+<p><em>Expression evaluation preserves the stack.</em></p>
+<h4 id="exmaple">exmaple</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200804115009773.png" alt="image-20200804115009773">
+
+</p>
+<h2 id="code-generation">Code Generation</h2>
+<h3 id="introduction-to-code-generation">Introduction to Code Generation</h3>
+<p>The accumulator is kept in MIPS register $a0</p>
+<p>The stack is kept in memory</p>
+<ul>
+<li>The stack grows towards lower addresses</li>
+<li>Standard convention on MIPS</li>
+</ul>
+<p>The address of the next location on the stack is kept in MIPS register <code>$sp</code> (stack pointer</p>
+<ul>
+<li>The top of the stack is at address <code>$sp+4</code></li>
+</ul>
+<p><strong>Stack is growing towards low addresses</strong></p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808090532307.png" alt="image-20200808090532307">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808090733566.png" alt="image-20200808090733566">
+
+</p>
+<h4 id="example-1">example</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808090948399.png" alt="image-20200808090948399">
+
+</p>
+<h3 id="code-generation-i">Code Generation I</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808092449719.png" alt="image-20200808092449719">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808092520377.png" alt="image-20200808092520377">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808092406241.png" alt="image-20200808092406241">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808092138761.png" alt="image-20200808092138761">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808092837102.png" alt="image-20200808092837102">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808093434286.png" alt="image-20200808093434286">
+
+</p>
+<h3 id="code-generation-ii">Code Generation II</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808101554898.png" alt="image-20200808101554898">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808101652847.png" alt="image-20200808101652847">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808101826630.png" alt="image-20200808101826630">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808102115320.png" alt="image-20200808102115320">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808102420307.png" alt="image-20200808102420307">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808102625336.png" alt="image-20200808102625336">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808102731121.png" alt="image-20200808102731121">
+
+</p>
+<h4 id="example-2">example</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808103106476.png" alt="image-20200808103106476">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808103516812.png" alt="image-20200808103516812">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808103618842.png" alt="image-20200808103618842">
+
+</p>
+<h3 id="code-generation-example">Code Generation Example</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808104801419.png" alt="image-20200808104801419">
+
+</p>
+<h3 id="temporaries">Temporaries</h3>
+<p>Idea:Keep temporaries in the AR</p>
+<p>The code generator must assign a fixed location in the AR for each temporary</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808113002505.png" alt="image-20200808113002505">
+
+</p>
+<blockquote>
+<p>While we need one here for the predicate, but notice that once the predicate is decided, once we know the answer to whether this predicate is true or false, we don&rsquo;t need that temporary anymore. So in fact, that temporary can be reclaimed; we don&rsquo;t need the space for that temporary anymore by the time we get to the false branch.</p>
+</blockquote>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808112920088.png" alt="image-20200808112920088">
+
+</p>
+<blockquote>
+<p>NT(e1 + e2) = max(NT(e1), 1 + NT(e2))</p>
+</blockquote>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808113708280.png" alt="image-20200808113708280">
+
+</p>
+<h4 id="example-3">example</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808113903169.png" alt="image-20200808113903169">
+
+</p>
+<blockquote>
+<p>最多需要两个temporaries来储存这些数据</p>
+<p>if 的true 或flase 一个，单个int可以变成返回值（不用临时变量），调用fib 传递的参数需要用临时变量</p>
+</blockquote>
+<p>For a function definition <strong>f(x.…… Xn)=e</strong> the AR has <strong>2+n+NT(e)</strong> elements</p>
+<ul>
+<li>Return addressL</li>
+<li>Frame pointer C</li>
+<li><strong>n</strong> arguments</li>
+<li><strong>NT(e)</strong> locations for intermediate results</li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808114653932.png" alt="image-20200808114653932">
+
+</p>
+<h4 id="new-scheme">new scheme</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808115316923.png" alt="image-20200808115316923">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808115353156.png" alt="image-20200808115353156">
+
+</p>
+<blockquote>
+<p>nt  unused temporary</p>
+</blockquote>
+<h3 id="object-layout">Object Layout</h3>
+<p>00 implementation=Basic code generation + <strong>More stuff</strong></p>
+<p>0o Slogan:If <strong>B is a subclass of A</strong>,than an object of class B can be used wherever an object of class A is expected</p>
+<p>This means that code in class A works <strong>unmodified</strong> for an object of class B</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808120906584.png" alt="image-20200808120906584">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808121002133.png" alt="image-20200808121002133">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808121205970.png" alt="image-20200808121205970">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808120828905.png" alt="image-20200808120828905">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808120723112.png" alt="image-20200808120723112">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808121617559.png" alt="image-20200808121617559">
+
+</p>
+<p>Every class has a fixed set of methods</p>
+<ul>
+<li>including inherited methods</li>
+</ul>
+<p>A <strong>dispatch table</strong> indexes these methods</p>
+<ul>
+<li>An array of method entry points</li>
+<li>A method <strong>f</strong> lives at <strong>a fixed offset</strong> in the dispatch table for a class and <strong>all of its subclasses</strong></li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808122344016.png" alt="image-20200808122344016">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808122753473.png" alt="image-20200808122753473">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808122815394.png" alt="image-20200808122815394">
+
+</p>
+<h3 id="opentional-semantics-overview">opentional Semantics overview</h3>
+<p>We must specify for every Cool expression what happens
+when it is evaluated</p>
+<ul>
+<li>This is the&quot;meaning&quot;of an expression</li>
+</ul>
+<p>The definition of a programming language:</p>
+<ul>
+<li>The tokens &gt;lexical analysis</li>
+<li>The grammar &gt;syntactic analysis</li>
+<li>The typing rules &gt;semantic analysis</li>
+<li>The evaluation rules
+→code generation and optimization</li>
+</ul>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808142452501.png" alt="image-20200808142452501">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808142730543.png" alt="image-20200808142730543">
+
+</p>
+<h4 id="denotaional-semantics">Denotaional semantics</h4>
+<p>Program&rsquo;s meaning is a mathematical function</p>
+<h4 id="axiomatic-semantics">Axiomatic semantics</h4>
+<ul>
+<li>Program behavior described via logical formulae
+<ul>
+<li>If execution begins in state satisfying X,then it ends in state satisfyingY</li>
+<li>X,Y formulas</li>
+</ul>
+</li>
+<li>Foundation of many program verification systems</li>
+</ul>
+<h3 id="operational-semantics">Operational Semantics</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808143144331.png" alt="image-20200808143144331">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808143427301.png" alt="image-20200808143427301">
+
+</p>
+<p>A variable environment maps variables to locations</p>
+<ul>
+<li>Keeps track of which yariables are in scope</li>
+<li>Tells us where those variables are</li>
+</ul>
+<p><strong>E = [ a : l1, b : l2 ]</strong></p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808144113316.png" alt="image-20200808144113316">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808144211557.png" alt="image-20200808144211557">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808144502293.png" alt="image-20200808144502293">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808144825648.png" alt="image-20200808144825648">
+
+</p>
+<h3 id="cool-semantics">Cool Semantics</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808145028046.png" alt="image-20200808145028046">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808145137544.png" alt="image-20200808145137544">
+
+</p>
+<blockquote>
+<p>first we look up in the environment <strong>E</strong> where that identifier <strong>id</strong> is stored so now we give us back a memory</p>
+<p>location <strong>l</strong>. So by in this case And then we look up in the store <strong>S</strong> what the value is at that memory locations, So,</p>
+<p>we use the same memory location here as an argument to the store to get back the value that variable currently</p>
+<p>has And notice I just have a reference, this is a read of memories so this is loading, I think it was loading the</p>
+<p>value of the variable. This does not affect the store so the store <strong>S</strong> is the same before and after. This is just looking</p>
+<p>at the value</p>
+</blockquote>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808145557313.png" alt="image-20200808145557313">
+
+</p>
+<h4 id="assignment">assignment</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808145750438.png" alt="image-20200808145750438">
+
+</p>
+<blockquote>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808145944381.png" alt="image-20200808145944381">
+
+</p>
+<p>we modify the store at that point with the new value so we replace the location l id or we update the value of l, i, d to be the value of v and we do that in store s1 which gives us a new store s2.</p>
+</blockquote>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808150452154.png" alt="image-20200808150452154">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808150819402.png" alt="image-20200808150819402">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808151558053.png" alt="image-20200808151558053">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808151807567.png" alt="image-20200808151807567">
+
+</p>
+<h4 id="if-else">if else</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808151959085.png" alt="image-20200808151959085">
+
+</p>
+<h4 id="while">while</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808152117753.png" alt="image-20200808152117753">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808152158870.png" alt="image-20200808152158870">
+
+</p>
+<h4 id="let">let</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808152603765.png" alt="image-20200808152603765">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808152652618.png" alt="image-20200808152652618">
+
+</p>
+<h3 id="cool-semantics-ii">Cool Semantics II</h3>
+<h4 id="new">new</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808153226162.png" alt="image-20200808153226162">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808153301600.png" alt="image-20200808153301600">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808153553893.png" alt="image-20200808153553893">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808154013836.png" alt="image-20200808154013836">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808154217191.png" alt="image-20200808154217191">
+
+</p>
+<h4 id="dynamic-dispatch">dynamic dispatch</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808154401563.png" alt="image-20200808154401563">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808154927736.png" alt="image-20200808154927736">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808155513811.png" alt="image-20200808155513811">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808155706318.png" alt="image-20200808155706318">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200808155830158.png" alt="image-20200808155830158">
+
+</p>
+<h3 id="pa5">PA5</h3>
+<h2 id="优化-optimization-1">优化 Optimization</h2>
+<h3 id="intermediate-code">Intermediate Code</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724164441833.png" alt="image-20200724164441833">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724164545484.png" alt="image-20200724164545484">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724164657828.png" alt="image-20200724164657828">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200724165004707.png" alt="image-20200724165004707">
+
+</p>
+<h3 id="optimization-overview">Optimization Overview</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727113032723.png" alt="image-20200727113032723">
+
+
+
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727113227764.png" alt="image-20200727113227764">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727114137055.png" alt="image-20200727114137055">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727114346148.png" alt="image-20200727114346148">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727135941770.png" alt="image-20200727135941770">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727140110611.png" alt="image-20200727140110611">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727141024199.png" alt="image-20200727141024199">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727142541805.png" alt="image-20200727142541805">
+
+</p>
+<h3 id="local-optimization">Local Optimization</h3>
+<p>有些可以删除的</p>
+<pre tabindex="0"><code>x = x + 0
+x = x * 1
+</code></pre><p>有些可以简化的</p>
+<pre tabindex="0"><code>x = x * 0 =&gt; x =0
+y = y ** 2 =&gt; y = y * y
+x = x *8 =&gt; x = x &lt;&lt; 3
+x = x * 15 =&gt; t = x &lt;&lt; 4;x = t - x;
+</code></pre><p>（一些机子上&laquo;比*号快</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727143956671.png" alt="image-20200727143956671">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727144813527.png" alt="image-20200727144813527">
+
+</p>
+<p>保留最高精度的浮点数，让架构决定计算结果</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727145423870.png" alt="image-20200727145423870">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727145657145.png" alt="image-20200727145657145">
+
+</p>
+<h3 id="peephole-optimization">Peephole Optimization</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727150656620.png" alt="image-20200727150656620">
+
+</p>
+<h3 id="dataflow-analysis">Dataflow Analysis</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727152656236.png" alt="image-20200727152656236">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727152915293.png" alt="image-20200727152915293">
+
+</p>
+<h3 id="constant-propagation">Constant Propagation</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727153509070.png" alt="image-20200727153509070">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727154004049.png" alt="image-20200727154004049">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727154640486.png" alt="image-20200727154640486">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727155002293.png" alt="image-20200727155002293">
+
+</p>
+<h3 id="analysis-of-loops">Analysis of Loops</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727161011290.png" alt="image-20200727161011290">
+
+</p>
+<h3 id="orderings">Orderings</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727162943132.png" alt="image-20200727162943132">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727163013545.png" alt="image-20200727163013545">
+
+</p>
+<h3 id="liveness-analysis">Liveness Analysis</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727164706188.png" alt="image-20200727164706188">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727164954867.png" alt="image-20200727164954867">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727165049700.png" alt="image-20200727165049700">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727165134688.png" alt="image-20200727165134688">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727165215533.png" alt="image-20200727165215533">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727165457537.png" alt="image-20200727165457537">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200727165949003.png" alt="image-20200727165949003">
+
+</p>
+<h3 id="register-allocation">Register Allocation</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730092739618.png" alt="image-20200730092739618">
+
+</p>
+<h4 id="principle">principle</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730093244462.png" alt="image-20200730093244462">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730093639654.png" alt="image-20200730093639654">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730093758586.png" alt="image-20200730093758586">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730094201480.png" alt="image-20200730094201480">
+
+</p>
+<h3 id="graph-coloring">Graph Coloring</h3>
+<p>A <strong>coloring of a graph</strong> is an assignment of colors to nodes, sch that nodes connected by an edge have different colors.</p>
+<p>A graph is <strong>k-colorable</strong> if it has a coloring with k colors.In here, colors = registers. Let k = number of machine registers.</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730100849423.png" alt="image-20200730100849423">
+
+</p>
+<p>再用寄存器名字替换</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730101320589.png" alt="image-20200730101320589">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730104742443.png" alt="image-20200730104742443">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730105029797.png" alt="image-20200730105029797">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730105203033.png" alt="image-20200730105203033">
+
+</p>
+<h4 id="example-4">example</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730105810302.png" alt="image-20200730105810302">
+
+</p>
+<p>Remove d Stack:{d,a}</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730105936761.png" alt="image-20200730105936761">
+
+</p>
+<p>now it doesn&rsquo;t matter which node we pick because we can process them in any</p>
+<p>Remove c,b,e,f</p>
+<p><strong>now Empty-graph - done with the first part</strong></p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730110258876.png" alt="image-20200730110258876">
+
+</p>
+<p>going to pick the <strong>lowest numbered register</strong> that is not used by any of its neighbors.</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730110339115.png" alt="image-20200730110339115">
+
+</p>
+<p>b is the only register that isnt used</p>
+<h3 id="spilling">Spilling</h3>
+<p>if tgere&rsquo;s no node that we can delete from the graph, in this situation, we&rsquo;re going to pick and know that
+there is a candidate for spilling.</p>
+<ul>
+<li>A spilled value &ldquo;lives&rdquo; in memory</li>
+</ul>
+<blockquote>
+<p>optimisitic coloring =&gt; hope that among the 4 neighbors of f we use less than 3 colors</p>
+</blockquote>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730112509274.png" alt="image-20200730112509274">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730112551179.png" alt="image-20200730112551179">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730113112519.png" alt="image-20200730113112519">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730112936005.png" alt="image-20200730112936005">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730113228217.png" alt="image-20200730113228217">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730113618452.png" alt="image-20200730113618452">
+
+</p>
+<h3 id="managing-caches">Managing Caches</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730114154225.png" alt="image-20200730114154225">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730114748858.png" alt="image-20200730114748858">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730114725025.png" alt="image-20200730114725025">
+
+</p>
+<h2 id="garbage-collection">Garbage collection</h2>
+<h3 id="automatic-memory-management">Automatic Memory Management</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730144340907.png" alt="image-20200730144340907">
+
+</p>
+<h4 id="how-to-know-an-object-will-never-be-used-again">How to know an object will &ldquo;never be used again&rdquo;?</h4>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730145148008.png" alt="image-20200730145148008">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730145452186.png" alt="image-20200730145452186">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730150153526.png" alt="image-20200730150153526">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730150244426.png" alt="image-20200730150244426">
+
+</p>
+<h3 id="mark-and-sweep">Mark and Sweep</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730150356190.png" alt="image-20200730150356190">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730150542396.png" alt="image-20200730150542396">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730162740553.png" alt="image-20200730162740553">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730163335635.png" alt="image-20200730163335635">
+
+</p>
+<h3 id="stop-and-copy">Stop and Copy</h3>
+<p>当旧区域满的时候，将有用的复制到新区域，然后新旧区域名字对换。</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730171624649.png" alt="image-20200730171624649">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730171725223.png" alt="image-20200730171725223">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730172133916.png" alt="image-20200730172133916">
+
+</p>
+<p>被复制过去之后，指针访问旧区域的时候，会发现旧区域已被标记，然后会更新指针指向新区域</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730172842124.png" alt="image-20200730172842124">
+
+</p>
+<p>scan到alloc之间就是需要被更新的</p>
+<h4 id="solution">solution</h4>
+<p>先复制A，然后根据指向按序复制到新区域并更新pointer</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730173025615.png" alt="image-20200730173025615">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730173211485.png" alt="image-20200730173211485">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730174134335.png" alt="image-20200730174134335">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730174236562.png" alt="image-20200730174236562">
+
+</p>
+<h3 id="conservative-collection">Conservative Collection</h3>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730175043466.png" alt="image-20200730175043466">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730175410736.png" alt="image-20200730175410736">
+
+</p>
+<h3 id="reference-counting">Reference Counting</h3>
+<p>Try to collect an object when there are no more pointers to it.</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730180530542.png" alt="image-20200730180530542">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730181146802.png" alt="image-20200730181146802">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730181841627.png" alt="image-20200730181841627">
+
+</p>
+<p>
+  <img src="/img/%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/image-20200730182213114.png" alt="image-20200730182213114">
+
+</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/natas/" data-toggle="tooltip" data-placement="top" title="Natas">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/llvm-pass/" data-toggle="tooltip" data-placement="top" title="LLVM pass">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

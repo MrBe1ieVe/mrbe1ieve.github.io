@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>反思总结 on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/%E5%8F%8D%E6%80%9D%E6%80%BB%E7%BB%93/</link>
+    <description>Recent content in 反思总结 on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/%E5%8F%8D%E6%80%9D%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安洵杯线下AWD总结</title>
+      <link>https://mrbelieve.tech/post/%E5%AE%89%E6%B4%B5%E6%9D%AF%E7%BA%BF%E4%B8%8Bawd%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E5%AE%89%E6%B4%B5%E6%9D%AF%E7%BA%BF%E4%B8%8Bawd%E6%80%BB%E7%BB%93/</guid>
+      <description>事后BB ==赛前自动提交flag脚本没有，自动化打全场脚本没有，哎。== 线下还是很友好的，可以连接外网，伙食也很不错，但是！ 只有先黑盒测试过</description>
+    </item>
+    
+  </channel>
+</rss>

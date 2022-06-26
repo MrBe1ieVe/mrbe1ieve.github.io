@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>buu on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/buu/</link>
+    <description>Recent content in buu on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/buu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>babyheap_0ctf_2017</title>
+      <link>https://mrbelieve.tech/post/babyheap_0ctf_2017/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/babyheap_0ctf_2017/</guid>
+      <description>参考wp:https://blog.csdn.net/weixin_42151611/article/details/98119213?fp</description>
+    </item>
+    
+    <item>
+      <title>ciscn_2019_s_9</title>
+      <link>https://mrbelieve.tech/post/ciscn_2019_s_9/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ciscn_2019_s_9/</guid>
+      <description>啥保护没开，第一时间考虑shellcode 另外leak只有50，leak多才考虑直接走rop 尝试过ret2libc,但是怎么都调不出来= = shellcode</description>
+    </item>
+    
+    <item>
+      <title>buu-ciscn_2019-c_1 WP</title>
+      <link>https://mrbelieve.tech/post/buu-ciscn_2019-c_1-wp/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/buu-ciscn_2019-c_1-wp/</guid>
+      <description>// local variable allocation has failed, the output may be wrong! int __cdecl main(int argc, const char **argv, const char **envp) { int v4; // [rsp+Ch] [rbp-4h] init(*(_QWORD *)&amp;amp;argc, argv, envp); puts(&amp;#34;EEEEEEE hh iii &amp;#34;); puts(&amp;#34;EE mm mm mmmm aa aa cccc hh nn nnn eee &amp;#34;); puts(&amp;#34;EEEEE mmm mm mm aa aaa cc hhhhhh iii nnn nn ee e &amp;#34;); puts(&amp;#34;EE mmm mm mm aa aaa cc hh hh</description>
+    </item>
+    
+    <item>
+      <title>ciscn_2019_n_1 WP</title>
+      <link>https://mrbelieve.tech/post/ciscn_2019_n_1-wp/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ciscn_2019_n_1-wp/</guid>
+      <description>int func() { int result; // eax char v1; // [rsp+0h] [rbp-30h] float v2; // [rsp+2Ch] [rbp-4h] v2 = 0.0; puts(&amp;#34;Let&amp;#39;s guess the number.&amp;#34;); gets(&amp;amp;v1); if ( v2 == 11.28125 ) result = system(&amp;#34;cat /flag&amp;#34;); else result = puts(&amp;#34;Its value should be 11.28125&amp;#34;); return result; } 看见==我还尝试了一下&amp;rsquo;a&amp;rsqu</description>
+    </item>
+    
+    <item>
+      <title>get_started_3dsctf_2016</title>
+      <link>https://mrbelieve.tech/post/get_started_3dsctf_2016/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/get_started_3dsctf_2016/</guid>
+      <description>mprotect函数原型： int mprotect(void *addr, size_t len, int prot); addr 内存启始地址 len 修改内存的长度 prot 内存的权限 [ 所以得到exp: from pwn import * elf = ELF(&amp;#39;./get_started_3dsctf_2016&amp;#39;) sh = elf.process() #sh = remote(&amp;#39;node3.buuoj.cn&amp;#39;,27037) pop3_ret = 0x804951D #为了后</description>
+    </item>
+    
+    <item>
+      <title>OGeek2019-babyrop</title>
+      <link>https://mrbelieve.tech/post/ogeek2019-babyrop/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ogeek2019-babyrop/</guid>
+      <description>程序 为了绕过strncmp，我们在v6这里可以放一个\x00 因为strlen会在识别到\x00之后停止，这样strncmp就会默认返回0 这里</description>
+    </item>
+    
+  </channel>
+</rss>

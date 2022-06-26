@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="OpenCanary使用及理解" />
+    <meta property="og:title" content="OpenCanary使用及理解" />
+    <meta property="twitter:title" content="OpenCanary使用及理解" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>OpenCanary使用及理解 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/opencanary%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%90%86%E8%A7%A3/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%9C%9C%E7%BD%90" title="蜜罐">
+                            蜜罐
+                        </a>
+                        
+                    </div>
+                    <h1>OpenCanary使用及理解</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Monday, May 10, 2021
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="协议支持列表">协议支持列表</h2>
+<p>22 ssh : a Secure Shell server which alerts on login attempts
+21 ftp - a File Transfer Protocol server which on login attempts
+git - a Git protocol which alerts on repo cloning
+80 http - an HTTP web server that alerts on login attempts
+httpproxy - an HTTP web proxy that alerts when there is an attempt to proxy to another page
+1433 mssql - an MS SQL server that alerts on login attempts
+3306 mysql - a MYSQL server that alerts on login attempts
+23 telnet - a Telnet server that alerts on login attempts
+25 snmp - an SNMP server which alerts on oid requests
+sip - a SIP server which alerts on sip requests
+5900 vnc - a VNC server which alerts on login attempts
+redis - a Redis server which alerts on actions
+tftp - a tftp server which alerts on requests
+ntp - an NTP server which alerts on ntp requests.
+tcpbanner - a TCPbanner service which alerts on connection and subsequent data recieved events.
+ignorelist - comma separated ips or CIDRs that will ignore alerting on.</p>
+<h2 id="安装在docker中">安装在docker中</h2>
+<p>使用官方的办法始终无法在docker中运行起来，只能看到</p>
+<pre tabindex="0"><code>Attaching to opencanary
+opencanary exited with code 0
+</code></pre><p>我去找了一个改改就能用的<a href="https://github.com/mrbelieve128/Docker-OpenCanary">mrbelieve128/Docker-OpenCanary: Simple Docker image for OpenCanary in Ubuntu</a></p>
+<h2 id="试用">试用</h2>
+<p>日志保存在<code>/var/tmp/opencanary.log</code></p>
+<p>80端口</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#ff79c6">&#34;dst_host&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>, <span style="color:#ff79c6">&#34;dst_port&#34;</span>: <span style="color:#bd93f9">-1</span>, <span style="color:#ff79c6">&#34;local_time&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:24:33.054025&#34;</span>, <span style="color:#ff79c6">&#34;local_time_adjusted&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:24:33.054043&#34;</span>, <span style="color:#ff79c6">&#34;logdata&#34;</span>: {<span style="color:#ff79c6">&#34;msg&#34;</span>: {<span style="color:#ff79c6">&#34;logdata&#34;</span>: <span style="color:#f1fa8c">&#34;Canary running!!!&#34;</span>}}, <span style="color:#ff79c6">&#34;logtype&#34;</span>: <span style="color:#bd93f9">1001</span>, <span style="color:#ff79c6">&#34;node_id&#34;</span>: <span style="color:#f1fa8c">&#34;opencanary_device01&#34;</span>, <span style="color:#ff79c6">&#34;src_host&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>, <span style="color:#ff79c6">&#34;src_port&#34;</span>: <span style="color:#bd93f9">-1</span>, <span style="color:#ff79c6">&#34;utc_time&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:24:33.054037&#34;</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#ff79c6">&#34;dst_host&#34;</span>: <span style="color:#f1fa8c">&#34;172.17.0.2&#34;</span>, <span style="color:#ff79c6">&#34;dst_port&#34;</span>: <span style="color:#bd93f9">80</span>, <span style="color:#ff79c6">&#34;local_time&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:33:59.434581&#34;</span>, <span style="color:#ff79c6">&#34;local_time_adjusted&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:33:59.434644&#34;</span>, <span style="color:#ff79c6">&#34;logdata&#34;</span>: {<span style="color:#ff79c6">&#34;HOSTNAME&#34;</span>: <span style="color:#f1fa8c">&#34;localhost&#34;</span>, <span style="color:#ff79c6">&#34;PATH&#34;</span>: <span style="color:#f1fa8c">&#34;/index.html&#34;</span>, <span style="color:#ff79c6">&#34;SKIN&#34;</span>: <span style="color:#f1fa8c">&#34;nasLogin&#34;</span>, <span style="color:#ff79c6">&#34;USERAGENT&#34;</span>: <span style="color:#f1fa8c">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.42&#34;</span>}, <span style="color:#ff79c6">&#34;logtype&#34;</span>: <span style="color:#bd93f9">3000</span>, <span style="color:#ff79c6">&#34;node_id&#34;</span>: <span style="color:#f1fa8c">&#34;opencanary_device01&#34;</span>, <span style="color:#ff79c6">&#34;src_host&#34;</span>: <span style="color:#f1fa8c">&#34;172.17.0.1&#34;</span>, <span style="color:#ff79c6">&#34;src_port&#34;</span>: <span style="color:#bd93f9">55736</span>, <span style="color:#ff79c6">&#34;utc_time&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:33:59.434633&#34;</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#ff79c6">&#34;dst_host&#34;</span>: <span style="color:#f1fa8c">&#34;172.17.0.2&#34;</span>, <span style="color:#ff79c6">&#34;dst_port&#34;</span>: <span style="color:#bd93f9">80</span>, <span style="color:#ff79c6">&#34;local_time&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:35:34.959679&#34;</span>, <span style="color:#ff79c6">&#34;local_time_adjusted&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:35:34.959764&#34;</span>, <span style="color:#ff79c6">&#34;logdata&#34;</span>: {<span style="color:#ff79c6">&#34;HOSTNAME&#34;</span>: <span style="color:#f1fa8c">&#34;localhost&#34;</span>, <span style="color:#ff79c6">&#34;PASSWORD&#34;</span>: <span style="color:#f1fa8c">&#34;admin1&#34;</span>, <span style="color:#ff79c6">&#34;PATH&#34;</span>: <span style="color:#f1fa8c">&#34;/index.html&#34;</span>, <span style="color:#ff79c6">&#34;SKIN&#34;</span>: <span style="color:#f1fa8c">&#34;nasLogin&#34;</span>, <span style="color:#ff79c6">&#34;USERAGENT&#34;</span>: <span style="color:#f1fa8c">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.42&#34;</span>, <span style="color:#ff79c6">&#34;USERNAME&#34;</span>: <span style="color:#f1fa8c">&#34;admin&#34;</span>}, <span style="color:#ff79c6">&#34;logtype&#34;</span>: <span style="color:#bd93f9">3001</span>, <span style="color:#ff79c6">&#34;node_id&#34;</span>: <span style="color:#f1fa8c">&#34;opencanary_device01&#34;</span>, <span style="color:#ff79c6">&#34;src_host&#34;</span>: <span style="color:#f1fa8c">&#34;172.17.0.1&#34;</span>, <span style="color:#ff79c6">&#34;src_port&#34;</span>: <span style="color:#bd93f9">55752</span>, <span style="color:#ff79c6">&#34;utc_time&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:35:34.959754&#34;</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#ff79c6">&#34;dst_host&#34;</span>: <span style="color:#f1fa8c">&#34;172.17.0.2&#34;</span>, <span style="color:#ff79c6">&#34;dst_port&#34;</span>: <span style="color:#bd93f9">80</span>, <span style="color:#ff79c6">&#34;local_time&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:35:40.035831&#34;</span>, <span style="color:#ff79c6">&#34;local_time_adjusted&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:35:40.035866&#34;</span>, <span style="color:#ff79c6">&#34;logdata&#34;</span>: {<span style="color:#ff79c6">&#34;HOSTNAME&#34;</span>: <span style="color:#f1fa8c">&#34;localhost&#34;</span>, <span style="color:#ff79c6">&#34;PASSWORD&#34;</span>: <span style="color:#f1fa8c">&#34;admin&#34;</span>, <span style="color:#ff79c6">&#34;PATH&#34;</span>: <span style="color:#f1fa8c">&#34;/index.html&#34;</span>, <span style="color:#ff79c6">&#34;SKIN&#34;</span>: <span style="color:#f1fa8c">&#34;nasLogin&#34;</span>, <span style="color:#ff79c6">&#34;USERAGENT&#34;</span>: <span style="color:#f1fa8c">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.42&#34;</span>, <span style="color:#ff79c6">&#34;USERNAME&#34;</span>: <span style="color:#f1fa8c">&#34;admin&#34;</span>}, <span style="color:#ff79c6">&#34;logtype&#34;</span>: <span style="color:#bd93f9">3001</span>, <span style="color:#ff79c6">&#34;node_id&#34;</span>: <span style="color:#f1fa8c">&#34;opencanary_device01&#34;</span>, <span style="color:#ff79c6">&#34;src_host&#34;</span>: <span style="color:#f1fa8c">&#34;172.17.0.1&#34;</span>, <span style="color:#ff79c6">&#34;src_port&#34;</span>: <span style="color:#bd93f9">55772</span>, <span style="color:#ff79c6">&#34;utc_time&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-22 08:35:40.035860&#34;</span>}
+</span></span></code></pre></div><p>21端口</p>
+<pre tabindex="0"><code>{&#34;dst_host&#34;: &#34;172.17.0.2&#34;, &#34;dst_port&#34;: 21, &#34;local_time&#34;: &#34;2021-04-22 08:52:34.745897&#34;, &#34;local_time_adjusted&#34;: &#34;2021-04-22 08:52:34.745986&#34;, &#34;logdata&#34;: {&#34;PASSWORD&#34;: &#34;admin1&#34;, &#34;USERNAME&#34;: &#34;admin&#34;}, &#34;logtype&#34;: 2000, &#34;node_id&#34;: &#34;opencanary_device01&#34;, &#34;src_host&#34;: &#34;172.17.0.1&#34;, &#34;src_port&#34;: 57076, &#34;utc_time&#34;: &#34;2021-04-22 08:52:34.745964&#34;}
+{&#34;dst_host&#34;: &#34;172.17.0.2&#34;, &#34;dst_port&#34;: 21, &#34;local_time&#34;: &#34;2021-04-22 08:52:34.751212&#34;, &#34;local_time_adjusted&#34;: &#34;2021-04-22 08:52:34.751331&#34;, &#34;logdata&#34;: {&#34;PASSWORD&#34;: &#34;admin1&#34;, &#34;USERNAME&#34;: &#34;admin&#34;}, &#34;logtype&#34;: 2000, &#34;node_id&#34;: &#34;opencanary_device01&#34;, &#34;src_host&#34;: &#34;172.17.0.1&#34;, &#34;src_port&#34;: 57078, &#34;utc_time&#34;: &#34;2021-04-22 08:52:34.751236&#34;}
+{&#34;dst_host&#34;: &#34;172.17.0.2&#34;, &#34;dst_port&#34;: 21, &#34;local_time&#34;: &#34;2021-04-22 08:53:02.559717&#34;, &#34;local_time_adjusted&#34;: &#34;2021-04-22 08:53:02.559749&#34;, &#34;logdata&#34;: {&#34;PASSWORD&#34;: &#34;admin1&#34;, &#34;USERNAME&#34;: &#34;admin&#34;}, &#34;logtype&#34;: 2000, &#34;node_id&#34;: &#34;opencanary_device01&#34;, &#34;src_host&#34;: &#34;172.17.0.1&#34;, &#34;src_port&#34;: 57086, &#34;utc_time&#34;: &#34;2021-04-22 08:53:02.559741&#34;}
+{&#34;dst_host&#34;: &#34;172.17.0.2&#34;, &#34;dst_port&#34;: 21, &#34;local_time&#34;: &#34;2021-04-22 08:53:02.560316&#34;, &#34;local_time_adjusted&#34;: &#34;2021-04-22 08:53:02.560336&#34;, &#34;logdata&#34;: {&#34;PASSWORD&#34;: &#34;admin1&#34;, &#34;USERNAME&#34;: &#34;admin&#34;}, &#34;logtype&#34;: 2000, &#34;node_id&#34;: &#34;opencanary_device01&#34;, &#34;src_host&#34;: &#34;172.17.0.1&#34;, &#34;src_port&#34;: 57084, &#34;utc_time&#34;: &#34;2021-04-22 08:53:02.560332&#34;}
+{&#34;dst_host&#34;: &#34;172.17.0.2&#34;, &#34;dst_port&#34;: 21, &#34;local_time&#34;: &#34;2021-04-22 08:53:04.350338&#34;, &#34;local_time_adjusted&#34;: &#34;2021-04-22 08:53:04.350379&#34;, &#34;logdata&#34;: {&#34;PASSWORD&#34;: &#34;admin&#34;, &#34;USERNAME&#34;: &#34;admin&#34;}, &#34;logtype&#34;: 2000, &#34;node_id&#34;: &#34;opencanary_device01&#34;, &#34;src_host&#34;: &#34;172.17.0.1&#34;, &#34;src_port&#34;: 57090, &#34;utc_time&#34;: &#34;2021-04-22 08:53:04.350363&#34;}
+{&#34;dst_host&#34;: &#34;172.17.0.2&#34;, &#34;dst_port&#34;: 21, &#34;local_time&#34;: &#34;2021-04-22 08:53:04.350905&#34;, &#34;local_time_adjusted&#34;: &#34;2021-04-22 08:53:04.350921&#34;, &#34;logdata&#34;: {&#34;PASSWORD&#34;: &#34;admin&#34;, &#34;USERNAME&#34;: &#34;admin&#34;}, &#34;logtype&#34;: 2000, &#34;node_id&#34;: &#34;opencanary_device01&#34;, &#34;src_host&#34;: &#34;172.17.0.1&#34;, &#34;src_port&#34;: 57094, &#34;utc_time&#34;: &#34;2021-04-22 08:53:04.350917&#34;}
+r
+</code></pre><p>监控文件修改/使用hpfeed等直接发送json都可以，也可以通过设置邮件提醒</p>
+<h2 id="源码理解">源码理解</h2>
+<h3 id="modules">modules</h3>
+<p><del>这里的绝大部分都使用了twisted框架</del> 绝大部分都复用了twisted框架下的服务代码</p>
+<h4 id="ssh">ssh</h4>
+<p>使用的<a href="https://github.com/desaster/kippo/blob/master/kippo/core/ssh.py">kippo/ssh.py</a>的代码。主要区别是<code>HoneyPotAvatar</code>类中的函数，去掉了打开shell执行命令的代码。</p>
+<p>
+  <img src="/img/OpenCanary%e4%bd%bf%e7%94%a8%e5%8f%8a%e7%90%86%e8%a7%a3/Snipaste_2021-05-10_11-12-27.png" alt="">
+
+</p>
+<p>高交互的ssh蜜罐可以看<a href="https://github.com/cowrie/cowrie">cowrie/cowrie: Cowrie SSH/Telnet Honeypot</a></p>
+<h4 id="ftp">ftp</h4>
+<p>类<code>LoggingFTP</code>
+复用了twisted框架的FTP绝大部分代码，只是重写了<code>ftp_PASS</code>函数</p>
+<p>diff比较之后，唯一的差别就是</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>logdata <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;USERNAME&#39;</span>: self<span style="color:#ff79c6">.</span>_user, <span style="color:#f1fa8c">&#39;PASSWORD&#39;</span>: password}
+</span></span><span style="display:flex;"><span>self<span style="color:#ff79c6">.</span>factory<span style="color:#ff79c6">.</span>canaryservice<span style="color:#ff79c6">.</span>log(logdata, transport<span style="color:#ff79c6">=</span>self<span style="color:#ff79c6">.</span>transport)
+</span></span></code></pre></div><p>这里会传递用户名和密码，然后调用<code>__init__.py</code>里的<code>canaryservice.log</code>来获取源、目标端口地址。</p>
+<p>类<code>CanaryFTP</code>
+功能：设置banner，端口，地址，然后设置服务
+这里如果修改Portal的第二个参数，写成允许登录的话估计就可以进一步拓展变成高交互蜜罐了，但是文件交互这个又是个大坑0.0</p>
+<h4 id="http">http</h4>
+<p><code>BasicLogin</code>负责记录Get的登录信息，Post的登录信息，以及渲染登录界面</p>
+<p>调用流程：
+初始化<code>CanaryHTTP</code>类，先去<code>.opencanary.conf</code>获取http的皮、设置端口、banner，然后设置默认重定向到index.html。首页为index.html。</p>
+<h5 id="添加自定义http皮方法">添加自定义http皮方法</h5>
+<p>http的皮放置在<code>\opencanary\modules\data\http\skin</code>里，有<code>403.html</code>，<code>404.html</code>和<code>index.html</code>。</p>
+<p>放置后在</p>
+<pre tabindex="0"><code> &#34;http.banner&#34;: &#34;Apache/2.2.22 (Ubuntu)&#34;,
+    &#34;http.enabled&#34;: true,
+    &#34;http.port&#34;: 80,
+ &#34;http.skin&#34;: &#34;nasLogin&#34;,
+    &#34;http.skin.list&#34;: [
+        {
+            &#34;desc&#34;: &#34;Plain HTML Login&#34;,
+            &#34;name&#34;: &#34;basicLogin&#34;
+        },
+        {
+            &#34;desc&#34;: &#34;Synology NAS Login&#34;,
+            &#34;name&#34;: &#34;nasLogin&#34;
+        }
+    ],
+</code></pre><p>添加desc，name，以及http.skin中配置上选用的皮</p>
+<h4 id="httpproxy">httpproxy</h4>
+<p><code>PROFILES</code>里默认设置了<code>ms-isa</code>和<code>squid</code>的</p>
+<p>ToDo</p>
+<h3 id="__init__"><strong>init</strong></h3>
+<p>ToDo</p>
+<h3 id="config">Config</h3>
+<p>函数<code>__init__</code>
+功能：负责读取三个位置的配置文件</p>
+<p>函数<code>moduleEnabled</code>
+功能：判断模组是否启用</p>
+<p>函数<code>getVal</code>
+功能：获取配置的某个值</p>
+<p>函数<code>setVaules</code>
+功能：设置所有有效的值和返回错误值</p>
+<p>&hellip;&hellip;</p>
+<h3 id="honeycred">honeycred</h3>
+<p>Todo: 搞清楚<code>honeycreds</code> 是干啥的</p>
+<p>函数<code>buildHoneyCredHook</code>
+功能：设置钩子方法，验证蜜罐凭证（？）</p>
+<h3 id="iphelper">iphelper</h3>
+<p>转换和验证ip</p>
+<h3 id="logger">logger</h3>
+<p>类<code>LoggerBase</code>
+功能：定义报错类型和规范log输出格式</p>
+<p>类<code>PyLogger</code>
+功能：继承LoggerBase，配置日志记录工具logging
+实现：使用了 <a href="https://docs.python.org/zh-cn/3/library/logging.html#module-logging" title="logging: Flexible event logging system for applications."><code>logging</code></a> -&ndash; Python 的日志记录工具</p>
+<p>类<code>SocketJSONHandler</code><br>
+功能：通过TCP发送json信息
+实现：使用 <a href="https://docs.python.org/zh-cn/3/library/logging.handlers.html#module-logging.handlers" title="logging.handlers: Handlers for the logging module."><code>logging.handlers</code></a></p>
+<p>类<code>HpfeedsHandler</code>
+功能：发送<a href="https://github.com/hpfeeds/hpfeeds">hpfeeds/hpfeeds: Honeynet Project generic authenticated datafeed protocol</a>协议的数据包</p>
+<p>类<code>SlackHandler</code>
+功能：我猜是把信息发送到slack这个类似钉钉的办公软件上</p>
+<p>类<code>TeamsHandler</code>
+功能：报警信息发送到teams这个软件上</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/apt%E5%AD%A6%E4%B9%A0/" data-toggle="tooltip" data-placement="top" title="APT学习">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/webgoat%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%B61-%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C/" data-toggle="tooltip" data-placement="top" title="WebGoat代码审计其1-登录注册">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

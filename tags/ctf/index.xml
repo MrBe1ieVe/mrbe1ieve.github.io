@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTF on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/ctf/</link>
+    <description>Recent content in CTF on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Sat, 08 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ORW-[极客大挑战2019]Not_Bad</title>
+      <link>https://mrbelieve.tech/post/orw-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019not_bad/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/orw-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019not_bad/</guid>
+      <description>RWX Linux的文件和目录的权限，有RWX三种。 r(Read，读取)：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目录的权限。 w(</description>
+    </item>
+    
+    <item>
+      <title>解密系列笔记</title>
+      <link>https://mrbelieve.tech/post/%E8%A7%A3%E5%AF%86%E7%B3%BB%E5%88%97/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E8%A7%A3%E5%AF%86%E7%B3%BB%E5%88%97/</guid>
+      <description>解密系列 ASCII编码是Unicode字符编码的一部分 系统dll属于level3，内核运行在level0. 虚拟内存 在保护模式下： 应用程序是不</description>
+    </item>
+    
+    <item>
+      <title>babyheap_0ctf_2017</title>
+      <link>https://mrbelieve.tech/post/babyheap_0ctf_2017/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/babyheap_0ctf_2017/</guid>
+      <description>参考wp:https://blog.csdn.net/weixin_42151611/article/details/98119213?fp</description>
+    </item>
+    
+    <item>
+      <title>ciscn_2019_s_9</title>
+      <link>https://mrbelieve.tech/post/ciscn_2019_s_9/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ciscn_2019_s_9/</guid>
+      <description>啥保护没开，第一时间考虑shellcode 另外leak只有50，leak多才考虑直接走rop 尝试过ret2libc,但是怎么都调不出来= = shellcode</description>
+    </item>
+    
+    <item>
+      <title>栈迁移</title>
+      <link>https://mrbelieve.tech/post/%E6%A0%88%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%A0%88%E8%BF%81%E7%A7%BB/</guid>
+      <description>劫持一次流程，覆盖一次ebp 栈迁移后跳到read 正常Rop到libc，再rop，再到libc rop到libc，由于跳到read上，后面可以继</description>
+    </item>
+    
+    <item>
+      <title>AWD准备</title>
+      <link>https://mrbelieve.tech/post/awd%E5%87%86%E5%A4%87/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/awd%E5%87%86%E5%A4%87/</guid>
+      <description>探测主机 Nmap 或 HTTPScan Nmap 扫描端口 端口攻击 常见：22，2389，1443，3306 ==准备爆破脚本！！！== WEB 攻击 Web 方面的语言多为 PHP，小部分为 Java 和</description>
+    </item>
+    
+    <item>
+      <title>AWD常用指令</title>
+      <link>https://mrbelieve.tech/post/awd%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/awd%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</guid>
+      <description>备份web目录 tar -zcvf web.tar.gz /var/www/html/ 查看已建立网络连接和对应进程 netstat -antulp | grep EST 用户管理 w 查看当前用户 pkill -kill -t &amp;lt;Username&amp;gt; 查看指定端口被哪个进程占用 lsof -i:端口号 或者 netstat -tunlp|grep 端</description>
+    </item>
+    
+    <item>
+      <title>buu-ciscn_2019-c_1 WP</title>
+      <link>https://mrbelieve.tech/post/buu-ciscn_2019-c_1-wp/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/buu-ciscn_2019-c_1-wp/</guid>
+      <description>// local variable allocation has failed, the output may be wrong! int __cdecl main(int argc, const char **argv, const char **envp) { int v4; // [rsp+Ch] [rbp-4h] init(*(_QWORD *)&amp;amp;argc, argv, envp); puts(&amp;#34;EEEEEEE hh iii &amp;#34;); puts(&amp;#34;EE mm mm mmmm aa aa cccc hh nn nnn eee &amp;#34;); puts(&amp;#34;EEEEE mmm mm mm aa aaa cc hhhhhh iii nnn nn ee e &amp;#34;); puts(&amp;#34;EE mmm mm mm aa aaa cc hh hh</description>
+    </item>
+    
+    <item>
+      <title>ciscn_2019_n_1 WP</title>
+      <link>https://mrbelieve.tech/post/ciscn_2019_n_1-wp/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ciscn_2019_n_1-wp/</guid>
+      <description>int func() { int result; // eax char v1; // [rsp+0h] [rbp-30h] float v2; // [rsp+2Ch] [rbp-4h] v2 = 0.0; puts(&amp;#34;Let&amp;#39;s guess the number.&amp;#34;); gets(&amp;amp;v1); if ( v2 == 11.28125 ) result = system(&amp;#34;cat /flag&amp;#34;); else result = puts(&amp;#34;Its value should be 11.28125&amp;#34;); return result; } 看见==我还尝试了一下&amp;rsquo;a&amp;rsqu</description>
+    </item>
+    
+    <item>
+      <title>get_started_3dsctf_2016</title>
+      <link>https://mrbelieve.tech/post/get_started_3dsctf_2016/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/get_started_3dsctf_2016/</guid>
+      <description>mprotect函数原型： int mprotect(void *addr, size_t len, int prot); addr 内存启始地址 len 修改内存的长度 prot 内存的权限 [ 所以得到exp: from pwn import * elf = ELF(&amp;#39;./get_started_3dsctf_2016&amp;#39;) sh = elf.process() #sh = remote(&amp;#39;node3.buuoj.cn&amp;#39;,27037) pop3_ret = 0x804951D #为了后</description>
+    </item>
+    
+    <item>
+      <title>GXY_CTF_my_cannary-从零记录如何调试出来</title>
+      <link>https://mrbelieve.tech/post/gxy_ctf_my_cannary-%E4%BB%8E%E9%9B%B6%E8%AE%B0%E5%BD%95%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E5%87%BA%E6%9D%A5/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/gxy_ctf_my_cannary-%E4%BB%8E%E9%9B%B6%E8%AE%B0%E5%BD%95%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E5%87%BA%E6%9D%A5/</guid>
+      <description>查看main 进入test() 看见了read，等等先 judge无法反编译，查看汇编 看见了xor rdx,[rbp-8]，以及上图的mov rdx, [rdx] 也就</description>
+    </item>
+    
+    <item>
+      <title>OGeek2019-babyrop</title>
+      <link>https://mrbelieve.tech/post/ogeek2019-babyrop/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/ogeek2019-babyrop/</guid>
+      <description>程序 为了绕过strncmp，我们在v6这里可以放一个\x00 因为strlen会在识别到\x00之后停止，这样strncmp就会默认返回0 这里</description>
+    </item>
+    
+    <item>
+      <title>使用docker为pwn题目搭配环境</title>
+      <link>https://mrbelieve.tech/post/%E4%BD%BF%E7%94%A8docker%E4%B8%BApwn%E9%A2%98%E7%9B%AE%E6%90%AD%E9%85%8D%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E4%BD%BF%E7%94%A8docker%E4%B8%BApwn%E9%A2%98%E7%9B%AE%E6%90%AD%E9%85%8D%E7%8E%AF%E5%A2%83/</guid>
+      <description>将多个题目搭建一个docker里 ubuntu *1 docker 安装 docker-compose 官方文档 giantbranch/pwn_deploy_chroot 解决 ERROR: Couldn&amp;rsquo;t connect to Docker daemon at http+docker://localunixsocket - is it running? docker-compose up解决错误ERROR: Couldn&amp;rsquo;t connect to Docker daemon at http+docker://localunixsocket - is it running? 将题目放到</description>
+    </item>
+    
+    <item>
+      <title>手动脱壳</title>
+      <link>https://mrbelieve.tech/post/%E6%89%8B%E5%8A%A8%E8%84%B1%E5%A3%B3/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%89%8B%E5%8A%A8%E8%84%B1%E5%A3%B3/</guid>
+      <description>手动脱壳 可分为压缩壳（常见的有UPX、北斗、ASDPack、Npack、PECompact等）和保护壳（如强壳Safengine、VMpro</description>
+    </item>
+    
+    <item>
+      <title>汇编、逆向工程基础</title>
+      <link>https://mrbelieve.tech/post/%E6%B1%87%E7%BC%96%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%B1%87%E7%BC%96%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%9F%BA%E7%A1%80/</guid>
+      <description>原文链接：https://blog.csdn.net/qq_21508727/article/details/80559270 单位 ·WORD</description>
+    </item>
+    
+    <item>
+      <title>汇编基础</title>
+      <link>https://mrbelieve.tech/post/%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80/</guid>
+      <description>X86汇编基础 ==Intel和AT&amp;amp;T语法区别：== Intel操作数在前面，AT&amp;amp;T的在后面 在Intel语法中： 在AT&amp;am</description>
+    </item>
+    
+  </channel>
+</rss>

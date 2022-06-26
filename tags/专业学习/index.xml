@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>专业学习 on Mr.Be1ieVe&#39;s Treasure</title>
+    <link>https://mrbelieve.tech/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 专业学习 on Mr.Be1ieVe&#39;s Treasure</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mr_believe@outlook.com (Mr.Be1ieVe)</managingEditor>
+    <webMaster>mr_believe@outlook.com (Mr.Be1ieVe)</webMaster>
+    <lastBuildDate>Tue, 31 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mrbelieve.tech/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cisco课程代码记录</title>
+      <link>https://mrbelieve.tech/post/cisco%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/cisco%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/</guid>
+      <description>不记肯定会忘记QAQ,只敲简写然后敲tab也是可以的 enable configure terminal hostname R1 加密 enable password xxx # 设置用户执行密码 enable secret class # 设置特权执行密码 line console 0 #线路密码 (config-line)password cisco (config-line)login (config-line)exit line</description>
+    </item>
+    
+    <item>
+      <title>TCPIP复习</title>
+      <link>https://mrbelieve.tech/post/tcpip%E5%A4%8D%E4%B9%A0/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/tcpip%E5%A4%8D%E4%B9%A0/</guid>
+      <description>地址 A类地址 公有1~126 地址类型 公有 私有 A类 1 ~ 126 10.0.0.0 ~ 10.255.255.255 B类 128 ~ 191 172.16.0.0 ~ 172.31.255.255 C类 192.0.0.0 ~ 223.255.255.255 192.168.0.0 ~ 192.168.255.255 直接交付和间接交付 直接交付 -&amp;gt; 交给同一个网络地址 间接</description>
+    </item>
+    
+    <item>
+      <title>操作系统复习</title>
+      <link>https://mrbelieve.tech/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0/</guid>
+      <description>对不起我看吐了，考炸了 操作系统的目标 方便性，有效性，可扩充性和开放性 可扩充性：采用微内核结构 P30 发展主要动力 不断提高计算机资源利用率 方便用户 器</description>
+    </item>
+    
+    <item>
+      <title>数据库复习笔记</title>
+      <link>https://mrbelieve.tech/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>使用的是sql server，操作可能跟mysql有区别 新建数据库 create database stuhyy on ( name = stu, filename=&amp;#39;C:\stu_data.mdf&amp;#39;, size = 3mb, maxsize = 500mb, filegrowth = 10% ) log on ( name = stu_log, filename = &amp;#39;D:\stu_log.ldf&amp;#39;, size=3mb, maxsize = unlimited, filegrowth = 1mb ) 修改</description>
+    </item>
+    
+    <item>
+      <title>网络编程</title>
+      <link>https://mrbelieve.tech/post/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>mr_believe@outlook.com (Mr.Be1ieVe)</author>
+      <guid>https://mrbelieve.tech/post/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
+      <description>3/9 非阻塞模式 // TcpServer.cpp : 定义控制台应用程序的入口点。 // #include &amp;#34;stdafx.h&amp;#34; #include &amp;lt;WINSOCK2.H&amp;gt; #include &amp;lt;iostream&amp;gt; #pragma comment(lib,&amp;#34;WS2_32.lib&amp;#34;) #define BUF_SIZE 64 // 缓冲区大小 int _tmain(int argc, _TCHAR* argv[]) { WSADATA wsd; // WSADATA变量，用于初始化Windo</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Mr.Be1ieVe&#39;s Treasure">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg">
+    <meta property="twitter:image" content="https://mrbelieve.tech/img/home-bg-universe.jpg" />
+    
+
+    
+    <meta name="title" content="APT学习" />
+    <meta property="og:title" content="APT学习" />
+    <meta property="twitter:title" content="APT学习" />
+    
+
+    
+    <meta name="description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。">
+    <meta property="og:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    <meta property="twitter:description" content="Mr.Be1ieVe，安全运营, 信息安全，生活家 | 这里是 Mr.Be1ieVe 的博客，与你一同学习进步。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Mr.Be1ieVe">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>APT学习 | Mr.Be1ieVe的博客 | Mr.Be1ieVe&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/apt%E5%AD%A6%E4%B9%A0/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mr.Be1ieVe&#39;s Treasure</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%88%99%E5%AE%AA%E6%B3%95">个人原则宪法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">安全建设实践</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E6%80%9D%E8%80%83%E4%B8%8E%E5%88%86%E6%9E%90">底层原理思考与分析</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-universe.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/apt" title="APT">
+                            APT
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E6%94%BB%E5%87%BB%E6%80%9D%E8%B7%AF" title="攻击思路">
+                            攻击思路
+                        </a>
+                        
+                    </div>
+                    <h1>APT学习</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Mr.Be1ieVe&#39;s Treasure
+                             
+                            on 
+                            Wednesday, May 5, 2021
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>记录自己看过的一些APT报告，学习攻击思路</p>
+<h2 id="安全研究人员发布针对westeal的技术分析httpsunit42paloaltonetworkscomwesteal"><a href="https://unit42.paloaltonetworks.com/westeal/">安全研究人员发布针对WeSteal的技术分析</a></h2>
+<h3 id="混淆">混淆</h3>
+<p>The Trojan was specifically written for Python 3.9, as the PyInstaller package included python39.dll as the Python interpreter. The developer also used the open source <strong>PyArmor</strong> source code obfuscator, which encrypts the contents of the Python script and decrypts the contents before sending to the Python interpreter for execution,</p>
+<h3 id="长久化">长久化</h3>
+<p>WeSteal将自己复制到<code>C:\Users\&lt;username&gt;\AppData\Local.exe</code></p>
+<p>然后创建一个batch脚本来实现自启<code>c:\Users\&lt;username&gt;\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\appdata.bat</code></p>
+<p>内容包含<code>start %localappdata%</code></p>
+<p>The command above uses a novel technique to obfuscate the batch file starting the WeSteal executable. The start
+command attempts to run the environment variable %localappdata%, which on a default Windows system is a path to the
+folder <code>C:\Users\&lt;username&gt;\AppData\Local</code>. However, in this context, the Local in that environment variable is
+interpreted as a file rather than a subfolder. The start command will run the WeSteal executable Local.exe (the start
+command does not require the .exe file extension) in the path <code>C:\Users\&lt;username&gt;\AppData\</code>.</p>
+<h2 id="water-pamola通过恶意订单攻击网店httpswwwtrendmicrocomen_usresearch21dwater-pamola-attacked-online-shops-via-malicious-ordershtml"><a href="https://www.trendmicro.com/en_us/research/21/d/water-pamola-attacked-online-shops-via-malicious-orders.html">Water Pamola通过恶意订单攻击网店</a></h2>
+<p>攻击链
+  <img src="/img/APT%e5%ad%a6%e4%b9%a0/Snipaste_2021-05-05_19-28-55.png" alt="">
+
+</p>
+<h3 id="xss脚本的功能">XSS脚本的功能</h3>
+<h4 id="获取页面信息">获取页面信息</h4>
+<p>向特定页面请求信息并转发响应包到Water Pamola服务器。这样可以让攻击者理解环境并设计攻击脚本
+
+  <img src="/img/APT%e5%ad%a6%e4%b9%a0/Snipaste_2021-05-05_19-31-12.png" alt="">
+
+</p>
+<h4 id="窃取凭证">窃取凭证</h4>
+<p>一种方法是伪造登录界面。如果输入了登录信息，脚本会用base64编码凭证，然后发送到Water Pamola服务器上</p>
+<p>
+  <img src="/img/APT%e5%ad%a6%e4%b9%a0/Snipaste_2021-05-05_19-40-57.png" alt="">
+
+</p>
+<p>另一种方法是显示认证报错，然后重定向到钓鱼网站，再让用户输入凭证。域名就像<code>{victim’s domain}[.]basic-authentication[.]live</code>，咋一看域名和正常的一样，迷惑用户</p>
+<p>
+  <img src="/img/APT%e5%ad%a6%e4%b9%a0/Snipaste_2021-05-05_19-44-25.png" alt="">
+
+</p>
+<h3 id="webshell--php-后门注入">webshell / PHP 后门注入</h3>
+<p>针对特定网站的框架，如在日本很火的EC-CUBE框架。</p>
+<p>第一种方法是通过调用框架的API来上传php webshell，</p>
+<p><a href="http://achineseboy.com/archives/49">php几个实用小技巧 – Chinese boy</a></p>
+<p>
+  <img src="/img/APT%e5%ad%a6%e4%b9%a0/Snipaste_2021-05-05_19-54-17.png" alt="">
+
+</p>
+<p>第二种方法是篡改网页header来注入可以执行任何php代码的代码，当然，代码都是混淆了得。一开始用异或来解码，然后把base64 字符串解码出eval。</p>
+<p>
+  <img src="/img/APT%e5%ad%a6%e4%b9%a0/Snipaste_2021-05-05_20-00-53.png" alt="">
+
+</p>
+<p>第三种方法是安装恶意插件到框架中。插件是设计来放置webshell的</p>
+<p>
+  <img src="/img/APT%e5%ad%a6%e4%b9%a0/Snipaste_2021-05-05_20-06-17.png" alt="">
+
+</p>
+<p>
+  <img src="/img/APT%e5%ad%a6%e4%b9%a0/Snipaste_2021-05-05_20-09-17.png" alt="">
+
+</p>
+<h3 id="传送恶意软件">传送恶意软件</h3>
+<p>脚本会提示Flash版本过低，然后重定向到假的flash安装站</p>
+<p>下载之后，Flash安装器是正常的，但是sideload的dll可能是被打补丁的，然后再加载真正的恶意dll。这样通过两个正常和有adobe签名的可执行文件再加载恶意dll</p>
+<h2 id="双头龙rotajakiro一个至少潜伏了3年的后门木马httpsblognetlab360comstealth_rotajakiro_backdoor_cn"><a href="https://blog.netlab.360.com/stealth_rotajakiro_backdoor_cn/">双头龙(RotaJakiro)，一个至少潜伏了3年的后门木马</a></h2>
+<p>这个过于硬核了，直接逆程序分析加密算法等</p>
+<h3 id="持久化">持久化</h3>
+<p>root用户，根据不同Linux系统发行版本，创建相应的自启动脚本 <code>/etc/init/systemd- agent.conf</code> 或者 <code>/lib/systemd/system/systemd-agent.service</code></p>
+<p>用于伪装的文件名，俩者2选1</p>
+<ul>
+<li><code>/bin/systemd/systemd-daemon</code></li>
+<li><code>/usr/lib/systemd/systemd-daemon</code></li>
+</ul>
+<p>非root用户，创建桌面环境的自启动脚本
+<code>$HOME/$.config/autostart/gnomehelper.desktop</code></p>
+<pre tabindex="0"><code>[Desktop Entry]
+Type=Application
+Exec=$HOME/.gvfsd/.profile/gvfsd-helper
+</code></pre><p>然后修改<code>.bashrc</code>创建shell环境的自启动脚本</p>
+<pre tabindex="0"><code>if [ -d ${HOME} ]; then
+  ${HOME}/.gvfsd/.profile/gvfsd-helper
+fi
+</code></pre><p>用于伪装的文件名，俩者同时存在</p>
+<ul>
+<li><code>$HOME/.dbus/sessions/session-dbus</code></li>
+<li><code>$HOME/.gvfsd/.profile/gvfsd-helper</code></li>
+</ul>
+<h3 id="进程守护">进程守护</h3>
+<p>root账户下，根据不同版本，向服务配置文件写入<code>Restart=always</code>或者<code>respawn</code>，这样服务进程被结束时，自动创建新进程</p>
+<p>非root用户，会生成两个进程，彼此见识，双进程保护：
+通过共享内存实现进程间通讯，告诉对方PID，然后通过<code>/proc/[PID]</code>动态获得进程存活情况，死亡时通过execvo创建进程，帮助复活</p>
+<h3 id="单一实例">单一实例</h3>
+<p>通过文件锁实现单一实例</p>
+<h3 id="网络通信">网络通信</h3>
+<p>可以分成两个截断</p>
+<ul>
+<li>Stage1 初始化截断：解密C2列表，建立连接，发送上线信息，接受并解密C2返回信息</li>
+<li>Stage2 业务截断，验证返回信息，通过验证则执行下发指令</li>
+</ul>
+<h2 id="以招聘信息为诱饵对制药公司发起攻击httpswwwptsecuritycomww-enanalyticspt-esc-threat-intelligencelazarus-recruitment"><a href="https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/lazarus-recruitment/">以招聘信息为诱饵对制药公司发起攻击</a></h2>
+<p>Todo</p>
+<h2 id="某货运物流公司lazarus后门httpsmpweixinqqcoms8mn6s-qpdggr79req5wyea"><a href="https://mp.weixin.qq.com/s/8MN6s-QPDGgr79rEq5wyeA">某货运物流公司Lazarus后门</a></h2>
+<p>通过Tor网络与其C2服务器通信</p>
+<p>后门是Vyveva的主要组件，它连接到C2服务器并执行威胁参与者发出的命令，其中一些命令是异步的，并且在它们自己的线程中执行。
+它们中的大多数是用于文件和进程操作或信息收集的普通命令，但是对于文件时间戳记也存在一种较不常用的命令，它可以将creation/write/access time元数据从“donor”文件复制到目标文件，或使用2000-2004年之间的随机日期。</p>
+<h2 id="lazarus利用threatneedle攻击某工业httpsmpweixinqqcomsb7qdhivj8itkkotk7eayqg"><a href="https://mp.weixin.qq.com/s/b7QdHIVJ8ItkKoTk7eayqg">Lazarus利用ThreatNeedle攻击某工业</a></h2>
+<h3 id="threatneedle的初次感染">ThreatNeedle的初次感染</h3>
+<p>观察到他们如何通过访问内部路由器机器并将其配置为代理服务器，从而允许他们将被盗数据从Intranet网络传输到其远程服务器，从而克服了网络分段的问题。</p>
+<p>攻击者使用公共电子邮件服务注册了帐户，确保发件人的电子邮件地址看起来与医疗中心的真实电子邮件地址相似。网络钓鱼电子邮件中显示的签名包括受攻击组织的医疗中心副校长的实际个人数据。攻击者能够在医疗中心的公共网站上找到此信息。</p>
+<pre tabindex="0"><code>payload路径：％APPDATA％\ Microsoft \ Windows \ lconcaches.db
+快捷方式路径：％APPDATA％\ Microsoft \ Windows \开始菜单\ Programs \ Startup \ OneDrives.lnk
+</code></pre><p>payload将下一个阶段加载为内存中运行的后门程序-ThreatNeedle后门程序</p>
+<h4 id="threatneedleinstaller">ThreatNeedle installer</h4>
+<p>恶意软件还会将配置数据另存为在RC4中加密的注册表项</p>
+<h4 id="threatneedleloader">ThreatNeedle loader</h4>
+<p>该组件负责将最终的后门payload加载到内存中。为了做到这一点，ThreatNeedle使用多种技术来解密其payload：</p>
+<p>从注册表加载payload。</p>
+<p>解密RC4和解压缩后，从自身加载payload。</p>
+<p>解密AES和解压缩后，从自身加载payload。</p>
+<p>解压后从自身加载payload。</p>
+<p>一字节异或后，从自身加载payload。</p>
+<h3 id="成功感染threat-needle后的阶段">成功感染Threat Needle后的阶段</h3>
+<p>攻击者执行了一个名为Responder的凭据收集工具，并使用Windows命令横向移动。Lazarus克服了网络分段问题，通过破坏路由器虚拟机，从与互联网断开的完全隔离的网络分段中窃取数据。</p>
+<p>最初，攻击者能够访问具有Internet访问权限的系统，并花费了很长时间在网络的企业部门的计算机之间分发恶意软件。在受感染计算机中，有企业IT基础架构管理员使用的计算机。</p>
+<p>管理员可以同时连接到公司网段和受限制的网段，以维护系统并在两个区域中为用户提供技术支持。结果，通过获得管理员工作站的控制权，攻击者能够访问受限制的网段。</p>
+<p>路由器是一台运行CentOS的虚拟机，可根据预定义的规则在多个网络接口之间进行路由连接。攻击者扫描了路由器的端口并检测到Webmin界面。接下来，攻击者使用特权根帐户登录Web界面。凭据可能保存在受感染系统的浏览器密码管理器之一中。</p>
+<p>通过访问配置面板，攻击者配置了Apache Web服务器，并开始将路由器用作组织的公司部门和受限部门之间的代理服务器。</p>
+<h4 id="数据泄漏">数据泄漏</h4>
+<p>为了创建隐蔽通道，恶意软件使用trivial binary encryption对转发的流量进行加密。</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://mrbelieve.tech"><img src="/img/favicon.png" />Mr.Be1ieVe&#39;s Treasure</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/xray_poc_%E7%BC%96%E5%86%99%E5%AD%A6%E4%B9%A0/" data-toggle="tooltip" data-placement="top" title="Xray_poc_编写学习">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/opencanary%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%90%86%E8%A7%A3/" data-toggle="tooltip" data-placement="top" title="OpenCanary使用及理解">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/awd" title="awd">
+                            awd
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/buu" title="buu">
+                            buu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ctf" title="ctf">
+                            ctf
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/hackthebox" title="hackthebox">
+                            hackthebox
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux%E4%BD%BF%E7%94%A8" title="linux使用">
+                            linux使用
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xray" title="xray">
+                            xray
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0" title="专业学习">
+                            专业学习
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" title="基础知识">
+                            基础知识
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" title="学习笔记">
+                            学习笔记
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:mr_believe@outlook.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/MrBe1ieVe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Mr.Be1ieVe&#39;s Treasure" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Mr.Be1ieVe&#39;s Treasure 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>
